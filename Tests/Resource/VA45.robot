@@ -6,7 +6,7 @@ Library    String
 Library    SAP_Tcode_Library.py
 Library     DateTime
 *** Variables ***
-${download_path}    C:\\TEMP
+${download_path}    C:\\TEMP\\
 
 *** Keywords *** 
 System Logon
@@ -58,6 +58,10 @@ Rental Document
     # Input Text      wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_GUI_CUL_EXPORT_AS:0512/txtGS_EXPORT-FILE_NAME  ${EMPTY}
     # Input Text      wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_GUI_CUL_EXPORT_AS:0512/txtGS_EXPORT-FILE_NAME  rental
     # Click Element   wnd[1]/tbar[0]/btn[20]
+    Click Element    element_id=wnd[0]/mbar/menu[0]/menu[3]/menu[1]
+    Click Element    element_id=wnd[1]/tbar[0]/btn[0]
+    Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=${EMPTY}
+    Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=rental.xlsx
     Input Text      wnd[1]/usr/ctxtDY_PATH      ${EMPTY}
     Input Text      wnd[1]/usr/ctxtDY_PATH      ${download_path}
     Click Element   wnd[1]/tbar[0]/btn[0]
