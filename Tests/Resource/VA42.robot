@@ -28,11 +28,12 @@ Release Block
         Run Transaction     /nVA42
         Input Text  wnd[0]/usr/ctxtVBAK-VBELN   ${contract}
         Send Vkey    0
-        Sleep   2
+        Sleep   1
         Click Element   wnd[0]/usr/subSUBSCREEN_HEADER:SAPMV45A:4021/btnBT_HEAD
-        Sleep   5
+        Sleep   1
         Click Element   wnd[0]/usr/tabsTAXI_TABSTRIP_HEAD/tabpT\\05
-        Sleep   2
+        Sleep   1
+        Run Keyword And Ignore Error    Click Element    wnd[1]/tbar[0]/btn[0]
         ${row}  Get Row Count   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD
         # Log To Console      ${row}
         FOR     ${i}    IN RANGE    0   ${row}
@@ -52,6 +53,7 @@ Process rental invoice
     Click Element   wnd[0]/tbar[0]/btn[3]
     Click Element   wnd[0]/tbar[0]/btn[3]
     Click Element   wnd[0]/tbar[0]/btn[11]
+    Run Keyword And Ignore Error    Click Element    wnd[1]/tbar[0]/btn[0]
+    Sleep    time_=0.3 seconds
     ${status}   Get Value   wnd[0]/sbar/pane[0]
     Log To Console      ${status}
-    Sleep   5
