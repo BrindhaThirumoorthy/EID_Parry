@@ -12,6 +12,7 @@ import pandas as pd
 from openpyxl import load_workbook
 import json
 import re
+import glob
 
 
 class SAP_Tcode_Library:
@@ -1422,6 +1423,13 @@ class SAP_Tcode_Library:
                     os.remove(file)
         except Exception as e:
             print(f"An error occurred: {e}")
-
-
-    # def select_material_views(self, table_id, views):
+            
+    def get_sap_table_value(self, table_id, row_num, column_id):
+        # Get Sap Table Value    table_id=wnd[0]/usr/cntlGRID1/shellcont/shell    row_num=${row_num}    column_id=BELNR
+        try:
+            table = self.session.findById(table_id)
+            table.currentCellRow = row_num
+            cell_value = table.getCellValue(row_num, column_id)
+            return cell_value  
+        except Exception as e:
+                return "FAIL"
