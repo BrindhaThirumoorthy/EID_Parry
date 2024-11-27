@@ -39,7 +39,7 @@ Release Block
             ${is_visible}   Run Keyword And Return Status   Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
             Run Keyword If    "${is_visible}" == "False"    Exit For Loop
             ${date}     Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
-            IF  '${date}' == '${rental_date}'
+            IF  '${date}' == '${symvar('Rental_Start_Date')}'
                 Process rental invoice
                 Exit For Loop
             END

@@ -1,7 +1,7 @@
 *** Settings ***
 Library    Process
 Library    OperatingSystem
-Library     ExcelLibrary
+Library    ExcelLibrary
 Library    String
 Library    SAP_Tcode_Library.py
 Library     DateTime
@@ -24,11 +24,11 @@ System Logout
 Rental Document
     Run Transaction     /nVA45
     Sleep   1
-    # Input Text      wnd[0]/usr/ctxtSAUART-LOW   ZMV
-    ${date}    Get Current Date    result_format=%Y
-    Log To Console      ${date}
-    Input Text      wnd[0]/usr/ctxtSVALID-LOW   01.${symvar('rental_month')}.${date}
-    Input Text      wnd[0]/usr/ctxtSVALID-HIGH  30.${symvar('rental_month')}.${date}
+    Input Text      wnd[0]/usr/ctxtSAUART-LOW   ZMV
+    # ${date}    Get Current Date    result_format=%Y
+    # Log To Console      ${date}
+    Input Text      wnd[0]/usr/ctxtSVALID-LOW   ${symvar('Rental_Start_Date')}
+    Input Text      wnd[0]/usr/ctxtSVALID-HIGH  ${symvar('Rental_End_Date')}
     Select Radio Button     wnd[0]/usr/radPVBOFF
     Click Element   wnd[0]/tbar[1]/btn[8]
 
