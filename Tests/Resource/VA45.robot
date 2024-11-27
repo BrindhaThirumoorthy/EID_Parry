@@ -52,9 +52,9 @@ Rental Document
     END
     Click Element    element_id=wnd[1]/tbar[0]/btn[0]
 
-    Click Element   wnd[0]/tbar[1]/btn[45]
-    Select Radio Button     wnd[1]/usr/subSUBSCREEN_STEPLOOP:SAPLSPO5:0150/sub:SAPLSPO5:0150/radSPOPLI-SELFLAG[2,0]
-    Click Element     wnd[1]/tbar[0]/btn[0]
+    # Click Element   wnd[0]/tbar[1]/btn[45]
+    # Select Radio Button     wnd[1]/usr/subSUBSCREEN_STEPLOOP:SAPLSPO5:0150/sub:SAPLSPO5:0150/radSPOPLI-SELFLAG[2,0]
+    # Click Element     wnd[1]/tbar[0]/btn[0]
     # Input Text      wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_GUI_CUL_EXPORT_AS:0512/txtGS_EXPORT-FILE_NAME  ${EMPTY}
     # Input Text      wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_GUI_CUL_EXPORT_AS:0512/txtGS_EXPORT-FILE_NAME  rental
     # Click Element   wnd[1]/tbar[0]/btn[20]
