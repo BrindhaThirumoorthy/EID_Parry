@@ -73,7 +73,7 @@ Rental Document
     log to console    ${json}  
     Sleep    0.5
     Delete Specific File    file_path=C:\\TEMP\\rental.xlsx
-    Delete Specific File    file_path=C:\\TEMP\\rental.json
+    # Delete Specific File    file_path=C:\\TEMP\\rental.json
 
 
 Matching_Row
