@@ -1443,11 +1443,11 @@ class SAP_Tcode_Library:
             except Exception as e:
                 print(f"An error occurred: {e}")
     def extract_numeric(self, data):
-        match = re.search(r'\d+', data)
+        match = re.findall(r'\d+', data)
         if match:
-            return match.group()
+            return ''.join(match)
         else:
-            return data
+            return "No numbers found"
     def get_invoice_number(self, status_id):
         try:
             status = self.session.findById(status_id).Text
