@@ -1442,4 +1442,28 @@ class SAP_Tcode_Library:
                     print(f"The file '{file_path}' does not exist.")
             except Exception as e:
                 print(f"An error occurred: {e}")
+    def extract_numeric(self, data):
+        match = re.search(r'\d+', data)
+        if match:
+            return match.group()
+        else:
+            return data
+    def get_invoice_number(self, status_id):
+        try:
+            status = self.session.findById(status_id).Text
+            # print(f"Status Message: '{status}'")
+        
+            pattern = r"Document (\d+) has been saved."
+            match = re.search(pattern, status)
+        
+            if match:
+                document_no = match.group(1)
+                # print(f"Extracted Document Number: '{document_no}'")
+                return document_no
+            else:
+                print("No match found")
+                return None
+        except Exception as e:
+            # print(f"Error: {str(e)}")
+            return f"Error: {str(e)}"
 

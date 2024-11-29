@@ -69,7 +69,7 @@ Rental Document
     Sleep    0.5
     ${json}    Excel To Json    excel_file=C:\\TEMP\\rental.xlsx    json_file=C:\\TEMP\\rental.json
     log    ${json}
-    Log To Console    **gbStart**copilot_Sales_Document_status**splitKeyValue**${json}**gbEnd**
+    Log To Console    **gbStart**copilot_Sales_Document_status**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
     log to console    ${json}  
     Sleep    0.5
     Delete Specific File    file_path=C:\\TEMP\\rental.xlsx

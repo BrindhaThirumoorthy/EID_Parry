@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<robot generated="20241127 09:32:37.453" generator="Rebot 6.0.2 (Python 3.12.7 on win32)" rpa="false" schemaversion="3">
- <suite id="s1" name="Tests" source="C:\Symphony_Replay\SAPtesting\Tests">
+<robot generated="20241129 13:13:59.495" generator="Rebot 6.0.2 (Python 3.12.7 on win32)" rpa="false" schemaversion="3">
+ <suite id="s1" name="Tests" source="C:\EID_Replay\EID_Parry\Tests">
   <kw name="Setup highest level suite" type="SETUP">
    <kw library="BuiltIn" name="Set Variable">
     <var>
@@ -12,10 +12,10 @@
     <doc>
      Returns the given values which can then be assigned to a variables.
     </doc>
-    <msg level="INFO" timestamp="20241127 09:32:13.378">
+    <msg level="INFO" timestamp="20241129 13:13:49.659">
      ${d.test_server} = Dev
     </msg>
-    <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
+    <status endtime="20241129 13:13:49.659" starttime="20241129 13:13:49.659" status="PASS"/>
    </kw>
    <kw library="Support" name="Reset screenshot count variable">
     <kw library="BuiltIn" name="Set Variable">
@@ -28,10 +28,10 @@
      <doc>
       Returns the given values which can then be assigned to a variables.
      </doc>
-     <msg level="INFO" timestamp="20241127 09:32:13.378">
+     <msg level="INFO" timestamp="20241129 13:13:49.661">
       ${screenshotCount} = 0_1
      </msg>
-     <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
+     <status endtime="20241129 13:13:49.661" starttime="20241129 13:13:49.660" status="PASS"/>
     </kw>
     <kw library="BuiltIn" name="Set Global Variable">
      <arg>
@@ -40,10 +40,10 @@
      <doc>
       Makes a variable available globally in all tests and suites.
      </doc>
-     <msg level="INFO" timestamp="20241127 09:32:13.378">
+     <msg level="INFO" timestamp="20241129 13:13:49.661">
       ${screenshotCount} = 0_1
      </msg>
-     <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
+     <status endtime="20241129 13:13:49.661" starttime="20241129 13:13:49.661" status="PASS"/>
     </kw>
     <kw library="Support" name="Set up screenshot directory">
      <kw library="OperatingSystem" name="Create Directory">
@@ -53,17 +53,17 @@
       <doc>
        Creates the specified directory.
       </doc>
-      <msg level="INFO" timestamp="20241127 09:32:13.378">
+      <msg level="INFO" timestamp="20241129 13:13:49.662">
        Web.Dev.screenshot_dir: Screenshot
       </msg>
-      <msg html="true" level="INFO" timestamp="20241127 09:32:13.378">
-       Created directory '&lt;a href="file://C:\Symphony_Replay\SAPtesting\Output\pabot_results\0\Screenshot"&gt;C:\Symphony_Replay\SAPtesting\Output\pabot_results\0\Screenshot&lt;/a&gt;'.
+      <msg html="true" level="INFO" timestamp="20241129 13:13:49.664">
+       Created directory '&lt;a href="file://C:\EID_Replay\EID_Parry\Output\pabot_results\0\Screenshot"&gt;C:\EID_Replay\EID_Parry\Output\pabot_results\0\Screenshot&lt;/a&gt;'.
       </msg>
-      <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
+      <status endtime="20241129 13:13:49.664" starttime="20241129 13:13:49.662" status="PASS"/>
      </kw>
-     <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
+     <status endtime="20241129 13:13:49.664" starttime="20241129 13:13:49.661" status="PASS"/>
     </kw>
-    <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
+    <status endtime="20241129 13:13:49.664" starttime="20241129 13:13:49.660" status="PASS"/>
    </kw>
    <kw library="BuiltIn" name="Set Global Variable">
     <arg>
@@ -75,10 +75,10 @@
     <doc>
      Makes a variable available globally in all tests and suites.
     </doc>
-    <msg level="INFO" timestamp="20241127 09:32:13.378">
+    <msg level="INFO" timestamp="20241129 13:13:49.665">
      ${screenshot_taking} = True
     </msg>
-    <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
+    <status endtime="20241129 13:13:49.665" starttime="20241129 13:13:49.665" status="PASS"/>
    </kw>
    <kw library="Support" name="Setup linux execution">
     <kw library="BuiltIn" name="Run Keyword And Return Status">
@@ -101,12 +101,12 @@
       <doc>
        Fails unless the given variable exists within the current scope.
       </doc>
-      <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
+      <status endtime="20241129 13:13:49.666" starttime="20241129 13:13:49.666" status="PASS"/>
      </kw>
-     <msg level="INFO" timestamp="20241127 09:32:13.378">
+     <msg level="INFO" timestamp="20241129 13:13:49.666">
       ${web_test_check} = True
      </msg>
-     <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
+     <status endtime="20241129 13:13:49.667" starttime="20241129 13:13:49.666" status="PASS"/>
     </kw>
     <kw library="BuiltIn" name="Run Keyword If">
      <arg>
@@ -138,10 +138,10 @@
             {"browser_version": browser version value,
              "driver_version": driver version value}
         </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.975">
-         &amp;{browser_information} = { browser_version=131.0.6778.86 | driver_version=131.0.6778.69  }
+        <msg level="INFO" timestamp="20241129 13:13:54.239">
+         &amp;{browser_information} = { browser_version=131.0.6778.86 | driver_version=131.0.6778.85  }
         </msg>
-        <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:13.378" status="PASS"/>
+        <status endtime="20241129 13:13:54.239" starttime="20241129 13:13:49.668" status="PASS"/>
        </kw>
        <kw library="BuiltIn" name="Set Suite Metadata">
         <arg>
@@ -153,10 +153,10 @@
         <doc>
          Sets metadata for the current test suite.
         </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.975">
+        <msg level="INFO" timestamp="20241129 13:13:54.240">
          Set suite metadata 'test_browser_name' to value 'chrome'.
         </msg>
-        <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="PASS"/>
+        <status endtime="20241129 13:13:54.240" starttime="20241129 13:13:54.240" status="PASS"/>
        </kw>
        <kw library="BuiltIn" name="Set Suite Metadata">
         <arg>
@@ -168,10 +168,10 @@
         <doc>
          Sets metadata for the current test suite.
         </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.975">
+        <msg level="INFO" timestamp="20241129 13:13:54.241">
          Set suite metadata 'test_browser_version' to value '131.0.6778.86'.
         </msg>
-        <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="PASS"/>
+        <status endtime="20241129 13:13:54.241" starttime="20241129 13:13:54.240" status="PASS"/>
        </kw>
        <kw library="BuiltIn" name="Set Suite Metadata">
         <arg>
@@ -183,12 +183,12 @@
         <doc>
          Sets metadata for the current test suite.
         </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.975">
-         Set suite metadata 'test_driver_version' to value '131.0.6778.69 '.
+        <msg level="INFO" timestamp="20241129 13:13:54.242">
+         Set suite metadata 'test_driver_version' to value '131.0.6778.85 '.
         </msg>
-        <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="PASS"/>
+        <status endtime="20241129 13:13:54.242" starttime="20241129 13:13:54.241" status="PASS"/>
        </kw>
-       <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:13.378" status="PASS"/>
+       <status endtime="20241129 13:13:54.242" starttime="20241129 13:13:49.667" status="PASS"/>
       </kw>
       <kw library="Support_Web" name="Setup Global Docker Execution Options">
        <kw library="BuiltIn" name="Set Global Variable">
@@ -201,10 +201,10 @@
         <doc>
          Makes a variable available globally in all tests and suites.
         </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.975">
+        <msg level="INFO" timestamp="20241129 13:13:54.243">
          ${global_browser_options} = None
         </msg>
-        <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="PASS"/>
+        <status endtime="20241129 13:13:54.243" starttime="20241129 13:13:54.242" status="PASS"/>
        </kw>
        <kw library="OperatingSystem" name="Get Environment Variable">
         <var>
@@ -219,10 +219,10 @@
         <doc>
          Returns the value of an environment variable with the given name.
         </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.975">
+        <msg level="INFO" timestamp="20241129 13:13:54.243">
          ${docker_check} = not_found
         </msg>
-        <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="PASS"/>
+        <status endtime="20241129 13:13:54.243" starttime="20241129 13:13:54.243" status="PASS"/>
        </kw>
        <kw library="BuiltIn" name="Run Keyword And Return If">
         <arg>
@@ -244,15 +244,15 @@
          <doc>
           Logs the given message with the given level.
          </doc>
-         <msg level="INFO" timestamp="20241127 09:32:22.975">
+         <msg level="INFO" timestamp="20241129 13:13:54.244">
           Not executing on Docker
          </msg>
-         <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="PASS"/>
+         <status endtime="20241129 13:13:54.244" starttime="20241129 13:13:54.244" status="PASS"/>
         </kw>
-        <msg level="INFO" timestamp="20241127 09:32:22.975">
+        <msg level="INFO" timestamp="20241129 13:13:54.244">
          Returning from the enclosing user keyword.
         </msg>
-        <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="PASS"/>
+        <status endtime="20241129 13:13:54.244" starttime="20241129 13:13:54.243" status="PASS"/>
        </kw>
        <kw library="BuiltIn" name="Create List">
         <var>
@@ -270,7 +270,7 @@
         <doc>
          Returns a list containing given items.
         </doc>
-        <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="NOT RUN"/>
+        <status endtime="20241129 13:13:54.244" starttime="20241129 13:13:54.244" status="NOT RUN"/>
        </kw>
        <kw library="BuiltIn" name="Set Global Variable">
         <arg>
@@ -282,9 +282,9 @@
         <doc>
          Makes a variable available globally in all tests and suites.
         </doc>
-        <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="NOT RUN"/>
+        <status endtime="20241129 13:13:54.244" starttime="20241129 13:13:54.244" status="NOT RUN"/>
        </kw>
-       <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="PASS"/>
+       <status endtime="20241129 13:13:54.245" starttime="20241129 13:13:54.242" status="PASS"/>
       </kw>
       <kw library="Support_Web" name="Create Webdriver for chrome preferences">
        <kw library="Support_Web" name="Update Docker Execution Options">
@@ -314,15 +314,15 @@
           <doc>
            Fails unless the given variable exists within the current scope.
           </doc>
-          <msg level="FAIL" timestamp="20241127 09:32:22.975">
+          <msg level="FAIL" timestamp="20241129 13:13:54.247">
            Variable '${docker_options}' does not exist.
           </msg>
-          <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="FAIL"/>
+          <status endtime="20241129 13:13:54.247" starttime="20241129 13:13:54.246" status="FAIL"/>
          </kw>
-         <msg level="INFO" timestamp="20241127 09:32:22.975">
+         <msg level="INFO" timestamp="20241129 13:13:54.247">
           ${docker_check} = False
          </msg>
-         <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="PASS"/>
+         <status endtime="20241129 13:13:54.247" starttime="20241129 13:13:54.245" status="PASS"/>
         </kw>
         <kw library="BuiltIn" name="Get Length">
          <var>
@@ -334,13 +334,13 @@
          <doc>
           Returns and logs the length of the given item as an integer.
          </doc>
-         <msg level="INFO" timestamp="20241127 09:32:22.975">
+         <msg level="INFO" timestamp="20241129 13:13:54.247">
           Length is 1
          </msg>
-         <msg level="INFO" timestamp="20241127 09:32:22.975">
+         <msg level="INFO" timestamp="20241129 13:13:54.248">
           ${list_prefs_length} = 1
          </msg>
-         <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="PASS"/>
+         <status endtime="20241129 13:13:54.248" starttime="20241129 13:13:54.247" status="PASS"/>
         </kw>
         <kw library="BuiltIn" name="Run Keyword If">
          <var>
@@ -389,17 +389,17 @@
           <doc>
            Returns the given values which can then be assigned to a variables.
           </doc>
-          <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="PASS"/>
+          <status endtime="20241129 13:13:54.248" starttime="20241129 13:13:54.248" status="PASS"/>
          </kw>
-         <msg level="INFO" timestamp="20241127 09:32:22.975">
+         <msg level="INFO" timestamp="20241129 13:13:54.248">
           ${list_prefs} = [[]]
          </msg>
-         <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="PASS"/>
+         <status endtime="20241129 13:13:54.248" starttime="20241129 13:13:54.248" status="PASS"/>
         </kw>
-        <msg level="INFO" timestamp="20241127 09:32:22.975">
+        <msg level="INFO" timestamp="20241129 13:13:54.248">
          ${list_prefs} = [[]]
         </msg>
-        <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="PASS"/>
+        <status endtime="20241129 13:13:54.248" starttime="20241129 13:13:54.245" status="PASS"/>
        </kw>
        <kw library="Support_Web" name="Create Chrome Options for download preferences">
         <var>
@@ -418,15 +418,15 @@
          <doc>
           Evaluates the given expression in Python and returns the result.
          </doc>
-         <msg level="INFO" timestamp="20241127 09:32:22.975">
-          ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002D3D4A02A80&gt;
+         <msg level="INFO" timestamp="20241129 13:13:54.249">
+          ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000210587BB5C0&gt;
          </msg>
-         <status endtime="20241127 09:32:22.975" starttime="20241127 09:32:22.975" status="PASS"/>
+         <status endtime="20241129 13:13:54.249" starttime="20241129 13:13:54.249" status="PASS"/>
         </kw>
-        <msg level="INFO" timestamp="20241127 09:32:22.991">
-         ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002D3D4A02A80&gt;
+        <msg level="INFO" timestamp="20241129 13:13:54.249">
+         ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000210587BB5C0&gt;
         </msg>
-        <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:22.975" status="PASS"/>
+        <status endtime="20241129 13:13:54.249" starttime="20241129 13:13:54.249" status="PASS"/>
        </kw>
        <kw library="Support_Web" name="Update Preferences List">
         <arg>
@@ -445,10 +445,10 @@
          <doc>
           Converts the given item to a Unicode string.
          </doc>
-         <msg level="INFO" timestamp="20241127 09:32:22.991">
+         <msg level="INFO" timestamp="20241129 13:13:54.250">
           ${string_prefs} = [[]]
          </msg>
-         <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:22.991" status="PASS"/>
+         <status endtime="20241129 13:13:54.250" starttime="20241129 13:13:54.250" status="PASS"/>
         </kw>
         <kw library="BuiltIn" name="Return From Keyword If">
          <arg>
@@ -457,10 +457,10 @@
          <doc>
           Returns from the enclosing user keyword if ``condition`` is true.
          </doc>
-         <msg level="INFO" timestamp="20241127 09:32:22.991">
+         <msg level="INFO" timestamp="20241129 13:13:54.250">
           Returning from the enclosing user keyword.
          </msg>
-         <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:22.991" status="PASS"/>
+         <status endtime="20241129 13:13:54.250" starttime="20241129 13:13:54.250" status="PASS"/>
         </kw>
         <for flavor="IN">
          <var>
@@ -484,13 +484,13 @@
            <doc>
             Calls the named method of the given object with the provided arguments.
            </doc>
-           <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:22.991" status="NOT RUN"/>
+           <status endtime="20241129 13:13:54.251" starttime="20241129 13:13:54.251" status="NOT RUN"/>
           </kw>
-          <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:22.991" status="NOT RUN"/>
+          <status endtime="20241129 13:13:54.251" starttime="20241129 13:13:54.250" status="NOT RUN"/>
          </iter>
-         <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:22.991" status="NOT RUN"/>
+         <status endtime="20241129 13:13:54.251" starttime="20241129 13:13:54.250" status="NOT RUN"/>
         </for>
-        <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:22.991" status="PASS"/>
+        <status endtime="20241129 13:13:54.251" starttime="20241129 13:13:54.249" status="PASS"/>
        </kw>
        <kw library="BuiltIn" name="Call Method">
         <arg>
@@ -508,7 +508,7 @@
         <doc>
          Calls the named method of the given object with the provided arguments.
         </doc>
-        <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:22.991" status="PASS"/>
+        <status endtime="20241129 13:13:54.251" starttime="20241129 13:13:54.251" status="PASS"/>
        </kw>
        <kw library="BuiltIn" name="Set Global Variable">
         <arg>
@@ -520,18 +520,18 @@
         <doc>
          Makes a variable available globally in all tests and suites.
         </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.991">
-         ${global_browser_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002D3D4A02A80&gt;
+        <msg level="INFO" timestamp="20241129 13:13:54.252">
+         ${global_browser_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000210587BB5C0&gt;
         </msg>
-        <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:22.991" status="PASS"/>
+        <status endtime="20241129 13:13:54.252" starttime="20241129 13:13:54.251" status="PASS"/>
        </kw>
-       <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:22.975" status="PASS"/>
+       <status endtime="20241129 13:13:54.252" starttime="20241129 13:13:54.245" status="PASS"/>
       </kw>
-      <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:13.378" status="PASS"/>
+      <status endtime="20241129 13:13:54.252" starttime="20241129 13:13:49.667" status="PASS"/>
      </kw>
-     <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:13.378" status="PASS"/>
+     <status endtime="20241129 13:13:54.252" starttime="20241129 13:13:49.667" status="PASS"/>
     </kw>
-    <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:13.378" status="PASS"/>
+    <status endtime="20241129 13:13:54.252" starttime="20241129 13:13:49.665" status="PASS"/>
    </kw>
    <kw library="BuiltIn" name="Set Suite Metadata">
     <arg>
@@ -543,3065 +543,267 @@
     <doc>
      Sets metadata for the current test suite.
     </doc>
-    <msg level="INFO" timestamp="20241127 09:32:22.991">
+    <msg level="INFO" timestamp="20241129 13:13:54.252">
      Set suite metadata 'environment' to value 'Dev'.
     </msg>
-    <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:22.991" status="PASS"/>
+    <status endtime="20241129 13:13:54.252" starttime="20241129 13:13:54.252" status="PASS"/>
    </kw>
-   <kw library="BuiltIn" name="Set Variable">
-    <var>
-     ${d.test_server}
-    </var>
-    <arg>
-     ${test_server}
-    </arg>
-    <doc>
-     Returns the given values which can then be assigned to a variables.
-    </doc>
-    <msg level="INFO" timestamp="20241127 09:32:13.378">
-     ${d.test_server} = Dev
-    </msg>
-    <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-   </kw>
-   <kw library="Support" name="Reset screenshot count variable">
-    <kw library="BuiltIn" name="Set Variable">
-     <var>
-      ${screenshotCount}
-     </var>
-     <arg>
-      ${PABOTQUEUEINDEX}_1
-     </arg>
-     <doc>
-      Returns the given values which can then be assigned to a variables.
-     </doc>
-     <msg level="INFO" timestamp="20241127 09:32:13.378">
-      ${screenshotCount} = 1_1
-     </msg>
-     <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-    </kw>
-    <kw library="BuiltIn" name="Set Global Variable">
-     <arg>
-      ${screenshotCount}
-     </arg>
-     <doc>
-      Makes a variable available globally in all tests and suites.
-     </doc>
-     <msg level="INFO" timestamp="20241127 09:32:13.378">
-      ${screenshotCount} = 1_1
-     </msg>
-     <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-    </kw>
-    <kw library="Support" name="Set up screenshot directory">
-     <kw library="OperatingSystem" name="Create Directory">
-      <arg>
-       ${OUTPUTDIR}${/}${wvar('screenshot_dir')}
-      </arg>
-      <doc>
-       Creates the specified directory.
-      </doc>
-      <msg level="INFO" timestamp="20241127 09:32:13.378">
-       Web.Dev.screenshot_dir: Screenshot
-      </msg>
-      <msg html="true" level="INFO" timestamp="20241127 09:32:13.378">
-       Created directory '&lt;a href="file://C:\Symphony_Replay\SAPtesting\Output\pabot_results\1\Screenshot"&gt;C:\Symphony_Replay\SAPtesting\Output\pabot_results\1\Screenshot&lt;/a&gt;'.
-      </msg>
-      <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-     </kw>
-     <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-    </kw>
-    <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-   </kw>
-   <kw library="BuiltIn" name="Set Global Variable">
-    <arg>
-     ${screenshot_taking}
-    </arg>
-    <arg>
-     ${True}
-    </arg>
-    <doc>
-     Makes a variable available globally in all tests and suites.
-    </doc>
-    <msg level="INFO" timestamp="20241127 09:32:13.378">
-     ${screenshot_taking} = True
-    </msg>
-    <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-   </kw>
-   <kw library="Support" name="Setup linux execution">
-    <kw library="BuiltIn" name="Run Keyword And Return Status">
-     <var>
-      ${web_test_check}
-     </var>
-     <arg>
-      Variable Should Exist
-     </arg>
-     <arg>
-      ${web_test}
-     </arg>
-     <doc>
-      Runs the given keyword with given arguments and returns the status as a Boolean value.
-     </doc>
-     <kw library="BuiltIn" name="Variable Should Exist">
-      <arg>
-       ${web_test}
-      </arg>
-      <doc>
-       Fails unless the given variable exists within the current scope.
-      </doc>
-      <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-     </kw>
-     <msg level="INFO" timestamp="20241127 09:32:13.378">
-      ${web_test_check} = True
-     </msg>
-     <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-    </kw>
-    <kw library="BuiltIn" name="Run Keyword If">
-     <arg>
-      ${web_test_check}
-     </arg>
-     <arg>
-      Setup Docker Execution Options
-     </arg>
-     <doc>
-      Runs the given keyword with the given arguments, if ``condition`` is true.
-     </doc>
-     <kw library="Support_Web" name="Setup Docker Execution Options">
-      <kw library="Support_Web" name="Setup Suite Metadata">
-       <arg>
-        ${browser}
-       </arg>
-       <kw library="BrowserSupport" name="Get Browser Metadata">
-        <var>
-         &amp;{browser_information}
-        </var>
-        <arg>
-         browser=${browser}
-        </arg>
-        <doc>
-         Fetches browser metadata information
-:param browser: Name of the browser for which information is fetched
-:param reload: Re-read the metadata based on the browser
-:return: Browser metadata information, dict of format
-            {"browser_version": browser version value,
-             "driver_version": driver version value}
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.053">
-         &amp;{browser_information} = { browser_version=131.0.6778.86 | driver_version=131.0.6778.69  }
-        </msg>
-        <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:13.378" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Suite Metadata">
-        <arg>
-         test_browser_name
-        </arg>
-        <arg>
-         ${browser}
-        </arg>
-        <doc>
-         Sets metadata for the current test suite.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.053">
-         Set suite metadata 'test_browser_name' to value 'chrome'.
-        </msg>
-        <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Suite Metadata">
-        <arg>
-         test_browser_version
-        </arg>
-        <arg>
-         ${browser_information.browser_version}
-        </arg>
-        <doc>
-         Sets metadata for the current test suite.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.053">
-         Set suite metadata 'test_browser_version' to value '131.0.6778.86'.
-        </msg>
-        <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Suite Metadata">
-        <arg>
-         test_driver_version
-        </arg>
-        <arg>
-         ${browser_information.driver_version}
-        </arg>
-        <doc>
-         Sets metadata for the current test suite.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.053">
-         Set suite metadata 'test_driver_version' to value '131.0.6778.69 '.
-        </msg>
-        <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-       </kw>
-       <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:13.378" status="PASS"/>
-      </kw>
-      <kw library="Support_Web" name="Setup Global Docker Execution Options">
-       <kw library="BuiltIn" name="Set Global Variable">
-        <arg>
-         ${global_browser_options}
-        </arg>
-        <arg>
-         None
-        </arg>
-        <doc>
-         Makes a variable available globally in all tests and suites.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.053">
-         ${global_browser_options} = None
-        </msg>
-        <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-       </kw>
-       <kw library="OperatingSystem" name="Get Environment Variable">
-        <var>
-         ${docker_check}
-        </var>
-        <arg>
-         EXECUTION_ENVIRONMENT
-        </arg>
-        <arg>
-         not_found
-        </arg>
-        <doc>
-         Returns the value of an environment variable with the given name.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.053">
-         ${docker_check} = not_found
-        </msg>
-        <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Run Keyword And Return If">
-        <arg>
-         "${docker_check}"!="docker"
-        </arg>
-        <arg>
-         Log
-        </arg>
-        <arg>
-         Not executing on Docker
-        </arg>
-        <doc>
-         Runs the specified keyword and returns from the enclosing user keyword.
-        </doc>
-        <kw library="BuiltIn" name="Log">
-         <arg>
-          Not executing on Docker
-         </arg>
-         <doc>
-          Logs the given message with the given level.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:22.053">
-          Not executing on Docker
-         </msg>
-         <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-        </kw>
-        <msg level="INFO" timestamp="20241127 09:32:22.053">
-         Returning from the enclosing user keyword.
-        </msg>
-        <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Create List">
-        <var>
-         @{options}
-        </var>
-        <arg>
-         --headless
-        </arg>
-        <arg>
-         --no-sandbox
-        </arg>
-        <arg>
-         --disable-dev-shm-usage
-        </arg>
-        <doc>
-         Returns a list containing given items.
-        </doc>
-        <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="NOT RUN"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Global Variable">
-        <arg>
-         @{docker_options}
-        </arg>
-        <arg>
-         @{options}
-        </arg>
-        <doc>
-         Makes a variable available globally in all tests and suites.
-        </doc>
-        <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="NOT RUN"/>
-       </kw>
-       <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-      </kw>
-      <kw library="Support_Web" name="Create Webdriver for chrome preferences">
-       <kw library="Support_Web" name="Update Docker Execution Options">
-        <var>
-         ${list_prefs}
-        </var>
-        <arg>
-         ${list_prefs}
-        </arg>
-        <kw library="BuiltIn" name="Run Keyword And Return Status">
-         <var>
-          ${docker_check}
-         </var>
-         <arg>
-          Variable Should Exist
-         </arg>
-         <arg>
-          ${docker_options}
-         </arg>
-         <doc>
-          Runs the given keyword with given arguments and returns the status as a Boolean value.
-         </doc>
-         <kw library="BuiltIn" name="Variable Should Exist">
-          <arg>
-           ${docker_options}
-          </arg>
-          <doc>
-           Fails unless the given variable exists within the current scope.
-          </doc>
-          <msg level="FAIL" timestamp="20241127 09:32:22.053">
-           Variable '${docker_options}' does not exist.
-          </msg>
-          <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="FAIL"/>
-         </kw>
-         <msg level="INFO" timestamp="20241127 09:32:22.053">
-          ${docker_check} = False
-         </msg>
-         <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-        </kw>
-        <kw library="BuiltIn" name="Get Length">
-         <var>
-          ${list_prefs_length}
-         </var>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <doc>
-          Returns and logs the length of the given item as an integer.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:22.053">
-          Length is 1
-         </msg>
-         <msg level="INFO" timestamp="20241127 09:32:22.053">
-          ${list_prefs_length} = 1
-         </msg>
-         <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-        </kw>
-        <kw library="BuiltIn" name="Run Keyword If">
-         <var>
-          ${list_prefs}
-         </var>
-         <arg>
-          ${docker_check} and ${list_prefs_length}&gt;0 and ${list_prefs}[0] != []
-         </arg>
-         <arg>
-          Combine Lists
-         </arg>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <arg>
-          ${docker_options}
-         </arg>
-         <arg>
-          ELSE IF
-         </arg>
-         <arg>
-          ${docker_check}
-         </arg>
-         <arg>
-          Set Variable
-         </arg>
-         <arg>
-          ${docker_options}
-         </arg>
-         <arg>
-          ELSE
-         </arg>
-         <arg>
-          Set Variable
-         </arg>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <doc>
-          Runs the given keyword with the given arguments, if ``condition`` is true.
-         </doc>
-         <kw library="BuiltIn" name="Set Variable">
-          <arg>
-           ${list_prefs}
-          </arg>
-          <doc>
-           Returns the given values which can then be assigned to a variables.
-          </doc>
-          <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-         </kw>
-         <msg level="INFO" timestamp="20241127 09:32:22.053">
-          ${list_prefs} = [[]]
-         </msg>
-         <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-        </kw>
-        <msg level="INFO" timestamp="20241127 09:32:22.053">
-         ${list_prefs} = [[]]
-        </msg>
-        <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-       </kw>
-       <kw library="Support_Web" name="Create Chrome Options for download preferences">
-        <var>
-         ${chrome_options}
-        </var>
-        <kw library="BuiltIn" name="Evaluate">
-         <var>
-          ${chrome_options}
-         </var>
-         <arg>
-          sys.modules['selenium.webdriver'].ChromeOptions()
-         </arg>
-         <arg>
-          sys
-         </arg>
-         <doc>
-          Evaluates the given expression in Python and returns the result.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:22.053">
-          ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000241AFAEE9C0&gt;
-         </msg>
-         <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-        </kw>
-        <msg level="INFO" timestamp="20241127 09:32:22.053">
-         ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000241AFAEE9C0&gt;
-        </msg>
-        <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-       </kw>
-       <kw library="Support_Web" name="Update Preferences List">
-        <arg>
-         ${chrome_options}
-        </arg>
-        <arg>
-         @{list_prefs}
-        </arg>
-        <kw library="BuiltIn" name="Convert To String">
-         <var>
-          ${string_prefs}
-         </var>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <doc>
-          Converts the given item to a Unicode string.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:22.053">
-          ${string_prefs} = [[]]
-         </msg>
-         <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-        </kw>
-        <kw library="BuiltIn" name="Return From Keyword If">
-         <arg>
-          ${string_prefs} == [[]]
-         </arg>
-         <doc>
-          Returns from the enclosing user keyword if ``condition`` is true.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:22.053">
-          Returning from the enclosing user keyword.
-         </msg>
-         <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-        </kw>
-        <for flavor="IN">
-         <var>
-          ${preference}
-         </var>
-         <value>
-          @{list_prefs}
-         </value>
-         <iter>
-          <var name="${preference}"/>
-          <kw library="BuiltIn" name="Call Method">
-           <arg>
-            ${chrome_options}
-           </arg>
-           <arg>
-            add_argument
-           </arg>
-           <arg>
-            ${preference}
-           </arg>
-           <doc>
-            Calls the named method of the given object with the provided arguments.
-           </doc>
-           <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="NOT RUN"/>
-          </kw>
-          <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="NOT RUN"/>
-         </iter>
-         <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="NOT RUN"/>
-        </for>
-        <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Call Method">
-        <arg>
-         ${chrome_options}
-        </arg>
-        <arg>
-         add_experimental_option
-        </arg>
-        <arg>
-         prefs
-        </arg>
-        <arg>
-         ${kw_prefs}
-        </arg>
-        <doc>
-         Calls the named method of the given object with the provided arguments.
-        </doc>
-        <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Global Variable">
-        <arg>
-         ${global_browser_options}
-        </arg>
-        <arg>
-         ${chrome options}
-        </arg>
-        <doc>
-         Makes a variable available globally in all tests and suites.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.053">
-         ${global_browser_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000241AFAEE9C0&gt;
-        </msg>
-        <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-       </kw>
-       <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-      </kw>
-      <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:13.378" status="PASS"/>
-     </kw>
-     <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:13.378" status="PASS"/>
-    </kw>
-    <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:13.378" status="PASS"/>
-   </kw>
-   <kw library="BuiltIn" name="Set Suite Metadata">
-    <arg>
-     environment
-    </arg>
-    <arg>
-     ${test_server}
-    </arg>
-    <doc>
-     Sets metadata for the current test suite.
-    </doc>
-    <msg level="INFO" timestamp="20241127 09:32:22.053">
-     Set suite metadata 'environment' to value 'Dev'.
-    </msg>
-    <status endtime="20241127 09:32:22.053" starttime="20241127 09:32:22.053" status="PASS"/>
-   </kw>
-   <kw library="BuiltIn" name="Set Variable">
-    <var>
-     ${d.test_server}
-    </var>
-    <arg>
-     ${test_server}
-    </arg>
-    <doc>
-     Returns the given values which can then be assigned to a variables.
-    </doc>
-    <msg level="INFO" timestamp="20241127 09:32:13.363">
-     ${d.test_server} = Dev
-    </msg>
-    <status endtime="20241127 09:32:13.363" starttime="20241127 09:32:13.363" status="PASS"/>
-   </kw>
-   <kw library="Support" name="Reset screenshot count variable">
-    <kw library="BuiltIn" name="Set Variable">
-     <var>
-      ${screenshotCount}
-     </var>
-     <arg>
-      ${PABOTQUEUEINDEX}_1
-     </arg>
-     <doc>
-      Returns the given values which can then be assigned to a variables.
-     </doc>
-     <msg level="INFO" timestamp="20241127 09:32:13.363">
-      ${screenshotCount} = 2_1
-     </msg>
-     <status endtime="20241127 09:32:13.363" starttime="20241127 09:32:13.363" status="PASS"/>
-    </kw>
-    <kw library="BuiltIn" name="Set Global Variable">
-     <arg>
-      ${screenshotCount}
-     </arg>
-     <doc>
-      Makes a variable available globally in all tests and suites.
-     </doc>
-     <msg level="INFO" timestamp="20241127 09:32:13.363">
-      ${screenshotCount} = 2_1
-     </msg>
-     <status endtime="20241127 09:32:13.363" starttime="20241127 09:32:13.363" status="PASS"/>
-    </kw>
-    <kw library="Support" name="Set up screenshot directory">
-     <kw library="OperatingSystem" name="Create Directory">
-      <arg>
-       ${OUTPUTDIR}${/}${wvar('screenshot_dir')}
-      </arg>
-      <doc>
-       Creates the specified directory.
-      </doc>
-      <msg level="INFO" timestamp="20241127 09:32:13.363">
-       Web.Dev.screenshot_dir: Screenshot
-      </msg>
-      <msg html="true" level="INFO" timestamp="20241127 09:32:13.363">
-       Created directory '&lt;a href="file://C:\Symphony_Replay\SAPtesting\Output\pabot_results\2\Screenshot"&gt;C:\Symphony_Replay\SAPtesting\Output\pabot_results\2\Screenshot&lt;/a&gt;'.
-      </msg>
-      <status endtime="20241127 09:32:13.363" starttime="20241127 09:32:13.363" status="PASS"/>
-     </kw>
-     <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.363" status="PASS"/>
-    </kw>
-    <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.363" status="PASS"/>
-   </kw>
-   <kw library="BuiltIn" name="Set Global Variable">
-    <arg>
-     ${screenshot_taking}
-    </arg>
-    <arg>
-     ${True}
-    </arg>
-    <doc>
-     Makes a variable available globally in all tests and suites.
-    </doc>
-    <msg level="INFO" timestamp="20241127 09:32:13.378">
-     ${screenshot_taking} = True
-    </msg>
-    <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-   </kw>
-   <kw library="Support" name="Setup linux execution">
-    <kw library="BuiltIn" name="Run Keyword And Return Status">
-     <var>
-      ${web_test_check}
-     </var>
-     <arg>
-      Variable Should Exist
-     </arg>
-     <arg>
-      ${web_test}
-     </arg>
-     <doc>
-      Runs the given keyword with given arguments and returns the status as a Boolean value.
-     </doc>
-     <kw library="BuiltIn" name="Variable Should Exist">
-      <arg>
-       ${web_test}
-      </arg>
-      <doc>
-       Fails unless the given variable exists within the current scope.
-      </doc>
-      <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-     </kw>
-     <msg level="INFO" timestamp="20241127 09:32:13.378">
-      ${web_test_check} = True
-     </msg>
-     <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-    </kw>
-    <kw library="BuiltIn" name="Run Keyword If">
-     <arg>
-      ${web_test_check}
-     </arg>
-     <arg>
-      Setup Docker Execution Options
-     </arg>
-     <doc>
-      Runs the given keyword with the given arguments, if ``condition`` is true.
-     </doc>
-     <kw library="Support_Web" name="Setup Docker Execution Options">
-      <kw library="Support_Web" name="Setup Suite Metadata">
-       <arg>
-        ${browser}
-       </arg>
-       <kw library="BrowserSupport" name="Get Browser Metadata">
-        <var>
-         &amp;{browser_information}
-        </var>
-        <arg>
-         browser=${browser}
-        </arg>
-        <doc>
-         Fetches browser metadata information
-:param browser: Name of the browser for which information is fetched
-:param reload: Re-read the metadata based on the browser
-:return: Browser metadata information, dict of format
-            {"browser_version": browser version value,
-             "driver_version": driver version value}
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:21.999">
-         &amp;{browser_information} = { browser_version=131.0.6778.86 | driver_version=131.0.6778.69  }
-        </msg>
-        <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:13.378" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Suite Metadata">
-        <arg>
-         test_browser_name
-        </arg>
-        <arg>
-         ${browser}
-        </arg>
-        <doc>
-         Sets metadata for the current test suite.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:21.999">
-         Set suite metadata 'test_browser_name' to value 'chrome'.
-        </msg>
-        <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Suite Metadata">
-        <arg>
-         test_browser_version
-        </arg>
-        <arg>
-         ${browser_information.browser_version}
-        </arg>
-        <doc>
-         Sets metadata for the current test suite.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:21.999">
-         Set suite metadata 'test_browser_version' to value '131.0.6778.86'.
-        </msg>
-        <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Suite Metadata">
-        <arg>
-         test_driver_version
-        </arg>
-        <arg>
-         ${browser_information.driver_version}
-        </arg>
-        <doc>
-         Sets metadata for the current test suite.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:21.999">
-         Set suite metadata 'test_driver_version' to value '131.0.6778.69 '.
-        </msg>
-        <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-       </kw>
-       <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:13.378" status="PASS"/>
-      </kw>
-      <kw library="Support_Web" name="Setup Global Docker Execution Options">
-       <kw library="BuiltIn" name="Set Global Variable">
-        <arg>
-         ${global_browser_options}
-        </arg>
-        <arg>
-         None
-        </arg>
-        <doc>
-         Makes a variable available globally in all tests and suites.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:21.999">
-         ${global_browser_options} = None
-        </msg>
-        <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-       </kw>
-       <kw library="OperatingSystem" name="Get Environment Variable">
-        <var>
-         ${docker_check}
-        </var>
-        <arg>
-         EXECUTION_ENVIRONMENT
-        </arg>
-        <arg>
-         not_found
-        </arg>
-        <doc>
-         Returns the value of an environment variable with the given name.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:21.999">
-         ${docker_check} = not_found
-        </msg>
-        <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Run Keyword And Return If">
-        <arg>
-         "${docker_check}"!="docker"
-        </arg>
-        <arg>
-         Log
-        </arg>
-        <arg>
-         Not executing on Docker
-        </arg>
-        <doc>
-         Runs the specified keyword and returns from the enclosing user keyword.
-        </doc>
-        <kw library="BuiltIn" name="Log">
-         <arg>
-          Not executing on Docker
-         </arg>
-         <doc>
-          Logs the given message with the given level.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:21.999">
-          Not executing on Docker
-         </msg>
-         <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-        </kw>
-        <msg level="INFO" timestamp="20241127 09:32:21.999">
-         Returning from the enclosing user keyword.
-        </msg>
-        <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Create List">
-        <var>
-         @{options}
-        </var>
-        <arg>
-         --headless
-        </arg>
-        <arg>
-         --no-sandbox
-        </arg>
-        <arg>
-         --disable-dev-shm-usage
-        </arg>
-        <doc>
-         Returns a list containing given items.
-        </doc>
-        <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="NOT RUN"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Global Variable">
-        <arg>
-         @{docker_options}
-        </arg>
-        <arg>
-         @{options}
-        </arg>
-        <doc>
-         Makes a variable available globally in all tests and suites.
-        </doc>
-        <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="NOT RUN"/>
-       </kw>
-       <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-      </kw>
-      <kw library="Support_Web" name="Create Webdriver for chrome preferences">
-       <kw library="Support_Web" name="Update Docker Execution Options">
-        <var>
-         ${list_prefs}
-        </var>
-        <arg>
-         ${list_prefs}
-        </arg>
-        <kw library="BuiltIn" name="Run Keyword And Return Status">
-         <var>
-          ${docker_check}
-         </var>
-         <arg>
-          Variable Should Exist
-         </arg>
-         <arg>
-          ${docker_options}
-         </arg>
-         <doc>
-          Runs the given keyword with given arguments and returns the status as a Boolean value.
-         </doc>
-         <kw library="BuiltIn" name="Variable Should Exist">
-          <arg>
-           ${docker_options}
-          </arg>
-          <doc>
-           Fails unless the given variable exists within the current scope.
-          </doc>
-          <msg level="FAIL" timestamp="20241127 09:32:21.999">
-           Variable '${docker_options}' does not exist.
-          </msg>
-          <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="FAIL"/>
-         </kw>
-         <msg level="INFO" timestamp="20241127 09:32:21.999">
-          ${docker_check} = False
-         </msg>
-         <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-        </kw>
-        <kw library="BuiltIn" name="Get Length">
-         <var>
-          ${list_prefs_length}
-         </var>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <doc>
-          Returns and logs the length of the given item as an integer.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:21.999">
-          Length is 1
-         </msg>
-         <msg level="INFO" timestamp="20241127 09:32:21.999">
-          ${list_prefs_length} = 1
-         </msg>
-         <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-        </kw>
-        <kw library="BuiltIn" name="Run Keyword If">
-         <var>
-          ${list_prefs}
-         </var>
-         <arg>
-          ${docker_check} and ${list_prefs_length}&gt;0 and ${list_prefs}[0] != []
-         </arg>
-         <arg>
-          Combine Lists
-         </arg>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <arg>
-          ${docker_options}
-         </arg>
-         <arg>
-          ELSE IF
-         </arg>
-         <arg>
-          ${docker_check}
-         </arg>
-         <arg>
-          Set Variable
-         </arg>
-         <arg>
-          ${docker_options}
-         </arg>
-         <arg>
-          ELSE
-         </arg>
-         <arg>
-          Set Variable
-         </arg>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <doc>
-          Runs the given keyword with the given arguments, if ``condition`` is true.
-         </doc>
-         <kw library="BuiltIn" name="Set Variable">
-          <arg>
-           ${list_prefs}
-          </arg>
-          <doc>
-           Returns the given values which can then be assigned to a variables.
-          </doc>
-          <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-         </kw>
-         <msg level="INFO" timestamp="20241127 09:32:21.999">
-          ${list_prefs} = [[]]
-         </msg>
-         <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-        </kw>
-        <msg level="INFO" timestamp="20241127 09:32:21.999">
-         ${list_prefs} = [[]]
-        </msg>
-        <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-       </kw>
-       <kw library="Support_Web" name="Create Chrome Options for download preferences">
-        <var>
-         ${chrome_options}
-        </var>
-        <kw library="BuiltIn" name="Evaluate">
-         <var>
-          ${chrome_options}
-         </var>
-         <arg>
-          sys.modules['selenium.webdriver'].ChromeOptions()
-         </arg>
-         <arg>
-          sys
-         </arg>
-         <doc>
-          Evaluates the given expression in Python and returns the result.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:21.999">
-          ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000029704AE2CC0&gt;
-         </msg>
-         <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-        </kw>
-        <msg level="INFO" timestamp="20241127 09:32:21.999">
-         ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000029704AE2CC0&gt;
-        </msg>
-        <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-       </kw>
-       <kw library="Support_Web" name="Update Preferences List">
-        <arg>
-         ${chrome_options}
-        </arg>
-        <arg>
-         @{list_prefs}
-        </arg>
-        <kw library="BuiltIn" name="Convert To String">
-         <var>
-          ${string_prefs}
-         </var>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <doc>
-          Converts the given item to a Unicode string.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:21.999">
-          ${string_prefs} = [[]]
-         </msg>
-         <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-        </kw>
-        <kw library="BuiltIn" name="Return From Keyword If">
-         <arg>
-          ${string_prefs} == [[]]
-         </arg>
-         <doc>
-          Returns from the enclosing user keyword if ``condition`` is true.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:21.999">
-          Returning from the enclosing user keyword.
-         </msg>
-         <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-        </kw>
-        <for flavor="IN">
-         <var>
-          ${preference}
-         </var>
-         <value>
-          @{list_prefs}
-         </value>
-         <iter>
-          <var name="${preference}"/>
-          <kw library="BuiltIn" name="Call Method">
-           <arg>
-            ${chrome_options}
-           </arg>
-           <arg>
-            add_argument
-           </arg>
-           <arg>
-            ${preference}
-           </arg>
-           <doc>
-            Calls the named method of the given object with the provided arguments.
-           </doc>
-           <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="NOT RUN"/>
-          </kw>
-          <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="NOT RUN"/>
-         </iter>
-         <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="NOT RUN"/>
-        </for>
-        <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Call Method">
-        <arg>
-         ${chrome_options}
-        </arg>
-        <arg>
-         add_experimental_option
-        </arg>
-        <arg>
-         prefs
-        </arg>
-        <arg>
-         ${kw_prefs}
-        </arg>
-        <doc>
-         Calls the named method of the given object with the provided arguments.
-        </doc>
-        <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Global Variable">
-        <arg>
-         ${global_browser_options}
-        </arg>
-        <arg>
-         ${chrome options}
-        </arg>
-        <doc>
-         Makes a variable available globally in all tests and suites.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:21.999">
-         ${global_browser_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000029704AE2CC0&gt;
-        </msg>
-        <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-       </kw>
-       <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-      </kw>
-      <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:13.378" status="PASS"/>
-     </kw>
-     <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:13.378" status="PASS"/>
-    </kw>
-    <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:13.378" status="PASS"/>
-   </kw>
-   <kw library="BuiltIn" name="Set Suite Metadata">
-    <arg>
-     environment
-    </arg>
-    <arg>
-     ${test_server}
-    </arg>
-    <doc>
-     Sets metadata for the current test suite.
-    </doc>
-    <msg level="INFO" timestamp="20241127 09:32:21.999">
-     Set suite metadata 'environment' to value 'Dev'.
-    </msg>
-    <status endtime="20241127 09:32:21.999" starttime="20241127 09:32:21.999" status="PASS"/>
-   </kw>
-   <kw library="BuiltIn" name="Set Variable">
-    <var>
-     ${d.test_server}
-    </var>
-    <arg>
-     ${test_server}
-    </arg>
-    <doc>
-     Returns the given values which can then be assigned to a variables.
-    </doc>
-    <msg level="INFO" timestamp="20241127 09:32:13.363">
-     ${d.test_server} = Dev
-    </msg>
-    <status endtime="20241127 09:32:13.363" starttime="20241127 09:32:13.363" status="PASS"/>
-   </kw>
-   <kw library="Support" name="Reset screenshot count variable">
-    <kw library="BuiltIn" name="Set Variable">
-     <var>
-      ${screenshotCount}
-     </var>
-     <arg>
-      ${PABOTQUEUEINDEX}_1
-     </arg>
-     <doc>
-      Returns the given values which can then be assigned to a variables.
-     </doc>
-     <msg level="INFO" timestamp="20241127 09:32:13.363">
-      ${screenshotCount} = 3_1
-     </msg>
-     <status endtime="20241127 09:32:13.363" starttime="20241127 09:32:13.363" status="PASS"/>
-    </kw>
-    <kw library="BuiltIn" name="Set Global Variable">
-     <arg>
-      ${screenshotCount}
-     </arg>
-     <doc>
-      Makes a variable available globally in all tests and suites.
-     </doc>
-     <msg level="INFO" timestamp="20241127 09:32:13.363">
-      ${screenshotCount} = 3_1
-     </msg>
-     <status endtime="20241127 09:32:13.363" starttime="20241127 09:32:13.363" status="PASS"/>
-    </kw>
-    <kw library="Support" name="Set up screenshot directory">
-     <kw library="OperatingSystem" name="Create Directory">
-      <arg>
-       ${OUTPUTDIR}${/}${wvar('screenshot_dir')}
-      </arg>
-      <doc>
-       Creates the specified directory.
-      </doc>
-      <msg level="INFO" timestamp="20241127 09:32:13.363">
-       Web.Dev.screenshot_dir: Screenshot
-      </msg>
-      <msg html="true" level="INFO" timestamp="20241127 09:32:13.378">
-       Created directory '&lt;a href="file://C:\Symphony_Replay\SAPtesting\Output\pabot_results\3\Screenshot"&gt;C:\Symphony_Replay\SAPtesting\Output\pabot_results\3\Screenshot&lt;/a&gt;'.
-      </msg>
-      <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.363" status="PASS"/>
-     </kw>
-     <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.363" status="PASS"/>
-    </kw>
-    <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.363" status="PASS"/>
-   </kw>
-   <kw library="BuiltIn" name="Set Global Variable">
-    <arg>
-     ${screenshot_taking}
-    </arg>
-    <arg>
-     ${True}
-    </arg>
-    <doc>
-     Makes a variable available globally in all tests and suites.
-    </doc>
-    <msg level="INFO" timestamp="20241127 09:32:13.378">
-     ${screenshot_taking} = True
-    </msg>
-    <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-   </kw>
-   <kw library="Support" name="Setup linux execution">
-    <kw library="BuiltIn" name="Run Keyword And Return Status">
-     <var>
-      ${web_test_check}
-     </var>
-     <arg>
-      Variable Should Exist
-     </arg>
-     <arg>
-      ${web_test}
-     </arg>
-     <doc>
-      Runs the given keyword with given arguments and returns the status as a Boolean value.
-     </doc>
-     <kw library="BuiltIn" name="Variable Should Exist">
-      <arg>
-       ${web_test}
-      </arg>
-      <doc>
-       Fails unless the given variable exists within the current scope.
-      </doc>
-      <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-     </kw>
-     <msg level="INFO" timestamp="20241127 09:32:13.378">
-      ${web_test_check} = True
-     </msg>
-     <status endtime="20241127 09:32:13.378" starttime="20241127 09:32:13.378" status="PASS"/>
-    </kw>
-    <kw library="BuiltIn" name="Run Keyword If">
-     <arg>
-      ${web_test_check}
-     </arg>
-     <arg>
-      Setup Docker Execution Options
-     </arg>
-     <doc>
-      Runs the given keyword with the given arguments, if ``condition`` is true.
-     </doc>
-     <kw library="Support_Web" name="Setup Docker Execution Options">
-      <kw library="Support_Web" name="Setup Suite Metadata">
-       <arg>
-        ${browser}
-       </arg>
-       <kw library="BrowserSupport" name="Get Browser Metadata">
-        <var>
-         &amp;{browser_information}
-        </var>
-        <arg>
-         browser=${browser}
-        </arg>
-        <doc>
-         Fetches browser metadata information
-:param browser: Name of the browser for which information is fetched
-:param reload: Re-read the metadata based on the browser
-:return: Browser metadata information, dict of format
-            {"browser_version": browser version value,
-             "driver_version": driver version value}
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:23.022">
-         &amp;{browser_information} = { browser_version=131.0.6778.86 | driver_version=131.0.6778.69  }
-        </msg>
-        <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:13.378" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Suite Metadata">
-        <arg>
-         test_browser_name
-        </arg>
-        <arg>
-         ${browser}
-        </arg>
-        <doc>
-         Sets metadata for the current test suite.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:23.022">
-         Set suite metadata 'test_browser_name' to value 'chrome'.
-        </msg>
-        <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Suite Metadata">
-        <arg>
-         test_browser_version
-        </arg>
-        <arg>
-         ${browser_information.browser_version}
-        </arg>
-        <doc>
-         Sets metadata for the current test suite.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:23.022">
-         Set suite metadata 'test_browser_version' to value '131.0.6778.86'.
-        </msg>
-        <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Suite Metadata">
-        <arg>
-         test_driver_version
-        </arg>
-        <arg>
-         ${browser_information.driver_version}
-        </arg>
-        <doc>
-         Sets metadata for the current test suite.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:23.022">
-         Set suite metadata 'test_driver_version' to value '131.0.6778.69 '.
-        </msg>
-        <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-       </kw>
-       <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:13.378" status="PASS"/>
-      </kw>
-      <kw library="Support_Web" name="Setup Global Docker Execution Options">
-       <kw library="BuiltIn" name="Set Global Variable">
-        <arg>
-         ${global_browser_options}
-        </arg>
-        <arg>
-         None
-        </arg>
-        <doc>
-         Makes a variable available globally in all tests and suites.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:23.022">
-         ${global_browser_options} = None
-        </msg>
-        <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-       </kw>
-       <kw library="OperatingSystem" name="Get Environment Variable">
-        <var>
-         ${docker_check}
-        </var>
-        <arg>
-         EXECUTION_ENVIRONMENT
-        </arg>
-        <arg>
-         not_found
-        </arg>
-        <doc>
-         Returns the value of an environment variable with the given name.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:23.022">
-         ${docker_check} = not_found
-        </msg>
-        <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Run Keyword And Return If">
-        <arg>
-         "${docker_check}"!="docker"
-        </arg>
-        <arg>
-         Log
-        </arg>
-        <arg>
-         Not executing on Docker
-        </arg>
-        <doc>
-         Runs the specified keyword and returns from the enclosing user keyword.
-        </doc>
-        <kw library="BuiltIn" name="Log">
-         <arg>
-          Not executing on Docker
-         </arg>
-         <doc>
-          Logs the given message with the given level.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:23.022">
-          Not executing on Docker
-         </msg>
-         <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-        </kw>
-        <msg level="INFO" timestamp="20241127 09:32:23.022">
-         Returning from the enclosing user keyword.
-        </msg>
-        <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Create List">
-        <var>
-         @{options}
-        </var>
-        <arg>
-         --headless
-        </arg>
-        <arg>
-         --no-sandbox
-        </arg>
-        <arg>
-         --disable-dev-shm-usage
-        </arg>
-        <doc>
-         Returns a list containing given items.
-        </doc>
-        <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="NOT RUN"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Global Variable">
-        <arg>
-         @{docker_options}
-        </arg>
-        <arg>
-         @{options}
-        </arg>
-        <doc>
-         Makes a variable available globally in all tests and suites.
-        </doc>
-        <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="NOT RUN"/>
-       </kw>
-       <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-      </kw>
-      <kw library="Support_Web" name="Create Webdriver for chrome preferences">
-       <kw library="Support_Web" name="Update Docker Execution Options">
-        <var>
-         ${list_prefs}
-        </var>
-        <arg>
-         ${list_prefs}
-        </arg>
-        <kw library="BuiltIn" name="Run Keyword And Return Status">
-         <var>
-          ${docker_check}
-         </var>
-         <arg>
-          Variable Should Exist
-         </arg>
-         <arg>
-          ${docker_options}
-         </arg>
-         <doc>
-          Runs the given keyword with given arguments and returns the status as a Boolean value.
-         </doc>
-         <kw library="BuiltIn" name="Variable Should Exist">
-          <arg>
-           ${docker_options}
-          </arg>
-          <doc>
-           Fails unless the given variable exists within the current scope.
-          </doc>
-          <msg level="FAIL" timestamp="20241127 09:32:23.022">
-           Variable '${docker_options}' does not exist.
-          </msg>
-          <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="FAIL"/>
-         </kw>
-         <msg level="INFO" timestamp="20241127 09:32:23.022">
-          ${docker_check} = False
-         </msg>
-         <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-        </kw>
-        <kw library="BuiltIn" name="Get Length">
-         <var>
-          ${list_prefs_length}
-         </var>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <doc>
-          Returns and logs the length of the given item as an integer.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:23.022">
-          Length is 1
-         </msg>
-         <msg level="INFO" timestamp="20241127 09:32:23.022">
-          ${list_prefs_length} = 1
-         </msg>
-         <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-        </kw>
-        <kw library="BuiltIn" name="Run Keyword If">
-         <var>
-          ${list_prefs}
-         </var>
-         <arg>
-          ${docker_check} and ${list_prefs_length}&gt;0 and ${list_prefs}[0] != []
-         </arg>
-         <arg>
-          Combine Lists
-         </arg>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <arg>
-          ${docker_options}
-         </arg>
-         <arg>
-          ELSE IF
-         </arg>
-         <arg>
-          ${docker_check}
-         </arg>
-         <arg>
-          Set Variable
-         </arg>
-         <arg>
-          ${docker_options}
-         </arg>
-         <arg>
-          ELSE
-         </arg>
-         <arg>
-          Set Variable
-         </arg>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <doc>
-          Runs the given keyword with the given arguments, if ``condition`` is true.
-         </doc>
-         <kw library="BuiltIn" name="Set Variable">
-          <arg>
-           ${list_prefs}
-          </arg>
-          <doc>
-           Returns the given values which can then be assigned to a variables.
-          </doc>
-          <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-         </kw>
-         <msg level="INFO" timestamp="20241127 09:32:23.022">
-          ${list_prefs} = [[]]
-         </msg>
-         <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-        </kw>
-        <msg level="INFO" timestamp="20241127 09:32:23.022">
-         ${list_prefs} = [[]]
-        </msg>
-        <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-       </kw>
-       <kw library="Support_Web" name="Create Chrome Options for download preferences">
-        <var>
-         ${chrome_options}
-        </var>
-        <kw library="BuiltIn" name="Evaluate">
-         <var>
-          ${chrome_options}
-         </var>
-         <arg>
-          sys.modules['selenium.webdriver'].ChromeOptions()
-         </arg>
-         <arg>
-          sys
-         </arg>
-         <doc>
-          Evaluates the given expression in Python and returns the result.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:23.022">
-          ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E0CDCD2B40&gt;
-         </msg>
-         <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-        </kw>
-        <msg level="INFO" timestamp="20241127 09:32:23.022">
-         ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E0CDCD2B40&gt;
-        </msg>
-        <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-       </kw>
-       <kw library="Support_Web" name="Update Preferences List">
-        <arg>
-         ${chrome_options}
-        </arg>
-        <arg>
-         @{list_prefs}
-        </arg>
-        <kw library="BuiltIn" name="Convert To String">
-         <var>
-          ${string_prefs}
-         </var>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <doc>
-          Converts the given item to a Unicode string.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:23.037">
-          ${string_prefs} = [[]]
-         </msg>
-         <status endtime="20241127 09:32:23.037" starttime="20241127 09:32:23.022" status="PASS"/>
-        </kw>
-        <kw library="BuiltIn" name="Return From Keyword If">
-         <arg>
-          ${string_prefs} == [[]]
-         </arg>
-         <doc>
-          Returns from the enclosing user keyword if ``condition`` is true.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:23.037">
-          Returning from the enclosing user keyword.
-         </msg>
-         <status endtime="20241127 09:32:23.037" starttime="20241127 09:32:23.037" status="PASS"/>
-        </kw>
-        <for flavor="IN">
-         <var>
-          ${preference}
-         </var>
-         <value>
-          @{list_prefs}
-         </value>
-         <iter>
-          <var name="${preference}"/>
-          <kw library="BuiltIn" name="Call Method">
-           <arg>
-            ${chrome_options}
-           </arg>
-           <arg>
-            add_argument
-           </arg>
-           <arg>
-            ${preference}
-           </arg>
-           <doc>
-            Calls the named method of the given object with the provided arguments.
-           </doc>
-           <status endtime="20241127 09:32:23.037" starttime="20241127 09:32:23.037" status="NOT RUN"/>
-          </kw>
-          <status endtime="20241127 09:32:23.037" starttime="20241127 09:32:23.037" status="NOT RUN"/>
-         </iter>
-         <status endtime="20241127 09:32:23.037" starttime="20241127 09:32:23.037" status="NOT RUN"/>
-        </for>
-        <status endtime="20241127 09:32:23.037" starttime="20241127 09:32:23.022" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Call Method">
-        <arg>
-         ${chrome_options}
-        </arg>
-        <arg>
-         add_experimental_option
-        </arg>
-        <arg>
-         prefs
-        </arg>
-        <arg>
-         ${kw_prefs}
-        </arg>
-        <doc>
-         Calls the named method of the given object with the provided arguments.
-        </doc>
-        <status endtime="20241127 09:32:23.037" starttime="20241127 09:32:23.037" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Global Variable">
-        <arg>
-         ${global_browser_options}
-        </arg>
-        <arg>
-         ${chrome options}
-        </arg>
-        <doc>
-         Makes a variable available globally in all tests and suites.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:23.037">
-         ${global_browser_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E0CDCD2B40&gt;
-        </msg>
-        <status endtime="20241127 09:32:23.037" starttime="20241127 09:32:23.037" status="PASS"/>
-       </kw>
-       <status endtime="20241127 09:32:23.037" starttime="20241127 09:32:23.022" status="PASS"/>
-      </kw>
-      <status endtime="20241127 09:32:23.037" starttime="20241127 09:32:13.378" status="PASS"/>
-     </kw>
-     <status endtime="20241127 09:32:23.037" starttime="20241127 09:32:13.378" status="PASS"/>
-    </kw>
-    <status endtime="20241127 09:32:23.037" starttime="20241127 09:32:13.378" status="PASS"/>
-   </kw>
-   <kw library="BuiltIn" name="Set Suite Metadata">
-    <arg>
-     environment
-    </arg>
-    <arg>
-     ${test_server}
-    </arg>
-    <doc>
-     Sets metadata for the current test suite.
-    </doc>
-    <msg level="INFO" timestamp="20241127 09:32:23.037">
-     Set suite metadata 'environment' to value 'Dev'.
-    </msg>
-    <status endtime="20241127 09:32:23.037" starttime="20241127 09:32:23.037" status="PASS"/>
-   </kw>
-   <kw library="BuiltIn" name="Set Variable">
-    <var>
-     ${d.test_server}
-    </var>
-    <arg>
-     ${test_server}
-    </arg>
-    <doc>
-     Returns the given values which can then be assigned to a variables.
-    </doc>
-    <msg level="INFO" timestamp="20241127 09:32:28.666">
-     ${d.test_server} = Dev
-    </msg>
-    <status endtime="20241127 09:32:28.666" starttime="20241127 09:32:28.666" status="PASS"/>
-   </kw>
-   <kw library="Support" name="Reset screenshot count variable">
-    <kw library="BuiltIn" name="Set Variable">
-     <var>
-      ${screenshotCount}
-     </var>
-     <arg>
-      ${PABOTQUEUEINDEX}_1
-     </arg>
-     <doc>
-      Returns the given values which can then be assigned to a variables.
-     </doc>
-     <msg level="INFO" timestamp="20241127 09:32:28.666">
-      ${screenshotCount} = 4_1
-     </msg>
-     <status endtime="20241127 09:32:28.666" starttime="20241127 09:32:28.666" status="PASS"/>
-    </kw>
-    <kw library="BuiltIn" name="Set Global Variable">
-     <arg>
-      ${screenshotCount}
-     </arg>
-     <doc>
-      Makes a variable available globally in all tests and suites.
-     </doc>
-     <msg level="INFO" timestamp="20241127 09:32:28.666">
-      ${screenshotCount} = 4_1
-     </msg>
-     <status endtime="20241127 09:32:28.666" starttime="20241127 09:32:28.666" status="PASS"/>
-    </kw>
-    <kw library="Support" name="Set up screenshot directory">
-     <kw library="OperatingSystem" name="Create Directory">
-      <arg>
-       ${OUTPUTDIR}${/}${wvar('screenshot_dir')}
-      </arg>
-      <doc>
-       Creates the specified directory.
-      </doc>
-      <msg level="INFO" timestamp="20241127 09:32:28.666">
-       Web.Dev.screenshot_dir: Screenshot
-      </msg>
-      <msg html="true" level="INFO" timestamp="20241127 09:32:28.666">
-       Created directory '&lt;a href="file://C:\Symphony_Replay\SAPtesting\Output\pabot_results\4\Screenshot"&gt;C:\Symphony_Replay\SAPtesting\Output\pabot_results\4\Screenshot&lt;/a&gt;'.
-      </msg>
-      <status endtime="20241127 09:32:28.666" starttime="20241127 09:32:28.666" status="PASS"/>
-     </kw>
-     <status endtime="20241127 09:32:28.666" starttime="20241127 09:32:28.666" status="PASS"/>
-    </kw>
-    <status endtime="20241127 09:32:28.666" starttime="20241127 09:32:28.666" status="PASS"/>
-   </kw>
-   <kw library="BuiltIn" name="Set Global Variable">
-    <arg>
-     ${screenshot_taking}
-    </arg>
-    <arg>
-     ${True}
-    </arg>
-    <doc>
-     Makes a variable available globally in all tests and suites.
-    </doc>
-    <msg level="INFO" timestamp="20241127 09:32:28.666">
-     ${screenshot_taking} = True
-    </msg>
-    <status endtime="20241127 09:32:28.666" starttime="20241127 09:32:28.666" status="PASS"/>
-   </kw>
-   <kw library="Support" name="Setup linux execution">
-    <kw library="BuiltIn" name="Run Keyword And Return Status">
-     <var>
-      ${web_test_check}
-     </var>
-     <arg>
-      Variable Should Exist
-     </arg>
-     <arg>
-      ${web_test}
-     </arg>
-     <doc>
-      Runs the given keyword with given arguments and returns the status as a Boolean value.
-     </doc>
-     <kw library="BuiltIn" name="Variable Should Exist">
-      <arg>
-       ${web_test}
-      </arg>
-      <doc>
-       Fails unless the given variable exists within the current scope.
-      </doc>
-      <status endtime="20241127 09:32:28.682" starttime="20241127 09:32:28.666" status="PASS"/>
-     </kw>
-     <msg level="INFO" timestamp="20241127 09:32:28.682">
-      ${web_test_check} = True
-     </msg>
-     <status endtime="20241127 09:32:28.682" starttime="20241127 09:32:28.666" status="PASS"/>
-    </kw>
-    <kw library="BuiltIn" name="Run Keyword If">
-     <arg>
-      ${web_test_check}
-     </arg>
-     <arg>
-      Setup Docker Execution Options
-     </arg>
-     <doc>
-      Runs the given keyword with the given arguments, if ``condition`` is true.
-     </doc>
-     <kw library="Support_Web" name="Setup Docker Execution Options">
-      <kw library="Support_Web" name="Setup Suite Metadata">
-       <arg>
-        ${browser}
-       </arg>
-       <kw library="BrowserSupport" name="Get Browser Metadata">
-        <var>
-         &amp;{browser_information}
-        </var>
-        <arg>
-         browser=${browser}
-        </arg>
-        <doc>
-         Fetches browser metadata information
-:param browser: Name of the browser for which information is fetched
-:param reload: Re-read the metadata based on the browser
-:return: Browser metadata information, dict of format
-            {"browser_version": browser version value,
-             "driver_version": driver version value}
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:33.330">
-         &amp;{browser_information} = { browser_version=131.0.6778.86 | driver_version=131.0.6778.69  }
-        </msg>
-        <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:28.682" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Suite Metadata">
-        <arg>
-         test_browser_name
-        </arg>
-        <arg>
-         ${browser}
-        </arg>
-        <doc>
-         Sets metadata for the current test suite.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:33.330">
-         Set suite metadata 'test_browser_name' to value 'chrome'.
-        </msg>
-        <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Suite Metadata">
-        <arg>
-         test_browser_version
-        </arg>
-        <arg>
-         ${browser_information.browser_version}
-        </arg>
-        <doc>
-         Sets metadata for the current test suite.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:33.330">
-         Set suite metadata 'test_browser_version' to value '131.0.6778.86'.
-        </msg>
-        <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Suite Metadata">
-        <arg>
-         test_driver_version
-        </arg>
-        <arg>
-         ${browser_information.driver_version}
-        </arg>
-        <doc>
-         Sets metadata for the current test suite.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:33.330">
-         Set suite metadata 'test_driver_version' to value '131.0.6778.69 '.
-        </msg>
-        <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-       </kw>
-       <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:28.682" status="PASS"/>
-      </kw>
-      <kw library="Support_Web" name="Setup Global Docker Execution Options">
-       <kw library="BuiltIn" name="Set Global Variable">
-        <arg>
-         ${global_browser_options}
-        </arg>
-        <arg>
-         None
-        </arg>
-        <doc>
-         Makes a variable available globally in all tests and suites.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:33.330">
-         ${global_browser_options} = None
-        </msg>
-        <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-       </kw>
-       <kw library="OperatingSystem" name="Get Environment Variable">
-        <var>
-         ${docker_check}
-        </var>
-        <arg>
-         EXECUTION_ENVIRONMENT
-        </arg>
-        <arg>
-         not_found
-        </arg>
-        <doc>
-         Returns the value of an environment variable with the given name.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:33.330">
-         ${docker_check} = not_found
-        </msg>
-        <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Run Keyword And Return If">
-        <arg>
-         "${docker_check}"!="docker"
-        </arg>
-        <arg>
-         Log
-        </arg>
-        <arg>
-         Not executing on Docker
-        </arg>
-        <doc>
-         Runs the specified keyword and returns from the enclosing user keyword.
-        </doc>
-        <kw library="BuiltIn" name="Log">
-         <arg>
-          Not executing on Docker
-         </arg>
-         <doc>
-          Logs the given message with the given level.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:33.330">
-          Not executing on Docker
-         </msg>
-         <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-        </kw>
-        <msg level="INFO" timestamp="20241127 09:32:33.330">
-         Returning from the enclosing user keyword.
-        </msg>
-        <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Create List">
-        <var>
-         @{options}
-        </var>
-        <arg>
-         --headless
-        </arg>
-        <arg>
-         --no-sandbox
-        </arg>
-        <arg>
-         --disable-dev-shm-usage
-        </arg>
-        <doc>
-         Returns a list containing given items.
-        </doc>
-        <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="NOT RUN"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Global Variable">
-        <arg>
-         @{docker_options}
-        </arg>
-        <arg>
-         @{options}
-        </arg>
-        <doc>
-         Makes a variable available globally in all tests and suites.
-        </doc>
-        <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="NOT RUN"/>
-       </kw>
-       <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-      </kw>
-      <kw library="Support_Web" name="Create Webdriver for chrome preferences">
-       <kw library="Support_Web" name="Update Docker Execution Options">
-        <var>
-         ${list_prefs}
-        </var>
-        <arg>
-         ${list_prefs}
-        </arg>
-        <kw library="BuiltIn" name="Run Keyword And Return Status">
-         <var>
-          ${docker_check}
-         </var>
-         <arg>
-          Variable Should Exist
-         </arg>
-         <arg>
-          ${docker_options}
-         </arg>
-         <doc>
-          Runs the given keyword with given arguments and returns the status as a Boolean value.
-         </doc>
-         <kw library="BuiltIn" name="Variable Should Exist">
-          <arg>
-           ${docker_options}
-          </arg>
-          <doc>
-           Fails unless the given variable exists within the current scope.
-          </doc>
-          <msg level="FAIL" timestamp="20241127 09:32:33.330">
-           Variable '${docker_options}' does not exist.
-          </msg>
-          <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="FAIL"/>
-         </kw>
-         <msg level="INFO" timestamp="20241127 09:32:33.330">
-          ${docker_check} = False
-         </msg>
-         <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-        </kw>
-        <kw library="BuiltIn" name="Get Length">
-         <var>
-          ${list_prefs_length}
-         </var>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <doc>
-          Returns and logs the length of the given item as an integer.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:33.330">
-          Length is 1
-         </msg>
-         <msg level="INFO" timestamp="20241127 09:32:33.330">
-          ${list_prefs_length} = 1
-         </msg>
-         <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-        </kw>
-        <kw library="BuiltIn" name="Run Keyword If">
-         <var>
-          ${list_prefs}
-         </var>
-         <arg>
-          ${docker_check} and ${list_prefs_length}&gt;0 and ${list_prefs}[0] != []
-         </arg>
-         <arg>
-          Combine Lists
-         </arg>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <arg>
-          ${docker_options}
-         </arg>
-         <arg>
-          ELSE IF
-         </arg>
-         <arg>
-          ${docker_check}
-         </arg>
-         <arg>
-          Set Variable
-         </arg>
-         <arg>
-          ${docker_options}
-         </arg>
-         <arg>
-          ELSE
-         </arg>
-         <arg>
-          Set Variable
-         </arg>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <doc>
-          Runs the given keyword with the given arguments, if ``condition`` is true.
-         </doc>
-         <kw library="BuiltIn" name="Set Variable">
-          <arg>
-           ${list_prefs}
-          </arg>
-          <doc>
-           Returns the given values which can then be assigned to a variables.
-          </doc>
-          <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-         </kw>
-         <msg level="INFO" timestamp="20241127 09:32:33.330">
-          ${list_prefs} = [[]]
-         </msg>
-         <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-        </kw>
-        <msg level="INFO" timestamp="20241127 09:32:33.330">
-         ${list_prefs} = [[]]
-        </msg>
-        <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-       </kw>
-       <kw library="Support_Web" name="Create Chrome Options for download preferences">
-        <var>
-         ${chrome_options}
-        </var>
-        <kw library="BuiltIn" name="Evaluate">
-         <var>
-          ${chrome_options}
-         </var>
-         <arg>
-          sys.modules['selenium.webdriver'].ChromeOptions()
-         </arg>
-         <arg>
-          sys
-         </arg>
-         <doc>
-          Evaluates the given expression in Python and returns the result.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:33.330">
-          ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001C29C292DB0&gt;
-         </msg>
-         <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-        </kw>
-        <msg level="INFO" timestamp="20241127 09:32:33.330">
-         ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001C29C292DB0&gt;
-        </msg>
-        <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-       </kw>
-       <kw library="Support_Web" name="Update Preferences List">
-        <arg>
-         ${chrome_options}
-        </arg>
-        <arg>
-         @{list_prefs}
-        </arg>
-        <kw library="BuiltIn" name="Convert To String">
-         <var>
-          ${string_prefs}
-         </var>
-         <arg>
-          ${list_prefs}
-         </arg>
-         <doc>
-          Converts the given item to a Unicode string.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:33.330">
-          ${string_prefs} = [[]]
-         </msg>
-         <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-        </kw>
-        <kw library="BuiltIn" name="Return From Keyword If">
-         <arg>
-          ${string_prefs} == [[]]
-         </arg>
-         <doc>
-          Returns from the enclosing user keyword if ``condition`` is true.
-         </doc>
-         <msg level="INFO" timestamp="20241127 09:32:33.330">
-          Returning from the enclosing user keyword.
-         </msg>
-         <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-        </kw>
-        <for flavor="IN">
-         <var>
-          ${preference}
-         </var>
-         <value>
-          @{list_prefs}
-         </value>
-         <iter>
-          <var name="${preference}"/>
-          <kw library="BuiltIn" name="Call Method">
-           <arg>
-            ${chrome_options}
-           </arg>
-           <arg>
-            add_argument
-           </arg>
-           <arg>
-            ${preference}
-           </arg>
-           <doc>
-            Calls the named method of the given object with the provided arguments.
-           </doc>
-           <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="NOT RUN"/>
-          </kw>
-          <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="NOT RUN"/>
-         </iter>
-         <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="NOT RUN"/>
-        </for>
-        <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Call Method">
-        <arg>
-         ${chrome_options}
-        </arg>
-        <arg>
-         add_experimental_option
-        </arg>
-        <arg>
-         prefs
-        </arg>
-        <arg>
-         ${kw_prefs}
-        </arg>
-        <doc>
-         Calls the named method of the given object with the provided arguments.
-        </doc>
-        <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Set Global Variable">
-        <arg>
-         ${global_browser_options}
-        </arg>
-        <arg>
-         ${chrome options}
-        </arg>
-        <doc>
-         Makes a variable available globally in all tests and suites.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:33.330">
-         ${global_browser_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001C29C292DB0&gt;
-        </msg>
-        <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-       </kw>
-       <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-      </kw>
-      <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:28.682" status="PASS"/>
-     </kw>
-     <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:28.682" status="PASS"/>
-    </kw>
-    <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:28.666" status="PASS"/>
-   </kw>
-   <kw library="BuiltIn" name="Set Suite Metadata">
-    <arg>
-     environment
-    </arg>
-    <arg>
-     ${test_server}
-    </arg>
-    <doc>
-     Sets metadata for the current test suite.
-    </doc>
-    <msg level="INFO" timestamp="20241127 09:32:33.330">
-     Set suite metadata 'environment' to value 'Dev'.
-    </msg>
-    <status endtime="20241127 09:32:33.330" starttime="20241127 09:32:33.330" status="PASS"/>
-   </kw>
-   <status endtime="20241127 09:32:22.991" starttime="20241127 09:32:13.363" status="PASS"/>
+   <status endtime="20241129 13:13:54.253" starttime="20241129 13:13:49.658" status="PASS"/>
   </kw>
-  <suite id="s1-s1" name="Sample" source="C:\Symphony_Replay\SAPtesting\Tests\Sample">
-   <suite id="s1-s1-s1" name="AAAA-123 Hello World User Story" source="C:\Symphony_Replay\SAPtesting\Tests\Sample\AAAA-123 Hello World User Story.robot">
-    <kw library="BuiltIn" name="Log To Console" type="SETUP">
+  <suite id="s1-s1" name="Test Create Rental Invoice" source="C:\EID_Replay\EID_Parry\Tests\Test_Create_Rental_Invoice.robot">
+   <kw library="create_rental_invoice" name="System Logon" type="SETUP">
+    <kw library="Process" name="Start Process">
      <arg>
-      Keyword is executed once before first test in the suite
+      ${symvar('SAP_SERVER')}
      </arg>
      <doc>
-      Logs the given message to the console.
+      Starts a new process on background.
      </doc>
-     <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
+     <msg level="INFO" timestamp="20241129 13:13:54.923">
+      Sym.Dev.SAP_SERVER: C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe
+     </msg>
+     <msg level="INFO" timestamp="20241129 13:13:54.924">
+      Starting process:
+"C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe"
+     </msg>
+     <status endtime="20241129 13:13:54.937" starttime="20241129 13:13:54.923" status="PASS"/>
     </kw>
-    <test id="s1-s1-s1-t1" line="11" name="Hello World is tested correctly">
-     <kw library="BuiltIn" name="Log To Console" type="SETUP">
-      <arg>
-       This keyword is executed before every test
-      </arg>
-      <doc>
-       Logs the given message to the console.
-      </doc>
-      <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-     </kw>
-     <kw library="Support_Sample" name="Given I concatenate hello with world">
-      <kw library="Support_Sample" name="Concatenates hello with world">
-       <kw library="BuiltIn" name="Set Suite Variable">
-        <arg>
-         ${result}
-        </arg>
-        <arg>
-         helloworld
-        </arg>
-        <doc>
-         Makes a variable available everywhere within the scope of the current suite.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:23.022">
-         ${result} = helloworld
-        </msg>
-        <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-       </kw>
-       <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-      </kw>
-      <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-     </kw>
-     <kw library="Support_Sample" name="Then I receive result as helloworld">
-      <kw library="Support_Sample" name="Results received as helloworld">
-       <kw library="BuiltIn" name="Should Be Equal">
-        <arg>
-         ${result}
-        </arg>
-        <arg>
-         helloworld
-        </arg>
-        <doc>
-         Fails if the given objects are unequal.
-        </doc>
-        <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-       </kw>
-       <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-      </kw>
-      <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-     </kw>
-     <kw library="BuiltIn" name="Log To Console" type="TEARDOWN">
-      <arg>
-       This keyword is executed after every test
-      </arg>
-      <doc>
-       Logs the given message to the console.
-      </doc>
-      <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-     </kw>
+    <kw library="SAP_Tcode_Library" name="Connect To Session">
      <doc>
-      Test to check that the setup is working currently through string
+      Connects to an open session SAP.
      </doc>
-     <tag>
-      AAAA-123
-     </tag>
-     <tag>
-      debug_listener_messages
-     </tag>
-     <tag>
-      helloworld
-     </tag>
-     <tag>
-      regression
-     </tag>
-     <tag>
-      Sample
-     </tag>
-     <tag>
-      SampleTest
-     </tag>
-     <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
-    </test>
-    <kw library="BuiltIn" name="Log To Console" type="TEARDOWN">
+     <status endtime="20241129 13:13:54.987" starttime="20241129 13:13:54.937" status="PASS"/>
+    </kw>
+    <kw library="SAP_Tcode_Library" name="Open Connection">
      <arg>
-      Keyword is executed once after last test in the suite
+      ${symvar('Rental_Connection')}
      </arg>
      <doc>
-      Logs the given message to the console.
+      Opens a connection to the given connection name. Be sure to provide the full connection name, including the bracket part.
      </doc>
-     <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:23.022" status="PASS"/>
+     <msg level="INFO" timestamp="20241129 13:13:54.988">
+      Sym.Dev.Rental_Connection: EID sandbox
+     </msg>
+     <status endtime="20241129 13:13:55.690" starttime="20241129 13:13:54.988" status="PASS"/>
     </kw>
-    <doc>
-     Checks for setup to work correctly. Jira-ID: AAAA-123
-    </doc>
-    <status endtime="20241127 09:32:23.022" starttime="20241127 09:32:22.991" status="PASS"/>
-   </suite>
-   <suite id="s1-s1-s2" name="AAAA-124 User Story to test selenium navigation" source="C:\Symphony_Replay\SAPtesting\Tests\Sample\AAAA-124 User Story to test selenium navigation.robot">
-    <kw library="BuiltIn" name="Log To Console" type="SETUP">
+    <kw library="SAP_Tcode_Library" name="Input Text">
      <arg>
-      Keyword is executed once before first test in the suite
+      wnd[0]/usr/txtRSYST-MANDT
+     </arg>
+     <arg>
+      ${symvar('Rental_Client')}
      </arg>
      <doc>
-      Logs the given message to the console.
+      Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
      </doc>
-     <status endtime="20241127 09:32:22.084" starttime="20241127 09:32:22.084" status="PASS"/>
+     <msg level="INFO" timestamp="20241129 13:13:55.691">
+      Sym.Dev.Rental_Client: 900
+     </msg>
+     <msg level="INFO" timestamp="20241129 13:13:55.727">
+      Typing text '900' into text field 'wnd[0]/usr/txtRSYST-MANDT'.
+     </msg>
+     <status endtime="20241129 13:13:55.727" starttime="20241129 13:13:55.690" status="PASS"/>
     </kw>
-    <test id="s1-s1-s2-t1" line="14" name="Visualization is received correctly">
-     <kw library="BuiltIn" name="Log To Console" type="SETUP">
+    <kw library="SAP_Tcode_Library" name="Input Text">
+     <arg>
+      wnd[0]/usr/txtRSYST-BNAME
+     </arg>
+     <arg>
+      ${symvar('Rental_User')}
+     </arg>
+     <doc>
+      Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+     </doc>
+     <msg level="INFO" timestamp="20241129 13:13:55.728">
+      Sym.Dev.Rental_User: bcssupport1
+     </msg>
+     <msg level="INFO" timestamp="20241129 13:13:55.744">
+      Typing text 'bcssupport1' into text field 'wnd[0]/usr/txtRSYST-BNAME'.
+     </msg>
+     <status endtime="20241129 13:13:55.744" starttime="20241129 13:13:55.728" status="PASS"/>
+    </kw>
+    <kw library="SAP_Tcode_Library" name="Input Password">
+     <arg>
+      wnd[0]/usr/pwdRSYST-BCODE
+     </arg>
+     <arg>
+      %{RENTAL_PASSWORD}
+     </arg>
+     <doc>
+      Inserts the given password into the text field identified by locator.
+The password is not recorded in the log.
+     </doc>
+     <msg level="INFO" timestamp="20241129 13:13:55.753">
+      Typing password into text field 'wnd[0]/usr/pwdRSYST-BCODE'.
+     </msg>
+     <status endtime="20241129 13:13:55.753" starttime="20241129 13:13:55.744" status="PASS"/>
+    </kw>
+    <kw library="SAP_Tcode_Library" name="Send Vkey">
+     <arg>
+      0
+     </arg>
+     <doc>
+      Sends a SAP virtual key combination to the window, not into an element.
+If you want to send a value to a text field, use `input text` instead.
+     </doc>
+     <status endtime="20241129 13:13:55.877" starttime="20241129 13:13:55.753" status="PASS"/>
+    </kw>
+    <kw library="SAP_Tcode_Library" name="Multiple Logon Handling">
+     <arg>
+      wnd[1]
+     </arg>
+     <arg>
+      wnd[1]/usr/radMULTI_LOGON_OPT2
+     </arg>
+     <arg>
+      wnd[1]/tbar[0]/btn[0]
+     </arg>
+     <msg level="INFO" timestamp="20241129 13:13:56.587">
+      Multiple logon exists
+     </msg>
+     <status endtime="20241129 13:13:56.587" starttime="20241129 13:13:55.877" status="PASS"/>
+    </kw>
+    <status endtime="20241129 13:13:56.588" starttime="20241129 13:13:54.922" status="PASS"/>
+   </kw>
+   <test id="s1-s1-t1" line="8" name="Create the rental Invoice">
+    <kw library="create_rental_invoice" name="Rental Invoice">
+     <kw library="SAP_Tcode_Library" name="Run Transaction">
       <arg>
-       This keyword is executed before every test
+       /nVF03
       </arg>
       <doc>
-       Logs the given message to the console.
+       Runs a Sap transaction. An error is given when an unknown transaction is specified.
       </doc>
-      <status endtime="20241127 09:32:22.084" starttime="20241127 09:32:22.084" status="PASS"/>
+      <status endtime="20241129 13:13:56.779" starttime="20241129 13:13:56.589" status="PASS"/>
      </kw>
-     <kw library="Support_Sample" name="Given I navigate to visualization website">
-      <kw library="Support_Sample" name="Navigated to visualization website">
-       <kw library="SeleniumLibrary" name="Open Browser">
-        <arg>
-         ${wvar('robot_site')}
-        </arg>
-        <arg>
-         ${browser}
-        </arg>
-        <arg>
-         options=${global_browser_options}
-        </arg>
-        <doc>
-         Opens a new browser instance to the optional ``url``.
-        </doc>
-        <msg level="WARN" timestamp="20241127 09:32:22.100">
-         Failed to fetch value for field: Web.Dev.robot_site
-        </msg>
-        <msg level="WARN" timestamp="20241127 09:32:22.100">
-         Traceback (most recent call last):
-  File "C:\Symphony_Replay\SAPtesting\Execution\Access_Data.py", line 58, in get_data
-    field_value = eval(command)
-                  ^^^^^^^^^^^^^
-  File "&lt;string&gt;", line 1, in &lt;module&gt;
-AttributeError: module 'Data.Web.Dev' has no attribute 'robot_site'
-        </msg>
-        <msg level="INFO" timestamp="20241127 09:32:22.100">
-         Opening browser 'chrome' to base url ''.
-        </msg>
-        <status endtime="20241127 09:32:25.536" starttime="20241127 09:32:22.084" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Log">
-        <arg>
-         Opened ${wvar('robot_site')} on browser ${browser}
-        </arg>
-        <doc>
-         Logs the given message with the given level.
-        </doc>
-        <msg level="WARN" timestamp="20241127 09:32:25.538">
-         Failed to fetch value for field: Web.Dev.robot_site
-        </msg>
-        <msg level="WARN" timestamp="20241127 09:32:25.552">
-         Traceback (most recent call last):
-  File "C:\Symphony_Replay\SAPtesting\Execution\Access_Data.py", line 58, in get_data
-    field_value = eval(command)
-                  ^^^^^^^^^^^^^
-  File "&lt;string&gt;", line 1, in &lt;module&gt;
-AttributeError: module 'Data.Web.Dev' has no attribute 'robot_site'
-        </msg>
-        <msg level="INFO" timestamp="20241127 09:32:25.584">
-         Opened  on browser chrome
-        </msg>
-        <status endtime="20241127 09:32:25.584" starttime="20241127 09:32:25.537" status="PASS"/>
-       </kw>
-       <status endtime="20241127 09:32:25.585" starttime="20241127 09:32:22.084" status="PASS"/>
-      </kw>
-      <status endtime="20241127 09:32:25.585" starttime="20241127 09:32:22.084" status="PASS"/>
-     </kw>
-     <kw library="Support_Sample" name="When I check for presence of data">
-      <kw library="Support_Sample" name="checks for data presence in website">
-       <kw library="SeleniumLibrary" name="Element Should Be Visible">
-        <arg>
-         ${wvar('robot_check_id')}
-        </arg>
-        <doc>
-         Verifies that the element identified by ``locator`` is visible.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:25.587">
-         Web.Dev.robot_check_id: xpath=//*[@class="title"]
-        </msg>
-        <kw library="SeleniumLibrary" name="Capture Page Screenshot">
-         <doc>
-          Takes a screenshot of the current page and embeds it into a log file.
-         </doc>
-         <msg html="true" level="INFO" timestamp="20241127 09:32:25.902">
-          &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="1-selenium-screenshot-1.png"&gt;&lt;img src="1-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;
-         </msg>
-         <status endtime="20241127 09:32:25.902" starttime="20241127 09:32:25.632" status="PASS"/>
-        </kw>
-        <msg level="FAIL" timestamp="20241127 09:32:25.902">
-         Element with locator 'xpath=//*[@class="title"]' not found.
-        </msg>
-        <status endtime="20241127 09:32:26.101" starttime="20241127 09:32:25.586" status="FAIL"/>
-       </kw>
-       <kw library="Support" name="Take Screenshot">
-        <arg>
-         Selenium
-        </arg>
-        <doc>
-         Expects arguments as Selenium or Appium to control which type of
-screenshot to take for the action
-        </doc>
-        <status endtime="20241127 09:32:26.102" starttime="20241127 09:32:26.101" status="NOT RUN"/>
-       </kw>
-       <status endtime="20241127 09:32:26.102" starttime="20241127 09:32:25.586" status="FAIL"/>
-      </kw>
-      <status endtime="20241127 09:32:26.102" starttime="20241127 09:32:25.585" status="FAIL"/>
-     </kw>
-     <kw library="Support_Sample" name="Then I can read the correct data is present">
-      <status endtime="20241127 09:32:26.103" starttime="20241127 09:32:26.103" status="NOT RUN"/>
-     </kw>
-     <kw library="SeleniumLibrary" name="Close Browser" type="TEARDOWN">
+     <kw library="SAP_Tcode_Library" name="Input Text">
+      <arg>
+       element_id=wnd[0]/usr/ctxtVBRK-VBELN
+      </arg>
+      <arg>
+       text=707326112
+      </arg>
       <doc>
-       Closes the current browser.
+       Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
       </doc>
-      <status endtime="20241127 09:32:30.382" starttime="20241127 09:32:26.103" status="PASS"/>
+      <msg level="INFO" timestamp="20241129 13:13:56.800">
+       Typing text '707326112' into text field 'wnd[0]/usr/ctxtVBRK-VBELN'.
+      </msg>
+      <status endtime="20241129 13:13:56.800" starttime="20241129 13:13:56.779" status="PASS"/>
      </kw>
-     <doc>
-      Test to check Visualization is working correctly
-     </doc>
-     <tag>
-      AAAA-124
-     </tag>
-     <tag>
-      Regression
-     </tag>
-     <tag>
-      Sample
-     </tag>
-     <tag>
-      selenium
-     </tag>
-     <tag>
-      uat
-     </tag>
-     <tag>
-      Web
-     </tag>
-     <status endtime="20241127 09:32:30.383" starttime="20241127 09:32:22.084" status="FAIL">
-      Element with locator 'xpath=//*[@class="title"]' not found.
-     </status>
-    </test>
-    <kw library="SeleniumLibrary" name="Close All Browsers" type="TEARDOWN">
-     <doc>
-      Closes all open browsers and resets the browser cache.
-     </doc>
-     <status endtime="20241127 09:32:30.385" starttime="20241127 09:32:30.384" status="PASS"/>
-    </kw>
-    <doc>
-     This is a sample user story.
-The documentation here should ideally match the user story doc.
-It only works if you have Web libraries enabled and the chromedriver
-is available in the environment PATH. Jira-ID: AAAA-124
-    </doc>
-    <status endtime="20241127 09:32:30.385" starttime="20241127 09:32:22.068" status="FAIL"/>
-   </suite>
-   <suite id="s1-s1-s3" name="AAAA-125 Calculator app tests" source="C:\Symphony_Replay\SAPtesting\Tests\Sample\AAAA-125 Calculator app tests.robot">
-    <kw library="Support_Sample" name="Navigate to calculator browser" type="SETUP">
-     <kw library="Support_Sample" name="Open page to calculator in browser">
-      <kw library="Support_Web" name="Add options to global browser options from list">
-       <var>
-        ${options}
-       </var>
-       <arg>
-        --incognito
-       </arg>
-       <kw library="BuiltIn" name="Run Keyword And Return Status">
-        <var>
-         ${docker_check}
-        </var>
-        <arg>
-         Variable Should Exist
-        </arg>
-        <arg>
-         ${global_browser_options}
-        </arg>
-        <doc>
-         Runs the given keyword with given arguments and returns the status as a Boolean value.
-        </doc>
-        <kw library="BuiltIn" name="Variable Should Exist">
-         <arg>
-          ${global_browser_options}
-         </arg>
-         <doc>
-          Fails unless the given variable exists within the current scope.
-         </doc>
-         <status endtime="20241127 09:32:22.031" starttime="20241127 09:32:22.031" status="PASS"/>
-        </kw>
-        <msg level="INFO" timestamp="20241127 09:32:22.031">
-         ${docker_check} = True
-        </msg>
-        <status endtime="20241127 09:32:22.031" starttime="20241127 09:32:22.031" status="PASS"/>
-       </kw>
-       <kw library="BuiltIn" name="Run Keyword If">
-        <var>
-         ${list_prefs}
-        </var>
-        <arg>
-         ${docker_check}==False
-        </arg>
-        <arg>
-         ${global_browser_options}=
-        </arg>
-        <arg>
-         Create Chrome Options for download preferences
-        </arg>
-        <doc>
-         Runs the given keyword with the given arguments, if ``condition`` is true.
-        </doc>
-        <msg level="INFO" timestamp="20241127 09:32:22.031">
-         ${list_prefs} = None
-        </msg>
-        <status endtime="20241127 09:32:22.031" starttime="20241127 09:32:22.031" status="PASS"/>
-       </kw>
-       <for flavor="IN">
-        <var>
-         ${preference}
-        </var>
-        <value>
-         @{additional_options}
-        </value>
-        <iter>
-         <var name="${preference}">
-          --incognito
-         </var>
-         <kw library="BuiltIn" name="Call Method">
-          <arg>
-           ${global_browser_options}
-          </arg>
-          <arg>
-           add_argument
-          </arg>
-          <arg>
-           ${preference}
-          </arg>
-          <doc>
-           Calls the named method of the given object with the provided arguments.
-          </doc>
-          <status endtime="20241127 09:32:22.031" starttime="20241127 09:32:22.031" status="PASS"/>
-         </kw>
-         <status endtime="20241127 09:32:22.031" starttime="20241127 09:32:22.031" status="PASS"/>
-        </iter>
-        <status endtime="20241127 09:32:22.031" starttime="20241127 09:32:22.031" status="PASS"/>
-       </for>
-       <msg level="INFO" timestamp="20241127 09:32:22.031">
-        ${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000029704AE2CC0&gt;
-       </msg>
-       <status endtime="20241127 09:32:22.031" starttime="20241127 09:32:22.031" status="PASS"/>
-      </kw>
-      <kw library="SeleniumLibrary" name="Open Browser">
-       <arg>
-        ${wvar('calculator_url')}
-       </arg>
-       <arg>
-        ${browser}
-       </arg>
-       <arg>
-        options=${options}
-       </arg>
-       <doc>
-        Opens a new browser instance to the optional ``url``.
-       </doc>
-       <msg level="WARN" timestamp="20241127 09:32:22.031">
-        Failed to fetch value for field: Web.Dev.calculator_url
-       </msg>
-       <msg level="WARN" timestamp="20241127 09:32:22.037">
-        Traceback (most recent call last):
-  File "C:\Symphony_Replay\SAPtesting\Execution\Access_Data.py", line 58, in get_data
-    field_value = eval(command)
-                  ^^^^^^^^^^^^^
-  File "&lt;string&gt;", line 1, in &lt;module&gt;
-AttributeError: module 'Data.Web.Dev' has no attribute 'calculator_url'
-       </msg>
-       <msg level="INFO" timestamp="20241127 09:32:22.037">
-        Opening browser 'chrome' to base url ''.
-       </msg>
-       <status endtime="20241127 09:32:24.980" starttime="20241127 09:32:22.031" status="PASS"/>
-      </kw>
-      <status endtime="20241127 09:32:24.980" starttime="20241127 09:32:22.031" status="PASS"/>
-     </kw>
-     <kw library="Support_Sample" name="Wait until the page has loaded successfully">
-      <kw library="SeleniumLibrary" name="Wait Until Page Contains Element">
-       <arg>
-        ${wvar('page_loaded_check')}
-       </arg>
-       <doc>
-        Waits until the element ``locator`` appears on the current page.
-       </doc>
-       <msg level="WARN" timestamp="20241127 09:32:24.982">
-        Failed to fetch value for field: Web.Dev.page_loaded_check
-       </msg>
-       <msg level="WARN" timestamp="20241127 09:32:25.023">
-        Traceback (most recent call last):
-  File "C:\Symphony_Replay\SAPtesting\Execution\Access_Data.py", line 58, in get_data
-    field_value = eval(command)
-                  ^^^^^^^^^^^^^
-  File "&lt;string&gt;", line 1, in &lt;module&gt;
-AttributeError: module 'Data.Web.Dev' has no attribute 'page_loaded_check'
-       </msg>
-       <kw library="SeleniumLibrary" name="Capture Page Screenshot">
-        <doc>
-         Takes a screenshot of the current page and embeds it into a log file.
-        </doc>
-        <msg html="true" level="INFO" timestamp="20241127 09:32:30.806">
-         &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="2-selenium-screenshot-1.png"&gt;&lt;img src="2-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;
-        </msg>
-        <status endtime="20241127 09:32:30.806" starttime="20241127 09:32:30.161" status="PASS"/>
-       </kw>
-       <msg level="FAIL" timestamp="20241127 09:32:30.806">
-        Element '' did not appear in 5 seconds.
-       </msg>
-       <status endtime="20241127 09:32:30.869" starttime="20241127 09:32:24.981" status="FAIL"/>
-      </kw>
-      <status endtime="20241127 09:32:30.870" starttime="20241127 09:32:24.981" status="FAIL"/>
-     </kw>
-     <status endtime="20241127 09:32:30.870" starttime="20241127 09:32:22.031" status="FAIL"/>
-    </kw>
-    <test id="s1-s1-s3-t1" line="10" name="Addition is tested successfully">
-     <doc>
-      Test to check Addition on calculator is working correctly
-     </doc>
-     <tag>
-      AAAA-125
-     </tag>
-     <tag>
-      addition
-     </tag>
-     <tag>
-      Calculator
-     </tag>
-     <tag>
-      debug_listener_messages
-     </tag>
-     <tag>
-      Regression
-     </tag>
-     <tag>
-      Sample
-     </tag>
-     <status endtime="20241127 09:32:30.885" starttime="20241127 09:32:30.870" status="FAIL">
-      Parent suite setup failed:
-Element '' did not appear in 5 seconds.
-     </status>
-    </test>
-    <test id="s1-s1-s3-t2" line="17" name="Subtraction is tested successfully">
-     <doc>
-      Test to check if subraction of two number is successful
-     </doc>
-     <tag>
-      AAAA-125
-     </tag>
-     <tag>
-      Calculator
-     </tag>
-     <tag>
-      debug_listener_messages
-     </tag>
-     <tag>
-      Regression
-     </tag>
-     <tag>
-      Sample
-     </tag>
-     <tag>
-      subtraction
-     </tag>
-     <status endtime="20241127 09:32:30.886" starttime="20241127 09:32:30.885" status="FAIL">
-      Parent suite setup failed:
-Element '' did not appear in 5 seconds.
-     </status>
-    </test>
-    <test id="s1-s1-s3-t3" line="24" name="Multiplication is tested successfully">
-     <doc>
-      Test to check if multiplication of two number is successful
-     </doc>
-     <tag>
-      AAAA-125
-     </tag>
-     <tag>
-      Calculator
-     </tag>
-     <tag>
-      debug_listener_messages
-     </tag>
-     <tag>
-      multiplication
-     </tag>
-     <tag>
-      Regression
-     </tag>
-     <tag>
-      Sample
-     </tag>
-     <status endtime="20241127 09:32:30.887" starttime="20241127 09:32:30.887" status="FAIL">
-      Parent suite setup failed:
-Element '' did not appear in 5 seconds.
-     </status>
-    </test>
-    <test id="s1-s1-s3-t4" line="31" name="Division is tested successfully">
-     <doc>
-      Test to check if division of two number is successful
-     </doc>
-     <tag>
-      AAAA-125
-     </tag>
-     <tag>
-      Calculator
-     </tag>
-     <tag>
-      debug_listener_messages
-     </tag>
-     <tag>
-      division
-     </tag>
-     <tag>
-      Regression
-     </tag>
-     <tag>
-      Sample
-     </tag>
-     <status endtime="20241127 09:32:30.888" starttime="20241127 09:32:30.888" status="FAIL">
-      Parent suite setup failed:
-Element '' did not appear in 5 seconds.
-     </status>
-    </test>
-    <test id="s1-s1-s3-t5" line="38" name="Division by Zero">
-     <doc>
-      Test to check if division of a number by zero is possible
-     </doc>
-     <tag>
-      AAAA-125
-     </tag>
-     <tag>
-      Calculator
-     </tag>
-     <tag>
-      debug_listener_messages
-     </tag>
-     <tag>
-      divide_by_zero
-     </tag>
-     <tag>
-      Regression
-     </tag>
-     <tag>
-      Sample
-     </tag>
-     <status endtime="20241127 09:32:30.889" starttime="20241127 09:32:30.888" status="FAIL">
-      Parent suite setup failed:
-Element '' did not appear in 5 seconds.
-     </status>
-    </test>
-    <test id="s1-s1-s3-t6" line="45" name="Multiplication of float numbers">
-     <doc>
-      Test to check if multiplication of two float numbers is successful
-     </doc>
-     <tag>
-      AAAA-125
-     </tag>
-     <tag>
-      Calculator
-     </tag>
-     <tag>
-      debug_listener_messages
-     </tag>
-     <tag>
-      float_multiplication
-     </tag>
-     <tag>
-      Regression
-     </tag>
-     <tag>
-      Sample
-     </tag>
-     <status endtime="20241127 09:32:30.890" starttime="20241127 09:32:30.889" status="FAIL">
-      Parent suite setup failed:
-Element '' did not appear in 5 seconds.
-     </status>
-    </test>
-    <test id="s1-s1-s3-t7" line="52" name="Clear of state">
-     <doc>
-      Test to check if clear of state is possible
-     </doc>
-     <tag>
-      AAAA-125
-     </tag>
-     <tag>
-      Calculator
-     </tag>
-     <tag>
-      clear_state
-     </tag>
-     <tag>
-      debug_listener_messages
-     </tag>
-     <tag>
-      Regression
-     </tag>
-     <tag>
-      Sample
-     </tag>
-     <status endtime="20241127 09:32:30.891" starttime="20241127 09:32:30.890" status="FAIL">
-      Parent suite setup failed:
-Element '' did not appear in 5 seconds.
-     </status>
-    </test>
-    <test id="s1-s1-s3-t8" line="59" name="Negation of number sign">
-     <doc>
-      Test to check if negation of number is possible
-     </doc>
-     <tag>
-      AAAA-125
-     </tag>
-     <tag>
-      Calculator
-     </tag>
-     <tag>
-      debug_listener_messages
-     </tag>
-     <tag>
-      number_negation
-     </tag>
-     <tag>
-      Regression
-     </tag>
-     <tag>
-      Sample
-     </tag>
-     <status endtime="20241127 09:32:30.892" starttime="20241127 09:32:30.891" status="FAIL">
-      Parent suite setup failed:
-Element '' did not appear in 5 seconds.
-     </status>
-    </test>
-    <test id="s1-s1-s3-t9" line="66" name="Large number addition">
-     <doc>
-      Test to check addition of large number is successful
-     </doc>
-     <tag>
-      AAAA-125
-     </tag>
-     <tag>
-      Calculator
-     </tag>
-     <tag>
-      debug_listener_messages
-     </tag>
-     <tag>
-      large_number_add
-     </tag>
-     <tag>
-      Regression
-     </tag>
-     <tag>
-      Sample
-     </tag>
-     <status endtime="20241127 09:32:30.892" starttime="20241127 09:32:30.892" status="FAIL">
-      Parent suite setup failed:
-Element '' did not appear in 5 seconds.
-     </status>
-    </test>
-    <test id="s1-s1-s3-t10" line="73" name="Large number multiplication">
-     <doc>
-      Test to check multiplication of large number is successful
-     </doc>
-     <tag>
-      AAAA-125
-     </tag>
-     <tag>
-      Calculator
-     </tag>
-     <tag>
-      debug_listener_messages
-     </tag>
-     <tag>
-      large_number_multiply
-     </tag>
-     <tag>
-      Regression
-     </tag>
-     <tag>
-      Sample
-     </tag>
-     <status endtime="20241127 09:32:30.893" starttime="20241127 09:32:30.893" status="FAIL">
-      Parent suite setup failed:
-Element '' did not appear in 5 seconds.
-     </status>
-    </test>
-    <kw library="SeleniumLibrary" name="Close All Browsers" type="TEARDOWN">
-     <doc>
-      Closes all open browsers and resets the browser cache.
-     </doc>
-     <status endtime="20241127 09:32:36.254" starttime="20241127 09:32:30.894" status="PASS"/>
-    </kw>
-    <doc>
-     Tests Calculator app functionality. Jira-ID: AAAA-125
-    </doc>
-    <status endtime="20241127 09:32:36.254" starttime="20241127 09:32:22.015" status="FAIL">
-     Suite setup failed:
-Element '' did not appear in 5 seconds.
-    </status>
-   </suite>
-   <suite id="s1-s1-s4" name="AAAA-126 Template Calculator Test" source="C:\Symphony_Replay\SAPtesting\Tests\Sample\AAAA-126 Template Calculator Test.robot">
-    <kw library="Support_Sample" name="Navigate to calculator browser headless" type="SETUP">
-     <kw library="Support_Sample" name="Set Chrome Options to open calculator headless">
-      <kw library="SeleniumLibrary" name="Open Browser">
-       <arg>
-        ${wvar('calculator_url')}
-       </arg>
-       <arg>
-        headlesschrome
-       </arg>
-       <arg>
-        options=${global_browser_options}
-       </arg>
-       <doc>
-        Opens a new browser instance to the optional ``url``.
-       </doc>
-       <msg level="WARN" timestamp="20241127 09:32:23.060">
-        Failed to fetch value for field: Web.Dev.calculator_url
-       </msg>
-       <msg level="WARN" timestamp="20241127 09:32:23.075">
-        Traceback (most recent call last):
-  File "C:\Symphony_Replay\SAPtesting\Execution\Access_Data.py", line 58, in get_data
-    field_value = eval(command)
-                  ^^^^^^^^^^^^^
-  File "&lt;string&gt;", line 1, in &lt;module&gt;
-AttributeError: module 'Data.Web.Dev' has no attribute 'calculator_url'
-       </msg>
-       <msg level="INFO" timestamp="20241127 09:32:23.075">
-        Opening browser 'headlesschrome' to base url ''.
-       </msg>
-       <status endtime="20241127 09:32:27.449" starttime="20241127 09:32:23.060" status="PASS"/>
-      </kw>
-      <kw library="SeleniumLibrary" name="Maximize Browser Window">
-       <doc>
-        Maximizes current browser window.
-       </doc>
-       <status endtime="20241127 09:32:27.487" starttime="20241127 09:32:27.449" status="PASS"/>
-      </kw>
-      <status endtime="20241127 09:32:27.488" starttime="20241127 09:32:23.060" status="PASS"/>
-     </kw>
-     <kw library="Support_Sample" name="Wait until the page has loaded successfully">
-      <kw library="SeleniumLibrary" name="Wait Until Page Contains Element">
-       <arg>
-        ${wvar('page_loaded_check')}
-       </arg>
-       <doc>
-        Waits until the element ``locator`` appears on the current page.
-       </doc>
-       <msg level="WARN" timestamp="20241127 09:32:27.489">
-        Failed to fetch value for field: Web.Dev.page_loaded_check
-       </msg>
-       <msg level="WARN" timestamp="20241127 09:32:27.498">
-        Traceback (most recent call last):
-  File "C:\Symphony_Replay\SAPtesting\Execution\Access_Data.py", line 58, in get_data
-    field_value = eval(command)
-                  ^^^^^^^^^^^^^
-  File "&lt;string&gt;", line 1, in &lt;module&gt;
-AttributeError: module 'Data.Web.Dev' has no attribute 'page_loaded_check'
-       </msg>
-       <kw library="SeleniumLibrary" name="Capture Page Screenshot">
-        <doc>
-         Takes a screenshot of the current page and embeds it into a log file.
-        </doc>
-        <msg html="true" level="INFO" timestamp="20241127 09:32:32.844">
-         &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="3-selenium-screenshot-1.png"&gt;&lt;img src="3-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;
-        </msg>
-        <status endtime="20241127 09:32:32.844" starttime="20241127 09:32:32.706" status="PASS"/>
-       </kw>
-       <msg level="FAIL" timestamp="20241127 09:32:32.844">
-        Element '' did not appear in 5 seconds.
-       </msg>
-       <status endtime="20241127 09:32:32.844" starttime="20241127 09:32:27.488" status="FAIL"/>
-      </kw>
-      <status endtime="20241127 09:32:32.844" starttime="20241127 09:32:27.488" status="FAIL"/>
-     </kw>
-     <status endtime="20241127 09:32:32.844" starttime="20241127 09:32:23.060" status="FAIL"/>
-    </kw>
-    <test id="s1-s1-s4-t1" line="10" name="Addition is tested successfully through template">
-     <doc>
-      Test to check Addition on calculator is working correctly through template
-     </doc>
-     <tag>
-      AAAA-126
-     </tag>
-     <tag>
-      addition_data_driven
-     </tag>
-     <tag>
-      Calculator
-     </tag>
-     <tag>
-      Regression
-     </tag>
-     <tag>
-      Sample
-     </tag>
-     <status endtime="20241127 09:32:32.844" starttime="20241127 09:32:32.844" status="FAIL">
-      Parent suite setup failed:
-Element '' did not appear in 5 seconds.
-     </status>
-    </test>
-    <kw library="SeleniumLibrary" name="Close All Browsers" type="TEARDOWN">
-     <doc>
-      Closes all open browsers and resets the browser cache.
-     </doc>
-     <status endtime="20241127 09:32:36.974" starttime="20241127 09:32:32.844" status="PASS"/>
-    </kw>
-    <doc>
-     Tests Calculator app functionality in template. Jira-ID: AAAA-126
-    </doc>
-    <status endtime="20241127 09:32:36.974" starttime="20241127 09:32:23.044" status="FAIL">
-     Suite setup failed:
-Element '' did not appear in 5 seconds.
-    </status>
-   </suite>
-   <suite id="s1-s1-s5" name="Datadriver" source="C:\Symphony_Replay\SAPtesting\Tests\Sample\Datadriver">
-    <suite id="s1-s1-s5-s1" name="Test" source="C:\Symphony_Replay\SAPtesting\Tests\Sample\Datadriver\Test.robot">
-     <test id="s1-s1-s5-s1-t1" line="12" name="Add two number with datadriver">
+     <kw library="SAP_Tcode_Library" name="Click Element">
+      <arg>
+       element_id=wnd[0]/mbar/menu[0]/menu[11]
+      </arg>
       <doc>
-       Test Objective: To test multiple data set with single test case using datadriver.
+       Performs a single click on a given element. Used only for buttons, tabs and menu items.
       </doc>
-      <tag>
-       DatadriverTest
-      </tag>
-      <tag>
-       Regression
-      </tag>
-      <tag>
-       Sample
-      </tag>
-      <status endtime="20241127 09:32:33.399" starttime="20241127 09:32:33.399" status="FAIL">
-       Test contains no keywords.
-      </status>
-     </test>
-     <kw library="SeleniumLibrary" name="Close All Browsers" type="TEARDOWN">
-      <doc>
-       Closes all open browsers and resets the browser cache.
-      </doc>
-      <status endtime="20241127 09:32:33.399" starttime="20241127 09:32:33.399" status="PASS"/>
+      <status endtime="20241129 13:13:57.052" starttime="20241129 13:13:56.800" status="PASS"/>
      </kw>
-     <doc>
-      Multiple data set run using DataDriver. Jira-ID: AGKL-659
-     </doc>
-     <status endtime="20241127 09:32:33.399" starttime="20241127 09:32:33.346" status="FAIL"/>
-    </suite>
-    <status endtime="20241127 09:32:33.462" starttime="20241127 09:32:33.346" status="FAIL"/>
-   </suite>
-   <doc>
-    Sample Tests
-   </doc>
-   <status endtime="20241127 09:32:37.043" starttime="20241127 09:32:21.999" status="FAIL"/>
+     <kw library="SAP_Tcode_Library" name="Click Element">
+      <arg>
+       element_id=wnd[1]/tbar[0]/btn[37]
+      </arg>
+      <doc>
+       Performs a single click on a given element. Used only for buttons, tabs and menu items.
+      </doc>
+      <status endtime="20241129 13:13:57.378" starttime="20241129 13:13:57.052" status="PASS"/>
+     </kw>
+     <kw library="BuiltIn" name="Sleep">
+      <arg>
+       time_=0.4 seconds
+      </arg>
+      <doc>
+       Pauses the test executed for the given time.
+      </doc>
+      <msg level="INFO" timestamp="20241129 13:13:57.779">
+       Slept 400 milliseconds
+      </msg>
+      <status endtime="20241129 13:13:57.779" starttime="20241129 13:13:57.379" status="PASS"/>
+     </kw>
+     <kw library="SAP_Tcode_Library" name="Unselect Checkbox">
+      <arg>
+       element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/4[0,4]/chk[1,4]
+      </arg>
+      <doc>
+       Removes selection of checkbox identified by locator.
+Does nothing if the checkbox is not selected.
+      </doc>
+      <status endtime="20241129 13:13:57.789" starttime="20241129 13:13:57.779" status="PASS"/>
+     </kw>
+     <kw library="SAP_Tcode_Library" name="Unselect Checkbox">
+      <arg>
+       element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/5[0,5]/chk[1,5]
+      </arg>
+      <doc>
+       Removes selection of checkbox identified by locator.
+Does nothing if the checkbox is not selected.
+      </doc>
+      <status endtime="20241129 13:13:57.797" starttime="20241129 13:13:57.789" status="PASS"/>
+     </kw>
+     <kw library="SAP_Tcode_Library" name="Unselect Checkbox">
+      <arg>
+       element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/6[0,6]/chk[1,6]
+      </arg>
+      <doc>
+       Removes selection of checkbox identified by locator.
+Does nothing if the checkbox is not selected.
+      </doc>
+      <status endtime="20241129 13:13:57.805" starttime="20241129 13:13:57.797" status="PASS"/>
+     </kw>
+     <kw library="SAP_Tcode_Library" name="Click Element">
+      <arg>
+       element_id=wnd[2]/tbar[0]/btn[0]
+      </arg>
+      <doc>
+       Performs a single click on a given element. Used only for buttons, tabs and menu items.
+      </doc>
+      <status endtime="20241129 13:13:58.155" starttime="20241129 13:13:57.805" status="PASS"/>
+     </kw>
+     <kw library="SAP_Tcode_Library" name="Click Element">
+      <arg>
+       element_id=wnd[2]/tbar[0]/btn[8]
+      </arg>
+      <doc>
+       Performs a single click on a given element. Used only for buttons, tabs and menu items.
+      </doc>
+      <status endtime="20241129 13:13:58.701" starttime="20241129 13:13:58.156" status="PASS"/>
+     </kw>
+     <kw library="SAP_Tcode_Library" name="Click Element">
+      <arg>
+       element_id=wnd[0]/mbar/menu[0]/menu[0]
+      </arg>
+      <doc>
+       Performs a single click on a given element. Used only for buttons, tabs and menu items.
+      </doc>
+      <status endtime="20241129 13:13:58.876" starttime="20241129 13:13:58.702" status="PASS"/>
+     </kw>
+     <kw library="SAP_Tcode_Library" name="Extract Numeric">
+      <var>
+       ${spool_id}
+      </var>
+      <arg>
+       data=wnd[0]/sbar/pane[0]
+      </arg>
+      <msg level="INFO" timestamp="20241129 13:13:58.877">
+       ${spool_id} = 0
+      </msg>
+      <status endtime="20241129 13:13:58.877" starttime="20241129 13:13:58.877" status="PASS"/>
+     </kw>
+     <status endtime="20241129 13:13:58.878" starttime="20241129 13:13:56.588" status="PASS"/>
+    </kw>
+    <tag>
+     Regression
+    </tag>
+    <tag>
+     VF01
+    </tag>
+    <status endtime="20241129 13:13:58.878" starttime="20241129 13:13:56.588" status="PASS"/>
+   </test>
+   <status endtime="20241129 13:13:58.879" starttime="20241129 13:13:54.253" status="PASS"/>
   </suite>
   <doc>
    Testing functionality through Robot Framework
@@ -3616,204 +818,39 @@ Element '' did not appear in 5 seconds.
    131.0.6778.86
   </meta>
   <meta name="test_driver_version">
-   131.0.6778.69
+   131.0.6778.85
   </meta>
   <meta name="test_environment">
    Dev
   </meta>
   <meta name="test_freeze_dependencies">
-   astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,oauthlib==3.2.2,outcome==1.3.0.post0,packaging==24.2,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,pywin32==308,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.5.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,urllib3==2.2.3,wheel==0.45.0,wrapt==1.16.0,wsproto==1.2.0
+   astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0
   </meta>
-  <status endtime="20241127 09:32:37.043" starttime="20241127 09:32:12.656" status="FAIL"/>
+  <status endtime="20241129 13:13:59.042" starttime="20241129 13:13:49.203" status="PASS"/>
  </suite>
  <statistics>
   <total>
-   <stat fail="13" pass="1" skip="0">
+   <stat fail="0" pass="1" skip="0">
     All Tests
    </stat>
   </total>
   <tag>
    <stat fail="0" pass="1" skip="0">
-    AAAA-123
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    AAAA-124
-   </stat>
-   <stat fail="10" pass="0" skip="0">
-    AAAA-125
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    AAAA-126
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    addition
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    addition_data_driven
-   </stat>
-   <stat fail="11" pass="0" skip="0">
-    Calculator
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    clear_state
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    DatadriverTest
-   </stat>
-   <stat fail="10" pass="1" skip="0">
-    debug_listener_messages
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    divide_by_zero
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    division
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    float_multiplication
+    Regression
    </stat>
    <stat fail="0" pass="1" skip="0">
-    helloworld
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    large_number_add
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    large_number_multiply
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    multiplication
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    number_negation
-   </stat>
-   <stat fail="13" pass="1" skip="0">
-    regression
-   </stat>
-   <stat fail="13" pass="1" skip="0">
-    Sample
-   </stat>
-   <stat fail="0" pass="1" skip="0">
-    SampleTest
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    selenium
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    subtraction
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    uat
-   </stat>
-   <stat fail="1" pass="0" skip="0">
-    Web
+    VF01
    </stat>
   </tag>
   <suite>
-   <stat fail="13" id="s1" name="Tests" pass="1" skip="0">
+   <stat fail="0" id="s1" name="Tests" pass="1" skip="0">
     Tests
    </stat>
-   <stat fail="13" id="s1-s1" name="Sample" pass="1" skip="0">
-    Tests.Sample
-   </stat>
-   <stat fail="0" id="s1-s1-s1" name="AAAA-123 Hello World User Story" pass="1" skip="0">
-    Tests.Sample.AAAA-123 Hello World User Story
-   </stat>
-   <stat fail="1" id="s1-s1-s2" name="AAAA-124 User Story to test selenium navigation" pass="0" skip="0">
-    Tests.Sample.AAAA-124 User Story to test selenium navigation
-   </stat>
-   <stat fail="10" id="s1-s1-s3" name="AAAA-125 Calculator app tests" pass="0" skip="0">
-    Tests.Sample.AAAA-125 Calculator app tests
-   </stat>
-   <stat fail="1" id="s1-s1-s4" name="AAAA-126 Template Calculator Test" pass="0" skip="0">
-    Tests.Sample.AAAA-126 Template Calculator Test
-   </stat>
-   <stat fail="1" id="s1-s1-s5" name="Datadriver" pass="0" skip="0">
-    Tests.Sample.Datadriver
-   </stat>
-   <stat fail="1" id="s1-s1-s5-s1" name="Test" pass="0" skip="0">
-    Tests.Sample.Datadriver.Test
+   <stat fail="0" id="s1-s1" name="Test Create Rental Invoice" pass="1" skip="0">
+    Tests.Test Create Rental Invoice
    </stat>
   </suite>
  </statistics>
  <errors>
-  <msg level="WARN" timestamp="20241127 09:32:22.100">
-   Failed to fetch value for field: Web.Dev.robot_site
-  </msg>
-  <msg level="WARN" timestamp="20241127 09:32:22.100">
-   Traceback (most recent call last):
-  File "C:\Symphony_Replay\SAPtesting\Execution\Access_Data.py", line 58, in get_data
-    field_value = eval(command)
-                  ^^^^^^^^^^^^^
-  File "&lt;string&gt;", line 1, in &lt;module&gt;
-AttributeError: module 'Data.Web.Dev' has no attribute 'robot_site'
-  </msg>
-  <msg level="WARN" timestamp="20241127 09:32:25.538">
-   Failed to fetch value for field: Web.Dev.robot_site
-  </msg>
-  <msg level="WARN" timestamp="20241127 09:32:25.552">
-   Traceback (most recent call last):
-  File "C:\Symphony_Replay\SAPtesting\Execution\Access_Data.py", line 58, in get_data
-    field_value = eval(command)
-                  ^^^^^^^^^^^^^
-  File "&lt;string&gt;", line 1, in &lt;module&gt;
-AttributeError: module 'Data.Web.Dev' has no attribute 'robot_site'
-  </msg>
-  <msg level="WARN" timestamp="20241127 09:32:22.031">
-   Failed to fetch value for field: Web.Dev.calculator_url
-  </msg>
-  <msg level="WARN" timestamp="20241127 09:32:22.037">
-   Traceback (most recent call last):
-  File "C:\Symphony_Replay\SAPtesting\Execution\Access_Data.py", line 58, in get_data
-    field_value = eval(command)
-                  ^^^^^^^^^^^^^
-  File "&lt;string&gt;", line 1, in &lt;module&gt;
-AttributeError: module 'Data.Web.Dev' has no attribute 'calculator_url'
-  </msg>
-  <msg level="WARN" timestamp="20241127 09:32:24.982">
-   Failed to fetch value for field: Web.Dev.page_loaded_check
-  </msg>
-  <msg level="WARN" timestamp="20241127 09:32:25.023">
-   Traceback (most recent call last):
-  File "C:\Symphony_Replay\SAPtesting\Execution\Access_Data.py", line 58, in get_data
-    field_value = eval(command)
-                  ^^^^^^^^^^^^^
-  File "&lt;string&gt;", line 1, in &lt;module&gt;
-AttributeError: module 'Data.Web.Dev' has no attribute 'page_loaded_check'
-  </msg>
-  <msg level="WARN" timestamp="20241127 09:32:23.060">
-   Failed to fetch value for field: Web.Dev.calculator_url
-  </msg>
-  <msg level="WARN" timestamp="20241127 09:32:23.075">
-   Traceback (most recent call last):
-  File "C:\Symphony_Replay\SAPtesting\Execution\Access_Data.py", line 58, in get_data
-    field_value = eval(command)
-                  ^^^^^^^^^^^^^
-  File "&lt;string&gt;", line 1, in &lt;module&gt;
-AttributeError: module 'Data.Web.Dev' has no attribute 'calculator_url'
-  </msg>
-  <msg level="WARN" timestamp="20241127 09:32:27.489">
-   Failed to fetch value for field: Web.Dev.page_loaded_check
-  </msg>
-  <msg level="WARN" timestamp="20241127 09:32:27.498">
-   Traceback (most recent call last):
-  File "C:\Symphony_Replay\SAPtesting\Execution\Access_Data.py", line 58, in get_data
-    field_value = eval(command)
-                  ^^^^^^^^^^^^^
-  File "&lt;string&gt;", line 1, in &lt;module&gt;
-AttributeError: module 'Data.Web.Dev' has no attribute 'page_loaded_check'
-  </msg>
-  <msg level="ERROR" timestamp="20241127 09:32:33.377">
-   [ DataDriver ] Error in robot file:
-  File "C:\Symphony_Replay\SAPtesting\Tests\Sample\Datadriver\Test.robot", line 0
-  </msg>
-  <msg level="ERROR" timestamp="20241127 09:32:33.377">
-   In source file:
-  File "C:\Symphony_Replay\SAPtesting\Tests\Sample\Datadriver//TextExcel.xlsx", line 0
-  </msg>
-  <msg level="ERROR" timestamp="20241127 09:32:33.399">
-   Calling method '_start_suite' of listener 'DataDriver' failed: ImportError: Requirements (pandas, openpyxl) for XLSX support are not installed.
-    Use 'pip install -U robotframework-datadriver[XLS]' to install XLSX support.
-  </msg>
  </errors>
 </robot>
