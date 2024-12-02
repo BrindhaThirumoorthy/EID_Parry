@@ -1477,4 +1477,16 @@ class SAP_Tcode_Library:
         else:
             print(f"Column {column_letter} not found in the Excel file.")
 
-
+    def excel_to_json_new(self, excel_file, json_file):
+        df = pd.read_excel(excel_file, engine='openpyxl')
+        for column in df.select_dtypes(['datetime']):
+            df[column] = df[column].astype(str)
+        for column in df.columns:
+            if df[column].dtype == 'object': 
+                df[column] = df[column].str.strip('"') 
+        data = df.to_dict(orient='records')
+        with open(json_file, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=4)
+        with open(json_file, 'r', encoding='utf-8') as f:
+            json_data = json.load(f)
+        return json_data
