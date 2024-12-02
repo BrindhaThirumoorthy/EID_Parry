@@ -68,7 +68,7 @@ Rental Document
     Process Excel    file_path=C:\\TEMP\\rental.xlsx    sheet_name=Sheet1
     Sleep    0.5
     Number To String    file_path=C:\\TEMP\\rental.xlsx    column_letter=H
-    Sleep    0.5 secomds
+    Sleep    0.5
     ${json}    Excel To Json    excel_file=C:\\TEMP\\rental.xlsx    json_file=C:\\TEMP\\rental.json
     log    ${json}
     Log To Console    **gbStart**copilot_Sales_Document_status**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
