@@ -72,7 +72,7 @@ Rental Document
     Log To Console    **gbStart**copilot_Sales_Document_status**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
     log to console    ${json}  
     Sleep    0.5
-    Delete Specific File    file_path=C:\\TEMP\\rental.xlsx
+    # Delete Specific File    file_path=C:\\TEMP\\rental.xlsx
     # Delete Specific File    file_path=C:\\TEMP\\rental.json
 
 
