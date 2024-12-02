@@ -1466,4 +1466,15 @@ class SAP_Tcode_Library:
         except Exception as e:
             # print(f"Error: {str(e)}")
             return f"Error: {str(e)}"
+        
+    def number_to_string(self, file_path, column_letter):
+        df = pd.read_excel(file_path)
+        column_index = ord(column_letter.upper()) - ord('A')
+        column_name = df.columns[column_index]
+        if column_name in df.columns:
+            df[column_name] = df[column_name].apply(lambda value: f'"{value}"' if pd.notnull(value) else value)
+            df.to_excel(file_path, index=False)
+        else:
+            print(f"Column {column_letter} not found in the Excel file.")
+
 

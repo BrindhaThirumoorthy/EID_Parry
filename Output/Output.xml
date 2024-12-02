@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<robot generated="20241129 15:00:29.096" generator="Rebot 6.0.2 (Python 3.12.7 on win32)" rpa="false" schemaversion="3">
+<robot generated="20241202 12:37:46.256" generator="Rebot 6.0.2 (Python 3.12.7 on win32)" rpa="false" schemaversion="3">
  <suite id="s1" name="Tests" source="C:\EID_Replay\EID_Parry\Tests">
   <kw name="Setup highest level suite" type="SETUP">
    <kw library="BuiltIn" name="Set Variable">
@@ -12,10 +12,10 @@
     <doc>
      Returns the given values which can then be assigned to a variables.
     </doc>
-    <msg level="INFO" timestamp="20241129 15:00:16.151">
+    <msg level="INFO" timestamp="20241202 12:37:39.625">
      ${d.test_server} = Dev
     </msg>
-    <status endtime="20241129 15:00:16.151" starttime="20241129 15:00:16.151" status="PASS"/>
+    <status endtime="20241202 12:37:39.625" starttime="20241202 12:37:39.625" status="PASS"/>
    </kw>
    <kw library="Support" name="Reset screenshot count variable">
     <kw library="BuiltIn" name="Set Variable">
@@ -28,10 +28,10 @@
      <doc>
       Returns the given values which can then be assigned to a variables.
      </doc>
-     <msg level="INFO" timestamp="20241129 15:00:16.151">
+     <msg level="INFO" timestamp="20241202 12:37:39.625">
       ${screenshotCount} = 0_1
      </msg>
-     <status endtime="20241129 15:00:16.151" starttime="20241129 15:00:16.151" status="PASS"/>
+     <status endtime="20241202 12:37:39.625" starttime="20241202 12:37:39.625" status="PASS"/>
     </kw>
     <kw library="BuiltIn" name="Set Global Variable">
      <arg>
@@ -40,10 +40,10 @@
      <doc>
       Makes a variable available globally in all tests and suites.
      </doc>
-     <msg level="INFO" timestamp="20241129 15:00:16.151">
+     <msg level="INFO" timestamp="20241202 12:37:39.625">
       ${screenshotCount} = 0_1
      </msg>
-     <status endtime="20241129 15:00:16.151" starttime="20241129 15:00:16.151" status="PASS"/>
+     <status endtime="20241202 12:37:39.625" starttime="20241202 12:37:39.625" status="PASS"/>
     </kw>
     <kw library="Support" name="Set up screenshot directory">
      <kw library="OperatingSystem" name="Create Directory">
@@ -53,17 +53,17 @@
       <doc>
        Creates the specified directory.
       </doc>
-      <msg level="INFO" timestamp="20241129 15:00:16.151">
+      <msg level="INFO" timestamp="20241202 12:37:39.625">
        Web.Dev.screenshot_dir: Screenshot
       </msg>
-      <msg html="true" level="INFO" timestamp="20241129 15:00:16.151">
+      <msg html="true" level="INFO" timestamp="20241202 12:37:39.625">
        Created directory '&lt;a href="file://C:\EID_Replay\EID_Parry\Output\pabot_results\0\Screenshot"&gt;C:\EID_Replay\EID_Parry\Output\pabot_results\0\Screenshot&lt;/a&gt;'.
       </msg>
-      <status endtime="20241129 15:00:16.151" starttime="20241129 15:00:16.151" status="PASS"/>
+      <status endtime="20241202 12:37:39.625" starttime="20241202 12:37:39.625" status="PASS"/>
      </kw>
-     <status endtime="20241129 15:00:16.151" starttime="20241129 15:00:16.151" status="PASS"/>
+     <status endtime="20241202 12:37:39.625" starttime="20241202 12:37:39.625" status="PASS"/>
     </kw>
-    <status endtime="20241129 15:00:16.151" starttime="20241129 15:00:16.151" status="PASS"/>
+    <status endtime="20241202 12:37:39.625" starttime="20241202 12:37:39.625" status="PASS"/>
    </kw>
    <kw library="BuiltIn" name="Set Global Variable">
     <arg>
@@ -75,10 +75,10 @@
     <doc>
      Makes a variable available globally in all tests and suites.
     </doc>
-    <msg level="INFO" timestamp="20241129 15:00:16.151">
+    <msg level="INFO" timestamp="20241202 12:37:39.625">
      ${screenshot_taking} = True
     </msg>
-    <status endtime="20241129 15:00:16.151" starttime="20241129 15:00:16.151" status="PASS"/>
+    <status endtime="20241202 12:37:39.625" starttime="20241202 12:37:39.625" status="PASS"/>
    </kw>
    <kw library="Support" name="Setup linux execution">
     <kw library="BuiltIn" name="Run Keyword And Return Status">
@@ -101,12 +101,12 @@
       <doc>
        Fails unless the given variable exists within the current scope.
       </doc>
-      <status endtime="20241129 15:00:16.167" starttime="20241129 15:00:16.167" status="PASS"/>
+      <status endtime="20241202 12:37:39.625" starttime="20241202 12:37:39.625" status="PASS"/>
      </kw>
-     <msg level="INFO" timestamp="20241129 15:00:16.167">
+     <msg level="INFO" timestamp="20241202 12:37:39.625">
       ${web_test_check} = True
      </msg>
-     <status endtime="20241129 15:00:16.167" starttime="20241129 15:00:16.167" status="PASS"/>
+     <status endtime="20241202 12:37:39.625" starttime="20241202 12:37:39.625" status="PASS"/>
     </kw>
     <kw library="BuiltIn" name="Run Keyword If">
      <arg>
@@ -138,10 +138,10 @@
             {"browser_version": browser version value,
              "driver_version": driver version value}
         </doc>
-        <msg level="INFO" timestamp="20241129 15:00:20.874">
+        <msg level="INFO" timestamp="20241202 12:37:44.460">
          &amp;{browser_information} = { browser_version=131.0.6778.86 | driver_version=131.0.6778.85  }
         </msg>
-        <status endtime="20241129 15:00:20.874" starttime="20241129 15:00:16.170" status="PASS"/>
+        <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:39.625" status="PASS"/>
        </kw>
        <kw library="BuiltIn" name="Set Suite Metadata">
         <arg>
@@ -153,10 +153,10 @@
         <doc>
          Sets metadata for the current test suite.
         </doc>
-        <msg level="INFO" timestamp="20241129 15:00:20.874">
+        <msg level="INFO" timestamp="20241202 12:37:44.460">
          Set suite metadata 'test_browser_name' to value 'chrome'.
         </msg>
-        <status endtime="20241129 15:00:20.874" starttime="20241129 15:00:20.874" status="PASS"/>
+        <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
        </kw>
        <kw library="BuiltIn" name="Set Suite Metadata">
         <arg>
@@ -168,10 +168,10 @@
         <doc>
          Sets metadata for the current test suite.
         </doc>
-        <msg level="INFO" timestamp="20241129 15:00:20.874">
+        <msg level="INFO" timestamp="20241202 12:37:44.460">
          Set suite metadata 'test_browser_version' to value '131.0.6778.86'.
         </msg>
-        <status endtime="20241129 15:00:20.874" starttime="20241129 15:00:20.874" status="PASS"/>
+        <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
        </kw>
        <kw library="BuiltIn" name="Set Suite Metadata">
         <arg>
@@ -183,12 +183,12 @@
         <doc>
          Sets metadata for the current test suite.
         </doc>
-        <msg level="INFO" timestamp="20241129 15:00:20.874">
+        <msg level="INFO" timestamp="20241202 12:37:44.460">
          Set suite metadata 'test_driver_version' to value '131.0.6778.85 '.
         </msg>
-        <status endtime="20241129 15:00:20.874" starttime="20241129 15:00:20.874" status="PASS"/>
+        <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
        </kw>
-       <status endtime="20241129 15:00:20.874" starttime="20241129 15:00:16.169" status="PASS"/>
+       <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:39.625" status="PASS"/>
       </kw>
       <kw library="Support_Web" name="Setup Global Docker Execution Options">
        <kw library="BuiltIn" name="Set Global Variable">
@@ -201,10 +201,10 @@
         <doc>
          Makes a variable available globally in all tests and suites.
         </doc>
-        <msg level="INFO" timestamp="20241129 15:00:20.874">
+        <msg level="INFO" timestamp="20241202 12:37:44.460">
          ${global_browser_options} = None
         </msg>
-        <status endtime="20241129 15:00:20.874" starttime="20241129 15:00:20.874" status="PASS"/>
+        <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
        </kw>
        <kw library="OperatingSystem" name="Get Environment Variable">
         <var>
@@ -219,10 +219,10 @@
         <doc>
          Returns the value of an environment variable with the given name.
         </doc>
-        <msg level="INFO" timestamp="20241129 15:00:20.874">
+        <msg level="INFO" timestamp="20241202 12:37:44.460">
          ${docker_check} = not_found
         </msg>
-        <status endtime="20241129 15:00:20.874" starttime="20241129 15:00:20.874" status="PASS"/>
+        <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
        </kw>
        <kw library="BuiltIn" name="Run Keyword And Return If">
         <arg>
@@ -244,15 +244,15 @@
          <doc>
           Logs the given message with the given level.
          </doc>
-         <msg level="INFO" timestamp="20241129 15:00:20.874">
+         <msg level="INFO" timestamp="20241202 12:37:44.460">
           Not executing on Docker
          </msg>
-         <status endtime="20241129 15:00:20.874" starttime="20241129 15:00:20.874" status="PASS"/>
+         <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
         </kw>
-        <msg level="INFO" timestamp="20241129 15:00:20.874">
+        <msg level="INFO" timestamp="20241202 12:37:44.460">
          Returning from the enclosing user keyword.
         </msg>
-        <status endtime="20241129 15:00:20.874" starttime="20241129 15:00:20.874" status="PASS"/>
+        <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
        </kw>
        <kw library="BuiltIn" name="Create List">
         <var>
@@ -270,7 +270,7 @@
         <doc>
          Returns a list containing given items.
         </doc>
-        <status endtime="20241129 15:00:20.874" starttime="20241129 15:00:20.874" status="NOT RUN"/>
+        <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="NOT RUN"/>
        </kw>
        <kw library="BuiltIn" name="Set Global Variable">
         <arg>
@@ -282,9 +282,9 @@
         <doc>
          Makes a variable available globally in all tests and suites.
         </doc>
-        <status endtime="20241129 15:00:20.874" starttime="20241129 15:00:20.874" status="NOT RUN"/>
+        <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="NOT RUN"/>
        </kw>
-       <status endtime="20241129 15:00:20.874" starttime="20241129 15:00:20.874" status="PASS"/>
+       <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
       </kw>
       <kw library="Support_Web" name="Create Webdriver for chrome preferences">
        <kw library="Support_Web" name="Update Docker Execution Options">
@@ -314,15 +314,15 @@
           <doc>
            Fails unless the given variable exists within the current scope.
           </doc>
-          <msg level="FAIL" timestamp="20241129 15:00:20.880">
+          <msg level="FAIL" timestamp="20241202 12:37:44.460">
            Variable '${docker_options}' does not exist.
           </msg>
-          <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="FAIL"/>
+          <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="FAIL"/>
          </kw>
-         <msg level="INFO" timestamp="20241129 15:00:20.880">
+         <msg level="INFO" timestamp="20241202 12:37:44.460">
           ${docker_check} = False
          </msg>
-         <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.874" status="PASS"/>
+         <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
         </kw>
         <kw library="BuiltIn" name="Get Length">
          <var>
@@ -334,13 +334,13 @@
          <doc>
           Returns and logs the length of the given item as an integer.
          </doc>
-         <msg level="INFO" timestamp="20241129 15:00:20.880">
+         <msg level="INFO" timestamp="20241202 12:37:44.460">
           Length is 1
          </msg>
-         <msg level="INFO" timestamp="20241129 15:00:20.880">
+         <msg level="INFO" timestamp="20241202 12:37:44.460">
           ${list_prefs_length} = 1
          </msg>
-         <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="PASS"/>
+         <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
         </kw>
         <kw library="BuiltIn" name="Run Keyword If">
          <var>
@@ -389,17 +389,17 @@
           <doc>
            Returns the given values which can then be assigned to a variables.
           </doc>
-          <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="PASS"/>
+          <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
          </kw>
-         <msg level="INFO" timestamp="20241129 15:00:20.880">
+         <msg level="INFO" timestamp="20241202 12:37:44.460">
           ${list_prefs} = [[]]
          </msg>
-         <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="PASS"/>
+         <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
         </kw>
-        <msg level="INFO" timestamp="20241129 15:00:20.880">
+        <msg level="INFO" timestamp="20241202 12:37:44.460">
          ${list_prefs} = [[]]
         </msg>
-        <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.874" status="PASS"/>
+        <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
        </kw>
        <kw library="Support_Web" name="Create Chrome Options for download preferences">
         <var>
@@ -418,15 +418,15 @@
          <doc>
           Evaluates the given expression in Python and returns the result.
          </doc>
-         <msg level="INFO" timestamp="20241129 15:00:20.880">
-          ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000024D71AB6B40&gt;
+         <msg level="INFO" timestamp="20241202 12:37:44.460">
+          ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001ED02FEC590&gt;
          </msg>
-         <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="PASS"/>
+         <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
         </kw>
-        <msg level="INFO" timestamp="20241129 15:00:20.880">
-         ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000024D71AB6B40&gt;
+        <msg level="INFO" timestamp="20241202 12:37:44.460">
+         ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001ED02FEC590&gt;
         </msg>
-        <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="PASS"/>
+        <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
        </kw>
        <kw library="Support_Web" name="Update Preferences List">
         <arg>
@@ -445,10 +445,10 @@
          <doc>
           Converts the given item to a Unicode string.
          </doc>
-         <msg level="INFO" timestamp="20241129 15:00:20.880">
+         <msg level="INFO" timestamp="20241202 12:37:44.460">
           ${string_prefs} = [[]]
          </msg>
-         <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="PASS"/>
+         <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
         </kw>
         <kw library="BuiltIn" name="Return From Keyword If">
          <arg>
@@ -457,10 +457,10 @@
          <doc>
           Returns from the enclosing user keyword if ``condition`` is true.
          </doc>
-         <msg level="INFO" timestamp="20241129 15:00:20.880">
+         <msg level="INFO" timestamp="20241202 12:37:44.460">
           Returning from the enclosing user keyword.
          </msg>
-         <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="PASS"/>
+         <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
         </kw>
         <for flavor="IN">
          <var>
@@ -484,13 +484,13 @@
            <doc>
             Calls the named method of the given object with the provided arguments.
            </doc>
-           <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="NOT RUN"/>
+           <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="NOT RUN"/>
           </kw>
-          <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="NOT RUN"/>
+          <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="NOT RUN"/>
          </iter>
-         <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="NOT RUN"/>
+         <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="NOT RUN"/>
         </for>
-        <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="PASS"/>
+        <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
        </kw>
        <kw library="BuiltIn" name="Call Method">
         <arg>
@@ -508,7 +508,7 @@
         <doc>
          Calls the named method of the given object with the provided arguments.
         </doc>
-        <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="PASS"/>
+        <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
        </kw>
        <kw library="BuiltIn" name="Set Global Variable">
         <arg>
@@ -520,18 +520,18 @@
         <doc>
          Makes a variable available globally in all tests and suites.
         </doc>
-        <msg level="INFO" timestamp="20241129 15:00:20.880">
-         ${global_browser_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000024D71AB6B40&gt;
+        <msg level="INFO" timestamp="20241202 12:37:44.460">
+         ${global_browser_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001ED02FEC590&gt;
         </msg>
-        <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="PASS"/>
+        <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
        </kw>
-       <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.874" status="PASS"/>
+       <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
       </kw>
-      <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:16.169" status="PASS"/>
+      <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:39.625" status="PASS"/>
      </kw>
-     <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:16.167" status="PASS"/>
+     <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:39.625" status="PASS"/>
     </kw>
-    <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:16.167" status="PASS"/>
+    <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:39.625" status="PASS"/>
    </kw>
    <kw library="BuiltIn" name="Set Suite Metadata">
     <arg>
@@ -543,523 +543,93 @@
     <doc>
      Sets metadata for the current test suite.
     </doc>
-    <msg level="INFO" timestamp="20241129 15:00:20.880">
+    <msg level="INFO" timestamp="20241202 12:37:44.460">
      Set suite metadata 'environment' to value 'Dev'.
     </msg>
-    <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:20.880" status="PASS"/>
+    <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:44.460" status="PASS"/>
    </kw>
-   <status endtime="20241129 15:00:20.880" starttime="20241129 15:00:16.151" status="PASS"/>
+   <status endtime="20241202 12:37:44.460" starttime="20241202 12:37:39.625" status="PASS"/>
   </kw>
-  <suite id="s1-s1" name="Test Create Rental Invoice" source="C:\EID_Replay\EID_Parry\Tests\Test_Create_Rental_Invoice.robot">
-   <kw library="create_rental_invoice" name="System Logon" type="SETUP">
-    <kw library="Process" name="Start Process">
-     <arg>
-      ${symvar('SAP_SERVER')}
-     </arg>
-     <doc>
-      Starts a new process on background.
-     </doc>
-     <msg level="INFO" timestamp="20241129 15:00:21.539">
-      Sym.Dev.SAP_SERVER: C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe
-     </msg>
-     <msg level="INFO" timestamp="20241129 15:00:21.539">
-      Starting process:
-"C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe"
-     </msg>
-     <status endtime="20241129 15:00:21.554" starttime="20241129 15:00:21.539" status="PASS"/>
-    </kw>
-    <kw library="SAP_Tcode_Library" name="Connect To Session">
-     <doc>
-      Connects to an open session SAP.
-     </doc>
-     <status endtime="20241129 15:00:21.599" starttime="20241129 15:00:21.554" status="PASS"/>
-    </kw>
-    <kw library="SAP_Tcode_Library" name="Open Connection">
-     <arg>
-      ${symvar('Rental_Connection')}
-     </arg>
-     <doc>
-      Opens a connection to the given connection name. Be sure to provide the full connection name, including the bracket part.
-     </doc>
-     <msg level="INFO" timestamp="20241129 15:00:21.599">
-      Sym.Dev.Rental_Connection: EID sandbox
-     </msg>
-     <status endtime="20241129 15:00:22.487" starttime="20241129 15:00:21.599" status="PASS"/>
-    </kw>
-    <kw library="SAP_Tcode_Library" name="Input Text">
-     <arg>
-      wnd[0]/usr/txtRSYST-MANDT
-     </arg>
-     <arg>
-      ${symvar('Rental_Client')}
-     </arg>
-     <doc>
-      Inserts the given text into the text field identified by locator.
-Use keyword `input password` to insert a password in a text field.
-     </doc>
-     <msg level="INFO" timestamp="20241129 15:00:22.488">
-      Sym.Dev.Rental_Client: 900
-     </msg>
-     <msg level="INFO" timestamp="20241129 15:00:22.522">
-      Typing text '900' into text field 'wnd[0]/usr/txtRSYST-MANDT'.
-     </msg>
-     <status endtime="20241129 15:00:22.548" starttime="20241129 15:00:22.487" status="PASS"/>
-    </kw>
-    <kw library="SAP_Tcode_Library" name="Input Text">
-     <arg>
-      wnd[0]/usr/txtRSYST-BNAME
-     </arg>
-     <arg>
-      ${symvar('Rental_User')}
-     </arg>
-     <doc>
-      Inserts the given text into the text field identified by locator.
-Use keyword `input password` to insert a password in a text field.
-     </doc>
-     <msg level="INFO" timestamp="20241129 15:00:22.549">
-      Sym.Dev.Rental_User: bcssupport1
-     </msg>
-     <msg level="INFO" timestamp="20241129 15:00:22.580">
-      Typing text 'bcssupport1' into text field 'wnd[0]/usr/txtRSYST-BNAME'.
-     </msg>
-     <status endtime="20241129 15:00:22.583" starttime="20241129 15:00:22.548" status="PASS"/>
-    </kw>
-    <kw library="SAP_Tcode_Library" name="Input Password">
-     <arg>
-      wnd[0]/usr/pwdRSYST-BCODE
-     </arg>
-     <arg>
-      %{RENTAL_PASSWORD}
-     </arg>
-     <doc>
-      Inserts the given password into the text field identified by locator.
-The password is not recorded in the log.
-     </doc>
-     <msg level="INFO" timestamp="20241129 15:00:22.649">
-      Typing password into text field 'wnd[0]/usr/pwdRSYST-BCODE'.
-     </msg>
-     <status endtime="20241129 15:00:22.654" starttime="20241129 15:00:22.584" status="PASS"/>
-    </kw>
-    <kw library="SAP_Tcode_Library" name="Send Vkey">
-     <arg>
-      0
-     </arg>
-     <doc>
-      Sends a SAP virtual key combination to the window, not into an element.
-If you want to send a value to a text field, use `input text` instead.
-     </doc>
-     <status endtime="20241129 15:00:23.235" starttime="20241129 15:00:22.654" status="PASS"/>
-    </kw>
-    <kw library="SAP_Tcode_Library" name="Multiple Logon Handling">
-     <arg>
-      wnd[1]
-     </arg>
-     <arg>
-      wnd[1]/usr/radMULTI_LOGON_OPT2
-     </arg>
-     <arg>
-      wnd[1]/tbar[0]/btn[0]
-     </arg>
-     <status endtime="20241129 15:00:23.267" starttime="20241129 15:00:23.235" status="PASS"/>
-    </kw>
-    <status endtime="20241129 15:00:23.267" starttime="20241129 15:00:21.539" status="PASS"/>
-   </kw>
-   <test id="s1-s1-t1" line="8" name="Create the rental Invoice">
-    <kw library="create_rental_invoice" name="Rental Invoice">
-     <kw library="SAP_Tcode_Library" name="Run Transaction">
+  <suite id="s1-s1" name="Test VA45" source="C:\EID_Replay\EID_Parry\Tests\Test_VA45.robot">
+   <test id="s1-s1-t1" line="9" name="Display the rental documents">
+    <kw library="VA45" name="Rental Document">
+     <kw library="SAP_Tcode_Library" name="Number To String">
       <arg>
-       /nVF03
+       file_path=C:\\TEMP\\rental.xlsx
       </arg>
-      <doc>
-       Runs a Sap transaction. An error is given when an unknown transaction is specified.
-      </doc>
-      <status endtime="20241129 15:00:23.436" starttime="20241129 15:00:23.267" status="PASS"/>
+      <arg>
+       column=H
+      </arg>
+      <status endtime="20241202 12:37:45.209" starttime="20241202 12:37:45.163" status="PASS"/>
      </kw>
-     <kw library="SAP_Tcode_Library" name="Input Text">
+     <kw library="SAP_Tcode_Library" name="Excel To Json">
+      <var>
+       ${json}
+      </var>
       <arg>
-       element_id=wnd[0]/usr/ctxtVBRK-VBELN
+       excel_file=C:\\TEMP\\rental.xlsx
       </arg>
       <arg>
-       text=707326112
+       json_file=C:\\TEMP\\rental.json
       </arg>
-      <doc>
-       Inserts the given text into the text field identified by locator.
-Use keyword `input password` to insert a password in a text field.
-      </doc>
-      <msg level="INFO" timestamp="20241129 15:00:23.452">
-       Typing text '707326112' into text field 'wnd[0]/usr/ctxtVBRK-VBELN'.
+      <msg level="INFO" timestamp="20241202 12:37:45.278">
+       ${json} = [{'Contract End Date': '2024-12-31', 'Contract Start Date': '2024-02-01', 'Document Currency': 'INR', 'Net Value (Item)': 3300000.0, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Documen...
       </msg>
-      <status endtime="20241129 15:00:23.452" starttime="20241129 15:00:23.436" status="PASS"/>
+      <status endtime="20241202 12:37:45.278" starttime="20241202 12:37:45.209" status="PASS"/>
      </kw>
-     <kw library="SAP_Tcode_Library" name="Click Element">
+     <kw library="BuiltIn" name="Log">
       <arg>
-       element_id=wnd[0]/mbar/menu[0]/menu[11]
+       ${json}
       </arg>
       <doc>
-       Performs a single click on a given element. Used only for buttons, tabs and menu items.
+       Logs the given message with the given level.
       </doc>
-      <status endtime="20241129 15:00:23.738" starttime="20241129 15:00:23.452" status="PASS"/>
+      <msg level="INFO" timestamp="20241202 12:37:45.278">
+       [{'Contract End Date': '2024-12-31', 'Contract Start Date': '2024-02-01', 'Document Currency': 'INR', 'Net Value (Item)': 3300000.0, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-02-29', 'Sales document': 40025131, 'Material': 'BCR-VILLA-A6', 'Target Quantity': 300000, 'Valid-To Date': '2024-12-31', 'Sold-To Party': 814205, 'Sold-To Party Name': 'Aditya George Mathai', 'Pricing Unit': 'PU', 'Net Price': 1.0, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2024-11-30', 'Contract Start Date': '2024-02-01', 'Document Currency': 'INR', 'Net Value (Item)': 4750000.0, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-02-29', 'Sales document': 40025134, 'Material': 'BCR-VILLA-B1', 'Target Quantity': 475000, 'Valid-To Date': '2024-11-30', 'Sold-To Party': 813974, 'Sold-To Party Name': 'APOLLO PHARMACIES LIMITED', 'Pricing Unit': 'PU', 'Net Price': 1.0, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 2436426.19, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025322, 'Material': 'PH-VF', 'Target Quantity': 2580, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 800597, 'Sold-To Party Name': 'PARRY AGRO INDUSTRIES LTD', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 594941.27, 'Sales Document Item': 20, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025322, 'Material': 'PH-IF-D', 'Target Quantity': 630, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 800597, 'Sold-To Party Name': 'PARRY AGRO INDUSTRIES LTD', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 1265428.78, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025323, 'Material': 'PH-VF', 'Target Quantity': 1340, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 10326, 'Sold-To Party Name': 'NEW AMBADI ESTATES PRIVATE LTD', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 5493486.24, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025324, 'Material': 'DH-EX-VF', 'Target Quantity': 4727, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 805782, 'Sold-To Party Name': 'MURUGAPPA MORGAN THERMAL CERAMICS', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 747925.64, 'Sales Document Item': 20, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025324, 'Material': 'PH-IF-D', 'Target Quantity': 792, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 805782, 'Sold-To Party Name': 'MURUGAPPA MORGAN THERMAL CERAMICS', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 140825.96, 'Sales Document Item': 30, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025324, 'Material': 'DH-EX-VFW', 'Target Quantity': 165, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 805782, 'Sold-To Party Name': 'MURUGAPPA MORGAN THERMAL CERAMICS', 'Pricing Unit': 'FT2', 'Net Price': 77.59, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 116218.3, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025325, 'Material': 'DH-IIF', 'Target Quantity': 100, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 204829, 'Sold-To Party Name': 'CHOLA PEOPLE AND MARKETING', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 67995.18, 'Sales Document Item': 20, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025325, 'Material': 'PH-IF-D', 'Target Quantity': 72, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 204829, 'Sold-To Party Name': 'CHOLA PEOPLE AND MARKETING', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 4609087.23, 'Sales Document Item': 40, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025326, 'Material': 'DH-EX-IF', 'Target Quantity': 3966, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31009, 'Sold-To Party Name': 'CARBORUNDUM UNIVERSAL LTD', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 6584008.64, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025326, 'Material': 'PH-IIIF', 'Target Quantity': 6972, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31009, 'Sold-To Party Name': 'CARBORUNDUM UNIVERSAL LTD', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 642668.95, 'Sales Document Item': 50, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025326, 'Material': 'DH-EX-IF', 'Target Quantity': 553, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31009, 'Sold-To Party Name': 'CARBORUNDUM UNIVERSAL LTD', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 3018794.35, 'Sales Document Item': 20, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025326, 'Material': 'PH-VIF', 'Target Quantity': 3537, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31009, 'Sold-To Party Name': 'CARBORUNDUM UNIVERSAL LTD', 'Pricing Unit': 'FT2', 'Net Price': 77.59, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 1869813.11, 'Sales Document Item': 30, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025326, 'Material': 'PH-IF-D', 'Target Quantity': 1980, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31009, 'Sold-To Party Name': 'CARBORUNDUM UNIVERSAL LTD', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 3853888.39, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025327, 'Material': 'PH-IIIF', 'Target Quantity': 4081, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 808993, 'Sold-To Party Name': 'MURUGAPPA WATER TECHNOLOGY AND SOLUTIONS', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 781921.03, 'Sales Document Item': 20, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025327, 'Material': 'PH-IF-D', 'Target Quantity': 828, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 808993, 'Sold-To Party Name': 'MURUGAPPA WATER TECHNOLOGY AND SOLUTIONS', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 883912.37, 'Sales Document Item': 20, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025328, 'Material': 'PH-IF-D', 'Target Quantity': 936, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 32998, 'Sold-To Party Name': 'NET ACCESS INDIA  LTD', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 3030745.85, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025328, 'Material': 'PH-VIF', 'Target Quantity': 3551, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 32998, 'Sold-To Party Name': 'NET ACCESS INDIA  LTD', 'Pricing Unit': 'FT2', 'Net Price': 77.59, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 454383.16, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025329, 'Material': 'DH-EX-VF-DC', 'Target Quantity': 1, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 32998, 'Sold-To Party Name': 'NET ACCESS INDIA  LTD', 'Pricing Unit': 'FT2', 'Net Price': 41307.56, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 594940.61, 'Sales Document Item': 40, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025330, 'Material': 'PH-IF-D', 'Target Quantity': 630, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 809181, 'Sold-To Party Name': 'MURUGAPPA MANAGEMENT SERVICES', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 149360.75, 'Sales Document Item': 70, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025330, 'Material': 'DH-EX-IF', 'Target Quantity': 175, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 809181, 'Sold-To Party Name': 'MURUGAPPA MANAGEMENT SERVICES', 'Pricing Unit': 'FT2', 'Net Price': 77.59, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 464860.11, 'Sales Document Item': 60, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025330, 'Material': 'DH-EX-VIF', 'Target Quantity': 400, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 809181, 'Sold-To Party Name': 'MURUGAPPA MANAGEMENT SERVICES', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 13917911.04, 'Sales Document Item': 20, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025330, 'Material': 'DH-VF', 'Target Quantity': 11976, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 809181, 'Sold-To Party Name': 'MURUGAPPA MANAGEMENT SERVICES', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 5761940.8, 'Sales Document Item': 50, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025330, 'Material': 'DH-EX-VIF', 'Target Quantity': 4958, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 809181, 'Sold-To Party Name': 'MURUGAPPA MANAGEMENT SERVICES', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 5046056.29, 'Sales Document Item': 30, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025330, 'Material': 'DH-VIF', 'Target Quantity': 4342, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 809181, 'Sold-To Party Name': 'MURUGAPPA MANAGEMENT SERVICES', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 281240.3, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025330, 'Material': 'DH-GF-LOBB', 'Target Quantity': 242, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 809181, 'Sold-To Party Name': 'MURUGAPPA MANAGEMENT SERVICES', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 1067714.23, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025331, 'Material': 'DH-EX-BM', 'Target Quantity': 1251, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 800593, 'Sold-To Party Name': 'CHOLAMANDALAM INVESTMENT AND FINANCE', 'Pricing Unit': 'FT2', 'Net Price': 77.59, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 169673.57, 'Sales Document Item': 20, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025331, 'Material': 'DH-EX-IF', 'Target Quantity': 146, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 800593, 'Sold-To Party Name': 'CHOLAMANDALAM INVESTMENT AND FINANCE', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 741451.7, 'Sales Document Item': 50, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025332, 'Material': 'DH-GF-LOBB', 'Target Quantity': 638, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31006, 'Sold-To Party Name': 'Cholamandalam MS General Insurance', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 2345765.4, 'Sales Document Item': 40, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025332, 'Material': 'PH-IF-D', 'Target Quantity': 2484, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31006, 'Sold-To Party Name': 'Cholamandalam MS General Insurance', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 6122206.2, 'Sales Document Item': 110, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025332, 'Material': 'DH-EX-IIF', 'Target Quantity': 5268, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31006, 'Sold-To Party Name': 'Cholamandalam MS General Insurance', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 628937.1, 'Sales Document Item': 90, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025332, 'Material': 'PH-IF-D', 'Target Quantity': 666, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31006, 'Sold-To Party Name': 'Cholamandalam MS General Insurance', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 1121887.8, 'Sales Document Item': 70, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025332, 'Material': 'PH-IF-D', 'Target Quantity': 1188, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31006, 'Sold-To Party Name': 'Cholamandalam MS General Insurance', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 428833.35, 'Sales Document Item': 100, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025332, 'Material': 'DH-EX-IF', 'Target Quantity': 369, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31006, 'Sold-To Party Name': 'Cholamandalam MS General Insurance', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 5434734.25, 'Sales Document Item': 30, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025332, 'Material': 'PH-IVF', 'Target Quantity': 5755, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31006, 'Sold-To Party Name': 'Cholamandalam MS General Insurance', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 6122206.2, 'Sales Document Item': 20, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025332, 'Material': 'DH-EX-IIIF', 'Target Quantity': 5268, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31006, 'Sold-To Party Name': 'Cholamandalam MS General Insurance', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 2730115.85, 'Sales Document Item': 60, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025332, 'Material': 'PH-IIIF', 'Target Quantity': 2891, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31006, 'Sold-To Party Name': 'Cholamandalam MS General Insurance', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 4256185.45, 'Sales Document Item': 80, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025332, 'Material': 'PH-IVF', 'Target Quantity': 4507, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31006, 'Sold-To Party Name': 'Cholamandalam MS General Insurance', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 13568101.14, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025332, 'Material': 'DH-IIF', 'Target Quantity': 11675, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31006, 'Sold-To Party Name': 'Cholamandalam MS General Insurance', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 3399660.0, 'Sales Document Item': 120, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': 40025332, 'Material': 'PH-IF-D', 'Target Quantity': 3600, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 31006, 'Sold-To Party Name': 'Cholamandalam MS General Insurance', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-03-01', 'Document Currency': 'INR', 'Net Value (Item)': 2814434.26, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-03-28', 'Sales document': 40025408, 'Material': 'CUDD-GODO', 'Target Quantity': 37297, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 812158, 'Sold-To Party Name': 'COROMANDEL INTERNATIONAL LIMITED', 'Pricing Unit': 'FT2', 'Net Price': 6.86, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-02-28', 'Contract Start Date': '2024-04-01', 'Document Currency': 'INR', 'Net Value (Item)': 297000.0, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-04-17', 'Sales document': 40025497, 'Material': 'DH-C-TOWE', 'Target Quantity': 1, 'Valid-To Date': '2025-02-28', 'Sold-To Party': 277306, 'Sold-To Party Name': 'RELIANCE JIO INFOCOM LTD.,', 'Pricing Unit': 'PU', 'Net Price': 27000.0, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-06-01', 'Document Currency': 'INR', 'Net Value (Item)': 42260.0, 'Sales Document Item': 20, 'Customer Reference': 'RENTAL', 'Document Date': '2024-06-24', 'Sales document': 40025940, 'Material': 'DH-GF-LOBB', 'Target Quantity': 50, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 32254, 'Sold-To Party Name': 'Cholamandalam MS Risk Services Limited', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-06-01', 'Document Currency': 'INR', 'Net Value (Item)': 947468.88, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-06-24', 'Sales document': 40025940, 'Material': 'DH-GF', 'Target Quantity': 1121, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 32254, 'Sold-To Party Name': 'Cholamandalam MS Risk Services Limited', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-06-01', 'Document Currency': 'INR', 'Net Value (Item)': 271972.72, 'Sales Document Item': 30, 'Customer Reference': 'RENTAL', 'Document Date': '2024-06-24', 'Sales document': 40025940, 'Material': 'PH-IF-D', 'Target Quantity': 396, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 32254, 'Sold-To Party Name': 'Cholamandalam MS Risk Services Limited', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-06-01', 'Document Currency': 'INR', 'Net Value (Item)': 6107711.76, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-06-24', 'Sales document': 40025941, 'Material': 'PH-IIF', 'Target Quantity': 8893, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 32254, 'Sold-To Party Name': 'Cholamandalam MS Risk Services Limited', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-01-31', 'Contract Start Date': '2024-06-01', 'Document Currency': 'INR', 'Net Value (Item)': 803555.92, 'Sales Document Item': 20, 'Customer Reference': 'RENTAL', 'Document Date': '2024-06-24', 'Sales document': 40025941, 'Material': 'PH-IF-D', 'Target Quantity': 1170, 'Valid-To Date': '2025-01-31', 'Sold-To Party': 32254, 'Sold-To Party Name': 'Cholamandalam MS Risk Services Limited', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'ESHFFI03', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-11-01', 'Document Currency': 'INR', 'Net Value (Item)': 938738.35, 'Sales Document Item': 20, 'Customer Reference': 'PH-VF &amp; PH-1F', 'Document Date': '2024-11-28', 'Sales document': 40026186, 'Material': 'PH-IF-D', 'Target Quantity': 1170, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 10333, 'Sold-To Party Name': 'AMBADI ENTERPRISES LTD', 'Pricing Unit': 'FT2', 'Net Price': 72.94, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-11-01', 'Document Currency': 'INR', 'Net Value (Item)': 8398109.17, 'Sales Document Item': 10, 'Customer Reference': 'PH-VF &amp; PH-1F', 'Document Date': '2024-11-28', 'Sales document': 40026186, 'Material': 'PH-IIF', 'Target Quantity': 8893, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 10333, 'Sold-To Party Name': 'AMBADI ENTERPRISES LTD', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-11-01', 'Document Currency': 'INR', 'Net Value (Item)': 944350.0, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-11-28', 'Sales document': 40026189, 'Material': 'PH-IF-D', 'Target Quantity': 1000, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 32254, 'Sold-To Party Name': 'Cholamandalam MS Risk Services Limited', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-11-01', 'Document Currency': 'INR', 'Net Value (Item)': 944350.0, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-11-28', 'Sales document': 40026190, 'Material': 'PH-IF-D', 'Target Quantity': 1000, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 32254, 'Sold-To Party Name': 'Cholamandalam MS Risk Services Limited', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-11-01', 'Document Currency': 'INR', 'Net Value (Item)': 13563000.0, 'Sales Document Item': 20, 'Customer Reference': 'RENTAL', 'Document Date': '2024-11-28', 'Sales document': 40026190, 'Material': 'DH-IVF', 'Target Quantity': 1233, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 32254, 'Sold-To Party Name': 'Cholamandalam MS Risk Services Limited', 'Pricing Unit': 'FT2', 'Net Price': 1000.0, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-11-01', 'Document Currency': 'INR', 'Net Value (Item)': 62316221.44, 'Sales Document Item': 10, 'Customer Reference': 'Rental', 'Document Date': '2024-11-28', 'Sales document': 40026191, 'Material': 'DH-IVF', 'Target Quantity': 1889, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 10333, 'Sold-To Party Name': 'AMBADI ENTERPRISES LTD', 'Pricing Unit': 'FT2', 'Net Price': 2999.0, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-11-01', 'Document Currency': 'INR', 'Net Value (Item)': 23744292.22, 'Sales Document Item': 20, 'Customer Reference': 'Rental', 'Document Date': '2024-11-28', 'Sales document': 40026191, 'Material': 'PH-IVF', 'Target Quantity': 1781, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 10333, 'Sold-To Party Name': 'AMBADI ENTERPRISES LTD', 'Pricing Unit': 'FT2', 'Net Price': 1212.0, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-11-01', 'Document Currency': 'INR', 'Net Value (Item)': 988480.02, 'Sales Document Item': 10, 'Customer Reference': 'Rental', 'Document Date': '2024-11-28', 'Sales document': 40026192, 'Material': 'PH-VF', 'Target Quantity': 1232, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 10333, 'Sold-To Party Name': 'AMBADI ENTERPRISES LTD', 'Pricing Unit': 'FT2', 'Net Price': 72.94, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-11-01', 'Document Currency': 'INR', 'Net Value (Item)': 16844.08, 'Sales Document Item': 10, 'Customer Reference': 'Rental', 'Document Date': '2024-11-28', 'Sales document': 40026193, 'Material': 'PH-VF', 'Target Quantity': 21, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 10333, 'Sold-To Party Name': 'AMBADI ENTERPRISES LTD', 'Pricing Unit': 'FT2', 'Net Price': 72.92, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-11-01', 'Document Currency': 'INR', 'Net Value (Item)': 8398109.28, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-11-28', 'Sales document': 40026194, 'Material': 'PH-IIF', 'Target Quantity': 8893, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 32254, 'Sold-To Party Name': 'Cholamandalam MS Risk Services Limited', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-11-01', 'Document Currency': 'INR', 'Net Value (Item)': 8398109.28, 'Sales Document Item': 10, 'Customer Reference': nan, 'Document Date': '2024-11-28', 'Sales document': 40026195, 'Material': 'PH-IIF', 'Target Quantity': 8893, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 32254, 'Sold-To Party Name': 'Cholamandalam MS Risk Services Limited', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-11-01', 'Document Currency': 'INR', 'Net Value (Item)': 13572.13, 'Sales Document Item': 30, 'Customer Reference': 'Demo - Rental Contract', 'Document Date': '2024-11-28', 'Sales document': 40026196, 'Material': 'PH-IVF', 'Target Quantity': 1, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 10333, 'Sold-To Party Name': 'AMBADI ENTERPRISES LTD', 'Pricing Unit': 'FT2', 'Net Price': 1233.83, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-11-01', 'Document Currency': 'INR', 'Net Value (Item)': 802.23, 'Sales Document Item': 10, 'Customer Reference': 'Demo - Rental Contract', 'Document Date': '2024-11-28', 'Sales document': 40026196, 'Material': 'PH-IF-D', 'Target Quantity': 1, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 10333, 'Sold-To Party Name': 'AMBADI ENTERPRISES LTD', 'Pricing Unit': 'FT2', 'Net Price': 72.93, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-10-01', 'Document Currency': 'INR', 'Net Value (Item)': 206041.32, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-11-28', 'Sales document': 40026197, 'Material': 'PH-IF-D', 'Target Quantity': 200, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 809181, 'Sold-To Party Name': 'MURUGAPPA MANAGEMENT SERVICES', 'Pricing Unit': 'FT2', 'Net Price': 85.85, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-10-01', 'Document Currency': 'INR', 'Net Value (Item)': 380342.28, 'Sales Document Item': 20, 'Customer Reference': 'RENTAL', 'Document Date': '2024-11-28', 'Sales document': 40026197, 'Material': 'DH-VF', 'Target Quantity': 300, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 809181, 'Sold-To Party Name': 'MURUGAPPA MANAGEMENT SERVICES', 'Pricing Unit': 'FT2', 'Net Price': 105.65, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-10-01', 'Document Currency': 'INR', 'Net Value (Item)': 1030.32, 'Sales Document Item': 10, 'Customer Reference': 'RENTAL', 'Document Date': '2024-11-28', 'Sales document': 40026198, 'Material': 'PH-IF-D', 'Target Quantity': 1, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 809181, 'Sold-To Party Name': 'MURUGAPPA MANAGEMENT SERVICES', 'Pricing Unit': 'FT2', 'Net Price': 85.86, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}, {'Contract End Date': '2025-10-31', 'Contract Start Date': '2024-10-01', 'Document Currency': 'INR', 'Net Value (Item)': 1267.92, 'Sales Document Item': 20, 'Customer Reference': 'RENTAL', 'Document Date': '2024-11-28', 'Sales document': 40026198, 'Material': 'DH-IVF', 'Target Quantity': 1, 'Valid-To Date': '2025-10-31', 'Sold-To Party': 809181, 'Sold-To Party Name': 'MURUGAPPA MANAGEMENT SERVICES', 'Pricing Unit': 'FT2', 'Net Price': 105.66, 'Plant': 'EHO', 'Created by': 'BCSSUPPORT1', 'Division': 'FI', 'Distribution Channel': 'FI', 'Sales Document Type': 'SUG Rental contract'}]
+      </msg>
+      <status endtime="20241202 12:37:45.278" starttime="20241202 12:37:45.278" status="PASS"/>
      </kw>
-     <kw library="SAP_Tcode_Library" name="Click Element">
+     <kw library="BuiltIn" name="Log To Console">
       <arg>
-       element_id=wnd[1]/tbar[0]/btn[37]
+       **gbStart**copilot_Sales_Document_status**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
       </arg>
       <doc>
-       Performs a single click on a given element. Used only for buttons, tabs and menu items.
+       Logs the given message to the console.
       </doc>
-      <status endtime="20241129 15:00:24.086" starttime="20241129 15:00:23.738" status="PASS"/>
+      <status endtime="20241202 12:37:45.278" starttime="20241202 12:37:45.278" status="PASS"/>
+     </kw>
+     <kw library="BuiltIn" name="Log To Console">
+      <arg>
+       ${json}
+      </arg>
+      <doc>
+       Logs the given message to the console.
+      </doc>
+      <status endtime="20241202 12:37:45.278" starttime="20241202 12:37:45.278" status="PASS"/>
      </kw>
      <kw library="BuiltIn" name="Sleep">
       <arg>
-       time_=0.4 seconds
+       0.5
       </arg>
       <doc>
        Pauses the test executed for the given time.
       </doc>
-      <msg level="INFO" timestamp="20241129 15:00:24.486">
-       Slept 400 milliseconds
+      <msg level="INFO" timestamp="20241202 12:37:45.779">
+       Slept 500 milliseconds
       </msg>
-      <status endtime="20241129 15:00:24.486" starttime="20241129 15:00:24.086" status="PASS"/>
+      <status endtime="20241202 12:37:45.779" starttime="20241202 12:37:45.278" status="PASS"/>
      </kw>
-     <kw library="SAP_Tcode_Library" name="Unselect Checkbox">
-      <arg>
-       element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/4[0,4]/chk[1,4]
-      </arg>
-      <doc>
-       Removes selection of checkbox identified by locator.
-Does nothing if the checkbox is not selected.
-      </doc>
-      <status endtime="20241129 15:00:24.486" starttime="20241129 15:00:24.486" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Unselect Checkbox">
-      <arg>
-       element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/5[0,5]/chk[1,5]
-      </arg>
-      <doc>
-       Removes selection of checkbox identified by locator.
-Does nothing if the checkbox is not selected.
-      </doc>
-      <status endtime="20241129 15:00:24.502" starttime="20241129 15:00:24.486" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Unselect Checkbox">
-      <arg>
-       element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/6[0,6]/chk[1,6]
-      </arg>
-      <doc>
-       Removes selection of checkbox identified by locator.
-Does nothing if the checkbox is not selected.
-      </doc>
-      <status endtime="20241129 15:00:24.502" starttime="20241129 15:00:24.502" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Click Element">
-      <arg>
-       element_id=wnd[2]/tbar[0]/btn[0]
-      </arg>
-      <doc>
-       Performs a single click on a given element. Used only for buttons, tabs and menu items.
-      </doc>
-      <status endtime="20241129 15:00:24.889" starttime="20241129 15:00:24.502" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Click Element">
-      <arg>
-       element_id=wnd[2]/tbar[0]/btn[8]
-      </arg>
-      <doc>
-       Performs a single click on a given element. Used only for buttons, tabs and menu items.
-      </doc>
-      <status endtime="20241129 15:00:25.460" starttime="20241129 15:00:24.889" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Click Element">
-      <arg>
-       element_id=wnd[0]/mbar/menu[0]/menu[0]
-      </arg>
-      <doc>
-       Performs a single click on a given element. Used only for buttons, tabs and menu items.
-      </doc>
-      <status endtime="20241129 15:00:25.638" starttime="20241129 15:00:25.460" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Get Value">
-      <var>
-       ${spool_value}
-      </var>
-      <arg>
-       element_id=wnd[0]/sbar/pane[0]
-      </arg>
-      <doc>
-       Gets the value of the given element. The possible return values depend on the type of element (see Return values).
-      </doc>
-      <msg level="INFO" timestamp="20241129 15:00:25.692">
-       ${spool_value} = Spool request (number 19,478) created.
-      </msg>
-      <status endtime="20241129 15:00:25.692" starttime="20241129 15:00:25.638" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Extract Numeric">
-      <var>
-       ${spool_id}
-      </var>
-      <arg>
-       data=${spool_value}
-      </arg>
-      <msg level="INFO" timestamp="20241129 15:00:25.692">
-       ${spool_id} = 19478
-      </msg>
-      <status endtime="20241129 15:00:25.692" starttime="20241129 15:00:25.692" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Run Transaction">
-      <arg>
-       transaction=/nex
-      </arg>
-      <doc>
-       Runs a Sap transaction. An error is given when an unknown transaction is specified.
-      </doc>
-      <status endtime="20241129 15:00:26.008" starttime="20241129 15:00:25.692" status="PASS"/>
-     </kw>
-     <kw library="create_rental_invoice" name="System Logon">
-      <kw library="Process" name="Start Process">
-       <arg>
-        ${symvar('SAP_SERVER')}
-       </arg>
-       <doc>
-        Starts a new process on background.
-       </doc>
-       <msg level="INFO" timestamp="20241129 15:00:26.008">
-        Sym.Dev.SAP_SERVER: C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe
-       </msg>
-       <msg level="INFO" timestamp="20241129 15:00:26.008">
-        Starting process:
-"C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe"
-       </msg>
-       <status endtime="20241129 15:00:26.024" starttime="20241129 15:00:26.008" status="PASS"/>
-      </kw>
-      <kw library="SAP_Tcode_Library" name="Connect To Session">
-       <doc>
-        Connects to an open session SAP.
-       </doc>
-       <status endtime="20241129 15:00:26.140" starttime="20241129 15:00:26.024" status="PASS"/>
-      </kw>
-      <kw library="SAP_Tcode_Library" name="Open Connection">
-       <arg>
-        ${symvar('Rental_Connection')}
-       </arg>
-       <doc>
-        Opens a connection to the given connection name. Be sure to provide the full connection name, including the bracket part.
-       </doc>
-       <msg level="INFO" timestamp="20241129 15:00:26.140">
-        Sym.Dev.Rental_Connection: EID sandbox
-       </msg>
-       <status endtime="20241129 15:00:26.852" starttime="20241129 15:00:26.140" status="PASS"/>
-      </kw>
-      <kw library="SAP_Tcode_Library" name="Input Text">
-       <arg>
-        wnd[0]/usr/txtRSYST-MANDT
-       </arg>
-       <arg>
-        ${symvar('Rental_Client')}
-       </arg>
-       <doc>
-        Inserts the given text into the text field identified by locator.
-Use keyword `input password` to insert a password in a text field.
-       </doc>
-       <msg level="INFO" timestamp="20241129 15:00:26.867">
-        Sym.Dev.Rental_Client: 900
-       </msg>
-       <msg level="INFO" timestamp="20241129 15:00:26.890">
-        Typing text '900' into text field 'wnd[0]/usr/txtRSYST-MANDT'.
-       </msg>
-       <status endtime="20241129 15:00:26.890" starttime="20241129 15:00:26.852" status="PASS"/>
-      </kw>
-      <kw library="SAP_Tcode_Library" name="Input Text">
-       <arg>
-        wnd[0]/usr/txtRSYST-BNAME
-       </arg>
-       <arg>
-        ${symvar('Rental_User')}
-       </arg>
-       <doc>
-        Inserts the given text into the text field identified by locator.
-Use keyword `input password` to insert a password in a text field.
-       </doc>
-       <msg level="INFO" timestamp="20241129 15:00:26.890">
-        Sym.Dev.Rental_User: bcssupport1
-       </msg>
-       <msg level="INFO" timestamp="20241129 15:00:26.905">
-        Typing text 'bcssupport1' into text field 'wnd[0]/usr/txtRSYST-BNAME'.
-       </msg>
-       <status endtime="20241129 15:00:26.905" starttime="20241129 15:00:26.890" status="PASS"/>
-      </kw>
-      <kw library="SAP_Tcode_Library" name="Input Password">
-       <arg>
-        wnd[0]/usr/pwdRSYST-BCODE
-       </arg>
-       <arg>
-        %{RENTAL_PASSWORD}
-       </arg>
-       <doc>
-        Inserts the given password into the text field identified by locator.
-The password is not recorded in the log.
-       </doc>
-       <msg level="INFO" timestamp="20241129 15:00:26.921">
-        Typing password into text field 'wnd[0]/usr/pwdRSYST-BCODE'.
-       </msg>
-       <status endtime="20241129 15:00:26.921" starttime="20241129 15:00:26.905" status="PASS"/>
-      </kw>
-      <kw library="SAP_Tcode_Library" name="Send Vkey">
-       <arg>
-        0
-       </arg>
-       <doc>
-        Sends a SAP virtual key combination to the window, not into an element.
-If you want to send a value to a text field, use `input text` instead.
-       </doc>
-       <status endtime="20241129 15:00:27.391" starttime="20241129 15:00:26.921" status="PASS"/>
-      </kw>
-      <kw library="SAP_Tcode_Library" name="Multiple Logon Handling">
-       <arg>
-        wnd[1]
-       </arg>
-       <arg>
-        wnd[1]/usr/radMULTI_LOGON_OPT2
-       </arg>
-       <arg>
-        wnd[1]/tbar[0]/btn[0]
-       </arg>
-       <status endtime="20241129 15:00:27.438" starttime="20241129 15:00:27.391" status="PASS"/>
-      </kw>
-      <status endtime="20241129 15:00:27.438" starttime="20241129 15:00:26.008" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Run Transaction">
-      <arg>
-       transaction=/nZPDF
-      </arg>
-      <doc>
-       Runs a Sap transaction. An error is given when an unknown transaction is specified.
-      </doc>
-      <status endtime="20241129 15:00:27.608" starttime="20241129 15:00:27.438" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Input Text">
-      <arg>
-       element_id=wnd[0]/usr/txtSPOOLNO
-      </arg>
-      <arg>
-       text=${spool_id}
-      </arg>
-      <doc>
-       Inserts the given text into the text field identified by locator.
-Use keyword `input password` to insert a password in a text field.
-      </doc>
-      <msg level="INFO" timestamp="20241129 15:00:27.623">
-       Typing text '19478' into text field 'wnd[0]/usr/txtSPOOLNO'.
-      </msg>
-      <status endtime="20241129 15:00:27.623" starttime="20241129 15:00:27.608" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Click Element">
-      <arg>
-       element_id=wnd[0]/tbar[1]/btn[8]
-      </arg>
-      <doc>
-       Performs a single click on a given element. Used only for buttons, tabs and menu items.
-      </doc>
-      <status endtime="20241129 15:00:28.140" starttime="20241129 15:00:27.623" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Input Text">
-      <arg>
-       element_id=wnd[1]/usr/ctxtDY_PATH
-      </arg>
-      <arg>
-       text=${EMPTY}
-      </arg>
-      <doc>
-       Inserts the given text into the text field identified by locator.
-Use keyword `input password` to insert a password in a text field.
-      </doc>
-      <msg level="INFO" timestamp="20241129 15:00:28.156">
-       Typing text '' into text field 'wnd[1]/usr/ctxtDY_PATH'.
-      </msg>
-      <status endtime="20241129 15:00:28.156" starttime="20241129 15:00:28.140" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Input Text">
-      <arg>
-       element_id=wnd[1]/usr/ctxtDY_FILENAME
-      </arg>
-      <arg>
-       text=${EMPTY}
-      </arg>
-      <doc>
-       Inserts the given text into the text field identified by locator.
-Use keyword `input password` to insert a password in a text field.
-      </doc>
-      <msg level="INFO" timestamp="20241129 15:00:28.178">
-       Typing text '' into text field 'wnd[1]/usr/ctxtDY_FILENAME'.
-      </msg>
-      <status endtime="20241129 15:00:28.178" starttime="20241129 15:00:28.156" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Input Text">
-      <arg>
-       element_id=wnd[1]/usr/ctxtDY_PATH
-      </arg>
-      <arg>
-       text=C:\\TEMP\\
-      </arg>
-      <doc>
-       Inserts the given text into the text field identified by locator.
-Use keyword `input password` to insert a password in a text field.
-      </doc>
-      <msg level="INFO" timestamp="20241129 15:00:28.178">
-       Typing text 'C:\TEMP\' into text field 'wnd[1]/usr/ctxtDY_PATH'.
-      </msg>
-      <status endtime="20241129 15:00:28.178" starttime="20241129 15:00:28.178" status="PASS"/>
-     </kw>
-     <kw library="DateTime" name="Get Current Date">
-      <var>
-       ${Month}
-      </var>
-      <arg>
-       result_format=%B
-      </arg>
-      <doc>
-       Returns current local or UTC time with an optional increment.
-      </doc>
-      <msg level="INFO" timestamp="20241129 15:00:28.178">
-       ${Month} = November
-      </msg>
-      <status endtime="20241129 15:00:28.178" starttime="20241129 15:00:28.178" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Input Text">
-      <arg>
-       element_id=wnd[1]/usr/ctxtDY_FILENAME
-      </arg>
-      <arg>
-       text=invo${Month}.pdf
-      </arg>
-      <doc>
-       Inserts the given text into the text field identified by locator.
-Use keyword `input password` to insert a password in a text field.
-      </doc>
-      <msg level="INFO" timestamp="20241129 15:00:28.194">
-       Typing text 'invoNovember.pdf' into text field 'wnd[1]/usr/ctxtDY_FILENAME'.
-      </msg>
-      <status endtime="20241129 15:00:28.194" starttime="20241129 15:00:28.178" status="PASS"/>
-     </kw>
-     <kw library="SAP_Tcode_Library" name="Click Element">
-      <arg>
-       element_id=wnd[1]/tbar[0]/btn[0]
-      </arg>
-      <doc>
-       Performs a single click on a given element. Used only for buttons, tabs and menu items.
-      </doc>
-      <status endtime="20241129 15:00:28.495" starttime="20241129 15:00:28.194" status="PASS"/>
-     </kw>
-     <status endtime="20241129 15:00:28.495" starttime="20241129 15:00:23.267" status="PASS"/>
+     <status endtime="20241202 12:37:45.779" starttime="20241202 12:37:45.163" status="PASS"/>
     </kw>
     <tag>
      Regression
     </tag>
     <tag>
-     VF01
+     VA45
     </tag>
-    <status endtime="20241129 15:00:28.495" starttime="20241129 15:00:23.267" status="PASS"/>
+    <status endtime="20241202 12:37:45.779" starttime="20241202 12:37:45.163" status="PASS"/>
    </test>
-   <status endtime="20241129 15:00:28.495" starttime="20241129 15:00:20.880" status="PASS"/>
+   <status endtime="20241202 12:37:45.779" starttime="20241202 12:37:44.460" status="PASS"/>
   </suite>
   <doc>
    Testing functionality through Robot Framework
@@ -1082,7 +652,7 @@ Use keyword `input password` to insert a password in a text field.
   <meta name="test_freeze_dependencies">
    astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0
   </meta>
-  <status endtime="20241129 15:00:28.680" starttime="20241129 15:00:15.788" status="PASS"/>
+  <status endtime="20241202 12:37:45.895" starttime="20241202 12:37:39.224" status="PASS"/>
  </suite>
  <statistics>
   <total>
@@ -1095,15 +665,15 @@ Use keyword `input password` to insert a password in a text field.
     Regression
    </stat>
    <stat fail="0" pass="1" skip="0">
-    VF01
+    VA45
    </stat>
   </tag>
   <suite>
    <stat fail="0" id="s1" name="Tests" pass="1" skip="0">
     Tests
    </stat>
-   <stat fail="0" id="s1-s1" name="Test Create Rental Invoice" pass="1" skip="0">
-    Tests.Test Create Rental Invoice
+   <stat fail="0" id="s1-s1" name="Test VA45" pass="1" skip="0">
+    Tests.Test VA45
    </stat>
   </suite>
  </statistics>
