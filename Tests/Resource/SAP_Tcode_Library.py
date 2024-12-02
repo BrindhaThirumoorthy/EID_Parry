@@ -1354,16 +1354,22 @@ class SAP_Tcode_Library:
         self.session.findById(element_id).text = ""
     
     def select_layout(self, table_id, variant):
-        table = self.session.findById(table_id)
-        row = table.RowCount
-        print(row)
-        for i in range(row):
-            layout_value = table.GetCellValue(i, "TEXT")
-            if layout_value == variant:
-                table.selectedRows = str(i)
-                break
-        if layout_value != variant:
-            print("No row with 'TEXT' value 'header' found.")
+        try:
+            table = self.session.findById(table_id)
+            row_count = table.RowCount
+            for i in range(row_count):
+                layout_value = table.GetCellValue(i, "TEXT")
+                if layout_value == variant:
+                    table.selectedRows = str(i)
+                    # Perform a click or double-click on the current cell
+                    table.clickCurrentCell()
+                    # Alternatively, for a double-click:
+                    table.doubleClickCurrentCell()
+                    return  # Exit the method after selecting and clicking
+            print(f"No row with 'TEXT' value '{variant}' found.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
 
     def excel_to_json(self, excel_file, json_file):
         # Read the Excel file
@@ -1490,3 +1496,19 @@ class SAP_Tcode_Library:
         with open(json_file, 'r', encoding='utf-8') as f:
             json_data = json.load(f)
         return json_data
+    
+    def extract_dates(self,DateContent):
+        data = json.loads(DateContent)
+        start_date = data.get("startDate")
+        end_date = data.get("endDate")
+        return start_date, end_date
+    
+    def select_layout_two(self, table_id, row_num, column_id):
+        try:
+            table = self.session.findById(table_id)
+            table.currentCellRow = row_num
+            cell_value = table.GetCellValue(row_num, column_id)
+            table.clickCurrentCell()
+            return cell_value
+        except Exception as e:
+            return "FAIL"

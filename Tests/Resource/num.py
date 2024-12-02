@@ -23,25 +23,41 @@ import pandas as pd
 # file_path = "C:\\TEMP\\rental.xlsx"
 # column = "H"
 # number_to_string(file_path, column)
-import  json
-import pandas as pd
-import json
+# import  json
+# import pandas as pd
+# import json
 
-def excel_to_json_new(excel_file, json_file):
-    df = pd.read_excel(excel_file, engine='openpyxl')
-    for column in df.select_dtypes(['datetime']):
-        df[column] = df[column].astype(str)
-    for column in df.columns:
-        if df[column].dtype == 'object': 
-            df[column] = df[column].str.strip('"') 
+# def excel_to_json_new(excel_file, json_file):
+#     df = pd.read_excel(excel_file, engine='openpyxl')
+#     for column in df.select_dtypes(['datetime']):
+#         df[column] = df[column].astype(str)
+#     for column in df.columns:
+#         if df[column].dtype == 'object': 
+#             df[column] = df[column].str.strip('"') 
     
-    data = df.to_dict(orient='records')
-    with open(json_file, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
-    with open(json_file, 'r', encoding='utf-8') as f:
-        json_data = json.load(f)
-    return json_data
+#     data = df.to_dict(orient='records')
+#     with open(json_file, 'w', encoding='utf-8') as f:
+#         json.dump(data, f, ensure_ascii=False, indent=4)
+#     with open(json_file, 'r', encoding='utf-8') as f:
+#         json_data = json.load(f)
+#     return json_data
 
-excel_file = "C:\\TEMP\\rental.xlsx"
-json_file = "C:\\TEMP\\final.json"
-excel_to_json_new(excel_file,json_file)
+# excel_file = "C:\\TEMP\\rental.xlsx"
+# json_file = "C:\\TEMP\\final.json"
+# excel_to_json_new(excel_file,json_file)
+
+import json
+ 
+def extract_dates(json_string):
+    data = json.loads(json_string)
+    start_date = data.get("startDate")
+    end_date = data.get("endDate")
+    return start_date, end_date
+ 
+# Example usage
+json_string = "{ \"startDate\": \"01.09.2024\", \"endDate\": \"30.11.2024\" }"
+start_date, end_date = extract_dates(json_string)
+print("Start Date:", start_date)
+print("End Date:", end_date)
+ 
+ 

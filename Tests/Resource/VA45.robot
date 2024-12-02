@@ -22,20 +22,34 @@ System Logon
 System Logout
     Run Transaction   /nex
 Rental Document
+    ${lod}    Extract Dates    DateContent=${symvar('DateContent')}
     Run Transaction     /nVA45
     Sleep   1
     Input Text      wnd[0]/usr/ctxtSAUART-LOW   ZMV
     # ${date}    Get Current Date    result_format=%Y
     # Log To Console      ${date}
-    Input Text      wnd[0]/usr/ctxtSVALID-LOW   ${symvar('Rental_Start_Date')}
-    Input Text      wnd[0]/usr/ctxtSVALID-HIGH  ${symvar('Rental_End_Date')}
+    Input Text      wnd[0]/usr/ctxtSVALID-LOW   ${lod}[0]
+    Input Text      wnd[0]/usr/ctxtSVALID-HIGH  ${lod}[1]
     Select Radio Button     wnd[0]/usr/radPVBOFF
     Click Element   wnd[0]/tbar[1]/btn[8]
 
 
     Click Element   wnd[0]/tbar[1]/btn[33]
-    Select Layout   wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell  Contracts - Header
+    ${range}    Get Row Count    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell
+    ${text}    Get Length    item=${symvar('Layout')}
+    FOR    ${i}    IN RANGE    0    ${text}
+        ${value}    Set Variable    ${symvar('Layout')}[${i}]
+        FOR    ${lp}    IN RANGE    0    ${range}
+            ${one}    Get Sap Table Value    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell    row_num=${lp}    column_id=TEXT
+            IF    '${value}' == '${one}'
+                Select Layout Two    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell    row_num=${lp}    column_id=TEXT
+            END
+        END  
+    END
     Click Element   wnd[1]/tbar[0]/btn[0]
+    # Select Layout   wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell  Contracts - Header
+    # Sleep    5
+    # Click Element   wnd[1]/tbar[0]/btn[0]
 
     Click Element   wnd[0]/tbar[1]/btn[32]
     ${row_count_one}    Get Row Count    table_id=wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell
