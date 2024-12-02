@@ -5,10 +5,10 @@ Library    String
 Library    SAP_Tcode_Library.py
 Library     DateTime
 *** Variables ***
-${rental_date}  26.11.2024
-${Text}     Rent for the month of November 2024.
-${rental_text}  wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE/ssubSUBSCREEN_BODY:SAPLV70T:2100/cntlSPLITTER_CONTAINER/shellcont/shellcont/shell/shellcont[1]/shell
-${rental_form}  wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE/ssubSUBSCREEN_BODY:SAPLV70T:2100/cntlSPLITTER_CONTAINER/shellcont/shellcont/shell/shellcont[0]/shell
+# ${rental_date}  26.11.2024
+# ${Text}     Rent for the month of November 2024.
+# ${rental_text}  wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE/ssubSUBSCREEN_BODY:SAPLV70T:2100/cntlSPLITTER_CONTAINER/shellcont/shellcont/shell/shellcont[1]/shell
+# ${rental_form}  wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE/ssubSUBSCREEN_BODY:SAPLV70T:2100/cntlSPLITTER_CONTAINER/shellcont/shellcont/shell/shellcont[0]/shell
 *** Keywords *** 
 System Logon
     Start Process    ${symvar('SAP_SERVER')}
@@ -23,10 +23,12 @@ System Logon
 System Logout
     Run Transaction   /nex
 Release Block
-    FOR     ${contract}     IN     @{symvar('documents')}
-        Set Global Variable     ${contract}
+    # FOR     ${contract}     IN     @{symvar('documents')}
+    #     Set Global Variable     ${contract}
         Run Transaction     /nVA42
-        Input Text  wnd[0]/usr/ctxtVBAK-VBELN   ${contract}
+        Log    message=${symvar('documents')}
+        Log To Console    message=${symvar('documents')}
+        Input Text  wnd[0]/usr/ctxtVBAK-VBELN   ${symvar('documents')}
         Send Vkey    0
         Sleep   1
         Click Element   wnd[0]/usr/subSUBSCREEN_HEADER:SAPMV45A:4021/btnBT_HEAD
@@ -45,7 +47,7 @@ Release Block
                 Exit For Loop
             END
         END
-    END
+    # END
 
 Process rental invoice
     Send Vkey    2
