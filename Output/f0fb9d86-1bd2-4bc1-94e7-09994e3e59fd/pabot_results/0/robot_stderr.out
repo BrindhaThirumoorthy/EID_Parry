@@ -1,0 +1,22 @@
+[ ERROR ] Processing variable file 'C:\EID_Replay\EID_Parry\Execution\Access_Data.py' failed: Importing variable file 'C:\EID_Replay\EID_Parry\Execution\Access_Data.py' failed: SyntaxError: unexpected character after line continuation character (rental.py, line 7)
+Traceback (most recent call last):
+  File "C:\EID_Replay\EID_Parry\Execution\Access_Data.py", line 15, in <module>
+    import Data.Symphony as Sym
+  File "C:\EID_Replay\EID_Parry\Data\Symphony\__init__.py", line 1, in <module>
+    from . import Dev
+  File "C:\EID_Replay\EID_Parry\Data\Symphony\Dev\__init__.py", line 1, in <module>
+    from .rental import *
+PYTHONPATH:
+  C:\EID_Replay\EID_Parry\Execution
+  C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\robot.exe
+  C:\Users\pimeidinfra\AppData\Local\Programs\Python\Python312\python312.zip
+  C:\Users\pimeidinfra\AppData\Local\Programs\Python\Python312\DLLs
+  C:\Users\pimeidinfra\AppData\Local\Programs\Python\Python312\Lib
+  C:\Users\pimeidinfra\AppData\Local\Programs\Python\Python312
+  C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony
+  C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages
+  C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages\win32
+  C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages\win32\lib
+  C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages\Pythonwin
+  C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages\setuptools\_vendor
+  C:\EID_Replay\EID_Parry

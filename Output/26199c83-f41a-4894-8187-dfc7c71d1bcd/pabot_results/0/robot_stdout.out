@@ -1,0 +1,38 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\__init__.robot:3
+      Setup highest level suite    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\__init__.robot:10
+      Reset screenshot count variable    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Support.robot:53
+      Set up screenshot directory    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Support.robot:19
+      Create Directory    ${OUTPUTDIR}${/}${wvar('screenshot_dir')}
+      |  ${OUTPUTDIR}${/}${wvar('screenshot_dir')} = <Unable to define variable value>
+______________________________________________________________________________
+Tests.Test VA45                                                               
+==============================================================================
+Display the rental documents                                          | FAIL |
+Parent suite setup failed:
+Resolving variable '${wvar('screenshot_dir')}' failed: Variable '${wvar}' not found.
+------------------------------------------------------------------------------
+Tests.Test VA45                                                       | FAIL |
+Parent suite setup failed:
+Resolving variable '${wvar('screenshot_dir')}' failed: Variable '${wvar}' not found.
+
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+Suite setup failed:
+Resolving variable '${wvar('screenshot_dir')}' failed: Variable '${wvar}' not found.
+
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\26199c83-f41a-4894-8187-dfc7c71d1bcd\pabot_results\0\Output.xml
