@@ -1514,3 +1514,6 @@ class SAP_Tcode_Library:
             return cell_value
         except Exception as e:
             return "FAIL"
+    def list_to_json(self, key_value, list_value):
+        document_json = json.dumps({key_value:list_value})
+        return  document_json
