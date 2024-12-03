@@ -9,9 +9,10 @@ print(list_new, type(list_new))
 
 # list_value = list(list_value)
 
-document_json = [{"documents": f"{i}"} for i in list_new]
+document_body = [{"document":f"{i}"} for i in list_new]
 
-document_json = json.dumps(document_json)
+document_json = json.dumps(document_body, separators=(',',':'))
 
 print(f"##gbStart##document_json##splitKeyValue##{document_json}##splitKeyValue##object##gbEnd##")
+# print(f"##gbStart##document_json##splitKeyValue##{document_json}##gbEnd##")
 print("Script Processed Successfully")
