@@ -33,20 +33,6 @@ Rental Document
     Select Radio Button     wnd[0]/usr/radPVBOFF
     Click Element   wnd[0]/tbar[1]/btn[8]
 
-
-    Click Element   wnd[0]/tbar[1]/btn[33]
-    ${range}    Get Row Count    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell
-    ${text}    Get Length    item=${symvar('Layout')}
-    FOR    ${i}    IN RANGE    0    ${text}
-        ${value}    Set Variable    ${symvar('Layout')}[${i}]
-        FOR    ${lp}    IN RANGE    0    ${range}
-            ${one}    Get Sap Table Value    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell    row_num=${lp}    column_id=TEXT
-            IF    '${value}' == '${one}'
-                Select Layout Two    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell    row_num=${lp}    column_id=TEXT
-            END
-        END  
-    END
-    Sleep    10
     # Click Element   wnd[1]/tbar[0]/btn[0]
     # Select Layout   wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell  Contracts - Header
     # Sleep    5
@@ -66,6 +52,20 @@ Rental Document
         END
     END
     Click Element    element_id=wnd[1]/tbar[0]/btn[0]
+
+    Click Element   wnd[0]/tbar[1]/btn[33]
+    ${range}    Get Row Count    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell
+    ${text}    Get Length    item=${symvar('Layout')}
+    FOR    ${i}    IN RANGE    0    ${text}
+        ${value}    Set Variable    ${symvar('Layout')}[${i}]
+        FOR    ${lp}    IN RANGE    0    ${range}
+            ${one}    Get Sap Table Value    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell    row_num=${lp}    column_id=TEXT
+            IF    '${value}' == '${one}'
+                Select Layout Two    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell    row_num=${lp}    column_id=TEXT
+            END
+        END  
+    END
+    Sleep    10
 
     # Click Element   wnd[0]/tbar[1]/btn[45]
     # Select Radio Button     wnd[1]/usr/subSUBSCREEN_STEPLOOP:SAPLSPO5:0150/sub:SAPLSPO5:0150/radSPOPLI-SELFLAG[2,0]
