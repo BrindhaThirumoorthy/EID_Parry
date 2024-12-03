@@ -23,6 +23,7 @@ System Logon
 System Logout
     Run Transaction   /nex
 Release Block
+    ${date}    Extract Dates    json_string=${symvar('DateContent')}
     FOR     ${contract}     IN     @{symvar('documents')}
         Set Global Variable     ${contract}
         Run Transaction     /nVA42
@@ -40,7 +41,7 @@ Release Block
             ${is_visible}   Run Keyword And Return Status   Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
             Run Keyword If    "${is_visible}" == "False"    Exit For Loop
             ${date}     Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
-            IF  '${date}' == '${symvar('Rental_Start_Date')}'
+            IF  '${date}' == '${date}[0]'
                 Process rental invoice
                 Exit For Loop
             END
