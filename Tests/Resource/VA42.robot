@@ -24,10 +24,11 @@ System Logout
     Run Transaction   /nex
 Release Block
     ${date}    Extract Dates    json_string=${symvar('DateContent')}
-    FOR     ${contract}     IN     @{symvar('documents')}
-        Set Global Variable     ${contract}
+    ${Rental_Start_Date}    Set Variable    ${date}[0]
+    # FOR     ${contract}     IN     @{symvar('documents')}
+        # Set Global Variable     ${contract}
         Run Transaction     /nVA42
-        Input Text  wnd[0]/usr/ctxtVBAK-VBELN    text=${contract}
+        Input Text  wnd[0]/usr/ctxtVBAK-VBELN    text=${symvar('documents')}
         Send Vkey    0
         Sleep   1
         Click Element   wnd[0]/usr/subSUBSCREEN_HEADER:SAPMV45A:4021/btnBT_HEAD
@@ -41,12 +42,12 @@ Release Block
             ${is_visible}   Run Keyword And Return Status   Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
             Run Keyword If    "${is_visible}" == "False"    Exit For Loop
             ${date}     Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
-            IF  '${date}' == '${date}[0]'
+            IF  '${date}' == '${Rental_Start_Date}'
                 Process rental invoice
                 Exit For Loop
             END
         END
-    END
+    # END
 
 Process rental invoice
     Send Vkey    2

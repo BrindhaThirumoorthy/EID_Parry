@@ -23,18 +23,18 @@ System Logon
 System Logout
     Run Transaction   /nex
 Rental Invoice
-    FOR     ${contract}     IN     @{symvar('documents')}
-        Set Global Variable     ${contract}
+    # FOR     ${contract}     IN     @{symvar('documents')}
+    #     Set Global Variable     ${contract}
         Run Transaction     /nVF01
         Sleep   1
-        Input Text  wnd[0]/usr/tblSAPMV60ATCTRL_ERF_FAKT/ctxtKOMFK-VBELN[0,0]    text=${contract}
+        Input Text  wnd[0]/usr/tblSAPMV60ATCTRL_ERF_FAKT/ctxtKOMFK-VBELN[0,0]   ${symvar('documents')}
         ${current_date}     Get Current Date    result_format=%d.%m.%Y
         Input Text  wnd[0]/usr/ctxtRV60A-FKDAT  ${current_date}
         Send Vkey   0
         ${status}   Get Value   wnd[0]/sbar/pane[0]
         IF  '${status}' == 'No billing documents were generated. Please see log.'
             # Log To Console  For ${contract} ${status}
-            Log To Console  For ${contract} ${status}
+            Log To Console  For ${symvar('documents')} ${status}
         ELSE IF     '${status}' == '${EMPTY}'
             Sleep    time_=0.4 seconds
             Click Element   wnd[0]/usr/btnTC_HEAD
@@ -87,6 +87,6 @@ Rental Invoice
         ${Month}    Get Current Date    result_format=%B  
         Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=${invoice_doc}_${Month}.pdf
         Click Element    element_id=wnd[1]/tbar[0]/btn[0]
-    END
+    # END
 
   
