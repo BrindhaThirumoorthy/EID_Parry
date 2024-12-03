@@ -3,6 +3,7 @@ import sys
 
 # list_value = ["40025323","40025326","40025328","40025330"]
 list_value = sys.argv[1]
+print(list_value, type(list_value))
 list_val = [int(i) for i in list_value.split(",")]
 print(type(list_val))
 document_json = {"documents": []}
