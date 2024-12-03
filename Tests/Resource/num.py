@@ -49,13 +49,15 @@ import pandas as pd
 import json
  
 def extract_dates(json_string):
-    data = json.loads(json_string)
-    start_date = data.get("startDate")
-    end_date = data.get("endDate")
-    return start_date, end_date
+    date_list =[]
+    start_date = json_string["startDate"]
+    date_list.append(start_date)
+    end_date = json_string["endDate"]
+    date_list.append(end_date)
+    return date_list
  
 # Example usage
-json_string = "{ \"startDate\": \"01.09.2024\", \"endDate\": \"30.11.2024\" }"
+json_string = {"startDate":"01.11.2024","endDate":"30.11.2024"}
 start_date, end_date = extract_dates(json_string)
 print("Start Date:", start_date)
 print("End Date:", end_date)

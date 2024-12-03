@@ -1,0 +1,28 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test VA45                                                               
+==============================================================================
+Display the rental documents                                            
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Test_VA45.robot:9
+    T:  Display the rental documents    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Test_VA45.robot:10
+      Rental Document    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\VA45.robot:25
+      Extract Dates    DateContent=${symvar('DateContent')}
+      |  DateContent=${symvar('DateContent')} = DateContent={'startDate': '01.11.2024', 'endDate': '30.11.2024'} (str)
+______________________________________________________________________________
+| FAIL |
+TypeError: string indices must be integers, not 'str'
+------------------------------------------------------------------------------
+Tests.Test VA45                                                       | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\cbbb8450-03b6-4555-8dc9-8a1b693fcd69\pabot_results\0\Output.xml

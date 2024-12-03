@@ -1497,11 +1497,13 @@ class SAP_Tcode_Library:
             json_data = json.load(f)
         return json_data
     
-    def extract_dates(self,DateContent):
-        data = json.loads(DateContent)
-        start_date = data.get("startDate")
-        end_date = data.get("endDate")
-        return start_date, end_date
+    def extract_dates(self, json_string):
+        date_list =[]
+        start_date = json_string["startDate"]
+        date_list.append(start_date)
+        end_date = json_string["endDate"]
+        date_list.append(end_date)
+        return date_list
     
     def select_layout_two(self, table_id, row_num, column_id):
         try:
