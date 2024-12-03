@@ -57,10 +57,12 @@ Process rental invoice
         Click Element   wnd[0]/tbar[0]/btn[3]
         Click Element   wnd[0]/tbar[0]/btn[3]
         Click Element   wnd[0]/tbar[0]/btn[11]
+        Log To Console    message=**gbStart**copilot_status_block**splitKeyValue**${symvar('documents')} Block released successfully..**gbEnd**
     ELSE IF    '${block}' == ''
         Click Element   wnd[0]/tbar[0]/btn[3]
         Click Element   wnd[0]/tbar[0]/btn[3]
         Click Element   wnd[0]/tbar[0]/btn[11]
+                Log To Console    message=**gbStart**copilot_status_block**splitKeyValue**${symvar('documents')} Block already in released state...**gbEnd**
     END
     Run Keyword And Ignore Error    Click Element    wnd[1]/tbar[0]/btn[0]
     Sleep    time_=0.3 seconds

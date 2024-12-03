@@ -35,6 +35,10 @@ Rental Invoice
         IF  '${status}' == 'No billing documents were generated. Please see log.'
             # Log To Console  For ${contract} ${status}
             Log To Console  For ${symvar('documents')} ${status}
+            Click Element    element_id=wnd[0]/mbar/menu[1]/menu[3]
+            Click Element    element_id=wnd[0]/tbar[1]/btn[25]
+            ${error_log}    Get Value    element_id=wnd[0]/usr/sub/1[0,0]/sub/1/2[0,1]/sub/1/2/3[0,3]/lbl[19,3]
+            Log To Console    message=**gbStart**copilot_status_error_log**splitKeyValue**${symvar('documents')} ${error_log}**gbEnd**
         ELSE IF     '${status}' == '${EMPTY}'
             Sleep    time_=0.4 seconds
             Click Element   wnd[0]/usr/btnTC_HEAD
@@ -48,6 +52,9 @@ Rental Invoice
             Click Element   wnd[0]/tbar[0]/btn[11]
             ${output}   Get Value   wnd[0]/sbar/pane[0]
             Log To Console      ${output}
+            Log To Console    message=**gbStart**copilot_status_invoicelog**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
+            ${invoice_doc}    Get Invoice Number    status_id=wnd[0]/sbar/pane[0]
+            Pdf_process    ${invoice_doc}
         ELSE IF    '${status}' == 'Please check the log.'
             Sleep    time_=0.4 seconds
             Click Element   wnd[0]/usr/btnTC_HEAD
@@ -61,32 +68,37 @@ Rental Invoice
             Click Element   wnd[0]/tbar[0]/btn[11]
             ${output}   Get Value   wnd[0]/sbar/pane[0]
             Log To Console      ${output}
+            Log To Console    message=**gbStart**copilot_status_invoicelog**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
             ${invoice_doc}    Get Invoice Number    status_id=wnd[0]/sbar/pane[0]
+            Pdf_process    ${invoice_doc}
         END
-        Run Transaction    /nVF03
-        Input Text    element_id=wnd[0]/usr/ctxtVBRK-VBELN    text=${invoice_doc}
-        Click Element    element_id=wnd[0]/mbar/menu[0]/menu[11]
-        Click Element    element_id=wnd[1]/tbar[0]/btn[37]
-        Sleep    time_=0.4 seconds
-        Unselect Checkbox    element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/4[0,4]/chk[1,4]
-        Unselect Checkbox    element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/5[0,5]/chk[1,5]
-        Unselect Checkbox    element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/6[0,6]/chk[1,6]
-        Click Element    element_id=wnd[2]/tbar[0]/btn[0]
-        Click Element    element_id=wnd[2]/tbar[0]/btn[8]
-        Click Element    element_id=wnd[0]/mbar/menu[0]/menu[0]
-        ${spool_value}    Get Value    element_id=wnd[0]/sbar/pane[0]
-        ${spool_id}    Extract Numeric    data=${spool_value}
-        Run Transaction    transaction=/nex
-        System Logon
-        Run Transaction    transaction=/nZPDF
-        Input Text    element_id=wnd[0]/usr/txtSPOOLNO    text=${spool_id}
-        Click Element    element_id=wnd[0]/tbar[1]/btn[8]
-        Input Text    element_id=wnd[1]/usr/ctxtDY_PATH    text=${EMPTY}
-        Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=${EMPTY}
-        Input Text    element_id=wnd[1]/usr/ctxtDY_PATH    text=${symvar('Invoice_PDF_PATH')}
-        ${Month}    Get Current Date    result_format=%B  
-        Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=${invoice_doc}_${Month}.pdf
-        Click Element    element_id=wnd[1]/tbar[0]/btn[0]
     # END
+
+Pdf_process
+    [Arguments]    ${invoice_doc}
+    Run Transaction    /nVF03
+    Input Text    element_id=wnd[0]/usr/ctxtVBRK-VBELN    text=${invoice_doc}
+    Click Element    element_id=wnd[0]/mbar/menu[0]/menu[11]
+    Click Element    element_id=wnd[1]/tbar[0]/btn[37]
+    Sleep    time_=0.4 seconds
+    Unselect Checkbox    element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/4[0,4]/chk[1,4]
+    Unselect Checkbox    element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/5[0,5]/chk[1,5]
+    Unselect Checkbox    element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/6[0,6]/chk[1,6]
+    Click Element    element_id=wnd[2]/tbar[0]/btn[0]
+    Click Element    element_id=wnd[2]/tbar[0]/btn[8]
+    Click Element    element_id=wnd[0]/mbar/menu[0]/menu[0]
+    ${spool_value}    Get Value    element_id=wnd[0]/sbar/pane[0]
+    ${spool_id}    Extract Numeric    data=${spool_value}
+    Run Transaction    transaction=/nex
+    System Logon
+    Run Transaction    transaction=/nZPDF
+    Input Text    element_id=wnd[0]/usr/txtSPOOLNO    text=${spool_id}
+    Click Element    element_id=wnd[0]/tbar[1]/btn[8]
+    Input Text    element_id=wnd[1]/usr/ctxtDY_PATH    text=${EMPTY}
+    Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=${EMPTY}
+    Input Text    element_id=wnd[1]/usr/ctxtDY_PATH    text=${symvar('Invoice_PDF_PATH')}
+    ${Month}    Get Current Date    result_format=%B  
+    Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=${invoice_doc}_${Month}.pdf
+    Click Element    element_id=wnd[1]/tbar[0]/btn[0]
 
   
