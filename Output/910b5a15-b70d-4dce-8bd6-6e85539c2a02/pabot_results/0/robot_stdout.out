@@ -1,0 +1,28 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test VA42                                                               
+==============================================================================
+Releasing the contracts blocks                                          
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Test_VA42.robot:9
+    T:  Releasing the contracts blocks    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Test_VA42.robot:10
+      Release Block    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\VA42.robot:26
+      Extract Dates    json_string=${symvar('DateContent')}
+      |  json_string=${symvar('DateContent')} = json_string= (str)
+______________________________________________________________________________
+| FAIL |
+TypeError: string indices must be integers, not 'str'
+------------------------------------------------------------------------------
+Tests.Test VA42                                                       | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\910b5a15-b70d-4dce-8bd6-6e85539c2a02\pabot_results\0\Output.xml
