@@ -51,10 +51,17 @@ Release Block
 
 Process rental invoice
     Send Vkey    2
-    Input Text   wnd[0]/usr/ctxtFPLT-FAKSP  ${EMPTY }
-    Click Element   wnd[0]/tbar[0]/btn[3]
-    Click Element   wnd[0]/tbar[0]/btn[3]
-    Click Element   wnd[0]/tbar[0]/btn[11]
+    ${block}    Get Value    element_id=wnd[0]/usr/ctxtFPLT-FAKSP
+    IF    '${block}' == '02'
+        Input Text   wnd[0]/usr/ctxtFPLT-FAKSP  ${EMPTY }
+        Click Element   wnd[0]/tbar[0]/btn[3]
+        Click Element   wnd[0]/tbar[0]/btn[3]
+        Click Element   wnd[0]/tbar[0]/btn[11]
+    ELSE IF    '${block}' == ''
+        Click Element   wnd[0]/tbar[0]/btn[3]
+        Click Element   wnd[0]/tbar[0]/btn[3]
+        Click Element   wnd[0]/tbar[0]/btn[11]
+    END
     Run Keyword And Ignore Error    Click Element    wnd[1]/tbar[0]/btn[0]
     Sleep    time_=0.3 seconds
     ${status}   Get Value   wnd[0]/sbar/pane[0]
