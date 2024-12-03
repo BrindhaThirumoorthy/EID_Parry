@@ -65,7 +65,7 @@ Rental Document
             END
         END  
     END
-    Sleep    10
+    Sleep    0.5
 
     # Click Element   wnd[0]/tbar[1]/btn[45]
     # Select Radio Button     wnd[1]/usr/subSUBSCREEN_STEPLOOP:SAPLSPO5:0150/sub:SAPLSPO5:0150/radSPOPLI-SELFLAG[2,0]
@@ -89,7 +89,7 @@ Rental Document
     Log To Console    **gbStart**copilot_Sales_Document_status**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
     log to console    ${json}  
     Sleep    0.5
-    Delete Specific File    file_path=C:\\TEMP\\rental.xlsx
+    # Delete Specific File    file_path=C:\\TEMP\\rental.xlsx
     # Delete Specific File    file_path=C:\\TEMP\\rental.json
 
 
