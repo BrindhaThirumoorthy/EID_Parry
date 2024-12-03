@@ -22,7 +22,7 @@ System Logon
 System Logout
     Run Transaction   /nex
 Rental Document
-    ${lod}    Extract Dates    DateContent=${symvar('DateContent')}
+    ${lod}    Extract Dates    json_string=${symvar('DateContent')}
     Run Transaction     /nVA45
     Sleep   1
     Input Text      wnd[0]/usr/ctxtSAUART-LOW   ZMV

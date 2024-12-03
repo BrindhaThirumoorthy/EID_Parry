@@ -54,6 +54,7 @@ def extract_dates(json_string):
     date_list.append(start_date)
     end_date = json_string["endDate"]
     date_list.append(end_date)
+    print(date_list,type(date_list),len(date_list))
     return date_list
  
 # Example usage
