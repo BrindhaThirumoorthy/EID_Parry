@@ -80,9 +80,10 @@ Rental Document
     Input Text      wnd[1]/usr/ctxtDY_PATH      ${EMPTY}
     Input Text      wnd[1]/usr/ctxtDY_PATH      ${download_path}
     Click Element   wnd[1]/tbar[0]/btn[0]
+    Delete Specific File    file_path=C:\\TEMP\\rental.xlsx
     Process Excel    file_path=C:\\TEMP\\rental.xlsx    sheet_name=Sheet1
     Sleep    0.5
-    Number To String    file_path=C:\\TEMP\\rental.xlsx    column_letter=H
+    Number To String    file_path=C:\\TEMP\\rental.xlsx    column_letter=C
     Sleep    0.5
     ${json}    Excel To Json New    excel_file=C:\\TEMP\\rental.xlsx    json_file=C:\\TEMP\\rental.json
     log    ${json}
