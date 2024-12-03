@@ -11,7 +11,7 @@ print(list_new, type(list_new))
 
 document_json = [{"documents": f"{i}"} for i in list_new]
 
-document_json = json.dumps(document_json, indent=4)
+document_json = json.dumps(document_json)
 
 print(f"##gbStart##document_json##splitKeyValue##{document_json}##splitKeyValue##object##gbEnd##")
 print("Script Processed Successfully")
