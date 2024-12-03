@@ -46,7 +46,8 @@ Rental Document
             END
         END  
     END
-    Click Element   wnd[1]/tbar[0]/btn[0]
+    Sleep    0.5
+    # Click Element   wnd[1]/tbar[0]/btn[0]
     # Select Layout   wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell  Contracts - Header
     # Sleep    5
     # Click Element   wnd[1]/tbar[0]/btn[0]
