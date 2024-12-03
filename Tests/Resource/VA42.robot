@@ -23,12 +23,10 @@ System Logon
 System Logout
     Run Transaction   /nex
 Release Block
-    # FOR     ${contract}     IN     @{symvar('documents')}
-    #     Set Global Variable     ${contract}
+    FOR     ${contract}     IN     @{symvar('documents')}
+        Set Global Variable     ${contract}
         Run Transaction     /nVA42
-        Log    message=${symvar('documents')}
-        Log To Console    message=${symvar('documents')}
-        Input Text  wnd[0]/usr/ctxtVBAK-VBELN   ${symvar('documents')}
+        Input Text  wnd[0]/usr/ctxtVBAK-VBELN    text=${contract}
         Send Vkey    0
         Sleep   1
         Click Element   wnd[0]/usr/subSUBSCREEN_HEADER:SAPMV45A:4021/btnBT_HEAD
@@ -47,7 +45,7 @@ Release Block
                 Exit For Loop
             END
         END
-    # END
+    END
 
 Process rental invoice
     Send Vkey    2
