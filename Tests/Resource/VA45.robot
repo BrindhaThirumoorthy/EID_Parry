@@ -75,12 +75,12 @@ Rental Document
     # Click Element   wnd[1]/tbar[0]/btn[20]
     Click Element    element_id=wnd[0]/mbar/menu[0]/menu[3]/menu[1]
     Click Element    element_id=wnd[1]/tbar[0]/btn[0]
+    Delete Specific File    file_path=C:\\TEMP\\rental.xlsx
     Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=${EMPTY}
     Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=rental.xlsx
     Input Text      wnd[1]/usr/ctxtDY_PATH      ${EMPTY}
     Input Text      wnd[1]/usr/ctxtDY_PATH      ${download_path}
     Click Element   wnd[1]/tbar[0]/btn[0]
-    Delete Specific File    file_path=C:\\TEMP\\rental.xlsx
     Process Excel    file_path=C:\\TEMP\\rental.xlsx    sheet_name=Sheet1
     Sleep    0.5
     Number To String    file_path=C:\\TEMP\\rental.xlsx    column_letter=C
