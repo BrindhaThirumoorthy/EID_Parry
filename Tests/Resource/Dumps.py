@@ -1,22 +1,28 @@
 import json
 import sys
 
-# sys.argv = ["script_name", '["Sales Document: 40026233 | Sold-To-Party: 800597", "Sales Document: 40026234 | Sold-To-Party: 800597"]']
-print(sys.argv)
+# sys.argv = ["script_name", '[Sales Document: 40026233 | Sold-To-Party: 800597, Sales Document: 40026234 | Sold-To-Party: 800597]']
+print("Arguments received:", sys.argv)
 
-# Extracting the input JSON array from the arguments
-input_array = json.loads(sys.argv[1])
+# Extract the raw input string from the arguments
+raw_input = sys.argv[1]
 
-# Extracting Sales Document values
-list_new = [int(item.split('|')[0].split(':')[1].strip()) for item in input_array]
-print(list_new, type(list_new))
+input_items = raw_input.strip("[]").split(",")
 
-# Creating the document body structure
-document_body = [{"document": f"{i}"} for i in list_new]
+list_new = []
+for item in input_items:
+    # Remove leading/trailing spaces
+    item = item.strip()
+    # Parse the "Sales Document" value
+    if "Sales Document:" in item:
+        sales_document = item.split('|')[0].split(':')[1].strip()
+        list_new.append(int(sales_document))
 
-# Converting to JSON
+print("Extracted Sales Document list:", list_new, type(list_new))
+
+document_body = [{"document": str(i)} for i in list_new]
+
 document_json = json.dumps(document_body, separators=(',', ':'))
 
-# Printing the output in the specified format
 print(f"##gbStart##document_json##splitKeyValue##{document_json}##splitKeyValue##object##gbEnd##")
 print("Script Processed Successfully")
