@@ -4,5 +4,5 @@ Rental_Client = "900"
 Rental_User = "bcssupport1"
 Invoice_PDF_PATH = "C:\\TEMP\\"
 Layout = ["Contracts - Header",]
-documents = "40026198"
+documents = "40026202"
 search_terms = ["Customer Reference","Document Date","Sales Document","Sales Document Type","Sales Document Item","Material","Target Quantity","Sales Unit","Valid-To Date","Sold-to Party","Net Value (Item)","Document Currency","Created By","Contract Start Date","Contract End Date",]

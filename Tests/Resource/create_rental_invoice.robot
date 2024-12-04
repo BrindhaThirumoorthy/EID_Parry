@@ -70,6 +70,7 @@ Rental Invoice
             Log To Console      ${output}
             Log To Console    message=**gbStart**copilot_status_invoicelog**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
             ${invoice_doc}    Get Invoice Number    status_id=wnd[0]/sbar/pane[0]
+            Sleep    10
             Pdf_process    ${invoice_doc}
         END
     # END

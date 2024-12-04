@@ -1,0 +1,16 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Create Rental Invoice                                              
+==============================================================================
+Create the rental Invoice                                             For 40026191 No billing documents were generated. Please see log.
+**gbStart**copilot_status_error_log**splitKeyValue**40026191 VF 014 The document is blocked for billing.**gbEnd**
+| PASS |
+------------------------------------------------------------------------------
+Tests.Test Create Rental Invoice                                      | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\dc715f49-bda6-4975-b7dc-059d11465ab4\pabot_results\0\Output.xml

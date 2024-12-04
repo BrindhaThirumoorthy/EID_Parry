@@ -1,0 +1,16 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Create Rental Invoice                                              
+==============================================================================
+Create the rental Invoice                                             Document 707326133 has been saved.
+**gbStart**copilot_status_invoicelog**splitKeyValue**40025326 Document 707326133 has been saved.**gbEnd**
+| PASS |
+------------------------------------------------------------------------------
+Tests.Test Create Rental Invoice                                      | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\b4caf5bf-637e-468f-a799-6b243daf1063\pabot_results\0\Output.xml
