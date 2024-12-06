@@ -1262,7 +1262,8 @@ class SAP_Tcode_Library:
                 print("Multiple logon exists")
                 self.session.findById(logon_id).selected = True
                 self.session.findById(continue_id).press()
-                return content
+                info = "Multiple logon found. Please terminate all the logon & proceed"
+                return info
             else:
                 print("Multiple logon does not exist.")
         except Exception as e:
@@ -1514,6 +1515,80 @@ class SAP_Tcode_Library:
             return cell_value
         except Exception as e:
             return "FAIL"
+        
     def list_to_json(self, key_value, list_value):
         document_json = json.dumps({key_value:list_value})
         return  document_json
+    
+    def list_document_number(self, list_value):
+        document_number = [item["document"] for item in list_value]
+        return  document_number
+    
+    def count_excel_rows(self, abs_filename, sheet_name):
+        try:
+            wb = openpyxl.load_workbook(abs_filename)
+            ws = wb[sheet_name]
+            count = 0
+            for row in ws:
+                if not all([cell.value == None for cell in row]):
+                    count += 1
+            print(count)
+            return(count)
+   
+        except Exception as e:
+            print(e)
+ 
+    def count_excel_columns(self, abs_filename, sheet_name):
+        try:
+            wb = openpyxl.load_workbook(abs_filename)
+            ws = wb[sheet_name]
+            columns = [cell.value for cell in ws[1]]  # Assuming the first row contains headers
+            column_count = len(columns)
+            print(column_count)
+            return column_count
+        except Exception as e:
+            print(f"Error: {e}")
+
+    def get_index(self, lists, value):
+        try:
+            index = lists.index(value)
+            return index
+        except ValueError:
+            print(f"{value} not found in the list")
+
+    def read_row_from_excel(self, abs_filename, sheet_name, row_number):
+        wb = openpyxl.load_workbook(abs_filename)
+        ws = wb[sheet_name]
+        row_data = []
+        for cell in ws[row_number]:
+            row_data.append(cell.value)
+        wb.close()
+        return row_data
+    
+    def write_row_to_excel(self, abs_filename, sheet_name, row_number, row_data):
+        wb = openpyxl.load_workbook(abs_filename)
+        if sheet_name not in wb.sheetnames:
+            wb.create_sheet(sheet_name)
+        ws = wb[sheet_name]
+        for col_num, value in enumerate(row_data, start=1):
+            ws.cell(row=row_number, column=col_num, value=value)
+        wb.save(abs_filename)
+        wb.close()
+
+    def delete_excel_row(self, abs_filename, sheet_name, row_number):
+        wb = openpyxl.load_workbook(abs_filename)
+        if sheet_name not in wb.sheetnames:
+            print(f"Sheet '{sheet_name}' does not exist in the workbook.")
+            return
+        ws = wb[sheet_name]
+        ws.delete_rows(row_number)
+        wb.save(abs_filename)
+        print(f"Row {row_number} has been deleted in sheet '{sheet_name}'.")
+
+    def remove_quotes(self, variable):
+        value = variable.strip('"')
+        return value
+    
+    # def append_to_list(self, variable_name, value):
+    #     variable_name.append(value)
+    #     return variable_name

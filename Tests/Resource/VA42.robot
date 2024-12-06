@@ -19,9 +19,12 @@ System Logon
     # Input Password    wnd[0]/usr/pwdRSYST-BCODE    ${symvar('RENTAL_PASSWORD')}
     Input Password    wnd[0]/usr/pwdRSYST-BCODE    %{RENTAL_PASSWORD}
     Send Vkey    0
-    Multiple logon Handling     wnd[1]  wnd[1]/usr/radMULTI_LOGON_OPT2  wnd[1]/tbar[0]/btn[0] 
+    ${logon_status}    Multiple logon Handling     wnd[1]  wnd[1]/usr/radMULTI_LOGON_OPT3  wnd[1]/tbar[0]/btn[0] 
+    Log To Console    **gbStart**copilot_Sales_Document_status**splitKeyValue**${logon_status}**gbEnd**
+
 System Logout
     Run Transaction   /nex
+    
 Release Block
     ${date}    Extract Dates    json_string=${symvar('DateContent')}
     ${Rental_Start_Date}    Set Variable    ${date}[0]

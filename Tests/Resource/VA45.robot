@@ -5,9 +5,11 @@ Library    ExcelLibrary
 Library    String
 Library    SAP_Tcode_Library.py
 Library     DateTime
+Library    Collections
 *** Variables ***
 ${download_path}    C:\\TEMP\\
-
+${excel_path}    C:\\TEMP\\rental.xlsx
+${excel_sheet}    Sheet1 
 *** Keywords *** 
 System Logon
     Start Process    ${symvar('SAP_SERVER')}
@@ -18,16 +20,17 @@ System Logon
     # Input Password    wnd[0]/usr/pwdRSYST-BCODE    ${symvar('RENTAL_PASSWORD')}
     Input Password    wnd[0]/usr/pwdRSYST-BCODE    %{RENTAL_PASSWORD}
     Send Vkey    0
-    Multiple logon Handling     wnd[1]  wnd[1]/usr/radMULTI_LOGON_OPT2  wnd[1]/tbar[0]/btn[0] 
+    ${logon_status}    Multiple logon Handling     wnd[1]  wnd[1]/usr/radMULTI_LOGON_OPT3  wnd[1]/tbar[0]/btn[0] 
+    Log To Console    **gbStart**copilot_Sales_Document_status**splitKeyValue**${logon_status}**gbEnd**
+
 System Logout
     Run Transaction   /nex
+
 Rental Document
     ${lod}    Extract Dates    json_string=${symvar('DateContent')}
     Run Transaction     /nVA45
     Sleep   1
     Input Text      wnd[0]/usr/ctxtSAUART-LOW   ZMV
-    # ${date}    Get Current Date    result_format=%Y
-    # Log To Console      ${date}
     Input Text      wnd[0]/usr/ctxtSVALID-LOW   ${lod}[0]
     Input Text      wnd[0]/usr/ctxtSVALID-HIGH  ${lod}[1]
     Select Radio Button     wnd[0]/usr/radPVBOFF
@@ -67,12 +70,6 @@ Rental Document
     END
     Sleep    0.5
 
-    # Click Element   wnd[0]/tbar[1]/btn[45]
-    # Select Radio Button     wnd[1]/usr/subSUBSCREEN_STEPLOOP:SAPLSPO5:0150/sub:SAPLSPO5:0150/radSPOPLI-SELFLAG[2,0]
-    # Click Element     wnd[1]/tbar[0]/btn[0]
-    # Input Text      wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_GUI_CUL_EXPORT_AS:0512/txtGS_EXPORT-FILE_NAME  ${EMPTY}
-    # Input Text      wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_GUI_CUL_EXPORT_AS:0512/txtGS_EXPORT-FILE_NAME  rental
-    # Click Element   wnd[1]/tbar[0]/btn[20]
     Click Element    element_id=wnd[0]/mbar/menu[0]/menu[3]/menu[1]
     Click Element    element_id=wnd[1]/tbar[0]/btn[0]
     Delete Specific File    file_path=C:\\TEMP\\rental.xlsx
@@ -82,19 +79,82 @@ Rental Document
     Input Text      wnd[1]/usr/ctxtDY_PATH      ${download_path}
     Click Element   wnd[1]/tbar[0]/btn[0]
     Process Excel    file_path=C:\\TEMP\\rental.xlsx    sheet_name=Sheet1
-    Sleep    0.5
+    Sleep    2
     Number To String    file_path=C:\\TEMP\\rental.xlsx    column_letter=C
-    Sleep    0.5
+    Sleep    2
+    Validate the open documents
     ${json}    Excel To Json New    excel_file=C:\\TEMP\\rental.xlsx    json_file=C:\\TEMP\\rental.json
     log    ${json}
     Log To Console    **gbStart**copilot_Sales_Document_status**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
     log to console    ${json}  
-    Sleep    0.5
-    # Delete Specific File    file_path=C:\\TEMP\\rental.xlsx
-    # Delete Specific File    file_path=C:\\TEMP\\rental.json
+    Sleep    2
 
 
 Matching_Row
     [Arguments]    ${row_index}    ${log}
     Click Element    element_id=wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_WL_SING
+    
+Validate the open documents
+    @{rows_to_delete}   Create List
+    Set Global Variable    @{rows_to_delete}
+    ${date}    Extract Dates    json_string=${symvar('DateContent')}
+    ${Rental_Start_Date}    Set Variable    ${date}[0]
+    ${Rental_End_Date}    Set Variable    ${date}[1]
+    ${row_count}    Count Excel Rows    ${excel_path}    ${excel_sheet}
+    # Log To Console    ${row_count}
+    ${row}    Evaluate    ${row_count} + 1
+    # Log To Console    ${row}
+    FOR  ${k}  IN RANGE    2    ${row}
+        Run Transaction    /nVA42
+        ${input_data}    Read Excel Cell Value    ${excel_path}    ${excel_sheet}    ${k}    3
+        # Log To Console    The data in row ${k} is : ${input_data}
+        ${document}    Remove Quotes    ${input_data}
+        Input Text  wnd[0]/usr/ctxtVBAK-VBELN    ${document}
+        Send Vkey    0
+        Sleep   1
+        Click Element   wnd[0]/usr/subSUBSCREEN_HEADER:SAPMV45A:4021/btnBT_HEAD
+        Sleep   1
+        Click Element   wnd[0]/usr/tabsTAXI_TABSTRIP_HEAD/tabpT\\05
+        Sleep   1
+        Run Keyword And Ignore Error    Click Element    wnd[1]/tbar[0]/btn[0]
+        ${row}  Get Row Count   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD
+        # Log To Console      ${row}
+        FOR     ${i}    IN RANGE    0   ${row}
+            ${is_visible}   Run Keyword And Return Status   Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
+            Run Keyword If    "${is_visible}" == "False"    Exit For Loop
+            ${date}     Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
+            Set Global Variable    ${i}
+            IF    '${date}' == '${Rental_Start_Date}' or '${date}' == '${Rental_End_Date}'
+                # Sleep    5
+                verify date    ${rows_to_delete}    ${k}
+                Exit For Loop
+                       
+            ELSE IF    '${date}' >= '${Rental_Start_Date}' and '${date}' <= '${Rental_End_Date}'
+                # Sleep    5
+                verify date    ${rows_to_delete}    ${k}
+                Exit For Loop
+            END
+            
+        END
+    END
+    Log To Console    rows needed to be deleted : ${rows_to_delete}
+    Delete the rows    ${rows_to_delete}
+
+verify date
+    [Arguments]    ${list_variable}    ${row}
+    Send Vkey    2
+    # Sleep    5
+    ${type}    Get Value    wnd[0]/usr/ctxtFPLT-FKSAF
+    # Sleep    5
+    # Log To Console    Type is: ${type}
+    Run Keyword If    '${type}' != 'A' and '${type}' != 'B'    Append To List    ${list_variable}    ${row}
+
+    
+Delete the rows
+    [Arguments]    ${rows}
+    FOR  ${row}  IN  @{rows}
+        Delete Excel Row    ${excel_path}    ${excel_sheet}    ${row}
+    END
+    
+
     

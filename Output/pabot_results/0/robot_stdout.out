@@ -3,25 +3,149 @@ Tests :: Testing functionality through Robot Framework
 ==============================================================================
 Tests.Test VA45                                                               
 ==============================================================================
-Display the rental documents                                            
-  Traceback (most recent call last):
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\EID_Replay\EID_Parry\Tests\Test_VA45.robot:9
-    T:  Display the rental documents    
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\EID_Replay\EID_Parry\Tests\Test_VA45.robot:10
-      Rental Document    
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\EID_Replay\EID_Parry\Tests\Resource\VA45.robot:49
-      Click Element    wnd[1]/tbar[0]/btn[0]
-______________________________________________________________________________
-| FAIL |
-ValueError: Cannot find element with id 'wnd[1]/tbar[0]/btn[0]'
+Display the rental documents                                          68
+69
+The data in row 2 is : "40025131"
+Type is: C
+The data in row 3 is : "40025322"
+Type is: A
+The data in row 4 is : "40025323"
+Type is: C
+The data in row 5 is : "40025324"
+Type is: A
+The data in row 6 is : "40025325"
+Type is: A
+The data in row 7 is : "40025326"
+Type is: C
+The data in row 8 is : "40025327"
+Type is: A
+The data in row 9 is : "40025328"
+Type is: A
+The data in row 10 is : "40025329"
+Type is: A
+The data in row 11 is : "40025330"
+Type is: A
+The data in row 12 is : "40025331"
+Type is: A
+The data in row 13 is : "40025332"
+Type is: A
+The data in row 14 is : "40025408"
+Type is: A
+The data in row 15 is : "40025497"
+Type is: A
+The data in row 16 is : "40025940"
+Type is: A
+The data in row 17 is : "40025941"
+Type is: A
+The data in row 18 is : "40026186"
+Type is: A
+The data in row 19 is : "40026189"
+Type is: A
+The data in row 20 is : "40026190"
+Type is: A
+The data in row 21 is : "40026191"
+Type is: A
+The data in row 22 is : "40026192"
+Type is: A
+The data in row 23 is : "40026193"
+Type is: A
+The data in row 24 is : "40026194"
+Type is: A
+The data in row 25 is : "40026195"
+Type is: A
+The data in row 26 is : "40026196"
+Type is: A
+The data in row 27 is : "40026197"
+Type is: A
+The data in row 28 is : "40026198"
+Type is: A
+The data in row 29 is : "40026199"
+Type is: A
+The data in row 30 is : "40026200"
+Type is: A
+The data in row 31 is : "40026201"
+Type is: C
+The data in row 32 is : "40026202"
+Type is: C
+The data in row 33 is : "40026203"
+Type is: C
+The data in row 34 is : "40026204"
+Type is: C
+The data in row 35 is : "40026205"
+Type is: A
+The data in row 36 is : "40026206"
+Type is: A
+The data in row 37 is : "40026207"
+Type is: A
+The data in row 38 is : "40026208"
+Type is: A
+The data in row 39 is : "40026209"
+Type is: A
+The data in row 40 is : "40026210"
+Type is: A
+The data in row 41 is : "40026211"
+Type is: C
+The data in row 42 is : "40026212"
+Type is: A
+The data in row 43 is : "40026213"
+Type is: A
+The data in row 44 is : "40026214"
+Type is: A
+The data in row 45 is : "40026215"
+Type is: A
+The data in row 46 is : "40026216"
+Type is: A
+The data in row 47 is : "40026217"
+Type is: A
+The data in row 48 is : "40026218"
+Type is: A
+The data in row 49 is : "40026219"
+Type is: A
+The data in row 50 is : "40026220"
+Type is: A
+The data in row 51 is : "40026221"
+Type is: A
+The data in row 52 is : "40026222"
+Type is: A
+The data in row 53 is : "40026223"
+Type is: A
+The data in row 54 is : "40026224"
+Type is: A
+The data in row 55 is : "40026225"
+Type is: A
+The data in row 56 is : "40026226"
+Type is: A
+The data in row 57 is : "40026227"
+Type is: A
+The data in row 58 is : "40026228"
+Type is: A
+The data in row 59 is : "40026229"
+Type is: A
+The data in row 60 is : "40026230"
+Type is: A
+The data in row 61 is : "40026231"
+Type is: A
+The data in row 62 is : "40026232"
+Type is: A
+The data in row 63 is : "40026233"
+Type is: A
+The data in row 64 is : "40026234"
+Type is: A
+The data in row 65 is : "40026235"
+Type is: A
+The data in row 66 is : "40026236"
+Type is: A
+The data in row 67 is : "40026237"
+Type is: A
+The data in row 68 is : "40026238"
+Type is: A
+rows needed to be deleted : [2, 4, 7, 31, 32, 33, 34, 41]
+| PASS |
 ------------------------------------------------------------------------------
-Tests.Test VA45                                                       | FAIL |
-1 test, 0 passed, 1 failed
+Tests.Test VA45                                                       | PASS |
+1 test, 1 passed, 0 failed
 ==============================================================================
-Tests :: Testing functionality through Robot Framework                | FAIL |
-1 test, 0 passed, 1 failed
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
 ==============================================================================
 Output:  C:\EID_Replay\EID_Parry\Output\pabot_results\0\Output.xml
