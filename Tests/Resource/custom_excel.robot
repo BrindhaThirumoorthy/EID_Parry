@@ -29,13 +29,13 @@ customize excel for output
                 FOR  ${j}  IN RANGE  2    ${rows}
                     ${input}    Read Excel Cell Value    ${file_name}    ${sheet_name}    ${j}    ${i}
                     IF    ${input} == "${document}"
-                        Log To Console    ${input} is in row of ${j}
+                        # Log To Console    ${input} is in row of ${j}
                         ${index_number}    Get Index    ${documents}    ${document}
                         ${index}    Evaluate    ${index_number} + 2
-                        Log To Console    Index is: ${index}
+                        # Log To Console    Index is: ${index}
 
                         ${row_data}    Read Row From Excel    ${file_name}    ${sheet_name}    ${j}
-                        Log To Console    row data is:${row_data}
+                        # Log To Console    row data is:${row_data}
                         Write Row To Excel    ${target_file_name}    ${target_sheet_name}    ${index}    ${row_data}
 
                     END
