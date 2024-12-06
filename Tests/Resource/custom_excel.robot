@@ -12,7 +12,7 @@ ${file_name}    C:\\TEMP\\rental.xlsx
 ${sheet_name}    Sheet1
 ${target_file_name}    C:\\Output\\Rental_output.xlsx
 ${target_sheet_name}    Sheet1
-${list_value}    [{"document":"40026189"},{"document":"40026195"}]
+${list_value}    ${symvar('document_json')}
 *** Keywords ***
 
 customize excel for output
