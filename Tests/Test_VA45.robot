@@ -7,5 +7,4 @@ Test Tags    VA45
  
 *** Test Cases ***
 Display the rental documents
-    # Rental Document
-    Validate the open documents
+    Rental Document

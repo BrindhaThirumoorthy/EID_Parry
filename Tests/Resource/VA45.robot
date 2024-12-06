@@ -36,26 +36,6 @@ Rental Document
     Select Radio Button     wnd[0]/usr/radPVBOFF
     Click Element   wnd[0]/tbar[1]/btn[8]
 
-    # Click Element   wnd[1]/tbar[0]/btn[0]
-    # Select Layout   wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell  Contracts - Header
-    # Sleep    5
-    # Click Element   wnd[1]/tbar[0]/btn[0]
-
-    Click Element   wnd[0]/tbar[1]/btn[32]
-    ${row_count_one}    Get Row Count    table_id=wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell
-    ${lop}    Get Length    ${symvar('search_terms')}
-    FOR  ${row_index}  IN RANGE    0    ${lop}
-        ${first_data}    Set Variable    ${symvar('search_terms')}[${row_index}]
-        FOR  ${ya}  IN RANGE    0    ${row_count_one}
-            ${log}    Get Sap Table Value    table_id=wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell    row_num=${ya}    column_id=SELTEXT
-            IF  '${first_data}' == '${log}'
-                Matching_Row    ${row_index}    ${log}
-                ${ya}    Evaluate    ${row_count_one} - 1
-            END
-        END
-    END
-    Click Element    element_id=wnd[1]/tbar[0]/btn[0]
-
     Click Element   wnd[0]/tbar[1]/btn[33]
     ${range}    Get Row Count    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell
     ${text}    Get Length    item=${symvar('Layout')}
@@ -68,7 +48,22 @@ Rental Document
             END
         END  
     END
-    Sleep    0.5
+    Sleep    1
+
+    # Click Element   wnd[0]/tbar[1]/btn[32]
+    # ${row_count_one}    Get Row Count    wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell
+    # ${lop}    Get Length    ${symvar('search_terms')}
+    # FOR  ${row_index}  IN RANGE    0    ${lop}
+    #     ${first_data}    Set Variable    ${symvar('search_terms')}[${row_index}]
+    #     FOR  ${ya}  IN RANGE    0    ${row_count_one}
+    #         ${log}    Get Sap Table Value    wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell    row_num=${ya}    column_id=SELTEXT
+    #         IF  '${first_data}' == '${log}'
+    #             Matching_Row    ${row_index}    ${log}
+    #             ${ya}    Evaluate    ${row_count_one} - 1
+    #         END
+    #     END
+    # END
+    # Click Element    element_id=wnd[1]/tbar[0]/btn[0]
 
     Click Element    element_id=wnd[0]/mbar/menu[0]/menu[3]/menu[1]
     Click Element    element_id=wnd[1]/tbar[0]/btn[0]
