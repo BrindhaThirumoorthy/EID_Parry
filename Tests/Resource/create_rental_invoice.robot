@@ -66,7 +66,7 @@ Rental Invoice
             ${error_log}    Get Value    wnd[0]/usr/sub/1[0,0]/sub/1/2[0,1]/sub/1/2/3[0,3]/lbl[19,3]
             Sleep    2
             Write the status into excel    ${symvar('documents')}    ${error_log}
-            Log To Console    message=**gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${error_log}**gbEnd**
+            Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${error_log}**gbEnd**
         ELSE IF     '${status}' == '${EMPTY}'
             Sleep    1
             Click Element   wnd[0]/usr/btnTC_HEAD
@@ -102,7 +102,7 @@ Rental Invoice
             Log To Console      ${output}
             Write the status into excel    ${symvar('documents')}    ${output}
             Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
-            ${invoice_doc}    Get Invoice Number    status_id=wnd[0]/sbar/pane[0]
+            ${invoice_doc}    Get Invoice Number    wnd[0]/sbar/pane[0]
             Sleep    10
             Pdf_process    ${invoice_doc}
         END
@@ -159,7 +159,9 @@ Write the status into excel
     ${excel_rows}    Evaluate    ${row_count} + 1
     FOR    ${excel_row}  IN RANGE    2    ${excel_rows}
         ${excel_data}    Read Excel Cell Value    ${target_file_name}    ${target_sheet_name}    ${excel_row}    3
-        IF  '${excel_data}' == '${document_number}'
+        ${data}    Remove Quotes    ${excel_data}
+        Log To Console    ${data}
+        IF  '${data}' == '${document_number}'
             Write Excel    ${target_file_name}    ${target_sheet_name}    ${excel_row}    11    ${value}            
         END
     END
