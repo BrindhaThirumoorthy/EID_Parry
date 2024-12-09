@@ -1,0 +1,15 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test VA45                                                               
+==============================================================================
+Display the rental documents                                          **gbStart**Sales_Document_status**splitKeyValue**Multiple logon found. Please terminate all the logon & proceed**gbEnd**
+| PASS |
+------------------------------------------------------------------------------
+Tests.Test VA45                                                       | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\6e1c4d67-ef99-4534-8711-5b5ea1aa0690\pabot_results\0\Output.xml

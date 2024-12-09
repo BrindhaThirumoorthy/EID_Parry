@@ -1,0 +1,49 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Create Rental Invoice                                              
+==============================================================================
+Create the rental Invoice                                             **gbStart**Sales_Document_status**splitKeyValue**No Multiple Logon Exists**gbEnd**
+Document 707326144 has been saved.
+40025325
+**gbStart**invoice_log**splitKeyValue**40025325 Document 707326144 has been saved.**gbEnd**
+**gbStart**Sales_Document_status**splitKeyValue**No Multiple Logon Exists**gbEnd**
+For 40025325 No billing documents were generated. Please see log.
+40025325
+**gbStart**invoice_log**splitKeyValue**40025325 VF 142 Date <VAR1> has already been billed (billing plan).**gbEnd**
+**gbStart**copilot_status_sheet**splitKeyValue**[{'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025325', 'Sales document type': 'ZMV', 'Valid-To Date': '2025-01-31', 'Sold-To Party': 204829, 'Net Value (Header)': 184213.48, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Invoice Details': 'CHOLA PEOPLE AND MARKETING', 'Unnamed: 10': 'VF 142 Date <VAR1> has already been billed (billing plan).'}]**splitKeyValue**object**gbEnd**
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Test_Create_Rental_Invoice.robot:8
+    T:  Create the rental Invoice    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Test_Create_Rental_Invoice.robot:9
+      System Logon    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\create_rental_invoice.robot:40
+          
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\create_rental_invoice.robot:42
+      Rental Invoice    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\create_rental_invoice.robot:88
+      '${status}' == 'Please check the log.'    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\create_rental_invoice.robot:107
+      Pdf_process    ${invoice_doc}
+      |  ${invoice_doc} = 707326144 (str)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\create_rental_invoice.robot:150
+      Get Current Date    %B
+______________________________________________________________________________
+| FAIL |
+ValueError: Unsupported timezone '%B'.
+------------------------------------------------------------------------------
+Tests.Test Create Rental Invoice                                      | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\ad781498-5cb8-453f-adc2-3a687d9789dd\pabot_results\0\Output.xml
