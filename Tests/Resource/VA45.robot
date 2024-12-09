@@ -22,10 +22,11 @@ System Logon
     Send Vkey    0
     ${logon_status}    Multiple logon Handling     wnd[1]
     IF    '${logon_status}' == "Multiple logon found. Please terminate all the logon & proceed"
-        Log To Console    **gbStart**copilot_Sales_Document_status**splitKeyValue**${logon_status}**gbEnd**
+        Log To Console    **gbStart**Sales_Document_status**splitKeyValue**${logon_status}**gbEnd**
 
     ELSE
         Rental Document
+        Log To Console    **gbStart**Sales_Document_status**splitKeyValue**No Multiple Logon Exists**gbEnd**
     END
      
 
@@ -56,20 +57,20 @@ Rental Document
     END
     Sleep    1
 
-    # Click Element   wnd[0]/tbar[1]/btn[32]
-    # ${row_count_one}    Get Row Count    wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell
-    # ${lop}    Get Length    ${symvar('search_terms')}
-    # FOR  ${row_index}  IN RANGE    0    ${lop}
-    #     ${first_data}    Set Variable    ${symvar('search_terms')}[${row_index}]
-    #     FOR  ${ya}  IN RANGE    0    ${row_count_one}
-    #         ${log}    Get Sap Table Value    wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell    row_num=${ya}    column_id=SELTEXT
-    #         IF  '${first_data}' == '${log}'
-    #             Matching_Row    ${row_index}    ${log}
-    #             ${ya}    Evaluate    ${row_count_one} - 1
-    #         END
-    #     END
-    # END
-    # Click Element    element_id=wnd[1]/tbar[0]/btn[0]
+    Click Element   wnd[0]/tbar[1]/btn[32]
+    ${row_count_one}    Get Row Count    wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell
+    ${lop}    Get Length    ${symvar('search_terms')}
+    FOR  ${row_index}  IN RANGE    0    ${lop}
+        ${first_data}    Set Variable    ${symvar('search_terms')}[${row_index}]
+        FOR  ${ya}  IN RANGE    0    ${row_count_one}
+            ${log}    Get Sap Table Value    wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell    row_num=${ya}    column_id=SELTEXT
+            IF  '${first_data}' == '${log}'
+                Matching_Row    ${row_index}    ${log}
+                ${ya}    Evaluate    ${row_count_one} - 1
+            END
+        END
+    END
+    Click Element    element_id=wnd[1]/tbar[0]/btn[0]
 
     Click Element    element_id=wnd[0]/mbar/menu[0]/menu[3]/menu[1]
     Click Element    element_id=wnd[1]/tbar[0]/btn[0]

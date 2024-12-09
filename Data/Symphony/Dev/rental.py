@@ -5,3 +5,5 @@ Rental_User = "bcssupport1"
 Invoice_PDF_PATH = "C:\\TEMP\\"
 Layout = ["Contracts - Header",]
 documents = "40026223"
+DateContent = {"startDate": "01.12.2024", "endDate": "31.12.2024"}
+search_terms = ["Sold-To Party Name"]

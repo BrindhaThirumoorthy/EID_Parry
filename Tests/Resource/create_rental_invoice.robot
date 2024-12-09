@@ -35,9 +35,10 @@ System Logon
     Send Vkey    0
     ${logon_status}    Multiple logon Handling     wnd[1]
     IF    '${logon_status}' == "Multiple logon found. Please terminate all the logon & proceed"
-        Log To Console    **gbStart**copilot_Sales_Document_status**splitKeyValue**${logon_status}**gbEnd**
+        Log To Console    **gbStart**Sales_Document_status**splitKeyValue**${logon_status}**gbEnd**
 
     ELSE
+        Log To Console    **gbStart**Sales_Document_status**splitKeyValue**No Multiple Logon Exists**gbEnd**
         Rental Invoice
     END
 
