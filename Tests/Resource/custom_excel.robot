@@ -13,6 +13,7 @@ ${sheet_name}    Sheet1
 ${target_file_name}    C:\\Output\\Rental_output.xlsx
 ${target_sheet_name}    Sheet1
 ${list_value}    ${symvar('document_json')}
+
 *** Keywords ***
 
 customize excel for output

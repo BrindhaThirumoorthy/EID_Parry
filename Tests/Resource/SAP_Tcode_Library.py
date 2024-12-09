@@ -1255,19 +1255,18 @@ class SAP_Tcode_Library:
             return f"Error: {e}"
     
     
-    def multiple_logon_handling(self, logon_window_id, logon_id, continue_id):  
+    def multiple_logon_handling(self, logon_window_id):  
         try:
             content = self.session.findById(logon_window_id).Text
             if content == "License Information for Multiple Logons":
                 print("Multiple logon exists")
-                self.session.findById(logon_id).selected = True
-                self.session.findById(continue_id).press()
                 info = "Multiple logon found. Please terminate all the logon & proceed"
                 return info
             else:
-                print("Multiple logon does not exist.")
+                info = "Multiple logon does not exist."
+                return info
         except Exception as e:
-            return f"Error: {e}"      
+            print(f"Error: {e}")      
 
     def table_scroll(self, table_id, first_visible_row):
         try:

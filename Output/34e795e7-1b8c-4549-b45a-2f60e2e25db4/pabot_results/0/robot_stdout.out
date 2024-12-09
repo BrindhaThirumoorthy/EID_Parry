@@ -1,0 +1,29 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test VA45                                                               
+==============================================================================
+**gbStart**copilot_Sales_Document_status**splitKeyValue**Error: (-2147352567, 'Exception occurred.', (619, 'SAP Frontend Server', 'The control could not be found by id.', 'C:\\Program Files (x86)\\SAP\\FrontEnd\\SAPgui\\sapfront.HLP', 393215, 0), None)**gbEnd**
+Display the rental documents                                            
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Test_VA45.robot:9
+    T:  Display the rental documents    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Test_VA45.robot:10
+      Rental Document    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\VA45.robot:30
+      Extract Dates    json_string=${symvar('DateContent')}
+      |  json_string=${symvar('DateContent')} = json_string= (str)
+______________________________________________________________________________
+| FAIL |
+TypeError: string indices must be integers, not 'str'
+------------------------------------------------------------------------------
+Tests.Test VA45                                                       | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\34e795e7-1b8c-4549-b45a-2f60e2e25db4\pabot_results\0\Output.xml

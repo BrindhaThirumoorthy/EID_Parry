@@ -14,6 +14,7 @@ ${rental_form}  wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE/ssubSUBSCREEN_BODY:SAP
 ${target_file_name}    C:\\Output\\Rental_output.xlsx
 ${target_sheet_name}    Sheet1
 ${json_path}    C:\\Output\\Rental_output.json
+
 *** Keywords *** 
 Write Excel
     [Arguments]    ${filepath}    ${sheetname}    ${rownum}    ${colnum}    ${cell_value}
@@ -32,8 +33,13 @@ System Logon
     # Input Password    wnd[0]/usr/pwdRSYST-BCODE    ${symvar('RENTAL_PASSWORD')}
     Input Password    wnd[0]/usr/pwdRSYST-BCODE    %{RENTAL_PASSWORD}
     Send Vkey    0
-    ${logon_status}    Multiple logon Handling     wnd[1]  wnd[1]/usr/radMULTI_LOGON_OPT3  wnd[1]/tbar[0]/btn[0] 
-    Log To Console    **gbStart**copilot_Sales_Document_status**splitKeyValue**${logon_status}**gbEnd**
+    ${logon_status}    Multiple logon Handling     wnd[1]
+    IF    '${logon_status}' == "Multiple logon found. Please terminate all the logon & proceed"
+        Log To Console    **gbStart**copilot_Sales_Document_status**splitKeyValue**${logon_status}**gbEnd**
+
+    ELSE
+        Rental Invoice
+    END
 
 System Logout
     Run Transaction   /nex
@@ -135,8 +141,8 @@ Write the status into excel
     ${excel_rows}    Evaluate    ${row_count} + 1
     FOR    ${excel_row}  IN RANGE    2    ${excel_rows}
         ${excel_data}    Read Excel Cell Value    ${target_file_name}    ${target_sheet_name}    ${excel_row}    3
-        IF  '${excel_data}' == '${excel_data}'
-            Write Excel    ${target_file_name}    ${target_sheet_name}    ${excel_row}    11    ${value}            
+        IF  '${excel_data}' == '${document_number}'
+            Write Excel    ${target_file_name}    ${target_sheet_name}    ${excel_row}    12    ${value}            
         END
     END
     
