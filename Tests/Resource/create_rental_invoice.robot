@@ -58,43 +58,50 @@ Rental Invoice
         IF  '${status}' == 'No billing documents were generated. Please see log.'
             # Log To Console  For ${contract} ${status}
             Log To Console  For ${symvar('documents')} ${status}
-            Click Element    element_id=wnd[0]/mbar/menu[1]/menu[3]
-            Click Element    element_id=wnd[0]/tbar[1]/btn[25]
-            ${error_log}    Get Value    element_id=wnd[0]/usr/sub/1[0,0]/sub/1/2[0,1]/sub/1/2/3[0,3]/lbl[19,3]
+            Sleep    2
+            Click Element    wnd[0]/mbar/menu[1]/menu[3]
+            Sleep    2
+            Click Element    wnd[0]/tbar[1]/btn[25]
+            Sleep    2
+            ${error_log}    Get Value    wnd[0]/usr/sub/1[0,0]/sub/1/2[0,1]/sub/1/2/3[0,3]/lbl[19,3]
+            Sleep    2
             Write the status into excel    ${symvar('documents')}    ${error_log}
-            Log To Console    message=**gbStart**copilot_status_error_log**splitKeyValue**${symvar('documents')} ${error_log}**gbEnd**
+            Log To Console    message=**gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${error_log}**gbEnd**
         ELSE IF     '${status}' == '${EMPTY}'
-            Sleep    time_=0.4 seconds
+            Sleep    1
             Click Element   wnd[0]/usr/btnTC_HEAD
             Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE
             Doubleclick Element     ${rental_form}  0001    Column1
             Input Text  ${rental_text}  ${Text}
-            Sleep    time_=0.4 seconds
+            Sleep    1
             Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU
             Input Text      wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU/ssubSUBSCREEN_BODY:SAPMV60A:6101/ssubCUSTOMER_SCREEN:ZZBILLHEADER:0100/txtVBRK-ZZEWAYBL    NA
-            Sleep    time_=0.4 seconds
+            Sleep    1
             Click Element   wnd[0]/tbar[0]/btn[11]
+            Sleep    4
             ${output}   Get Value   wnd[0]/sbar/pane[0]
             Log To Console      ${output}
             Write the status into excel    ${symvar('documents')}    ${output}
-            Log To Console    message=**gbStart**copilot_status_invoicelog**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
+            Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
             ${invoice_doc}    Get Invoice Number    status_id=wnd[0]/sbar/pane[0]
             Pdf_process    ${invoice_doc}
         ELSE IF    '${status}' == 'Please check the log.'
-            Sleep    time_=0.4 seconds
+            Sleep    1
             Click Element   wnd[0]/usr/btnTC_HEAD
             Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE
             Doubleclick Element     ${rental_form}  0001    Column1
             Input Text  ${rental_text}  ${Text}
-            Sleep    time_=0.4 seconds
+            Sleep    1
             Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU
             Input Text      wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU/ssubSUBSCREEN_BODY:SAPMV60A:6101/ssubCUSTOMER_SCREEN:ZZBILLHEADER:0100/txtVBRK-ZZEWAYBL    NA
-            Sleep    time_=0.4 seconds
+            Sleep    1
             Click Element   wnd[0]/tbar[0]/btn[11]
+            Sleep    2
             ${output}   Get Value   wnd[0]/sbar/pane[0]
+            Sleep    4
             Log To Console      ${output}
             Write the status into excel    ${symvar('documents')}    ${output}
-            Log To Console    message=**gbStart**copilot_status_invoicelog**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
+            Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
             ${invoice_doc}    Get Invoice Number    status_id=wnd[0]/sbar/pane[0]
             Sleep    10
             Pdf_process    ${invoice_doc}
@@ -112,29 +119,39 @@ Rental Invoice
 Pdf_process
     [Arguments]    ${invoice_doc}
     Run Transaction    /nVF03
-    Input Text    element_id=wnd[0]/usr/ctxtVBRK-VBELN    text=${invoice_doc}
-    Click Element    element_id=wnd[0]/mbar/menu[0]/menu[11]
-    Click Element    element_id=wnd[1]/tbar[0]/btn[37]
-    Sleep    time_=0.4 seconds
-    Unselect Checkbox    element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/4[0,4]/chk[1,4]
-    Unselect Checkbox    element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/5[0,5]/chk[1,5]
-    Unselect Checkbox    element_id=wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/6[0,6]/chk[1,6]
-    Click Element    element_id=wnd[2]/tbar[0]/btn[0]
-    Click Element    element_id=wnd[2]/tbar[0]/btn[8]
-    Click Element    element_id=wnd[0]/mbar/menu[0]/menu[0]
-    ${spool_value}    Get Value    element_id=wnd[0]/sbar/pane[0]
-    ${spool_id}    Extract Numeric    data=${spool_value}
-    Run Transaction    transaction=/nex
+    Input Text    wnd[0]/usr/ctxtVBRK-VBELN    ${invoice_doc}
+    Click Element    wnd[0]/mbar/menu[0]/menu[11]
+    Click Element    wnd[1]/tbar[0]/btn[37]
+    Sleep    2
+    Unselect Checkbox    wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/4[0,4]/chk[1,4]
+    Unselect Checkbox    wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/5[0,5]/chk[1,5]
+    Unselect Checkbox    wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/6[0,6]/chk[1,6]
+    Sleep    2
+    Click Element    wnd[2]/tbar[0]/btn[0]
+    Sleep    2
+    Click Element    wnd[2]/tbar[0]/btn[8]
+    Sleep    2
+    Click Element    wnd[0]/mbar/menu[0]/menu[0]
+    Sleep    2
+    ${spool_value}    Get Value    wnd[0]/sbar/pane[0]
+    ${spool_id}    Extract Numeric    ${spool_value}
+    Sleep    2
+    Run Transaction    /nex
     System Logon
-    Run Transaction    transaction=/nZPDF
-    Input Text    element_id=wnd[0]/usr/txtSPOOLNO    text=${spool_id}
-    Click Element    element_id=wnd[0]/tbar[1]/btn[8]
-    Input Text    element_id=wnd[1]/usr/ctxtDY_PATH    text=${EMPTY}
-    Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=${EMPTY}
-    Input Text    element_id=wnd[1]/usr/ctxtDY_PATH    text=${symvar('Invoice_PDF_PATH')}
-    ${Month}    Get Current Date    result_format=%B  
-    Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=${invoice_doc}_${Month}.pdf
-    Click Element    element_id=wnd[1]/tbar[0]/btn[0]
+    Run Transaction    /nZPDF
+    Input Text    wnd[0]/usr/txtSPOOLNO    ${spool_id}
+    Sleep    2
+    Click Element    wnd[0]/tbar[1]/btn[8]
+    Sleep    2
+    Input Text    wnd[1]/usr/ctxtDY_PATH    ${EMPTY}
+    Input Text    wnd[1]/usr/ctxtDY_FILENAME    ${EMPTY}
+    Sleep    2
+    Input Text    wnd[1]/usr/ctxtDY_PATH    ${symvar('Invoice_PDF_PATH')}
+    ${Month}    Get Current Date    %B  
+    Input Text    wnd[1]/usr/ctxtDY_FILENAME    ${invoice_doc}_${Month}.pdf
+    Sleep    2
+    Click Element    wnd[1]/tbar[0]/btn[0]
+    Sleep    2
 
 Write the status into excel
     [Arguments]    ${document_number}    ${value}
@@ -143,7 +160,7 @@ Write the status into excel
     FOR    ${excel_row}  IN RANGE    2    ${excel_rows}
         ${excel_data}    Read Excel Cell Value    ${target_file_name}    ${target_sheet_name}    ${excel_row}    3
         IF  '${excel_data}' == '${document_number}'
-            Write Excel    ${target_file_name}    ${target_sheet_name}    ${excel_row}    12    ${value}            
+            Write Excel    ${target_file_name}    ${target_sheet_name}    ${excel_row}    11    ${value}            
         END
     END
     
