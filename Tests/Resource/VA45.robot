@@ -156,7 +156,7 @@ Delete the rows
     [Arguments]    ${rows}
     ${row_length}    Get Length    ${rows}
     FOR    ${h}    IN RANGE    0    ${row_length}
-        ${delete_row}    Evaluate    ${rows}[${row_length}] - ${h}
+        ${delete_row}    Evaluate    @{rows}[${h}] - ${h}
         Delete Excel Row    ${excel_path}    ${excel_sheet}    ${delete_row}
         
     END
