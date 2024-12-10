@@ -71,7 +71,7 @@ Rental Invoice
             Sleep    1
             Click Element   wnd[0]/usr/btnTC_HEAD
             Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE
-            Doubleclick Element     ${rental_form}  0001    Column1
+            Doubleclick Element     ${rental_form}  0002    Column1
             ${Month}    Get Current Date    result_format=%B
             Input Text  ${rental_text}  Rent for the month of ${Month} 2024.
             Sleep    1
