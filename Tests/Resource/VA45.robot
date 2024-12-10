@@ -154,9 +154,14 @@ verify date
     
 Delete the rows
     [Arguments]    ${rows}
-    FOR  ${row}  IN  @{rows}
-        Delete Excel Row    ${excel_path}    ${excel_sheet}    ${row}
+    ${row_length}    Get Length    ${rows}
+    FOR    ${h}    IN RANGE    0    ${row_length}
+        ${delete_row}    Evaluate    ${rows}[${row_length}] - ${h}
+        Delete Excel Row    ${excel_path}    ${excel_sheet}    ${delete_row}
+        
     END
+    
+    
     
 
     
