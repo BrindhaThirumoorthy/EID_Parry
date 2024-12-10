@@ -1,7 +1,7 @@
 import json
 import sys
 
-# sys.argv = ["script_name", '[Sales Document: 40026233 | Sold-To-Party: 800597, Sales Document: 40026234 | Sold-To-Party: 800597]']
+sys.argv = ["Sales Document: 40025325 | Sold To Party: 'CHOLA PEOPLE AND MARKETING'","Sales Document: 40026200 | Sold To Party: 'PARRY AGRO INDUSTRIES LTD'","Sales Document: 40026201 | Sold To Party: 'PARRY AGRO INDUSTRIES LTD'"]
 print("Arguments received:", sys.argv)
 
 # Extract the raw input string from the arguments

@@ -1,16 +1,12 @@
 ==============================================================================
 Tests :: Testing functionality through Robot Framework                        
 ==============================================================================
-Tests.Test Create Rental Invoice                                              
+Tests.Test VA45                                                               
 ==============================================================================
-Create the rental Invoice                                             **gbStart**Sales_Document_status**splitKeyValue**No Multiple Logon Exists**gbEnd**
-For 40026191 No billing documents were generated. Please see log.
-40026191
-**gbStart**invoice_log**splitKeyValue**40026191 VF 014 The document is blocked for billing.**gbEnd**
-**gbStart**copilot_status_sheet**splitKeyValue**[{'Customer Reference (Header)': 'Rental', 'Document Date': '2024-11-28', 'Sales document': '40026191', 'Sales document type': 'ZMV', 'Valid-To Date': '2025-10-31', 'Sold-To Party': 10333, 'Net Value (Header)': 86060513.66, 'Document Currency': 'INR', 'Created by': 'BCSSUPPORT1', 'Invoice Details': 'AMBADI ENTERPRISES LTD', 'Unnamed: 10': 'VF 014 The document is blocked for billing.'}]**splitKeyValue**object**gbEnd**
+Display the rental documents                                          **gbStart**Sales_Document_status**splitKeyValue**Multiple logon found. Please terminate all the logon & proceed**gbEnd**
 | PASS |
 ------------------------------------------------------------------------------
-Tests.Test Create Rental Invoice                                      | PASS |
+Tests.Test VA45                                                       | PASS |
 1 test, 1 passed, 0 failed
 ==============================================================================
 Tests :: Testing functionality through Robot Framework                | PASS |
