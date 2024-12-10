@@ -1587,6 +1587,13 @@ class SAP_Tcode_Library:
         value = variable.strip('"')
         return value
     
+    def select_form_header(self, table_id, row, column):
+        table = self.session.findById(table_id)
+        data = table.getValue(row, column)
+        return  data
+        # table.selectItem(row, column)
+        # table.doubleClickItem(row, column)
+    
     # def append_to_list(self, variable_name, value):
     #     variable_name.append(value)
     #     return variable_name

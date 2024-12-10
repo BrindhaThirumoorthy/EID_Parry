@@ -1,0 +1,34 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Create Rental Invoice                                              
+==============================================================================
+Create the rental Invoice                                             **gbStart**Sales_Document_status**splitKeyValue**No Multiple Logon Exists**gbEnd**
+Document 707326148 has been saved.
+40025324
+40025322
+40025327
+40025328
+40025329
+40026231
+**gbStart**invoice_log**splitKeyValue**40025322 Document 707326148 has been saved.**gbEnd**
+**gbStart**Sales_Document_status**splitKeyValue**No Multiple Logon Exists**gbEnd**
+For 40025322 No billing documents were generated. Please see log.
+40025324
+40025322
+40025327
+40025328
+40025329
+40026231
+**gbStart**invoice_log**splitKeyValue**40025322 VF 142 Date <VAR1> has already been billed (billing plan).**gbEnd**
+**gbStart**copilot_status_sheet**splitKeyValue**[{'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025324', 'Sales document type': 'ZMV', 'Valid-To Date': '2025-01-31', 'Sold-To Party': 805782, 'Net Value (Header)': 6382237.84, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Invoice Details': 'MURUGAPPA MORGAN THERMAL CERAMICS', 'Unnamed: 10': 'VF 142 Date <VAR1> has already been billed (billing plan).'}, {'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025322', 'Sales document type': 'ZMV', 'Valid-To Date': '2025-01-31', 'Sold-To Party': 800597, 'Net Value (Header)': 3031367.46, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Invoice Details': 'PARRY AGRO INDUSTRIES LTD', 'Unnamed: 10': 'VF 142 Date <VAR1> has already been billed (billing plan).'}, {'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025327', 'Sales document type': 'ZMV', 'Valid-To Date': '2025-01-31', 'Sold-To Party': 808993, 'Net Value (Header)': 11153111.66, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Invoice Details': 'MURUGAPPA WATER TECHNOLOGY AND SOLUTIONS', 'Unnamed: 10': nan}, {'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025328', 'Sales document type': 'ZMV', 'Valid-To Date': '2025-01-31', 'Sold-To Party': 32998, 'Net Value (Header)': 3914658.22, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Invoice Details': 'NET ACCESS INDIA  LTD', 'Unnamed: 10': nan}, {'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025329', 'Sales document type': 'ZMV', 'Valid-To Date': '2025-01-31', 'Sold-To Party': 32998, 'Net Value (Header)': 454383.16, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Invoice Details': 'NET ACCESS INDIA  LTD', 'Unnamed: 10': nan}, {'Customer Reference (Header)': 'Demo - Rental Contra', 'Document Date': '2024-12-04', 'Sales document': '40026231', 'Sales document type': 'ZMV', 'Valid-To Date': '2025-11-30', 'Sold-To Party': 800597, 'Net Value (Header)': 946.0, 'Document Currency': 'INR', 'Created by': 'BCSSUPPORT1', 'Invoice Details': 'PARRY AGRO INDUSTRIES LTD', 'Unnamed: 10': nan}]**splitKeyValue**object**gbEnd**
+**gbStart**copilot_status_sheet**splitKeyValue**[{'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025324', 'Sales document type': 'ZMV', 'Valid-To Date': '2025-01-31', 'Sold-To Party': 805782, 'Net Value (Header)': 6382237.84, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Invoice Details': 'MURUGAPPA MORGAN THERMAL CERAMICS', 'Unnamed: 10': 'VF 142 Date <VAR1> has already been billed (billing plan).'}, {'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025322', 'Sales document type': 'ZMV', 'Valid-To Date': '2025-01-31', 'Sold-To Party': 800597, 'Net Value (Header)': 3031367.46, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Invoice Details': 'PARRY AGRO INDUSTRIES LTD', 'Unnamed: 10': 'VF 142 Date <VAR1> has already been billed (billing plan).'}, {'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025327', 'Sales document type': 'ZMV', 'Valid-To Date': '2025-01-31', 'Sold-To Party': 808993, 'Net Value (Header)': 11153111.66, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Invoice Details': 'MURUGAPPA WATER TECHNOLOGY AND SOLUTIONS', 'Unnamed: 10': nan}, {'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025328', 'Sales document type': 'ZMV', 'Valid-To Date': '2025-01-31', 'Sold-To Party': 32998, 'Net Value (Header)': 3914658.22, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Invoice Details': 'NET ACCESS INDIA  LTD', 'Unnamed: 10': nan}, {'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025329', 'Sales document type': 'ZMV', 'Valid-To Date': '2025-01-31', 'Sold-To Party': 32998, 'Net Value (Header)': 454383.16, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Invoice Details': 'NET ACCESS INDIA  LTD', 'Unnamed: 10': nan}, {'Customer Reference (Header)': 'Demo - Rental Contra', 'Document Date': '2024-12-04', 'Sales document': '40026231', 'Sales document type': 'ZMV', 'Valid-To Date': '2025-11-30', 'Sold-To Party': 800597, 'Net Value (Header)': 946.0, 'Document Currency': 'INR', 'Created by': 'BCSSUPPORT1', 'Invoice Details': 'PARRY AGRO INDUSTRIES LTD', 'Unnamed: 10': nan}]**splitKeyValue**object**gbEnd**
+| PASS |
+------------------------------------------------------------------------------
+Tests.Test Create Rental Invoice                                      | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\c5eefc25-4e71-47c4-8e0a-5601ea00dc03\pabot_results\0\Output.xml
