@@ -160,7 +160,7 @@ Write the status into excel
         ${data}    Remove Quotes    ${excel_data}
         Log To Console    ${data}
         IF  '${data}' == '${document_number}'
-            Write Excel    ${target_file_name}    ${target_sheet_name}    ${excel_row}    10    ${value}            
+            Write Excel    ${target_file_name}    ${target_sheet_name}    ${excel_row}    9    ${value}            
         END
     END
 
@@ -173,7 +173,7 @@ Write the invoice created by into excel
         ${data}    Remove Quotes    ${excel_data}
         Log To Console    ${data}
         IF  '${data}' == '${document_number}'
-            Write Excel    ${target_file_name}    ${target_sheet_name}    ${excel_row}    7    ${value}            
+            Write Excel    ${target_file_name}    ${target_sheet_name}    ${excel_row}    6    ${value}            
         END
     END
     
