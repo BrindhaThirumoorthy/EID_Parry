@@ -57,11 +57,11 @@ Rental Document
     END
     Sleep    1
 
-    Click Element   wnd[0]/tbar[1]/btn[32]
-    ${row_count_one}    Get Row Count    wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell
     ${lop}    Get Length    ${symvar('search_terms')}
     FOR  ${row_index}  IN RANGE    0    ${lop}
         ${first_data}    Set Variable    ${symvar('search_terms')}[${row_index}]
+        Click Element   wnd[0]/tbar[1]/btn[32]
+        ${row_count_one}    Get Row Count    wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell
         FOR  ${ya}  IN RANGE    0    ${row_count_one}
             ${log}    Get Sap Table Value    wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell    row_num=${ya}    column_id=SELTEXT
             IF  '${first_data}' == '${log}'
@@ -70,7 +70,7 @@ Rental Document
             END
         END
     END
-    Click Element    element_id=wnd[1]/tbar[0]/btn[0]
+    
 
     Click Element    element_id=wnd[0]/mbar/menu[0]/menu[3]/menu[1]
     Click Element    element_id=wnd[1]/tbar[0]/btn[0]
@@ -95,6 +95,7 @@ Rental Document
 Matching_Row
     [Arguments]    ${row_index}    ${log}
     Click Element    element_id=wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_WL_SING
+    Click Element    element_id=wnd[1]/tbar[0]/btn[0]
     
 Validate the open documents
     @{rows_to_delete}   Create List

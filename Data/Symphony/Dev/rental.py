@@ -4,4 +4,4 @@ Rental_Client = "900"
 Rental_User = "bcssupport1"
 DateContent = {"startDate":"01.12.2024","endDate":"31.12.2024"}
 Layout = ["Contracts - Header",]
-search_terms = ["Sold-To Party Name"]
+search_terms = ["Sold-To Party Name", "Billing Block Description"]
