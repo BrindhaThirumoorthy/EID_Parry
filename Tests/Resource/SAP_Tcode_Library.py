@@ -1588,11 +1588,11 @@ class SAP_Tcode_Library:
         return value
     
     def select_form_header(self, table_id, row, column):
-        table = self.session.findById(table_id)
-        data = table.getValue(row, column)
-        return  data
-        # table.selectItem(row, column)
-        # table.doubleClickItem(row, column)
+        self.session.findById(table_id).selectItem (row,column)
+        self.session.findById(table_id).ensureVisibleHorizontalItem (row,column)
+        self.session.findById(table_id).doubleClickItem (row,column)
+        # self.session.findById(table_id).selectedNode = row
+        # self.session.findById(table_id).doubleClickNode (row)
     
     # def append_to_list(self, variable_name, value):
     #     variable_name.append(value)

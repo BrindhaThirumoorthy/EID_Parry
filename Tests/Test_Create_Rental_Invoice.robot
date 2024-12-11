@@ -6,4 +6,4 @@ Task Tags    VF01
  
 *** Test Cases ***
 Create the rental Invoice
-    System Logon
+    Create Rental Invoice and download pdf

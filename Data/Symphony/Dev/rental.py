@@ -5,3 +5,5 @@ Rental_User = "bcssupport1"
 DateContent = {"startDate":"01.11.2024","endDate":"30.11.2024"}
 Layout = ["Contracts - Header",]
 search_terms = ["Sold-To Party Name"]
+documents = "40026237"
+Invoice_PDF_PATH = "C:\\Symphony\\Rental_Invoice\\Download\\2024\\December"
