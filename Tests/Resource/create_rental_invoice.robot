@@ -89,6 +89,7 @@ Rental Invoice
         Write the status into excel    ${symvar('documents')}    ${output}
         Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
         ${invoice_doc}    Get Invoice Number    status_id=wnd[0]/sbar/pane[0]
+        Get Invoice created by    ${symvar('documents')}    ${invoice_doc}
         Pdf_process    ${invoice_doc}
     ELSE IF    '${status}' == 'Please check the log.'
         Sleep    1
@@ -105,6 +106,7 @@ Rental Invoice
         Write the status into excel    ${symvar('documents')}    ${output}
         Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
         ${invoice_doc}    Get Invoice Number    wnd[0]/sbar/pane[0]
+        Get Invoice created by    ${symvar('documents')}    ${invoice_doc}
         Pdf_process    ${invoice_doc}
     END
     Process Excel    ${target_file_name}    ${target_sheet_name}
@@ -158,10 +160,30 @@ Write the status into excel
         ${data}    Remove Quotes    ${excel_data}
         Log To Console    ${data}
         IF  '${data}' == '${document_number}'
-            Write Excel    ${target_file_name}    ${target_sheet_name}    ${excel_row}    11    ${value}            
+            Write Excel    ${target_file_name}    ${target_sheet_name}    ${excel_row}    10    ${value}            
+        END
+    END
+
+Write the invoice created by into excel
+    [Arguments]    ${document_number}    ${value}
+    ${row_count}    Count Excel Rows    ${target_file_name}    ${target_sheet_name}
+    ${excel_rows}    Evaluate    ${row_count} + 1
+    FOR    ${excel_row}  IN RANGE    2    ${excel_rows}
+        ${excel_data}    Read Excel Cell Value    ${target_file_name}    ${target_sheet_name}    ${excel_row}    3
+        ${data}    Remove Quotes    ${excel_data}
+        Log To Console    ${data}
+        IF  '${data}' == '${document_number}'
+            Write Excel    ${target_file_name}    ${target_sheet_name}    ${excel_row}    7    ${value}            
         END
     END
     
+Get Invoice created by
+    [Arguments]    ${document_number}    ${invoice_doc}
+    Run Transaction    /nVF03
+    Input Text    wnd[0]/usr/ctxtVBRK-VBELN    ${invoice_doc}
+    Click Element    wnd[0]/usr/btnTC_HEAD
+    ${created_by}    Get Value    wnd[0]/usr/ssubSUBSCREEN_HEADER:SAPMV60A:6011/txtVBRK-ERNAM
+    Write the invoice created by into excel    ${document_number}    ${created_by}
 
 
   

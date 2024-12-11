@@ -13,12 +13,26 @@ ${sheet_name}    Sheet1
 ${target_file_name}    C:\\Output\\Rental_output.xlsx
 ${target_sheet_name}    Sheet1
 ${list_value}    ${symvar('document_json')}
+@{column_names}    Valid-To Date    Sold-To Party
 
 *** Keywords ***
 
 customize excel for output
     ${column_count}    Count Excel Columns    ${file_name}    ${sheet_name}
     ${column}    Evaluate    ${column_count} + 1
+    FOR    ${name}    IN    @{column_names}
+        FOR  ${l}  IN RANGE  1    ${column}
+            ${data}    Read Excel Cell Value    ${file_name}    ${sheet_name}    1    ${l}
+            IF  '${data}' == '${name}'
+                Delete Excel Column    ${file_name}    ${sheet_name}    ${l}
+                Log To Console    column ${l} deleted
+            # ELSE IF  '${data}' == 'Sold-To Party'
+            #     Delete Excel Column    ${file_name}    ${sheet_name}    ${l}
+            #     Log To Console    column ${l} deleted
+            END
+        END
+    END
+
     FOR  ${i}  IN RANGE  1    ${column}
         ${data}    Read Excel Cell Value    ${file_name}    ${sheet_name}    1    ${i}
         IF  '${data}' == 'Sales document'

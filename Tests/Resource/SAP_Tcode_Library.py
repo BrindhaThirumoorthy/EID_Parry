@@ -1583,6 +1583,16 @@ class SAP_Tcode_Library:
         wb.save(abs_filename)
         print(f"Row {row_number} has been deleted in sheet '{sheet_name}'.")
 
+    def delete_excel_column(self, abs_filename, sheet_name, column_number):
+        wb = openpyxl.load_workbook(abs_filename)
+        if sheet_name not in wb.sheetnames:
+            print(f"Sheet '{sheet_name}' does not exist in the workbook.")
+            return
+        ws = wb[sheet_name]
+        ws.delete_cols(column_number)
+        wb.save(abs_filename)
+        print(f"Column {column_number} has been deleted in sheet '{sheet_name}'.")
+
     def remove_quotes(self, variable):
         value = variable.strip('"')
         return value
@@ -1594,6 +1604,3 @@ class SAP_Tcode_Library:
         # self.session.findById(table_id).selectedNode = row
         # self.session.findById(table_id).doubleClickNode (row)
     
-    # def append_to_list(self, variable_name, value):
-    #     variable_name.append(value)
-    #     return variable_name
