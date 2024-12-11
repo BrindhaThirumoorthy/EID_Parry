@@ -1,0 +1,17 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test custom excel                                                       
+==============================================================================
+Display Excel for output                                              document no is :40026234
+document no is :40026235
+document no is :40026236
+| PASS |
+------------------------------------------------------------------------------
+Tests.Test custom excel                                               | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\19130f32-0cdb-4fa3-8ad3-bc3b2c7f98c1\pabot_results\0\Output.xml

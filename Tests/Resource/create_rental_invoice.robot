@@ -143,8 +143,9 @@ Pdf_process
     Input Text    wnd[1]/usr/ctxtDY_PATH    ${EMPTY}
     Input Text    wnd[1]/usr/ctxtDY_FILENAME    ${EMPTY}
     Input Text    wnd[1]/usr/ctxtDY_PATH    ${symvar('Invoice_PDF_PATH')}
-    ${Month}    Get Current Date    result_format=%B  
-    Input Text    wnd[1]/usr/ctxtDY_FILENAME    ${invoice_doc}_${Month}.pdf
+    ${Month}    Get Current Date    result_format=%B
+    ${year}    Get Current Date    result_format=%Y
+    Input Text    wnd[1]/usr/ctxtDY_FILENAME    ${invoice_doc}_${Month}${year}.pdf
     Click Element    wnd[1]/tbar[0]/btn[0]
     Sleep    1
 
