@@ -181,6 +181,7 @@ Get Invoice created by
     [Arguments]    ${document_number}    ${invoice_doc}
     Run Transaction    /nVF03
     Input Text    wnd[0]/usr/ctxtVBRK-VBELN    ${invoice_doc}
+    Send Vkey    0
     Click Element    wnd[0]/usr/btnTC_HEAD
     ${created_by}    Get Value    wnd[0]/usr/ssubSUBSCREEN_HEADER:SAPMV60A:6011/txtVBRK-ERNAM
     Write the invoice created by into excel    ${document_number}    ${created_by}
