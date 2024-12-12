@@ -89,6 +89,7 @@ Rental Invoice
         Write the status into excel    ${symvar('documents')}    ${output}
         Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
         ${invoice_doc}    Get Invoice Number    status_id=wnd[0]/sbar/pane[0]
+        Sleep    10
         Get Invoice created by    ${symvar('documents')}    ${invoice_doc}
         Pdf_process    ${invoice_doc}
     ELSE IF    '${status}' == 'Please check the log.'
@@ -106,6 +107,7 @@ Rental Invoice
         Write the status into excel    ${symvar('documents')}    ${output}
         Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
         ${invoice_doc}    Get Invoice Number    wnd[0]/sbar/pane[0]
+        Sleep    10
         Get Invoice created by    ${symvar('documents')}    ${invoice_doc}
         Pdf_process    ${invoice_doc}
     END
@@ -180,6 +182,7 @@ Write the invoice created by into excel
 Get Invoice created by
     [Arguments]    ${document_number}    ${invoice_doc}
     Run Transaction    /nVF03
+    Sleep    2
     Input Text    wnd[0]/usr/ctxtVBRK-VBELN    ${invoice_doc}
     Send Vkey    0
     Click Element    wnd[0]/usr/btnTC_HEAD
