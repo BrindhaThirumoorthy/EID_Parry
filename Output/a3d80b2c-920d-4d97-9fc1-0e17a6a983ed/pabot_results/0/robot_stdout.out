@@ -1,0 +1,21 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Create Rental Invoice                                              
+==============================================================================
+Create the rental Invoice                                             **gbStart**Sales_Document_status**splitKeyValue**No Multiple Logon Exists**gbEnd**
+For 40026186 No billing documents were generated. Please see log.
+40025941
+40026186
+40026194
+**gbStart**invoice_log**splitKeyValue**40026186 VF 142 Date <VAR1> has already been billed (billing plan).**gbEnd**
+**gbStart**copilot_status_sheet**splitKeyValue**[{'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-06-24', 'Sales document': '40025941', 'Net Value (Header)': 6911267.68, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Sold-To Party Name': 'Cholamandalam MS Risk Services Limited', 'Billing Block Description': 'Compl Confirm Missng', 'Invoice Details': 'VF 014 The document is blocked for billing.'}, {'Customer Reference (Header)': 'PH-VF & PH-1F', 'Document Date': '2024-11-28', 'Sales document': '40026186', 'Net Value (Header)': 9336847.52, 'Document Currency': 'INR', 'Created by': 'BCSSUPPORT1', 'Sold-To Party Name': 'AMBADI ENTERPRISES LTD', 'Billing Block Description': nan, 'Invoice Details': 'VF 142 Date <VAR1> has already been billed (billing plan).'}, {'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-11-28', 'Sales document': '40026194', 'Net Value (Header)': 8398109.28, 'Document Currency': 'INR', 'Created by': 'BCSSUPPORT1', 'Sold-To Party Name': 'Cholamandalam MS Risk Services Limited', 'Billing Block Description': nan, 'Invoice Details': nan}]**splitKeyValue**object**gbEnd**
+| PASS |
+------------------------------------------------------------------------------
+Tests.Test Create Rental Invoice                                      | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\a3d80b2c-920d-4d97-9fc1-0e17a6a983ed\pabot_results\0\Output.xml

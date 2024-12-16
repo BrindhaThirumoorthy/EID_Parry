@@ -204,9 +204,9 @@ Validate the e-invoice status
     FOR    ${r}    IN RANGE    0    ${table_row}
         ${invoice_status}    Get Cell Value    wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell    ${r}    STATDESC
         Log To Console    row is :${r}:${invoice_status}
-        Run Keyword If    '${invoice_status}' == ${EMPTY}    Exit For Loop
         IF    ${invoice_status}' == 'IRN Generated'
             Pdf_process    ${invoice_doc}
+            Exit For Loop
         ELSE
             Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created with E-Invoice error**gbEnd** 
         END
