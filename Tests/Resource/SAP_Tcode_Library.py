@@ -1372,17 +1372,12 @@ class SAP_Tcode_Library:
 
 
     def excel_to_json(self, excel_file, json_file):
-        # Read the Excel file
         df = pd.read_excel(excel_file, engine='openpyxl')
-        # Convert Timestamp objects to strings
         for column in df.select_dtypes(['datetime']):
             df[column] = df[column].astype(str)
-        # Convert the DataFrame to a dictionary
         data = df.to_dict(orient='records')
-        # Write the dictionary to a JSON file
         with open(json_file, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
-        # Read the JSON file after writing it
         with open(json_file, 'r', encoding='utf-8') as f:
             json_data = json.load(f)
         return json_data
