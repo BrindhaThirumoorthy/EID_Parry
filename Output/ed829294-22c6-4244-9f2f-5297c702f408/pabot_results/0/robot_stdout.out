@@ -1,0 +1,56 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Create Rental Invoice                                              
+==============================================================================
+Create the rental Invoice                                             **gbStart**Sales_Document_status**splitKeyValue**No Multiple Logon Exists**gbEnd**
+Document 707326177 has been saved.
+40026197
+**gbStart**invoice_log**splitKeyValue**40026205 Document 707326177 has been saved.**gbEnd**
+40026197
+2
+row is :0:Ready To be Sent
+2
+row is :0:IRN Generated
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Test_Create_Rental_Invoice.robot:8
+    T:  Create the rental Invoice    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Test_Create_Rental_Invoice.robot:9
+      Create Rental Invoice and download pdf    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\create_rental_invoice.robot:50
+          
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\create_rental_invoice.robot:52
+      Rental Invoice    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\create_rental_invoice.robot:95
+      '${status}' == 'Please check the log.'    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\create_rental_invoice.robot:112
+      Validate the e-invoice status    ${invoice_doc}
+      |  ${invoice_doc} = 707326177 (str)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\create_rental_invoice.robot:204
+      ${r} IN RANGE [ 0 | ${table_row} ]    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\create_rental_invoice.robot:204
+      ${r} = 1    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\create_rental_invoice.robot:205
+      Get Cell Value    wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell    ${r}    STATDESC
+      |  ${r} = 1 (int)
+______________________________________________________________________________
+| FAIL |
+ValueError: Cannot find Element 'wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell'.
+------------------------------------------------------------------------------
+Tests.Test Create Rental Invoice                                      | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\ed829294-22c6-4244-9f2f-5297c702f408\pabot_results\0\Output.xml

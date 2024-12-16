@@ -1,0 +1,18 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test custom excel                                                       
+==============================================================================
+Display Excel for output                                              column 4 deleted
+column 4 deleted
+column 4 deleted
+document no is :40026205
+| PASS |
+------------------------------------------------------------------------------
+Tests.Test custom excel                                               | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\c21703b6-e9ee-469a-9cd5-7ead84d2d382\pabot_results\0\Output.xml

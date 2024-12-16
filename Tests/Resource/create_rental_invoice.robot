@@ -222,6 +222,7 @@ Validate the e-invoice status
                     Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created with E-Invoice error**gbEnd** 
                 END
             END
+            Exit For Loop
 
         ELSE IF    '${invoice_status}' == 'Error Generating IRN'
             Sleep    5
@@ -238,6 +239,7 @@ Validate the e-invoice status
                     Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created with E-Invoice error**gbEnd** 
                 END
             END
+            Exit For Loop
         END
     END
     
