@@ -91,7 +91,7 @@ Rental Invoice
         ${invoice_doc}    Get Invoice Number    status_id=wnd[0]/sbar/pane[0]
         Sleep    10
         Get Invoice created by    ${symvar('documents')}    ${invoice_doc}
-        Pdf_process    ${invoice_doc}
+        Validate the e-invoice status    ${invoice_doc}
     ELSE IF    '${status}' == 'Please check the log.'
         Sleep    1
         Click Element   wnd[0]/usr/btnTC_HEAD
@@ -109,7 +109,7 @@ Rental Invoice
         ${invoice_doc}    Get Invoice Number    wnd[0]/sbar/pane[0]
         Sleep    10
         Get Invoice created by    ${symvar('documents')}    ${invoice_doc}
-        Pdf_process    ${invoice_doc}
+        Validate the e-invoice status    ${invoice_doc}
     END
     Process Excel    ${target_file_name}    ${target_sheet_name}
     Sleep    2
@@ -188,6 +188,33 @@ Get Invoice created by
     Click Element    wnd[0]/usr/btnTC_HEAD
     ${created_by}    Get Value    wnd[0]/usr/ssubSUBSCREEN_HEADER:SAPMV60A:6011/txtVBRK-ERNAM
     Write the invoice created by into excel    ${document_number}    ${created_by}
+
+Validate the e-invoice status
+    [Arguments]    ${invoice_doc}
+    Run Transaction    /nzeinv
+    Select Radio Button    wnd[0]/usr/radP_SD
+    Select From List By Key    wnd[0]/usr/cmbPA_BUKRS    EID
+    Send Vkey    0
+    Input Text    wnd[0]/usr/ctxtSO_SDDOC-LOW    ${invoice_doc}
+    ${year}    Get Current Date    result_format=%Y
+    Input Text    wnd[0]/usr/txtSO_GJAHR-LOW    ${year}
+    Click Element    wnd[0]/tbar[1]/btn[8]
+    ${table_row}    Get Row Count    wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell
+    Log To Console    ${table_row}
+    FOR    ${r}    IN RANGE    0    ${table_row}
+        ${invoice_status}    Get Cell Value    wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell    ${r}    STATDESC
+        Log To Console    row is :${r}:${invoice_status}
+        Run Keyword If    '${invoice_status}' == ${EMPTY}    Exit For Loop
+        IF    ${invoice_status}' == 'IRN Generated'
+            Pdf_process    ${invoice_doc}
+        ELSE
+            Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created with E-Invoice error**gbEnd** 
+        END
+    END
+    
+
+
+
 
 
   
