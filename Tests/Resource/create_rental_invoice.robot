@@ -204,7 +204,7 @@ Validate the e-invoice status
     FOR    ${r}    IN RANGE    0    ${table_row}
         ${invoice_status}    Get Cell Value    wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell    ${r}    STATDESC
         Log To Console    row is :${r}:${invoice_status}
-        IF    ${invoice_status}' == 'IRN Generated'
+        IF    '${invoice_status}' == 'IRN Generated'
             Pdf_process    ${invoice_doc}
             Exit For Loop
         ELSE

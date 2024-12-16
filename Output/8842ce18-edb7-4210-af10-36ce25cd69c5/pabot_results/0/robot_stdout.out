@@ -1,0 +1,26 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Create Rental Invoice                                              
+==============================================================================
+Create the rental Invoice                                             **gbStart**Sales_Document_status**splitKeyValue**No Multiple Logon Exists**gbEnd**
+Document 707326172 has been saved.
+40026195
+40026196
+40026197
+**gbStart**invoice_log**splitKeyValue**40026195 Document 707326172 has been saved.**gbEnd**
+40026195
+40026196
+40026197
+2
+row is :0:IRN Generated
+| FAIL |
+Evaluating IF condition failed: Evaluating expression 'IRN Generated' == 'IRN Generated'' failed: SyntaxError: unterminated string literal (detected at line 1) (<string>, line 1)
+------------------------------------------------------------------------------
+Tests.Test Create Rental Invoice                                      | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\8842ce18-edb7-4210-af10-36ce25cd69c5\pabot_results\0\Output.xml
