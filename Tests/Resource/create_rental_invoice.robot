@@ -207,8 +207,37 @@ Validate the e-invoice status
         IF    '${invoice_status}' == 'IRN Generated'
             Pdf_process    ${invoice_doc}
             Exit For Loop
-        ELSE
-            Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created with E-Invoice error**gbEnd** 
+        ELSE IF    '${invoice_status}' == 'Ready To be Sent'
+            Sleep    5
+            Click Element    wnd[0]/tbar[1]/btn[5]
+            ${table_row}    Get Row Count    wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell
+            Log To Console    ${table_row}
+            FOR    ${r}    IN RANGE    0    ${table_row}
+                ${invoice_status}    Get Cell Value    wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell    ${r}    STATDESC
+                Log To Console    row is :${r}:${invoice_status}
+                IF    '${invoice_status}' == 'IRN Generated'
+                    Pdf_process    ${invoice_doc}
+                    Exit For Loop
+                ELSE 
+                    Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created with E-Invoice error**gbEnd** 
+                END
+            END
+
+        ELSE IF    '${invoice_status}' == 'Error Generating IRN'
+            Sleep    5
+            Click Element    wnd[0]/tbar[1]/btn[5]
+            ${table_row}    Get Row Count    wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell
+            Log To Console    ${table_row}
+            FOR    ${r}    IN RANGE    0    ${table_row}
+                ${invoice_status}    Get Cell Value    wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell    ${r}    STATDESC
+                Log To Console    row is :${r}:${invoice_status}
+                IF    '${invoice_status}' == 'IRN Generated'
+                    Pdf_process    ${invoice_doc}
+                    Exit For Loop
+                ELSE 
+                    Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created with E-Invoice error**gbEnd** 
+                END
+            END
         END
     END
     
