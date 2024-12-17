@@ -6,7 +6,7 @@ from datetime import time
 def convert_excel_to_json(excel_file, json_file):
     # Read the Excel file
     df = pd.read_excel(excel_file, engine='openpyxl')
-    df = df.where(pd.notnull(df), None)
+    df = df.where(pd.notnull(df), "empty")
 
     # Convert datetime and time objects to strings
     for column in df.columns:
@@ -41,12 +41,12 @@ def delete_files(files):
             print(f"Error deleting file {file}: {e}")
 
 # Example usage
-# excel_file = r'C:\EID_Parry\EXPORT.xlsx'  # Replace with your Excel file path
-# json_file = r'C:\EID_Parry\EXPORT.json'  # Replace with your desired JSON file path
+excel_file = r'C:\TEMP\rental.xlsx'  # Replace with your Excel file path
+json_file = r'C:\TEMP\rental.json'  # Replace with your desired JSON file path
 
-# excel_to_json(excel_file, json_file)
-# data = read_json(json_file)
-# print(f"##gbStart##copilot_key##splitKeyValue##{data}##splitKeyValue##object##gbEnd##")
+convert_excel_to_json(excel_file, json_file)
+data = read_json(json_file)
+print(f"##gbStart##copilot_key##splitKeyValue##{data}##splitKeyValue##object##gbEnd##")
 
 # Delete the files
 # delete_files([excel_file, json_file])

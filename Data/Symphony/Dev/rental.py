@@ -4,4 +4,5 @@ Rental_Client = "900"
 Rental_User = "bcssupport1"
 Invoice_PDF_PATH = "C:\\Symphony\\Rental_Invoice\\Download\\2024\\December"
 Layout = ["Contracts - Header",]
-documents = "40026205"
+documents = "40026207"
+document_json = [{"document":"40026206"},{"document":"40026207"}]

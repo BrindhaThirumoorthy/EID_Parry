@@ -83,16 +83,16 @@ Rental Document
     Input Text      wnd[1]/usr/ctxtDY_PATH      ${EMPTY}
     Input Text      wnd[1]/usr/ctxtDY_PATH      ${download_path}
     Click Element   wnd[1]/tbar[0]/btn[0]
-    # Process Excel    file_path=C:\\TEMP\\rental.xlsx    sheet_name=Sheet1
-    # Sleep    2
-    # Number To String    file_path=C:\\TEMP\\rental.xlsx    column_letter=C
-    # Sleep    2
+    Process Excel    file_path=C:\\TEMP\\rental.xlsx    sheet_name=Sheet1
+    Sleep    2
+    Number To String    file_path=C:\\TEMP\\rental.xlsx    column_letter=C
+    Sleep    2
     Validate the open documents
-    # ${json}    Excel To Json New    excel_file=C:\\TEMP\\rental.xlsx    json_file=C:\\TEMP\\rental.json
+    ${json}    Excel To Json New    excel_file=C:\\TEMP\\rental.xlsx    json_file=C:\\TEMP\\rental.json
     # log    ${json}
     # Log To Console    **gbStart**Sales_Document_status**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
-    Convert Excel To Json    C:\\TEMP\\rental.xlsx    C:\\TEMP\\rental.json
-    ${json}    Read Json    C:\\TEMP\\rental.json
+    # Convert Excel To Json    C:\\TEMP\\rental.xlsx    C:\\TEMP\\rental.json
+    # ${json}    Read Json    C:\\TEMP\\rental.json
     log to console    ${json}  
     Sleep    2
 

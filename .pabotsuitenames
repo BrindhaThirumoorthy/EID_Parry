@@ -1,5 +1,5 @@
-datasources:5e48c0640413814eb7f83c154210bedb2fac2634
-commandlineoptions:e5bb48238125cb95ca886738ff899ba98c0f2495
+datasources:5036bf7d5105eb3b98b8f4c1b1372081c03ce149
+commandlineoptions:f0f6c07534104a3d4878fbb72c66dede7e29d734
 suitesfrom:no-suites-from-option
-file:4963681f5653d0571a42fa0e52875e69ed6ba094
---suite Tests.Test Create Rental Invoice
+file:952f1dcf3908d87efa4279e2a868192ae9b9b062
+--suite Tests.Test custom excel

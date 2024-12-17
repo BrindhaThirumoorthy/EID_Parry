@@ -112,14 +112,14 @@ Rental Invoice
         Get Invoice created by    ${symvar('documents')}    ${invoice_doc}
         Validate the e-invoice status    ${invoice_doc}
     END
-    # Process Excel    ${target_file_name}    ${target_sheet_name}
-    # Sleep    2
-    # Number To String    ${target_file_name}    column_letter=C
-    # Sleep    2
-    # ${json}    Excel To Json New    ${target_file_name}    ${json_path}
-    # # log    ${json}
-    Convert Excel To Json    ${target_file_name}    ${json_path}
-    ${json}    Read Json    ${json_path}
+    Process Excel    ${target_file_name}    ${target_sheet_name}
+    Sleep    2
+    Number To String    ${target_file_name}    column_letter=C
+    Sleep    2
+    ${json}    Excel To Json New    ${target_file_name}    ${json_path}
+    # log    ${json}
+    # Convert Excel To Json    ${target_file_name}    ${json_path}
+    # ${json}    Read Json    ${json_path}
     Log To Console    **gbStart**copilot_status_sheet**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
     # log to console    ${json} 
     # # END
