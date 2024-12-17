@@ -15,6 +15,7 @@ ${rental_form}  wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE/ssubSUBSCREEN_BODY:SAP
 ${target_file_name}    C:\\Output\\Rental_output.xlsx
 ${target_sheet_name}    Sheet1
 ${json_path}    C:\\Output\\Rental_output.json
+${json_path1}    C:\\Output\\Rental_Status.json
 # ${invoice_doc}    707326152
 *** Keywords *** 
 Write Excel
@@ -228,7 +229,7 @@ Validate the e-invoice status
                     Pdf_process    ${invoice_doc}
                     Exit For Loop
                 ELSE 
-                    Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created with E-Invoice error**gbEnd** 
+                    Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created ${invoice_doc} with E-Invoice error**gbEnd** 
                 END
             END
             Exit For Loop
@@ -245,7 +246,7 @@ Validate the e-invoice status
                     Pdf_process    ${invoice_doc}
                     Exit For Loop
                 ELSE 
-                    Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created with E-Invoice error**gbEnd** 
+                    Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created ${invoice_doc} with E-Invoice error**gbEnd** 
                 END
             END
             Exit For Loop
