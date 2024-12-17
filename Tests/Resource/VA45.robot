@@ -37,64 +37,66 @@ System Logout
     Run Transaction   /nex
 
 Rental Document
-    ${lod}    Extract Dates    json_string=${symvar('DateContent')}
-    Run Transaction     /nVA45
-    Sleep   1
-    Input Text      wnd[0]/usr/ctxtSAUART-LOW   ZMV
-    Input Text      wnd[0]/usr/ctxtSVALID-LOW   ${lod}[0]
-    Input Text      wnd[0]/usr/ctxtSVALID-HIGH  ${lod}[1]
-    Select Radio Button     wnd[0]/usr/radPVBOFF
-    Click Element   wnd[0]/tbar[1]/btn[8]
+    ${title}    Get Value    wnd[0]/sbar/pane[0]
+    IF    '${title}' == 'Name or password is incorrect (repeat logon)'
+        Log To Console    **gbStart**Sales_Document_status**splitKeyValue**${title}**gbEnd**
 
-    Click Element   wnd[0]/tbar[1]/btn[33]
-    ${range}    Get Row Count    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell
-    ${text}    Get Length    item=${symvar('Layout')}
-    FOR    ${i}    IN RANGE    0    ${text}
-        ${value}    Set Variable    ${symvar('Layout')}[${i}]
-        FOR    ${lp}    IN RANGE    0    ${range}
-            ${one}    Get Sap Table Value    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell    row_num=${lp}    column_id=TEXT
-            IF    '${value}' == '${one}'
-                Select Layout Two    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell    row_num=${lp}    column_id=TEXT
-            END
-        END  
-    END
-    Sleep    1
+    ELSE     
+        ${lod}    Extract Dates    json_string=${symvar('DateContent')}
+        Run Transaction     /nVA45
+        Sleep   1
+        Input Text      wnd[0]/usr/ctxtSAUART-LOW   ZMV
+        Input Text      wnd[0]/usr/ctxtSVALID-LOW   ${lod}[0]
+        Input Text      wnd[0]/usr/ctxtSVALID-HIGH  ${lod}[1]
+        Select Radio Button     wnd[0]/usr/radPVBOFF
+        Click Element   wnd[0]/tbar[1]/btn[8]
 
-    ${lop}    Get Length    ${symvar('search_terms')}
-    FOR  ${row_index}  IN RANGE    0    ${lop}
-        ${first_data}    Set Variable    ${symvar('search_terms')}[${row_index}]
-        Click Element   wnd[0]/tbar[1]/btn[32]
-        ${row_count_one}    Get Row Count    wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell
-        FOR  ${ya}  IN RANGE    0    ${row_count_one}
-            ${log}    Get Sap Table Value    wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell    row_num=${ya}    column_id=SELTEXT
-            IF  '${first_data}' == '${log}'
-                Matching_Row    ${row_index}    ${log}
-                ${ya}    Evaluate    ${row_count_one} - 1
+        Click Element   wnd[0]/tbar[1]/btn[33]
+        ${range}    Get Row Count    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell
+        ${text}    Get Length    item=${symvar('Layout')}
+        FOR    ${i}    IN RANGE    0    ${text}
+            ${value}    Set Variable    ${symvar('Layout')}[${i}]
+            FOR    ${lp}    IN RANGE    0    ${range}
+                ${one}    Get Sap Table Value    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell    row_num=${lp}    column_id=TEXT
+                IF    '${value}' == '${one}'
+                    Select Layout Two    table_id=wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell    row_num=${lp}    column_id=TEXT
+                END
+            END  
+        END
+        Sleep    1
+
+        ${lop}    Get Length    ${symvar('search_terms')}
+        FOR  ${row_index}  IN RANGE    0    ${lop}
+            ${first_data}    Set Variable    ${symvar('search_terms')}[${row_index}]
+            Click Element   wnd[0]/tbar[1]/btn[32]
+            ${row_count_one}    Get Row Count    wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell
+            FOR  ${ya}  IN RANGE    0    ${row_count_one}
+                ${log}    Get Sap Table Value    wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell    row_num=${ya}    column_id=SELTEXT
+                IF  '${first_data}' == '${log}'
+                    Matching_Row    ${row_index}    ${log}
+                    ${ya}    Evaluate    ${row_count_one} - 1
+                END
             END
         END
-    END
-    
+        
 
-    Click Element    element_id=wnd[0]/mbar/menu[0]/menu[3]/menu[1]
-    Click Element    element_id=wnd[1]/tbar[0]/btn[0]
-    Delete Specific File    file_path=C:\\TEMP\\rental.xlsx
-    Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=${EMPTY}
-    Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=rental.xlsx
-    Input Text      wnd[1]/usr/ctxtDY_PATH      ${EMPTY}
-    Input Text      wnd[1]/usr/ctxtDY_PATH      ${download_path}
-    Click Element   wnd[1]/tbar[0]/btn[0]
-    Process Excel    file_path=C:\\TEMP\\rental.xlsx    sheet_name=Sheet1
-    Sleep    2
-    Number To String    file_path=C:\\TEMP\\rental.xlsx    column_letter=C
-    Sleep    2
-    Validate the open documents
-    ${json}    Excel To Json New    excel_file=C:\\TEMP\\rental.xlsx    json_file=C:\\TEMP\\rental.json
-    # log    ${json}
-    # Log To Console    **gbStart**Sales_Document_status**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
-    # Convert Excel To Json    C:\\TEMP\\rental.xlsx    C:\\TEMP\\rental.json
-    # ${json}    Read Json    C:\\TEMP\\rental.json
-    log to console    ${json}  
-    Sleep    2
+        Click Element    element_id=wnd[0]/mbar/menu[0]/menu[3]/menu[1]
+        Click Element    element_id=wnd[1]/tbar[0]/btn[0]
+        Delete Specific File    file_path=C:\\TEMP\\rental.xlsx
+        Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=${EMPTY}
+        Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=rental.xlsx
+        Input Text      wnd[1]/usr/ctxtDY_PATH      ${EMPTY}
+        Input Text      wnd[1]/usr/ctxtDY_PATH      ${download_path}
+        Click Element   wnd[1]/tbar[0]/btn[0]
+        Process Excel    file_path=C:\\TEMP\\rental.xlsx    sheet_name=Sheet1
+        Sleep    2
+        Number To String    file_path=C:\\TEMP\\rental.xlsx    column_letter=C
+        Sleep    2
+        Validate the open documents
+        ${json}    Excel To Json New    excel_file=C:\\TEMP\\rental.xlsx    json_file=C:\\TEMP\\rental.json
+        log to console    ${json}  
+        Sleep    2
+    END
 
 
 Matching_Row

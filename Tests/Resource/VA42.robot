@@ -36,28 +36,33 @@ System Logout
     Run Transaction   /nex
 
 Release Block
-    ${date}    Extract Dates    json_string=${symvar('DateContent')}
-    ${Rental_Start_Date}    Set Variable    ${date}[0]
-    # FOR     ${contract}     IN     @{symvar('documents')}
-        # Set Global Variable     ${contract}
-        Run Transaction     /nVA42
-        Input Text  wnd[0]/usr/ctxtVBAK-VBELN    text=${symvar('documents')}
-        Send Vkey    0
-        Click Element   wnd[0]/usr/subSUBSCREEN_HEADER:SAPMV45A:4021/btnBT_HEAD
-        Click Element   wnd[0]/usr/tabsTAXI_TABSTRIP_HEAD/tabpT\\05
-        Run Keyword And Ignore Error    Click Element    wnd[1]/tbar[0]/btn[0]
-        ${row}  Get Row Count   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD
-        # Log To Console      ${row}
-        FOR     ${i}    IN RANGE    0   ${row}
-            ${is_visible}   Run Keyword And Return Status   Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
-            Run Keyword If    "${is_visible}" == "False"    Exit For Loop
-            ${date}     Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
-            IF  '${date}' == '${Rental_Start_Date}'
-                Process rental block
-                Exit For Loop
+    ${title}    Get Value    wnd[0]/sbar/pane[0]
+    IF    '${title}' == 'Name or password is incorrect (repeat logon)'
+        Log To Console    **gbStart**Sales_Document_status**splitKeyValue**${title}**gbEnd**
+
+    ELSE  
+        ${date}    Extract Dates    json_string=${symvar('DateContent')}
+        ${Rental_Start_Date}    Set Variable    ${date}[0]
+        # FOR     ${contract}     IN     @{symvar('documents')}
+            # Set Global Variable     ${contract}
+            Run Transaction     /nVA42
+            Input Text  wnd[0]/usr/ctxtVBAK-VBELN    text=${symvar('documents')}
+            Send Vkey    0
+            Click Element   wnd[0]/usr/subSUBSCREEN_HEADER:SAPMV45A:4021/btnBT_HEAD
+            Click Element   wnd[0]/usr/tabsTAXI_TABSTRIP_HEAD/tabpT\\05
+            Run Keyword And Ignore Error    Click Element    wnd[1]/tbar[0]/btn[0]
+            ${row}  Get Row Count   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD
+            # Log To Console      ${row}
+            FOR     ${i}    IN RANGE    0   ${row}
+                ${is_visible}   Run Keyword And Return Status   Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
+                Run Keyword If    "${is_visible}" == "False"    Exit For Loop
+                ${date}     Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
+                IF  '${date}' == '${Rental_Start_Date}'
+                    Process rental block
+                    Exit For Loop
+                END
             END
-        END
-    # END
+    END
 
 Process rental block
     Send Vkey    2

@@ -46,6 +46,11 @@ def delete_files(files):
         except Exception as e:
             print(f"Error deleting file {file}: {e}")
 
+def convert_json_to_string(data):
+    value = json.dumps(data, indent=4)
+    # print(value)
+    return value
+
 # Example usage
 # excel_file = r'C:\\Output\\Rental_output.xlsx'  # Replace with your Excel file path
 # json_file = r'C:\\Output\\Rental_output.json'  # Replace with your desired JSON file path

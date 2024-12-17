@@ -59,71 +59,77 @@ System Logout
 Rental Invoice
     # FOR     ${contract}     IN     @{symvar('documents')}
     #     Set Global Variable     ${contract}
-    Run Transaction     /nVF01
-    Sleep   1
-    Input Text  wnd[0]/usr/tblSAPMV60ATCTRL_ERF_FAKT/ctxtKOMFK-VBELN[0,0]   ${symvar('documents')}
-    ${current_date}     Get Current Date    result_format=%d.%m.%Y
-    Input Text  wnd[0]/usr/ctxtRV60A-FKDAT  ${current_date}
-    Send Vkey   0
-    ${status}   Get Value   wnd[0]/sbar/pane[0]
-    IF  '${status}' == 'No billing documents were generated. Please see log.'
-        # Log To Console  For ${contract} ${status}
-        Sleep    1
-        Log To Console  For ${symvar('documents')} ${status}
-        Click Element    wnd[0]/mbar/menu[1]/menu[3]
-        Click Element    wnd[0]/tbar[1]/btn[25]
-        ${error_log}    Get Value    wnd[0]/usr/sub/1[0,0]/sub/1/2[0,1]/sub/1/2/3[0,3]/lbl[19,3]
-        Write the status into excel    ${symvar('documents')}    ${error_log}
-        Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${error_log}**gbEnd**
-    ELSE IF     '${status}' == '${EMPTY}'
-        Sleep    1
-        Click Element   wnd[0]/usr/btnTC_HEAD
-        Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE
-        select_form_header     ${rental_form}  0001    Column1
-        ${Month}    Get Current Date    result_format=%B
-        Input Text  ${rental_text}  Rent for the month of ${Month} 2024.
-        Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU
-        Input Text      wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU/ssubSUBSCREEN_BODY:SAPMV60A:6101/ssubCUSTOMER_SCREEN:ZZBILLHEADER:0100/txtVBRK-ZZEWAYBL    NA
-        Click Element   wnd[0]/tbar[0]/btn[11]
-        ${output}   Get Value   wnd[0]/sbar/pane[0]
-        Log To Console      ${output}
-        Write the status into excel    ${symvar('documents')}    ${output}
-        Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
-        ${invoice_doc}    Get Invoice Number    status_id=wnd[0]/sbar/pane[0]
-        Sleep    10
-        Get Invoice created by    ${symvar('documents')}    ${invoice_doc}
-        Validate the e-invoice status    ${invoice_doc}
-    ELSE IF    '${status}' == 'Please check the log.'
-        Sleep    1
-        Click Element   wnd[0]/usr/btnTC_HEAD
-        Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE
-        select_form_header     ${rental_form}  0001    Column1
-        ${Month}    Get Current Date    result_format=%B
-        Input Text  ${rental_text}  Rent for the month of ${Month} 2024.
-        Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU
-        Input Text      wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU/ssubSUBSCREEN_BODY:SAPMV60A:6101/ssubCUSTOMER_SCREEN:ZZBILLHEADER:0100/txtVBRK-ZZEWAYBL    NA
-        Click Element   wnd[0]/tbar[0]/btn[11]
-        ${output}   Get Value   wnd[0]/sbar/pane[0]
-        Log To Console      ${output}
-        Write the status into excel    ${symvar('documents')}    ${output}
-        Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
-        ${invoice_doc}    Get Invoice Number    wnd[0]/sbar/pane[0]
-        Sleep    10
-        Get Invoice created by    ${symvar('documents')}    ${invoice_doc}
-        Validate the e-invoice status    ${invoice_doc}
-    END
-    Process Excel    ${target_file_name}    ${target_sheet_name}
-    Sleep    2
-    Number To String    ${target_file_name}    column_letter=C
-    Sleep    2
-    ${json}    Excel To Json New    ${target_file_name}    ${json_path}
-    # log    ${json}
-    Convert Excel To Json    ${target_file_name}    ${json_path1}
-    ${mail}    Read Json    ${json_path}
-    Log To Console    **gbStart**copilot_status_sheet**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
-    Log To Console    **gbStart**email_status**splitKeyValue**${mail}**splitKeyValue**object**gbEnd**
+    ${title}    Get Value    wnd[0]/sbar/pane[0]
+    IF    '${title}' == 'Name or password is incorrect (repeat logon)'
+        Log To Console    **gbStart**Sales_Document_status**splitKeyValue**${title}**gbEnd**
+
+    ELSE  
+        Run Transaction     /nVF01
+        Sleep   1
+        Input Text  wnd[0]/usr/tblSAPMV60ATCTRL_ERF_FAKT/ctxtKOMFK-VBELN[0,0]   ${symvar('documents')}
+        ${current_date}     Get Current Date    result_format=%d.%m.%Y
+        Input Text  wnd[0]/usr/ctxtRV60A-FKDAT  ${current_date}
+        Send Vkey   0
+        ${status}   Get Value   wnd[0]/sbar/pane[0]
+        IF  '${status}' == 'No billing documents were generated. Please see log.'
+            # Log To Console  For ${contract} ${status}
+            Sleep    1
+            Log To Console  For ${symvar('documents')} ${status}
+            Click Element    wnd[0]/mbar/menu[1]/menu[3]
+            Click Element    wnd[0]/tbar[1]/btn[25]
+            ${error_log}    Get Value    wnd[0]/usr/sub/1[0,0]/sub/1/2[0,1]/sub/1/2/3[0,3]/lbl[19,3]
+            Write the status into excel    ${symvar('documents')}    ${error_log}
+            Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${error_log}**gbEnd**
+        ELSE IF     '${status}' == '${EMPTY}'
+            Sleep    1
+            Click Element   wnd[0]/usr/btnTC_HEAD
+            Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE
+            select_form_header     ${rental_form}  0001    Column1
+            ${Month}    Get Current Date    result_format=%B
+            Input Text  ${rental_text}  Rent for the month of ${Month} 2024.
+            Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU
+            Input Text      wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU/ssubSUBSCREEN_BODY:SAPMV60A:6101/ssubCUSTOMER_SCREEN:ZZBILLHEADER:0100/txtVBRK-ZZEWAYBL    NA
+            Click Element   wnd[0]/tbar[0]/btn[11]
+            ${output}   Get Value   wnd[0]/sbar/pane[0]
+            Log To Console      ${output}
+            Write the status into excel    ${symvar('documents')}    ${output}
+            Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
+            ${invoice_doc}    Get Invoice Number    status_id=wnd[0]/sbar/pane[0]
+            Sleep    10
+            Get Invoice created by    ${symvar('documents')}    ${invoice_doc}
+            Validate the e-invoice status    ${invoice_doc}
+        ELSE IF    '${status}' == 'Please check the log.'
+            Sleep    1
+            Click Element   wnd[0]/usr/btnTC_HEAD
+            Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE
+            select_form_header     ${rental_form}  0001    Column1
+            ${Month}    Get Current Date    result_format=%B
+            Input Text  ${rental_text}  Rent for the month of ${Month} 2024.
+            Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU
+            Input Text      wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU/ssubSUBSCREEN_BODY:SAPMV60A:6101/ssubCUSTOMER_SCREEN:ZZBILLHEADER:0100/txtVBRK-ZZEWAYBL    NA
+            Click Element   wnd[0]/tbar[0]/btn[11]
+            ${output}   Get Value   wnd[0]/sbar/pane[0]
+            Log To Console      ${output}
+            Write the status into excel    ${symvar('documents')}    ${output}
+            Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
+            ${invoice_doc}    Get Invoice Number    wnd[0]/sbar/pane[0]
+            Sleep    10
+            Get Invoice created by    ${symvar('documents')}    ${invoice_doc}
+            Validate the e-invoice status    ${invoice_doc}
+        END
+        Process Excel    ${target_file_name}    ${target_sheet_name}
+        Sleep    2
+        Number To String    ${target_file_name}    column_letter=C
+        Sleep    2
+        ${json}    Excel To Json New    ${target_file_name}    ${json_path}
+        # log    ${json}
+        Convert Excel To Json    ${target_file_name}    ${json_path1}
+        ${mail}    Read Json    ${json_path}
+        ${json_to_string}    Convert Json To String    ${mail}
+        Log To Console    **gbStart**copilot_status_sheet**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
+        Log To Console    **gbStart**email_log**splitKeyValue**${json_to_string}**splitKeyValue**object**gbEnd**
     # log to console    ${json} 
-    # # END
+    END
 
 Pdf_process
     [Arguments]    ${invoice_doc}
@@ -246,6 +252,12 @@ Validate the e-invoice status
             Exit For Loop
         END
     END
+
+
+Convert Json To String
+    [Arguments]    ${arg1}
+    # TODO: implement keyword "Convert Json To String".
+    Fail    Not Implemented
     
 
 
