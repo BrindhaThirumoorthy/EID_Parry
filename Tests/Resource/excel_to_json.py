@@ -41,12 +41,12 @@ def delete_files(files):
             print(f"Error deleting file {file}: {e}")
 
 # Example usage
-excel_file = r'C:\TEMP\rental.xlsx'  # Replace with your Excel file path
-json_file = r'C:\TEMP\rental.json'  # Replace with your desired JSON file path
+# excel_file = r'C:\\Output\\Rental_output.xlsx'  # Replace with your Excel file path
+# json_file = r'C:\\Output\\Rental_output.json'  # Replace with your desired JSON file path
 
-convert_excel_to_json(excel_file, json_file)
-data = read_json(json_file)
-print(f"##gbStart##copilot_key##splitKeyValue##{data}##splitKeyValue##object##gbEnd##")
+# convert_excel_to_json(excel_file, json_file)
+# data = read_json(json_file)
+# print(f"##gbStart##copilot_key##splitKeyValue##{data}##splitKeyValue##object##gbEnd##")
 
 # Delete the files
 # delete_files([excel_file, json_file])
