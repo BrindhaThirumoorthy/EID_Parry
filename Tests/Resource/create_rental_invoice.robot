@@ -15,7 +15,6 @@ ${rental_form}  wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE/ssubSUBSCREEN_BODY:SAP
 ${target_file_name}    C:\\Output\\Rental_output.xlsx
 ${target_sheet_name}    Sheet1
 ${json_path}    C:\\Output\\Rental_output.json
-${json_path1}    C:\\Output\\Rental_Status.json
 # ${invoice_doc}    707326152
 *** Keywords *** 
 Write Excel
@@ -121,13 +120,8 @@ Rental Invoice
         Sleep    2
         Number To String    ${target_file_name}    column_letter=C
         Sleep    2
-        ${json}    Excel To Json New    ${target_file_name}    ${json_path}
-        # log    ${json}
-        Convert Excel To Json    ${target_file_name}    ${json_path1}
-        ${mail}    Read Json    ${json_path1}
+        ${json}    Excel To Json New    ${target_file_name}    ${json_path}        
         Log To Console    **gbStart**copilot_status_sheet**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
-        Log To Console    **gbStart**email_log**splitKeyValue**${mail}**splitKeyValue**object**gbEnd**
-    # log to console    ${json} 
     END
 
 Pdf_process
