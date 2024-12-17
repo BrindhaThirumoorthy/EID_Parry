@@ -36,7 +36,8 @@ def read_json(json_file):
     # Open and read the JSON file
     with open(json_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
-    return data
+    value = json.dumps(data, indent=4)
+    return value
 
 def delete_files(files):
     for file in files:
@@ -46,18 +47,20 @@ def delete_files(files):
         except Exception as e:
             print(f"Error deleting file {file}: {e}")
 
-def convert_json_to_string(data):
+def convert_json_to_string(input):
     value = json.dumps(data, indent=4)
     # print(value)
     return value
 
 # Example usage
 # excel_file = r'C:\\Output\\Rental_output.xlsx'  # Replace with your Excel file path
-# json_file = r'C:\\Output\\Rental_output.json'  # Replace with your desired JSON file path
+json_file = r'C:\Output\Rental_Status.json'  # Replace with your desired JSON file path
+# convert_json_to_string(data)
 
-# data = convert_excel_to_json(excel_file, json_file)
-# # data = read_json(json_file)
-# print(f"##gbStart##copilot_key##splitKeyValue##{data}##splitKeyValue##object##gbEnd##")
+# convert_excel_to_json(excel_file, json_file)
+data = read_json(json_file)
+data1 = convert_json_to_string(data)
+print(f"##gbStart##copilot_key##splitKeyValue##{data1}##splitKeyValue##object##gbEnd##")
 
 # Delete the files
 # delete_files([excel_file, json_file])

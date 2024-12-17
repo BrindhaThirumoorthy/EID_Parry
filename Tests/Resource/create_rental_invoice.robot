@@ -125,9 +125,8 @@ Rental Invoice
         # log    ${json}
         Convert Excel To Json    ${target_file_name}    ${json_path1}
         ${mail}    Read Json    ${json_path1}
-        ${json_to_string}    Convert Json To String    ${mail}
         Log To Console    **gbStart**copilot_status_sheet**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
-        Log To Console    **gbStart**email_log**splitKeyValue**${json_to_string}**splitKeyValue**object**gbEnd**
+        Log To Console    **gbStart**email_log**splitKeyValue**${mail}**splitKeyValue**object**gbEnd**
     # log to console    ${json} 
     END
 
