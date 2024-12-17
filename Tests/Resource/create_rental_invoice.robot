@@ -60,7 +60,7 @@ Rental Invoice
     #     Set Global Variable     ${contract}
     ${title}    Get Value    wnd[0]/sbar/pane[0]
     IF    '${title}' == 'Name or password is incorrect (repeat logon)'
-        Log To Console    **gbStart**copilot_log_status**splitKeyValue**${title}**gbEnd**
+        Log To Console    **gbStart**password_status**splitKeyValue**${title}**gbEnd**
 
     ELSE  
         Run Transaction     /nVF01
