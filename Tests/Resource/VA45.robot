@@ -93,7 +93,7 @@ Rental Document
         Sleep    2
         Validate the open documents
         ${json}    Excel To Json New    excel_file=C:\\TEMP\\rental.xlsx    json_file=C:\\TEMP\\rental.json
-        log to console    ${json}  
+        log to console     **gbStart**document_selection**splitKeyValue**${json}**splitKeyValue**object**gbEnd**  
         Sleep    2
     END
 
