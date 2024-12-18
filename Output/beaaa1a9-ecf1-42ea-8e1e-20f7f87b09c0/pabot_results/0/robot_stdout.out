@@ -1,0 +1,15 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test VA42                                                               
+==============================================================================
+Releasing the contracts blocks                                        | FAIL |
+Evaluating IF condition failed: Variable '${Rental_End_Date}' not found.
+------------------------------------------------------------------------------
+Tests.Test VA42                                                       | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\beaaa1a9-ecf1-42ea-8e1e-20f7f87b09c0\pabot_results\0\Output.xml

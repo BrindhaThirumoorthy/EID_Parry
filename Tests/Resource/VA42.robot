@@ -42,6 +42,7 @@ Release Block
     ELSE  
         ${date}    Extract Dates    json_string=${symvar('DateContent')}
         ${Rental_Start_Date}    Set Variable    ${date}[0]
+        ${Rental_End_Date}    Set Variable    ${date}[1]
         # FOR     ${contract}     IN     @{symvar('documents')}
             # Set Global Variable     ${contract}
             Run Transaction     /nVA42

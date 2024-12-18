@@ -1,0 +1,3156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.12.7 on win32)" generated="20241218 20:03:24.692" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\EID_Replay\EID_Parry\Tests">
+<kw name="Setup highest level suite" type="SETUP">
+<kw name="Set Variable" library="BuiltIn">
+<var>${d.test_server}</var>
+<arg>${test_server}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241218 20:03:25.995" level="INFO">${d.test_server} = Dev</msg>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:25.995"/>
+</kw>
+<kw name="Reset screenshot count variable" library="Support">
+<kw name="Set Variable" library="BuiltIn">
+<var>${screenshotCount}</var>
+<arg>${PABOTQUEUEINDEX}_1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241218 20:03:25.995" level="INFO">${screenshotCount} = 0_1</msg>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:25.995"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${screenshotCount}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20241218 20:03:25.995" level="INFO">${screenshotCount} = 0_1</msg>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:25.995"/>
+</kw>
+<kw name="Set up screenshot directory" library="Support">
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${OUTPUTDIR}${/}${wvar('screenshot_dir')}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20241218 20:03:25.995" level="INFO">Web.Dev.screenshot_dir: Screenshot</msg>
+<msg timestamp="20241218 20:03:25.995" level="INFO" html="true">Created directory '&lt;a href="file://C:\EID_Replay\EID_Parry\Output\fbb3fe83-716e-45f3-86ad-20009a5f5c20\pabot_results\0\Screenshot"&gt;C:\EID_Replay\EID_Parry\Output\fbb3fe83-716e-45f3-86ad-20009a5f5c20\pabot_results\0\Screenshot&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:25.995"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:25.995"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:25.995"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${screenshot_taking}</arg>
+<arg>${True}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20241218 20:03:25.995" level="INFO">${screenshot_taking} = True</msg>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:25.995"/>
+</kw>
+<kw name="Setup linux execution" library="Support">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${web_test_check}</var>
+<arg>Variable Should Exist</arg>
+<arg>${web_test}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Variable Should Exist" library="BuiltIn">
+<arg>${web_test}</arg>
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:25.995"/>
+</kw>
+<msg timestamp="20241218 20:03:25.995" level="INFO">${web_test_check} = True</msg>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:25.995"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${web_test_check}</arg>
+<arg>Setup Docker Execution Options</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Setup Docker Execution Options" library="Support_Web">
+<kw name="Setup Suite Metadata" library="Support_Web">
+<arg>${browser}</arg>
+<kw name="Get Browser Metadata" library="BrowserSupport">
+<var>&amp;{browser_information}</var>
+<arg>browser=${browser}</arg>
+<doc>Fetches browser metadata information
+:param browser: Name of the browser for which information is fetched
+:param reload: Re-read the metadata based on the browser
+:return: Browser metadata information, dict of format
+            {"browser_version": browser version value,
+             "driver_version": driver version value}</doc>
+<msg timestamp="20241218 20:03:31.561" level="INFO">&amp;{browser_information} = { browser_version=131.0.6778.109 | driver_version=131.0.6778.85  }</msg>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_browser_name</arg>
+<arg>${browser}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20241218 20:03:31.561" level="INFO">Set suite metadata 'test_browser_name' to value 'chrome'.</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_browser_version</arg>
+<arg>${browser_information.browser_version}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20241218 20:03:31.561" level="INFO">Set suite metadata 'test_browser_version' to value '131.0.6778.109'.</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_driver_version</arg>
+<arg>${browser_information.driver_version}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20241218 20:03:31.561" level="INFO">Set suite metadata 'test_driver_version' to value '131.0.6778.85 '.</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Setup Global Docker Execution Options" library="Support_Web">
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${global_browser_options}</arg>
+<arg>None</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20241218 20:03:31.561" level="INFO">${global_browser_options} = None</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Get Environment Variable" library="OperatingSystem">
+<var>${docker_check}</var>
+<arg>EXECUTION_ENVIRONMENT</arg>
+<arg>not_found</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<msg timestamp="20241218 20:03:31.561" level="INFO">${docker_check} = not_found</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Run Keyword And Return If" library="BuiltIn">
+<arg>"${docker_check}"!="docker"</arg>
+<arg>Log</arg>
+<arg>Not executing on Docker</arg>
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Not executing on Docker</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20241218 20:03:31.561" level="INFO">Not executing on Docker</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<msg timestamp="20241218 20:03:31.561" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{options}</var>
+<arg>--headless</arg>
+<arg>--no-sandbox</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>@{docker_options}</arg>
+<arg>@{options}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Create Webdriver for chrome preferences" library="Support_Web">
+<kw name="Update Docker Execution Options" library="Support_Web">
+<var>${list_prefs}</var>
+<arg>${list_prefs}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${docker_check}</var>
+<arg>Variable Should Exist</arg>
+<arg>${docker_options}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Variable Should Exist" library="BuiltIn">
+<arg>${docker_options}</arg>
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<msg timestamp="20241218 20:03:31.561" level="FAIL">Variable '${docker_options}' does not exist.</msg>
+<status status="FAIL" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<msg timestamp="20241218 20:03:31.561" level="INFO">${docker_check} = False</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${list_prefs_length}</var>
+<arg>${list_prefs}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20241218 20:03:31.561" level="INFO">Length is 1</msg>
+<msg timestamp="20241218 20:03:31.561" level="INFO">${list_prefs_length} = 1</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${list_prefs}</var>
+<arg>${docker_check} and ${list_prefs_length}&gt;0 and ${list_prefs}[0] != []</arg>
+<arg>Combine Lists</arg>
+<arg>${list_prefs}</arg>
+<arg>${docker_options}</arg>
+<arg>ELSE IF</arg>
+<arg>${docker_check}</arg>
+<arg>Set Variable</arg>
+<arg>${docker_options}</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${list_prefs}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Variable" library="BuiltIn">
+<arg>${list_prefs}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<msg timestamp="20241218 20:03:31.561" level="INFO">${list_prefs} = [[]]</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<msg timestamp="20241218 20:03:31.561" level="INFO">${list_prefs} = [[]]</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Create Chrome Options for download preferences" library="Support_Web">
+<var>${chrome_options}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241218 20:03:31.561" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000019F5107CF80&gt;</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<msg timestamp="20241218 20:03:31.561" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000019F5107CF80&gt;</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Update Preferences List" library="Support_Web">
+<arg>${chrome_options}</arg>
+<arg>@{list_prefs}</arg>
+<kw name="Convert To String" library="BuiltIn">
+<var>${string_prefs}</var>
+<arg>${list_prefs}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20241218 20:03:31.561" level="INFO">${string_prefs} = [[]]</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>${string_prefs} == [[]]</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<msg timestamp="20241218 20:03:31.561" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<for flavor="IN">
+<var>${preference}</var>
+<value>@{list_prefs}</value>
+<iter>
+<var name="${preference}"/>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>${preference}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</for>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${kw_prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${global_browser_options}</arg>
+<arg>${chrome options}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20241218 20:03:31.561" level="INFO">${global_browser_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000019F5107CF80&gt;</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:31.561"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:31.561"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:31.561"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>environment</arg>
+<arg>${test_server}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20241218 20:03:31.561" level="INFO">Set suite metadata 'environment' to value 'Dev'.</msg>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:31.561"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:25.995" endtime="20241218 20:03:31.561"/>
+</kw>
+<suite id="s1-s1" name="Test custom excel" source="C:\EID_Replay\EID_Parry\Tests\Test_custom_excel.robot">
+<test id="s1-s1-t1" name="Display Excel for output" line="6">
+<kw name="delete the existing excel details" library="custom_excel">
+<kw name="Count Excel Rows" library="SAP_Tcode_Library">
+<var>${excel_row}</var>
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<msg timestamp="20241218 20:03:32.410" level="INFO">3</msg>
+<msg timestamp="20241218 20:03:32.410" level="INFO">${excel_row} = 3</msg>
+<status status="PASS" starttime="20241218 20:03:32.395" endtime="20241218 20:03:32.410"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${excel_rows}</var>
+<arg>${excel_row} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241218 20:03:32.410" level="INFO">${excel_rows} = 4</msg>
+<status status="PASS" starttime="20241218 20:03:32.410" endtime="20241218 20:03:32.410"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${k}</var>
+<value>2</value>
+<value>${excel_rows}</value>
+<iter>
+<var name="${k}">2</var>
+<kw name="Delete Excel Row" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${k}</arg>
+<msg timestamp="20241218 20:03:32.426" level="INFO">Row 2 has been deleted in sheet 'Sheet1'.</msg>
+<status status="PASS" starttime="20241218 20:03:32.410" endtime="20241218 20:03:32.426"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:32.410" endtime="20241218 20:03:32.426"/>
+</iter>
+<iter>
+<var name="${k}">3</var>
+<kw name="Delete Excel Row" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${k}</arg>
+<msg timestamp="20241218 20:03:32.448" level="INFO">Row 3 has been deleted in sheet 'Sheet1'.</msg>
+<status status="PASS" starttime="20241218 20:03:32.426" endtime="20241218 20:03:32.448"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:32.426" endtime="20241218 20:03:32.448"/>
+</iter>
+<status status="PASS" starttime="20241218 20:03:32.410" endtime="20241218 20:03:32.448"/>
+</for>
+<status status="PASS" starttime="20241218 20:03:32.395" endtime="20241218 20:03:32.448"/>
+</kw>
+<kw name="customize excel for output" library="custom_excel">
+<kw name="Count Excel Columns" library="SAP_Tcode_Library">
+<var>${column_count}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<msg timestamp="20241218 20:03:32.464" level="INFO">11</msg>
+<msg timestamp="20241218 20:03:32.464" level="INFO">${column_count} = 11</msg>
+<status status="PASS" starttime="20241218 20:03:32.448" endtime="20241218 20:03:32.464"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${column}</var>
+<arg>${column_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241218 20:03:32.464" level="INFO">${column} = 12</msg>
+<status status="PASS" starttime="20241218 20:03:32.464" endtime="20241218 20:03:32.464"/>
+</kw>
+<for flavor="IN">
+<var>${name}</var>
+<value>@{column_names}</value>
+<iter>
+<var name="${name}">Sales document type</var>
+<for flavor="IN RANGE">
+<var>${l}</var>
+<value>1</value>
+<value>${column}</value>
+<iter>
+<var name="${l}">1</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.464" level="INFO">${data} = Customer Reference (Header)</msg>
+<status status="PASS" starttime="20241218 20:03:32.464" endtime="20241218 20:03:32.464"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.464" endtime="20241218 20:03:32.464"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.464" endtime="20241218 20:03:32.464"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.464" endtime="20241218 20:03:32.464"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.464" endtime="20241218 20:03:32.464"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.464" endtime="20241218 20:03:32.464"/>
+</iter>
+<iter>
+<var name="${l}">2</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.479" level="INFO">${data} = Document Date</msg>
+<status status="PASS" starttime="20241218 20:03:32.464" endtime="20241218 20:03:32.479"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.479"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.479"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.479"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.479"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.464" endtime="20241218 20:03:32.479"/>
+</iter>
+<iter>
+<var name="${l}">3</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.479" level="INFO">${data} = Sales document</msg>
+<status status="PASS" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.479"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.479"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.479"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.479"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.479"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.479"/>
+</iter>
+<iter>
+<var name="${l}">4</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.479" level="INFO">${data} = Sales document type</msg>
+<status status="PASS" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.479"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.548" level="INFO">Column 4 has been deleted in sheet 'Sheet1'.</msg>
+<status status="PASS" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.548"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241218 20:03:32.548" endtime="20241218 20:03:32.548"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.548"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.548"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.479" endtime="20241218 20:03:32.548"/>
+</iter>
+<iter>
+<var name="${l}">5</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.548" level="INFO">${data} = Sold-To Party</msg>
+<status status="PASS" starttime="20241218 20:03:32.548" endtime="20241218 20:03:32.548"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.548" endtime="20241218 20:03:32.548"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.548" endtime="20241218 20:03:32.548"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.548" endtime="20241218 20:03:32.548"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.548" endtime="20241218 20:03:32.548"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.548" endtime="20241218 20:03:32.548"/>
+</iter>
+<iter>
+<var name="${l}">6</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.564" level="INFO">${data} = Net Value (Header)</msg>
+<status status="PASS" starttime="20241218 20:03:32.548" endtime="20241218 20:03:32.564"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.564" endtime="20241218 20:03:32.564"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.564" endtime="20241218 20:03:32.564"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.564" endtime="20241218 20:03:32.564"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.564" endtime="20241218 20:03:32.564"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.548" endtime="20241218 20:03:32.564"/>
+</iter>
+<iter>
+<var name="${l}">7</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.564" level="INFO">${data} = Document Currency</msg>
+<status status="PASS" starttime="20241218 20:03:32.564" endtime="20241218 20:03:32.564"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.564" endtime="20241218 20:03:32.564"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.564" endtime="20241218 20:03:32.564"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.564" endtime="20241218 20:03:32.564"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.564" endtime="20241218 20:03:32.564"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.564" endtime="20241218 20:03:32.564"/>
+</iter>
+<iter>
+<var name="${l}">8</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.580" level="INFO">${data} = Created by</msg>
+<status status="PASS" starttime="20241218 20:03:32.564" endtime="20241218 20:03:32.580"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.564" endtime="20241218 20:03:32.580"/>
+</iter>
+<iter>
+<var name="${l}">9</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.580" level="INFO">${data} = Sold-To Party Name</msg>
+<status status="PASS" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</iter>
+<iter>
+<var name="${l}">10</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.580" level="INFO">${data} = Billing Block Description</msg>
+<status status="PASS" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.580"/>
+</iter>
+<iter>
+<var name="${l}">11</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.595" level="INFO">${data} = None</msg>
+<status status="PASS" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.595"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.595" endtime="20241218 20:03:32.595"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.595" endtime="20241218 20:03:32.595"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.595" endtime="20241218 20:03:32.595"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.595" endtime="20241218 20:03:32.595"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.580" endtime="20241218 20:03:32.595"/>
+</iter>
+<status status="PASS" starttime="20241218 20:03:32.464" endtime="20241218 20:03:32.595"/>
+</for>
+<status status="PASS" starttime="20241218 20:03:32.464" endtime="20241218 20:03:32.595"/>
+</iter>
+<iter>
+<var name="${name}">Valid-To Date</var>
+<for flavor="IN RANGE">
+<var>${l}</var>
+<value>1</value>
+<value>${column}</value>
+<iter>
+<var name="${l}">1</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.595" level="INFO">${data} = Customer Reference (Header)</msg>
+<status status="PASS" starttime="20241218 20:03:32.595" endtime="20241218 20:03:32.595"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.595" endtime="20241218 20:03:32.595"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.595" endtime="20241218 20:03:32.595"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.595" endtime="20241218 20:03:32.595"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.595" endtime="20241218 20:03:32.595"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.595" endtime="20241218 20:03:32.595"/>
+</iter>
+<iter>
+<var name="${l}">2</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.611" level="INFO">${data} = Document Date</msg>
+<status status="PASS" starttime="20241218 20:03:32.595" endtime="20241218 20:03:32.611"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.611"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.611"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.611"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.611"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.595" endtime="20241218 20:03:32.611"/>
+</iter>
+<iter>
+<var name="${l}">3</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.611" level="INFO">${data} = Sales document</msg>
+<status status="PASS" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.611"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.611"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.611"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.611"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.611"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.611"/>
+</iter>
+<iter>
+<var name="${l}">4</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.611" level="INFO">${data} = Valid-To Date</msg>
+<status status="PASS" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.611"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.627" level="INFO">Column 4 has been deleted in sheet 'Sheet1'.</msg>
+<status status="PASS" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.627"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241218 20:03:32.627" endtime="20241218 20:03:32.627"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.627"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.627"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.611" endtime="20241218 20:03:32.627"/>
+</iter>
+<iter>
+<var name="${l}">5</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.649" level="INFO">${data} = Net Value (Header)</msg>
+<status status="PASS" starttime="20241218 20:03:32.627" endtime="20241218 20:03:32.649"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.627" endtime="20241218 20:03:32.649"/>
+</iter>
+<iter>
+<var name="${l}">6</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.649" level="INFO">${data} = Document Currency</msg>
+<status status="PASS" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</iter>
+<iter>
+<var name="${l}">7</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.649" level="INFO">${data} = Created by</msg>
+<status status="PASS" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.649"/>
+</iter>
+<iter>
+<var name="${l}">8</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.664" level="INFO">${data} = Sold-To Party Name</msg>
+<status status="PASS" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.664"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.664" endtime="20241218 20:03:32.664"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.664" endtime="20241218 20:03:32.664"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.664" endtime="20241218 20:03:32.664"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.664" endtime="20241218 20:03:32.664"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.649" endtime="20241218 20:03:32.664"/>
+</iter>
+<iter>
+<var name="${l}">9</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.664" level="INFO">${data} = Billing Block Description</msg>
+<status status="PASS" starttime="20241218 20:03:32.664" endtime="20241218 20:03:32.664"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.664" endtime="20241218 20:03:32.664"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.664" endtime="20241218 20:03:32.664"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.664" endtime="20241218 20:03:32.664"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.664" endtime="20241218 20:03:32.664"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.664" endtime="20241218 20:03:32.664"/>
+</iter>
+<iter>
+<var name="${l}">10</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.696" level="INFO">${data} = None</msg>
+<status status="PASS" starttime="20241218 20:03:32.664" endtime="20241218 20:03:32.696"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.696" endtime="20241218 20:03:32.696"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.696" endtime="20241218 20:03:32.696"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.696" endtime="20241218 20:03:32.696"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.696" endtime="20241218 20:03:32.696"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.664" endtime="20241218 20:03:32.696"/>
+</iter>
+<iter>
+<var name="${l}">11</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.711" level="INFO">${data} = None</msg>
+<status status="PASS" starttime="20241218 20:03:32.696" endtime="20241218 20:03:32.711"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.711"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.711"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.711"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.711"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.696" endtime="20241218 20:03:32.711"/>
+</iter>
+<status status="PASS" starttime="20241218 20:03:32.595" endtime="20241218 20:03:32.711"/>
+</for>
+<status status="PASS" starttime="20241218 20:03:32.595" endtime="20241218 20:03:32.711"/>
+</iter>
+<iter>
+<var name="${name}">Sold-To Party</var>
+<for flavor="IN RANGE">
+<var>${l}</var>
+<value>1</value>
+<value>${column}</value>
+<iter>
+<var name="${l}">1</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.711" level="INFO">${data} = Customer Reference (Header)</msg>
+<status status="PASS" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.711"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.711"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.711"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.711"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.711"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.711"/>
+</iter>
+<iter>
+<var name="${l}">2</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.711" level="INFO">${data} = Document Date</msg>
+<status status="PASS" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.711"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.711"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.727"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.727"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.727"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.727"/>
+</iter>
+<iter>
+<var name="${l}">3</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.727" level="INFO">${data} = Sales document</msg>
+<status status="PASS" starttime="20241218 20:03:32.727" endtime="20241218 20:03:32.727"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.727" endtime="20241218 20:03:32.727"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.727" endtime="20241218 20:03:32.727"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.727" endtime="20241218 20:03:32.727"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.727" endtime="20241218 20:03:32.727"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.727" endtime="20241218 20:03:32.727"/>
+</iter>
+<iter>
+<var name="${l}">4</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.727" level="INFO">${data} = Sold-To Party</msg>
+<status status="PASS" starttime="20241218 20:03:32.727" endtime="20241218 20:03:32.727"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.749" level="INFO">Column 4 has been deleted in sheet 'Sheet1'.</msg>
+<status status="PASS" starttime="20241218 20:03:32.727" endtime="20241218 20:03:32.749"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241218 20:03:32.749" endtime="20241218 20:03:32.749"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:32.727" endtime="20241218 20:03:32.749"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.727" endtime="20241218 20:03:32.749"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.727" endtime="20241218 20:03:32.749"/>
+</iter>
+<iter>
+<var name="${l}">5</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.765" level="INFO">${data} = Document Currency</msg>
+<status status="PASS" starttime="20241218 20:03:32.749" endtime="20241218 20:03:32.765"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.765" endtime="20241218 20:03:32.765"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.765" endtime="20241218 20:03:32.765"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.765" endtime="20241218 20:03:32.765"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.765" endtime="20241218 20:03:32.765"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.749" endtime="20241218 20:03:32.765"/>
+</iter>
+<iter>
+<var name="${l}">6</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.765" level="INFO">${data} = Created by</msg>
+<status status="PASS" starttime="20241218 20:03:32.765" endtime="20241218 20:03:32.765"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.765" endtime="20241218 20:03:32.765"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.765" endtime="20241218 20:03:32.765"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.765" endtime="20241218 20:03:32.765"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.765" endtime="20241218 20:03:32.765"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.765" endtime="20241218 20:03:32.765"/>
+</iter>
+<iter>
+<var name="${l}">7</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.780" level="INFO">${data} = Sold-To Party Name</msg>
+<status status="PASS" starttime="20241218 20:03:32.765" endtime="20241218 20:03:32.780"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.765" endtime="20241218 20:03:32.780"/>
+</iter>
+<iter>
+<var name="${l}">8</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.780" level="INFO">${data} = Billing Block Description</msg>
+<status status="PASS" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</iter>
+<iter>
+<var name="${l}">9</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.780" level="INFO">${data} = None</msg>
+<status status="PASS" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.780"/>
+</iter>
+<iter>
+<var name="${l}">10</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.796" level="INFO">${data} = None</msg>
+<status status="PASS" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.796"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.796" endtime="20241218 20:03:32.796"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.796" endtime="20241218 20:03:32.796"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.796" endtime="20241218 20:03:32.796"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.796" endtime="20241218 20:03:32.796"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.780" endtime="20241218 20:03:32.796"/>
+</iter>
+<iter>
+<var name="${l}">11</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${l}</arg>
+<msg timestamp="20241218 20:03:32.796" level="INFO">${data} = None</msg>
+<status status="PASS" starttime="20241218 20:03:32.796" endtime="20241218 20:03:32.796"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == '${name}'">
+<kw name="Delete Excel Column" library="SAP_Tcode_Library">
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${l}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.796" endtime="20241218 20:03:32.796"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>column ${l} deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.796" endtime="20241218 20:03:32.796"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.796" endtime="20241218 20:03:32.796"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.796" endtime="20241218 20:03:32.796"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.796" endtime="20241218 20:03:32.796"/>
+</iter>
+<status status="PASS" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.796"/>
+</for>
+<status status="PASS" starttime="20241218 20:03:32.711" endtime="20241218 20:03:32.796"/>
+</iter>
+<status status="PASS" starttime="20241218 20:03:32.464" endtime="20241218 20:03:32.796"/>
+</for>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${column}</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.812" level="INFO">${data} = Customer Reference (Header)</msg>
+<status status="PASS" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == 'Sales document'">
+<kw name="Evaluate" library="BuiltIn">
+<var>@{documents}</var>
+<arg>[item['document'] for item in ${list_value}]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</kw>
+<kw name="Count Excel Rows" library="SAP_Tcode_Library">
+<var>${row_count}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${row_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</kw>
+<for flavor="IN">
+<var>${document}</var>
+<value>@{documents}</value>
+<iter>
+<var name="${document}"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>document no is :${document}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>2</value>
+<value>${rows}</value>
+<iter>
+<var name="${j}"/>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</branch>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</if>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.812"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.827" level="INFO">${data} = Document Date</msg>
+<status status="PASS" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.827"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == 'Sales document'">
+<kw name="Evaluate" library="BuiltIn">
+<var>@{documents}</var>
+<arg>[item['document'] for item in ${list_value}]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</kw>
+<kw name="Count Excel Rows" library="SAP_Tcode_Library">
+<var>${row_count}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${row_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</kw>
+<for flavor="IN">
+<var>${document}</var>
+<value>@{documents}</value>
+<iter>
+<var name="${document}"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>document no is :${document}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>2</value>
+<value>${rows}</value>
+<iter>
+<var name="${j}"/>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</branch>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</if>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.827"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.812" endtime="20241218 20:03:32.827"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.843" level="INFO">${data} = Sales document</msg>
+<status status="PASS" starttime="20241218 20:03:32.827" endtime="20241218 20:03:32.843"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == 'Sales document'">
+<kw name="Evaluate" library="BuiltIn">
+<var>@{documents}</var>
+<arg>[item['document'] for item in ${list_value}]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241218 20:03:32.843" level="INFO">@{documents} = [ 40026218 ]</msg>
+<status status="PASS" starttime="20241218 20:03:32.843" endtime="20241218 20:03:32.843"/>
+</kw>
+<kw name="Count Excel Rows" library="SAP_Tcode_Library">
+<var>${row_count}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<msg timestamp="20241218 20:03:32.849" level="INFO">16</msg>
+<msg timestamp="20241218 20:03:32.849" level="INFO">${row_count} = 16</msg>
+<status status="PASS" starttime="20241218 20:03:32.843" endtime="20241218 20:03:32.849"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${row_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241218 20:03:32.849" level="INFO">${rows} = 17</msg>
+<status status="PASS" starttime="20241218 20:03:32.849" endtime="20241218 20:03:32.849"/>
+</kw>
+<for flavor="IN">
+<var>${document}</var>
+<value>@{documents}</value>
+<iter>
+<var name="${document}">40026218</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>document no is :${document}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241218 20:03:32.849" endtime="20241218 20:03:32.849"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>2</value>
+<value>${rows}</value>
+<iter>
+<var name="${j}">2</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.865" level="INFO">${input} = "40025332"</msg>
+<status status="PASS" starttime="20241218 20:03:32.849" endtime="20241218 20:03:32.865"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.865"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.865"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.865"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.865"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.865"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.865"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.849" endtime="20241218 20:03:32.865"/>
+</iter>
+<iter>
+<var name="${j}">3</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.865" level="INFO">${input} = "40025941"</msg>
+<status status="PASS" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.865"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.865"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.865"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.865"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.865"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.865"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.865"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.865"/>
+</iter>
+<iter>
+<var name="${j}">4</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.881" level="INFO">${input} = "40026198"</msg>
+<status status="PASS" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.881"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.881" endtime="20241218 20:03:32.881"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.881" endtime="20241218 20:03:32.881"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.881" endtime="20241218 20:03:32.881"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.881" endtime="20241218 20:03:32.881"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.881" endtime="20241218 20:03:32.881"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.881" endtime="20241218 20:03:32.881"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.865" endtime="20241218 20:03:32.881"/>
+</iter>
+<iter>
+<var name="${j}">5</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.881" level="INFO">${input} = "40026210"</msg>
+<status status="PASS" starttime="20241218 20:03:32.881" endtime="20241218 20:03:32.881"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.896"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.896"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.896"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.896"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.896"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.881" endtime="20241218 20:03:32.896"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.881" endtime="20241218 20:03:32.896"/>
+</iter>
+<iter>
+<var name="${j}">6</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.896" level="INFO">${input} = "40026216"</msg>
+<status status="PASS" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.896"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.896"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.896"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.896"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.896"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.896"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.896"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.896"/>
+</iter>
+<iter>
+<var name="${j}">7</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.912" level="INFO">${input} = "40026217"</msg>
+<status status="PASS" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.912"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.912" endtime="20241218 20:03:32.912"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.912" endtime="20241218 20:03:32.912"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.912" endtime="20241218 20:03:32.912"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.912" endtime="20241218 20:03:32.912"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.912" endtime="20241218 20:03:32.912"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.912" endtime="20241218 20:03:32.912"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.896" endtime="20241218 20:03:32.912"/>
+</iter>
+<iter>
+<var name="${j}">8</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.912" level="INFO">${input} = "40026218"</msg>
+<status status="PASS" starttime="20241218 20:03:32.912" endtime="20241218 20:03:32.912"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<msg timestamp="20241218 20:03:32.912" level="INFO">${index_number} = 0</msg>
+<status status="PASS" starttime="20241218 20:03:32.912" endtime="20241218 20:03:32.912"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241218 20:03:32.927" level="INFO">${index} = 2</msg>
+<status status="PASS" starttime="20241218 20:03:32.927" endtime="20241218 20:03:32.927"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<msg timestamp="20241218 20:03:32.927" level="INFO">${row_data} = ['Demo-Rental', datetime.datetime(2024, 12, 4, 0, 0), '"40026218"', 940.94, 'INR', 'BCSSUPPORT1', 'PARRY AGRO INDUSTRIES LTD', None]</msg>
+<status status="PASS" starttime="20241218 20:03:32.927" endtime="20241218 20:03:32.927"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="PASS" starttime="20241218 20:03:32.927" endtime="20241218 20:03:32.953"/>
+</kw>
+<status status="PASS" starttime="20241218 20:03:32.912" endtime="20241218 20:03:32.953"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.912" endtime="20241218 20:03:32.953"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.912" endtime="20241218 20:03:32.953"/>
+</iter>
+<iter>
+<var name="${j}">9</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.953" level="INFO">${input} = "40026219"</msg>
+<status status="PASS" starttime="20241218 20:03:32.953" endtime="20241218 20:03:32.953"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.953" endtime="20241218 20:03:32.953"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.953" endtime="20241218 20:03:32.953"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.953" endtime="20241218 20:03:32.953"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.953" endtime="20241218 20:03:32.953"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.953" endtime="20241218 20:03:32.953"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.953" endtime="20241218 20:03:32.953"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.953" endtime="20241218 20:03:32.953"/>
+</iter>
+<iter>
+<var name="${j}">10</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.969" level="INFO">${input} = "40026220"</msg>
+<status status="PASS" starttime="20241218 20:03:32.953" endtime="20241218 20:03:32.969"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.953" endtime="20241218 20:03:32.969"/>
+</iter>
+<iter>
+<var name="${j}">11</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.969" level="INFO">${input} = "40026221"</msg>
+<status status="PASS" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</iter>
+<iter>
+<var name="${j}">12</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.969" level="INFO">${input} = "40026223"</msg>
+<status status="PASS" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.969"/>
+</iter>
+<iter>
+<var name="${j}">13</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.984" level="INFO">${input} = "40026224"</msg>
+<status status="PASS" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.984"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.984" endtime="20241218 20:03:32.984"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.984" endtime="20241218 20:03:32.984"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.984" endtime="20241218 20:03:32.984"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.984" endtime="20241218 20:03:32.984"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.984" endtime="20241218 20:03:32.984"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.984" endtime="20241218 20:03:32.984"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.969" endtime="20241218 20:03:32.984"/>
+</iter>
+<iter>
+<var name="${j}">14</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:32.984" level="INFO">${input} = "40026244"</msg>
+<status status="PASS" starttime="20241218 20:03:32.984" endtime="20241218 20:03:32.984"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.984" endtime="20241218 20:03:32.984"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:32.984" endtime="20241218 20:03:32.984"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.984" endtime="20241218 20:03:32.984"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:32.984" endtime="20241218 20:03:32.984"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:32.984" endtime="20241218 20:03:32.984"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.984" endtime="20241218 20:03:32.984"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.984" endtime="20241218 20:03:32.984"/>
+</iter>
+<iter>
+<var name="${j}">15</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:33.000" level="INFO">${input} = "40026246"</msg>
+<status status="PASS" starttime="20241218 20:03:32.984" endtime="20241218 20:03:33.000"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.000" endtime="20241218 20:03:33.000"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.000" endtime="20241218 20:03:33.000"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.000" endtime="20241218 20:03:33.000"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.000" endtime="20241218 20:03:33.000"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:33.000" endtime="20241218 20:03:33.000"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:33.000" endtime="20241218 20:03:33.000"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.984" endtime="20241218 20:03:33.000"/>
+</iter>
+<iter>
+<var name="${j}">16</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:33.000" level="INFO">${input} = "40026247"</msg>
+<status status="PASS" starttime="20241218 20:03:33.000" endtime="20241218 20:03:33.000"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.000" endtime="20241218 20:03:33.000"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.000" endtime="20241218 20:03:33.000"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.000" endtime="20241218 20:03:33.000"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.000" endtime="20241218 20:03:33.016"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:33.000" endtime="20241218 20:03:33.016"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:33.000" endtime="20241218 20:03:33.016"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:33.000" endtime="20241218 20:03:33.016"/>
+</iter>
+<status status="PASS" starttime="20241218 20:03:32.849" endtime="20241218 20:03:33.016"/>
+</for>
+<status status="PASS" starttime="20241218 20:03:32.849" endtime="20241218 20:03:33.016"/>
+</iter>
+<status status="PASS" starttime="20241218 20:03:32.849" endtime="20241218 20:03:33.016"/>
+</for>
+<status status="PASS" starttime="20241218 20:03:32.843" endtime="20241218 20:03:33.016"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:32.843" endtime="20241218 20:03:33.016"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:32.827" endtime="20241218 20:03:33.016"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:33.053" level="INFO">${data} = Net Value (Header)</msg>
+<status status="PASS" starttime="20241218 20:03:33.053" endtime="20241218 20:03:33.053"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == 'Sales document'">
+<kw name="Evaluate" library="BuiltIn">
+<var>@{documents}</var>
+<arg>[item['document'] for item in ${list_value}]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.053" endtime="20241218 20:03:33.053"/>
+</kw>
+<kw name="Count Excel Rows" library="SAP_Tcode_Library">
+<var>${row_count}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.053" endtime="20241218 20:03:33.053"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${row_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.053" endtime="20241218 20:03:33.053"/>
+</kw>
+<for flavor="IN">
+<var>${document}</var>
+<value>@{documents}</value>
+<iter>
+<var name="${document}"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>document no is :${document}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>2</value>
+<value>${rows}</value>
+<iter>
+<var name="${j}"/>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</branch>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</if>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.053" endtime="20241218 20:03:33.069"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.053" endtime="20241218 20:03:33.069"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.053" endtime="20241218 20:03:33.069"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:33.053" endtime="20241218 20:03:33.069"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:33.016" endtime="20241218 20:03:33.069"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:33.069" level="INFO">${data} = Document Currency</msg>
+<status status="PASS" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == 'Sales document'">
+<kw name="Evaluate" library="BuiltIn">
+<var>@{documents}</var>
+<arg>[item['document'] for item in ${list_value}]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<kw name="Count Excel Rows" library="SAP_Tcode_Library">
+<var>${row_count}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${row_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<for flavor="IN">
+<var>${document}</var>
+<value>@{documents}</value>
+<iter>
+<var name="${document}"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>document no is :${document}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>2</value>
+<value>${rows}</value>
+<iter>
+<var name="${j}"/>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</branch>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</if>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:33.069" level="INFO">${data} = Created by</msg>
+<status status="PASS" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == 'Sales document'">
+<kw name="Evaluate" library="BuiltIn">
+<var>@{documents}</var>
+<arg>[item['document'] for item in ${list_value}]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<kw name="Count Excel Rows" library="SAP_Tcode_Library">
+<var>${row_count}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.069"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${row_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.085"/>
+</kw>
+<for flavor="IN">
+<var>${document}</var>
+<value>@{documents}</value>
+<iter>
+<var name="${document}"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>document no is :${document}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>2</value>
+<value>${rows}</value>
+<iter>
+<var name="${j}"/>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</branch>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</if>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.085"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.085"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:33.069" endtime="20241218 20:03:33.085"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:33.085" level="INFO">${data} = Sold-To Party Name</msg>
+<status status="PASS" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == 'Sales document'">
+<kw name="Evaluate" library="BuiltIn">
+<var>@{documents}</var>
+<arg>[item['document'] for item in ${list_value}]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<kw name="Count Excel Rows" library="SAP_Tcode_Library">
+<var>${row_count}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${row_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<for flavor="IN">
+<var>${document}</var>
+<value>@{documents}</value>
+<iter>
+<var name="${document}"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>document no is :${document}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>2</value>
+<value>${rows}</value>
+<iter>
+<var name="${j}"/>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</branch>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</if>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.085"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:33.100" level="INFO">${data} = Billing Block Description</msg>
+<status status="PASS" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.100"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == 'Sales document'">
+<kw name="Evaluate" library="BuiltIn">
+<var>@{documents}</var>
+<arg>[item['document'] for item in ${list_value}]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<kw name="Count Excel Rows" library="SAP_Tcode_Library">
+<var>${row_count}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${row_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<for flavor="IN">
+<var>${document}</var>
+<value>@{documents}</value>
+<iter>
+<var name="${document}"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>document no is :${document}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>2</value>
+<value>${rows}</value>
+<iter>
+<var name="${j}"/>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</branch>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</if>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:33.085" endtime="20241218 20:03:33.100"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:33.100" level="INFO">${data} = None</msg>
+<status status="PASS" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == 'Sales document'">
+<kw name="Evaluate" library="BuiltIn">
+<var>@{documents}</var>
+<arg>[item['document'] for item in ${list_value}]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<kw name="Count Excel Rows" library="SAP_Tcode_Library">
+<var>${row_count}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${row_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<for flavor="IN">
+<var>${document}</var>
+<value>@{documents}</value>
+<iter>
+<var name="${document}"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>document no is :${document}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>2</value>
+<value>${rows}</value>
+<iter>
+<var name="${j}"/>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</branch>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</if>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.100"/>
+</iter>
+<iter>
+<var name="${i}">10</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:33.116" level="INFO">${data} = None</msg>
+<status status="PASS" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.116"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == 'Sales document'">
+<kw name="Evaluate" library="BuiltIn">
+<var>@{documents}</var>
+<arg>[item['document'] for item in ${list_value}]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<kw name="Count Excel Rows" library="SAP_Tcode_Library">
+<var>${row_count}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${row_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<for flavor="IN">
+<var>${document}</var>
+<value>@{documents}</value>
+<iter>
+<var name="${document}"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>document no is :${document}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>2</value>
+<value>${rows}</value>
+<iter>
+<var name="${j}"/>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</branch>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</if>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:33.100" endtime="20241218 20:03:33.116"/>
+</iter>
+<iter>
+<var name="${i}">11</var>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<msg timestamp="20241218 20:03:33.116" level="INFO">${data} = None</msg>
+<status status="PASS" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<if>
+<branch type="IF" condition="'${data}' == 'Sales document'">
+<kw name="Evaluate" library="BuiltIn">
+<var>@{documents}</var>
+<arg>[item['document'] for item in ${list_value}]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<kw name="Count Excel Rows" library="SAP_Tcode_Library">
+<var>${row_count}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${row_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<for flavor="IN">
+<var>${document}</var>
+<value>@{documents}</value>
+<iter>
+<var name="${document}"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>document no is :${document}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>2</value>
+<value>${rows}</value>
+<iter>
+<var name="${j}"/>
+<kw name="Read Excel Cell Value" library="SAP_Tcode_Library">
+<var>${input}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<arg>${i}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<if>
+<branch type="IF" condition="${input} == &quot;${document}&quot;">
+<kw name="Get Index" library="SAP_Tcode_Library">
+<var>${index_number}</var>
+<arg>${documents}</arg>
+<arg>${document}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index_number} + 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<kw name="Read Row From Excel" library="SAP_Tcode_Library">
+<var>${row_data}</var>
+<arg>${file_name}</arg>
+<arg>${sheet_name}</arg>
+<arg>${j}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<kw name="Write Row To Excel" library="SAP_Tcode_Library">
+<arg>${target_file_name}</arg>
+<arg>${target_sheet_name}</arg>
+<arg>${index}</arg>
+<arg>${row_data}</arg>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</kw>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</branch>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</if>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</iter>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</for>
+<status status="NOT RUN" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</branch>
+<status status="PASS" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</if>
+<status status="PASS" starttime="20241218 20:03:33.116" endtime="20241218 20:03:33.116"/>
+</iter>
+<status status="PASS" starttime="20241218 20:03:32.796" endtime="20241218 20:03:33.116"/>
+</for>
+<status status="PASS" starttime="20241218 20:03:32.448" endtime="20241218 20:03:33.116"/>
+</kw>
+<tag>excel</tag>
+<tag>Regression</tag>
+<status status="PASS" starttime="20241218 20:03:32.395" endtime="20241218 20:03:33.116"/>
+</test>
+<status status="PASS" starttime="20241218 20:03:31.561" endtime="20241218 20:03:33.132"/>
+</suite>
+<doc>Testing functionality through Robot Framework</doc>
+<meta name="environment">Dev</meta>
+<meta name="test_browser_name">chrome</meta>
+<meta name="test_browser_version">131.0.6778.109</meta>
+<meta name="test_driver_version">131.0.6778.85 </meta>
+<meta name="test_environment">Dev</meta>
+<meta name="test_freeze_dependencies">astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0</meta>
+<status status="PASS" starttime="20241218 20:03:25.632" endtime="20241218 20:03:33.256"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">excel</stat>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test custom excel">Tests.Test custom excel</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
