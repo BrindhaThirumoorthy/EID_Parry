@@ -1,5 +1,5 @@
-datasources:ef3b118a22aa8a4913d49c140c10ffe5417d509d
-commandlineoptions:ce9aaa46f814db068ff8bd8c5e9c6862f662431e
+datasources:561b6a62125671c4c3a1ef67fdb0d7d1d8136f67
+commandlineoptions:842e572251c66faf6f4c25b156c806e2feeaff5c
 suitesfrom:no-suites-from-option
-file:28980e75dafb36ec6b37f9c3c63e05f558712a20
---suite Tests.Test VA45
+file:0d57fb47d7a18c59348fdf345c292151d3a611d0
+--suite Tests.Resource.Test file

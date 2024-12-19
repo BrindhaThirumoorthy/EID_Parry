@@ -170,17 +170,6 @@ Delete the rows
         
     END
 
-
-Remove Space From Column Header
-    [Arguments]    ${arg1}
-    # TODO: implement keyword "Remove Space From Column Header".
-    Fail    Not Implemented
-
-
-Output Proper Json
-    # TODO: implement keyword "Output Proper Json".
-    Fail    Not Implemented
-    
     
     
 

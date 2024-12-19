@@ -1612,14 +1612,10 @@ class SAP_Tcode_Library:
             print("Invalid Excel Path")
 
     def output_proper_json(self, json_data):
-        proper_json = (
+        proper_json = {
                 '{"StatusCode": 200,'
                 f'"ResponseBody": {{"content":{json_data}}},'
                 '"status": 200,'
-                '"content_type": "application/json"}',
-                status=200,
-                content_type="application/json"
-            )
-        return proper_json
-
+                "content_type": "application/json"}
+        return json.dumps(proper_json)
     
