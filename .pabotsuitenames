@@ -1,5 +1,5 @@
-datasources:c2460be14e9ecc0320bb4fecc8def1d375791b5c
-commandlineoptions:ce9aaa46f814db068ff8bd8c5e9c6862f662431e
+datasources:e44256ad6a4e402e2a9db85262d2ea4762357e6d
+commandlineoptions:f0f6c07534104a3d4878fbb72c66dede7e29d734
 suitesfrom:no-suites-from-option
-file:639ae6a50cb7614903854088d9138fd8a04610c6
---suite Tests.Test VA45
+file:4ec64a3437e931aeb4c03b9d620b8014cf013025
+--suite Tests.Test custom excel

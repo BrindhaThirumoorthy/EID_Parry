@@ -5,7 +5,7 @@ from datetime import time
 
 def convert_excel_to_json(excel_file, json_file):
     df = pd.read_excel(excel_file, engine='openpyxl')
-    df = df.where(pd.notnull(df), "empty")
+    # df = df.where(pd.notnull(df), "empty")
     for column in df.select_dtypes(['datetime']):
         df[column] = df[column].astype(str)
     for column in df.columns:
