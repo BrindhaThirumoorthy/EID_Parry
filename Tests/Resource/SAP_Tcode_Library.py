@@ -1479,6 +1479,7 @@ class SAP_Tcode_Library:
 
     def excel_to_json_new(self, excel_file, json_file):
         df = pd.read_excel(excel_file, engine='openpyxl')
+        df = df.where(pd.notnull(df), "empty")
         for column in df.select_dtypes(['datetime']):
             df[column] = df[column].astype(str)
         for column in df.columns:
@@ -1603,6 +1604,7 @@ class SAP_Tcode_Library:
         if os.path.exists(excel_path):
             try:
                 df = pd.read_excel(excel_path)
+                df = df.where(pd.notnull(df), "empty")
                 df.columns = df.columns.str.replace(' ','_')
                 df.columns = df.columns.str.replace('-','_')
                 df.to_excel(excel_path, index=False)
@@ -1613,9 +1615,14 @@ class SAP_Tcode_Library:
 
     def output_proper_json(self, json_data):
         proper_json = {
-                '{"StatusCode": 200,'
-                f'"ResponseBody": {{"content":{json_data}}},'
-                '"status": 200,'
-                "content_type": "application/json"}
+            "StatusCode": 200,
+            "ResponseBody": {
+                "content": json_data
+            },
+            "status": 200,
+            "content_type": "application/json"
+        }
+        
+        # Return the json.dumps of the dictionary
         return json.dumps(proper_json)
     

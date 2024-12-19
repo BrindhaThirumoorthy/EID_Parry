@@ -92,7 +92,7 @@ Rental Document
         Number To String    file_path=C:\\TEMP\\rental.xlsx    column_letter=C
         Sleep    2
         Validate the open documents
-        Remove Space From Column Header    C:\\TEMP\\rental.xlsx
+        # Remove Space From Column Header    C:\\TEMP\\rental.xlsx
         ${json}    Excel To Json New    excel_file=C:\\TEMP\\rental.xlsx    json_file=C:\\TEMP\\rental.json
         ${proper_json}    Output Proper Json    ${json}
         log to console     **gbStart**document_selection**splitKeyValue**${proper_json}**splitKeyValue**object**gbEnd**  
