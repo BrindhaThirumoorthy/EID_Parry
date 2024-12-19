@@ -19624,3 +19624,278 @@ Argument File Data:
 
 2024-12-18 20:19:12,801 - Robot.Driver - _delete_file - INFO - Deleting file: C:\EID_Replay\EID_Parry\Robot_Arguments__
 2024-12-18 20:19:12,816 - Robot.Driver - create_pabot_local_logfiles - INFO - Create log.html file in pabot results folders, which will have the screenshots embedded:
+2024-12-18 20:22:30,942 - Robot.Driver - clean_output_directory - INFO - Cleaning Output Directory: C:\EID_Replay\EID_Parry\Output\a939e838-5453-43ad-a135-30167eae4236
+2024-12-18 20:22:30,942 - Robot.Driver - build_execution_command - INFO - 
+Executing tests from folder: Tests
+2024-12-18 20:22:31,815 - Robot.Driver - set_execution_command - INFO - 
+command is : "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_84b225b6-f948-48d8-9018-4d14781f15f9"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 20:22:31,815 - Robot.Driver - execute_command - INFO - 
+Executing: "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_84b225b6-f948-48d8-9018-4d14781f15f9"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 20:22:31,815 - Robot.Driver - execute_command - INFO - 
+Argument File Data:
+--variable test_server:Dev
+--metadata test_environment:Dev
+--metadata test_freeze_dependencies:astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0
+--include VA42
+--variable browser:chrome
+--variableFile C:\EID_Replay\EID_Parry\Execution\Access_Data.py
+--log LOG
+--report Report
+--listener C:\EID_Replay\EID_Parry\Execution\ResultsListener.py
+--variable screenshot_taking:True
+--outputdir C:\EID_Replay\EID_Parry\Output\a939e838-5453-43ad-a135-30167eae4236
+--output Output.xml
+
+
+2024-12-18 20:22:52,540 - Robot.Driver - _delete_file - INFO - Deleting file: C:\EID_Replay\EID_Parry\Robot_Arguments__
+2024-12-18 20:22:52,571 - Robot.Driver - create_pabot_local_logfiles - INFO - Create log.html file in pabot results folders, which will have the screenshots embedded:
+2024-12-18 20:23:19,135 - Robot.Driver - clean_output_directory - INFO - Cleaning Output Directory: C:\EID_Replay\EID_Parry\Output\33d4db1f-cc29-4961-af34-fe4524d0752c
+2024-12-18 20:23:19,135 - Robot.Driver - build_execution_command - INFO - 
+Executing tests from folder: Tests
+2024-12-18 20:23:19,275 - Robot.Driver - set_execution_command - INFO - 
+command is : "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_8725124f-ee8b-4cbc-924f-29dc8860ae4f"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 20:23:19,275 - Robot.Driver - execute_command - INFO - 
+Executing: "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_8725124f-ee8b-4cbc-924f-29dc8860ae4f"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 20:23:19,275 - Robot.Driver - execute_command - INFO - 
+Argument File Data:
+--variable test_server:Dev
+--metadata test_environment:Dev
+--metadata test_freeze_dependencies:astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0
+--include VF01
+--variable browser:chrome
+--variableFile C:\EID_Replay\EID_Parry\Execution\Access_Data.py
+--log LOG
+--report Report
+--listener C:\EID_Replay\EID_Parry\Execution\ResultsListener.py
+--variable screenshot_taking:True
+--outputdir C:\EID_Replay\EID_Parry\Output\33d4db1f-cc29-4961-af34-fe4524d0752c
+--output Output.xml
+
+
+2024-12-18 20:24:14,183 - Robot.Driver - _delete_file - INFO - Deleting file: C:\EID_Replay\EID_Parry\Robot_Arguments__
+2024-12-18 20:24:14,230 - Robot.Driver - create_pabot_local_logfiles - INFO - Create log.html file in pabot results folders, which will have the screenshots embedded:
+2024-12-18 22:00:57,416 - Robot.Driver - clean_output_directory - INFO - Cleaning Output Directory: C:\EID_Replay\EID_Parry\Output\714280b5-02b8-414d-b6f2-29019cb9680f
+2024-12-18 22:00:57,416 - Robot.Driver - build_execution_command - INFO - 
+Executing tests from folder: Tests
+2024-12-18 22:00:57,588 - Robot.Driver - set_execution_command - INFO - 
+command is : "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_3888a045-416e-4441-9bb8-b99f4f07a9c6"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:00:57,588 - Robot.Driver - execute_command - INFO - 
+Executing: "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_3888a045-416e-4441-9bb8-b99f4f07a9c6"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:00:57,588 - Robot.Driver - execute_command - INFO - 
+Argument File Data:
+--variable test_server:Dev
+--metadata test_environment:Dev
+--metadata test_freeze_dependencies:astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0
+--include VA45
+--variable browser:chrome
+--variableFile C:\EID_Replay\EID_Parry\Execution\Access_Data.py
+--log LOG
+--report Report
+--listener C:\EID_Replay\EID_Parry\Execution\ResultsListener.py
+--variable screenshot_taking:True
+--outputdir C:\EID_Replay\EID_Parry\Output\714280b5-02b8-414d-b6f2-29019cb9680f
+--output Output.xml
+
+
+2024-12-18 22:08:39,079 - Robot.Driver - _delete_file - INFO - Deleting file: C:\EID_Replay\EID_Parry\Robot_Arguments__
+2024-12-18 22:08:39,736 - Robot.Driver - create_pabot_local_logfiles - INFO - Create log.html file in pabot results folders, which will have the screenshots embedded:
+2024-12-18 22:15:29,433 - Robot.Driver - clean_output_directory - INFO - Cleaning Output Directory: C:\EID_Replay\EID_Parry\Output\d1c518cb-3d08-4cfa-b1b6-458d194af6eb
+2024-12-18 22:15:29,433 - Robot.Driver - build_execution_command - INFO - 
+Executing tests from folder: Tests
+2024-12-18 22:15:29,589 - Robot.Driver - set_execution_command - INFO - 
+command is : "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_b1db22e6-0f2a-4ed5-8ae7-5c5c0474a890"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:15:29,589 - Robot.Driver - execute_command - INFO - 
+Executing: "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_b1db22e6-0f2a-4ed5-8ae7-5c5c0474a890"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:15:29,589 - Robot.Driver - execute_command - INFO - 
+Argument File Data:
+--variable test_server:Dev
+--metadata test_environment:Dev
+--metadata test_freeze_dependencies:astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0
+--include excel
+--variable browser:chrome
+--variableFile C:\EID_Replay\EID_Parry\Execution\Access_Data.py
+--log LOG
+--report Report
+--listener C:\EID_Replay\EID_Parry\Execution\ResultsListener.py
+--variable screenshot_taking:True
+--outputdir C:\EID_Replay\EID_Parry\Output\d1c518cb-3d08-4cfa-b1b6-458d194af6eb
+--output Output.xml
+
+
+2024-12-18 22:15:40,467 - Robot.Driver - _delete_file - INFO - Deleting file: C:\EID_Replay\EID_Parry\Robot_Arguments__
+2024-12-18 22:15:40,561 - Robot.Driver - create_pabot_local_logfiles - INFO - Create log.html file in pabot results folders, which will have the screenshots embedded:
+2024-12-18 22:15:49,201 - Robot.Driver - clean_output_directory - INFO - Cleaning Output Directory: C:\EID_Replay\EID_Parry\Output\296809a2-244a-44fd-b611-e74a6e31aaf3
+2024-12-18 22:15:49,217 - Robot.Driver - build_execution_command - INFO - 
+Executing tests from folder: Tests
+2024-12-18 22:15:49,342 - Robot.Driver - set_execution_command - INFO - 
+command is : "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_2e440bbe-3340-4489-88f9-6b3b2524bc64"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:15:49,342 - Robot.Driver - execute_command - INFO - 
+Executing: "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_2e440bbe-3340-4489-88f9-6b3b2524bc64"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:15:49,342 - Robot.Driver - execute_command - INFO - 
+Argument File Data:
+--variable test_server:Dev
+--metadata test_environment:Dev
+--metadata test_freeze_dependencies:astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0
+--include VA42
+--variable browser:chrome
+--variableFile C:\EID_Replay\EID_Parry\Execution\Access_Data.py
+--log LOG
+--report Report
+--listener C:\EID_Replay\EID_Parry\Execution\ResultsListener.py
+--variable screenshot_taking:True
+--outputdir C:\EID_Replay\EID_Parry\Output\296809a2-244a-44fd-b611-e74a6e31aaf3
+--output Output.xml
+
+
+2024-12-18 22:16:05,761 - Robot.Driver - _delete_file - INFO - Deleting file: C:\EID_Replay\EID_Parry\Robot_Arguments__
+2024-12-18 22:16:05,793 - Robot.Driver - create_pabot_local_logfiles - INFO - Create log.html file in pabot results folders, which will have the screenshots embedded:
+2024-12-18 22:16:14,824 - Robot.Driver - clean_output_directory - INFO - Cleaning Output Directory: C:\EID_Replay\EID_Parry\Output\dd28a006-96b0-4439-9116-2ed2d29f4e44
+2024-12-18 22:16:14,824 - Robot.Driver - build_execution_command - INFO - 
+Executing tests from folder: Tests
+2024-12-18 22:16:14,980 - Robot.Driver - set_execution_command - INFO - 
+command is : "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_11eeca8a-1f0d-4f38-b2d5-2a7f4a2d15f5"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:16:14,996 - Robot.Driver - execute_command - INFO - 
+Executing: "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_11eeca8a-1f0d-4f38-b2d5-2a7f4a2d15f5"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:16:14,996 - Robot.Driver - execute_command - INFO - 
+Argument File Data:
+--variable test_server:Dev
+--metadata test_environment:Dev
+--metadata test_freeze_dependencies:astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0
+--include VA42
+--variable browser:chrome
+--variableFile C:\EID_Replay\EID_Parry\Execution\Access_Data.py
+--log LOG
+--report Report
+--listener C:\EID_Replay\EID_Parry\Execution\ResultsListener.py
+--variable screenshot_taking:True
+--outputdir C:\EID_Replay\EID_Parry\Output\dd28a006-96b0-4439-9116-2ed2d29f4e44
+--output Output.xml
+
+
+2024-12-18 22:16:31,153 - Robot.Driver - _delete_file - INFO - Deleting file: C:\EID_Replay\EID_Parry\Robot_Arguments__
+2024-12-18 22:16:31,169 - Robot.Driver - create_pabot_local_logfiles - INFO - Create log.html file in pabot results folders, which will have the screenshots embedded:
+2024-12-18 22:16:40,763 - Robot.Driver - clean_output_directory - INFO - Cleaning Output Directory: C:\EID_Replay\EID_Parry\Output\8c2ee430-9d0b-4cab-b0ba-717c739e6e85
+2024-12-18 22:16:40,763 - Robot.Driver - build_execution_command - INFO - 
+Executing tests from folder: Tests
+2024-12-18 22:16:40,950 - Robot.Driver - set_execution_command - INFO - 
+command is : "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_592896ce-25ff-42ea-a00a-66615586163d"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:16:40,950 - Robot.Driver - execute_command - INFO - 
+Executing: "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_592896ce-25ff-42ea-a00a-66615586163d"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:16:40,950 - Robot.Driver - execute_command - INFO - 
+Argument File Data:
+--variable test_server:Dev
+--metadata test_environment:Dev
+--metadata test_freeze_dependencies:astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0
+--include VA42
+--variable browser:chrome
+--variableFile C:\EID_Replay\EID_Parry\Execution\Access_Data.py
+--log LOG
+--report Report
+--listener C:\EID_Replay\EID_Parry\Execution\ResultsListener.py
+--variable screenshot_taking:True
+--outputdir C:\EID_Replay\EID_Parry\Output\8c2ee430-9d0b-4cab-b0ba-717c739e6e85
+--output Output.xml
+
+
+2024-12-18 22:16:56,926 - Robot.Driver - _delete_file - INFO - Deleting file: C:\EID_Replay\EID_Parry\Robot_Arguments__
+2024-12-18 22:16:56,941 - Robot.Driver - create_pabot_local_logfiles - INFO - Create log.html file in pabot results folders, which will have the screenshots embedded:
+2024-12-18 22:22:10,170 - Robot.Driver - clean_output_directory - INFO - Cleaning Output Directory: C:\EID_Replay\EID_Parry\Output\f2c228c3-65c2-4079-9cc7-0c34c88a08ae
+2024-12-18 22:22:10,170 - Robot.Driver - build_execution_command - INFO - 
+Executing tests from folder: Tests
+2024-12-18 22:22:10,311 - Robot.Driver - set_execution_command - INFO - 
+command is : "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_04a15baf-9b00-4ad2-a1ec-ddd1d66ae33d"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:22:10,311 - Robot.Driver - execute_command - INFO - 
+Executing: "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_04a15baf-9b00-4ad2-a1ec-ddd1d66ae33d"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:22:10,311 - Robot.Driver - execute_command - INFO - 
+Argument File Data:
+--variable test_server:Dev
+--metadata test_environment:Dev
+--metadata test_freeze_dependencies:astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0
+--include VF01
+--variable browser:chrome
+--variableFile C:\EID_Replay\EID_Parry\Execution\Access_Data.py
+--log LOG
+--report Report
+--listener C:\EID_Replay\EID_Parry\Execution\ResultsListener.py
+--variable screenshot_taking:True
+--outputdir C:\EID_Replay\EID_Parry\Output\f2c228c3-65c2-4079-9cc7-0c34c88a08ae
+--output Output.xml
+
+
+2024-12-18 22:22:28,369 - Robot.Driver - _delete_file - INFO - Deleting file: C:\EID_Replay\EID_Parry\Robot_Arguments__
+2024-12-18 22:22:28,385 - Robot.Driver - create_pabot_local_logfiles - INFO - Create log.html file in pabot results folders, which will have the screenshots embedded:
+2024-12-18 22:22:37,431 - Robot.Driver - clean_output_directory - INFO - Cleaning Output Directory: C:\EID_Replay\EID_Parry\Output\f18b8417-820b-4ee2-b94c-0a9f0f990894
+2024-12-18 22:22:37,431 - Robot.Driver - build_execution_command - INFO - 
+Executing tests from folder: Tests
+2024-12-18 22:22:37,603 - Robot.Driver - set_execution_command - INFO - 
+command is : "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_6c3f8a55-b467-4f25-a08f-f9978bf1a4f6"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:22:37,603 - Robot.Driver - execute_command - INFO - 
+Executing: "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_6c3f8a55-b467-4f25-a08f-f9978bf1a4f6"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:22:37,603 - Robot.Driver - execute_command - INFO - 
+Argument File Data:
+--variable test_server:Dev
+--metadata test_environment:Dev
+--metadata test_freeze_dependencies:astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0
+--include VF01
+--variable browser:chrome
+--variableFile C:\EID_Replay\EID_Parry\Execution\Access_Data.py
+--log LOG
+--report Report
+--listener C:\EID_Replay\EID_Parry\Execution\ResultsListener.py
+--variable screenshot_taking:True
+--outputdir C:\EID_Replay\EID_Parry\Output\f18b8417-820b-4ee2-b94c-0a9f0f990894
+--output Output.xml
+
+
+2024-12-18 22:22:55,596 - Robot.Driver - _delete_file - INFO - Deleting file: C:\EID_Replay\EID_Parry\Robot_Arguments__
+2024-12-18 22:22:55,612 - Robot.Driver - create_pabot_local_logfiles - INFO - Create log.html file in pabot results folders, which will have the screenshots embedded:
+2024-12-18 22:23:04,752 - Robot.Driver - clean_output_directory - INFO - Cleaning Output Directory: C:\EID_Replay\EID_Parry\Output\1373b039-8699-40bd-a090-1f65e9dab839
+2024-12-18 22:23:04,752 - Robot.Driver - build_execution_command - INFO - 
+Executing tests from folder: Tests
+2024-12-18 22:23:04,909 - Robot.Driver - set_execution_command - INFO - 
+command is : "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_ddcdd370-611f-4f57-93de-3cf02f485378"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:23:04,909 - Robot.Driver - execute_command - INFO - 
+Executing: "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_ddcdd370-611f-4f57-93de-3cf02f485378"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:23:04,909 - Robot.Driver - execute_command - INFO - 
+Argument File Data:
+--variable test_server:Dev
+--metadata test_environment:Dev
+--metadata test_freeze_dependencies:astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0
+--include VF01
+--variable browser:chrome
+--variableFile C:\EID_Replay\EID_Parry\Execution\Access_Data.py
+--log LOG
+--report Report
+--listener C:\EID_Replay\EID_Parry\Execution\ResultsListener.py
+--variable screenshot_taking:True
+--outputdir C:\EID_Replay\EID_Parry\Output\1373b039-8699-40bd-a090-1f65e9dab839
+--output Output.xml
+
+
+2024-12-18 22:23:56,093 - Robot.Driver - _delete_file - INFO - Deleting file: C:\EID_Replay\EID_Parry\Robot_Arguments__
+2024-12-18 22:23:56,125 - Robot.Driver - create_pabot_local_logfiles - INFO - Create log.html file in pabot results folders, which will have the screenshots embedded:
+2024-12-18 22:43:46,799 - Robot.Driver - clean_output_directory - INFO - Cleaning Output Directory: C:\EID_Replay\EID_Parry\Output\3167579e-58c3-4917-aa84-b760d35108bf
+2024-12-18 22:43:46,799 - Robot.Driver - build_execution_command - INFO - 
+Executing tests from folder: Tests
+2024-12-18 22:43:46,955 - Robot.Driver - set_execution_command - INFO - 
+command is : "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_eab4f8a1-b97d-4b16-b91f-e145004bce65"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:43:46,955 - Robot.Driver - execute_command - INFO - 
+Executing: "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\pabot" --verbose  --argumentfile "C:\EID_Replay\EID_Parry\Robot_Arguments_eab4f8a1-b97d-4b16-b91f-e145004bce65"  "C:\EID_Replay\EID_Parry\Tests" 
+2024-12-18 22:43:46,955 - Robot.Driver - execute_command - INFO - 
+Argument File Data:
+--variable test_server:Dev
+--metadata test_environment:Dev
+--metadata test_freeze_dependencies:astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0
+--include VA45
+--variable browser:chrome
+--variableFile C:\EID_Replay\EID_Parry\Execution\Access_Data.py
+--log LOG
+--report Report
+--listener C:\EID_Replay\EID_Parry\Execution\ResultsListener.py
+--variable screenshot_taking:True
+--outputdir C:\EID_Replay\EID_Parry\Output\3167579e-58c3-4917-aa84-b760d35108bf
+--output Output.xml
+
+
+2024-12-18 22:50:53,308 - Robot.Driver - _delete_file - INFO - Deleting file: C:\EID_Replay\EID_Parry\Robot_Arguments__
+2024-12-18 22:50:53,980 - Robot.Driver - create_pabot_local_logfiles - INFO - Create log.html file in pabot results folders, which will have the screenshots embedded:

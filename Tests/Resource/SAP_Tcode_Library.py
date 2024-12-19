@@ -1598,4 +1598,17 @@ class SAP_Tcode_Library:
         self.session.findById(table_id).doubleClickItem (row,column)
         # self.session.findById(table_id).selectedNode = row
         # self.session.findById(table_id).doubleClickNode (row)
+
+    def remove_space_from_column_header(self, excel_path):
+        if os.path.exists(excel_path):
+            try:
+                df = pd.read_excel(excel_path)
+                df.columns = df.columns.str.replace(' ','_')
+                df.columns = df.columns.str.replace('-','_')
+                df.to_excel(excel_path, index=False)
+            except Exception as e:
+                return e
+        else:
+            print("Invalid Excel Path")
+
     
