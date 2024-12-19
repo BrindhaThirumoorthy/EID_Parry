@@ -94,7 +94,8 @@ Rental Document
         Validate the open documents
         Remove Space From Column Header    C:\\TEMP\\rental.xlsx
         ${json}    Excel To Json New    excel_file=C:\\TEMP\\rental.xlsx    json_file=C:\\TEMP\\rental.json
-        log to console     **gbStart**document_selection**splitKeyValue**${json}**splitKeyValue**object**gbEnd**  
+        ${proper_json}    Output Proper Json    ${json}
+        log to console     **gbStart**document_selection**splitKeyValue**${proper_json}**splitKeyValue**object**gbEnd**  
         Sleep    2
     END
 
@@ -168,6 +169,17 @@ Delete the rows
         Delete Excel Row    ${excel_path}    ${excel_sheet}    ${delete_row}
         
     END
+
+
+Remove Space From Column Header
+    [Arguments]    ${arg1}
+    # TODO: implement keyword "Remove Space From Column Header".
+    Fail    Not Implemented
+
+
+Output Proper Json
+    # TODO: implement keyword "Output Proper Json".
+    Fail    Not Implemented
     
     
     
