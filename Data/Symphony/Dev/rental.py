@@ -1,7 +1,7 @@
 SAP_SERVER = "C:\\Program Files (x86)\\SAP\\FrontEnd\\SAPgui\\saplogon.exe"
 Rental_Connection = "EID sandbox"
 Rental_Client = "900"
-Rental_User = "eecfgn03"
-DateContent = {"startDate":"01.12.2024","endDate":"31.12.2024"}
+Rental_User = "ESHFFI03"
+Invoice_PDF_PATH = "C:\\Symphony\\Rental_Invoice\\Download\\2024\\December"
 Layout = ["Contracts - Header",]
-search_terms = ["Sold-To Party Name","Billing Block Description"]
+documents = "40026246"

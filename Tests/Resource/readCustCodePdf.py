@@ -36,7 +36,10 @@ if __name__ == "__main__":
         pdf_path = os.path.join(folder_path, file_name)
 
         text_blocks = extract_text_from_first_page(pdf_path)
+        print(text_blocks)
         parsed_content, recipient_info = parse_key_value_pairs(text_blocks)
+        print(parsed_content)
+        print(recipient_info)
         recipient_info = recipient_info.split('-')[-1].strip()
         print(f"##gbStart##bp_number##splitKeyValue##{recipient_info}##splitKeyValue##object##gbEnd##")
         print("Script Processed Successfully")
