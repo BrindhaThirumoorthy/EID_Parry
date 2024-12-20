@@ -1,0 +1,27 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test VA45                                                               
+==============================================================================
+Display the rental documents                                            
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Test_VA45.robot:9
+    T:  Display the rental documents    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Test_VA45.robot:10
+      System Logon    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\VA45.robot:26
+      Multiple Logon Handling    wnd[1]
+______________________________________________________________________________
+| FAIL |
+Keyword 'SAP_Tcode_Library.Multiple Logon Handling' expected 3 arguments, got 1.
+------------------------------------------------------------------------------
+Tests.Test VA45                                                       | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\8746aed5-9b0a-419f-b4d5-5ce6e36ea378\pabot_results\0\Output.xml
