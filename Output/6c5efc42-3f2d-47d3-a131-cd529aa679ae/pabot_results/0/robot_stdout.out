@@ -1,0 +1,26 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Create Rental Invoice                                              
+==============================================================================
+Create the rental Invoice                                             Document 707326194 has been saved.
+40026217
+**gbStart**invoice_log**splitKeyValue**40026217 Document 707326194 has been saved.**gbEnd**
+40026217
+2
+row is :0:Ready To be Sent
+2
+row is :0:Ready To be Sent
+**gbStart**invoice_log**splitKeyValue**40026217 Invoice is created 707326194 with E-Invoice error**gbEnd**
+row is :1:
+**gbStart**invoice_log**splitKeyValue**40026217 Invoice is created 707326194 with E-Invoice error**gbEnd**
+**gbStart**copilot_status_sheet**splitKeyValue**[{'Customer Reference (Header)': 'Demo - Rental Contra', 'Document Date': '2024-12-04', 'Sales document': '40026217', 'Net Value (Header)': 940.94, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Sold-To Party Name': 'PARRY AGRO INDUSTRIES LTD', 'Billing Block Description': 'empty', 'Invoice Details': 'Document 707326194 has been saved.'}]**splitKeyValue**object**gbEnd**
+| PASS |
+------------------------------------------------------------------------------
+Tests.Test Create Rental Invoice                                      | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\6c5efc42-3f2d-47d3-a131-cd529aa679ae\pabot_results\0\Output.xml

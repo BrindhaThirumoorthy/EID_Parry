@@ -1,0 +1,2854 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot generated="20241219 20:49:50.975" generator="Rebot 6.0.2 (Python 3.12.7 on win32)" rpa="false" schemaversion="3">
+ <suite id="s1" name="Tests" source="C:\EID_Replay\EID_Parry\Tests">
+  <kw name="Setup highest level suite" type="SETUP">
+   <kw library="BuiltIn" name="Set Variable">
+    <var>
+     ${d.test_server}
+    </var>
+    <arg>
+     ${test_server}
+    </arg>
+    <doc>
+     Returns the given values which can then be assigned to a variables.
+    </doc>
+    <msg level="INFO" timestamp="20241219 20:49:02.107">
+     ${d.test_server} = Dev
+    </msg>
+    <status endtime="20241219 20:49:02.107" starttime="20241219 20:49:02.107" status="PASS"/>
+   </kw>
+   <kw library="Support" name="Reset screenshot count variable">
+    <kw library="BuiltIn" name="Set Variable">
+     <var>
+      ${screenshotCount}
+     </var>
+     <arg>
+      ${PABOTQUEUEINDEX}_1
+     </arg>
+     <doc>
+      Returns the given values which can then be assigned to a variables.
+     </doc>
+     <msg level="INFO" timestamp="20241219 20:49:02.107">
+      ${screenshotCount} = 0_1
+     </msg>
+     <status endtime="20241219 20:49:02.107" starttime="20241219 20:49:02.107" status="PASS"/>
+    </kw>
+    <kw library="BuiltIn" name="Set Global Variable">
+     <arg>
+      ${screenshotCount}
+     </arg>
+     <doc>
+      Makes a variable available globally in all tests and suites.
+     </doc>
+     <msg level="INFO" timestamp="20241219 20:49:02.107">
+      ${screenshotCount} = 0_1
+     </msg>
+     <status endtime="20241219 20:49:02.107" starttime="20241219 20:49:02.107" status="PASS"/>
+    </kw>
+    <kw library="Support" name="Set up screenshot directory">
+     <kw library="OperatingSystem" name="Create Directory">
+      <arg>
+       ${OUTPUTDIR}${/}${wvar('screenshot_dir')}
+      </arg>
+      <doc>
+       Creates the specified directory.
+      </doc>
+      <msg level="INFO" timestamp="20241219 20:49:02.107">
+       Web.Dev.screenshot_dir: Screenshot
+      </msg>
+      <msg html="true" level="INFO" timestamp="20241219 20:49:02.107">
+       Created directory '&lt;a href="file://C:\EID_Replay\EID_Parry\Output\0ae5b3c2-0068-4d27-9af3-a6c128a2fed1\pabot_results\0\Screenshot"&gt;C:\EID_Replay\EID_Parry\Output\0ae5b3c2-0068-4d27-9af3-a6c128a2fed1\pabot_results\0\Screenshot&lt;/a&gt;'.
+      </msg>
+      <status endtime="20241219 20:49:02.107" starttime="20241219 20:49:02.107" status="PASS"/>
+     </kw>
+     <status endtime="20241219 20:49:02.107" starttime="20241219 20:49:02.107" status="PASS"/>
+    </kw>
+    <status endtime="20241219 20:49:02.107" starttime="20241219 20:49:02.107" status="PASS"/>
+   </kw>
+   <kw library="BuiltIn" name="Set Global Variable">
+    <arg>
+     ${screenshot_taking}
+    </arg>
+    <arg>
+     ${True}
+    </arg>
+    <doc>
+     Makes a variable available globally in all tests and suites.
+    </doc>
+    <msg level="INFO" timestamp="20241219 20:49:02.107">
+     ${screenshot_taking} = True
+    </msg>
+    <status endtime="20241219 20:49:02.107" starttime="20241219 20:49:02.107" status="PASS"/>
+   </kw>
+   <kw library="Support" name="Setup linux execution">
+    <kw library="BuiltIn" name="Run Keyword And Return Status">
+     <var>
+      ${web_test_check}
+     </var>
+     <arg>
+      Variable Should Exist
+     </arg>
+     <arg>
+      ${web_test}
+     </arg>
+     <doc>
+      Runs the given keyword with given arguments and returns the status as a Boolean value.
+     </doc>
+     <kw library="BuiltIn" name="Variable Should Exist">
+      <arg>
+       ${web_test}
+      </arg>
+      <doc>
+       Fails unless the given variable exists within the current scope.
+      </doc>
+      <status endtime="20241219 20:49:02.107" starttime="20241219 20:49:02.107" status="PASS"/>
+     </kw>
+     <msg level="INFO" timestamp="20241219 20:49:02.107">
+      ${web_test_check} = True
+     </msg>
+     <status endtime="20241219 20:49:02.107" starttime="20241219 20:49:02.107" status="PASS"/>
+    </kw>
+    <kw library="BuiltIn" name="Run Keyword If">
+     <arg>
+      ${web_test_check}
+     </arg>
+     <arg>
+      Setup Docker Execution Options
+     </arg>
+     <doc>
+      Runs the given keyword with the given arguments, if ``condition`` is true.
+     </doc>
+     <kw library="Support_Web" name="Setup Docker Execution Options">
+      <kw library="Support_Web" name="Setup Suite Metadata">
+       <arg>
+        ${browser}
+       </arg>
+       <kw library="BrowserSupport" name="Get Browser Metadata">
+        <var>
+         &amp;{browser_information}
+        </var>
+        <arg>
+         browser=${browser}
+        </arg>
+        <doc>
+         Fetches browser metadata information
+:param browser: Name of the browser for which information is fetched
+:param reload: Re-read the metadata based on the browser
+:return: Browser metadata information, dict of format
+            {"browser_version": browser version value,
+             "driver_version": driver version value}
+        </doc>
+        <msg level="INFO" timestamp="20241219 20:49:08.960">
+         &amp;{browser_information} = { browser_version=131.0.6778.109 | driver_version=131.0.6778.85  }
+        </msg>
+        <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:02.107" status="PASS"/>
+       </kw>
+       <kw library="BuiltIn" name="Set Suite Metadata">
+        <arg>
+         test_browser_name
+        </arg>
+        <arg>
+         ${browser}
+        </arg>
+        <doc>
+         Sets metadata for the current test suite.
+        </doc>
+        <msg level="INFO" timestamp="20241219 20:49:08.960">
+         Set suite metadata 'test_browser_name' to value 'chrome'.
+        </msg>
+        <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+       </kw>
+       <kw library="BuiltIn" name="Set Suite Metadata">
+        <arg>
+         test_browser_version
+        </arg>
+        <arg>
+         ${browser_information.browser_version}
+        </arg>
+        <doc>
+         Sets metadata for the current test suite.
+        </doc>
+        <msg level="INFO" timestamp="20241219 20:49:08.960">
+         Set suite metadata 'test_browser_version' to value '131.0.6778.109'.
+        </msg>
+        <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+       </kw>
+       <kw library="BuiltIn" name="Set Suite Metadata">
+        <arg>
+         test_driver_version
+        </arg>
+        <arg>
+         ${browser_information.driver_version}
+        </arg>
+        <doc>
+         Sets metadata for the current test suite.
+        </doc>
+        <msg level="INFO" timestamp="20241219 20:49:08.960">
+         Set suite metadata 'test_driver_version' to value '131.0.6778.85 '.
+        </msg>
+        <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+       </kw>
+       <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:02.107" status="PASS"/>
+      </kw>
+      <kw library="Support_Web" name="Setup Global Docker Execution Options">
+       <kw library="BuiltIn" name="Set Global Variable">
+        <arg>
+         ${global_browser_options}
+        </arg>
+        <arg>
+         None
+        </arg>
+        <doc>
+         Makes a variable available globally in all tests and suites.
+        </doc>
+        <msg level="INFO" timestamp="20241219 20:49:08.960">
+         ${global_browser_options} = None
+        </msg>
+        <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+       </kw>
+       <kw library="OperatingSystem" name="Get Environment Variable">
+        <var>
+         ${docker_check}
+        </var>
+        <arg>
+         EXECUTION_ENVIRONMENT
+        </arg>
+        <arg>
+         not_found
+        </arg>
+        <doc>
+         Returns the value of an environment variable with the given name.
+        </doc>
+        <msg level="INFO" timestamp="20241219 20:49:08.960">
+         ${docker_check} = not_found
+        </msg>
+        <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+       </kw>
+       <kw library="BuiltIn" name="Run Keyword And Return If">
+        <arg>
+         "${docker_check}"!="docker"
+        </arg>
+        <arg>
+         Log
+        </arg>
+        <arg>
+         Not executing on Docker
+        </arg>
+        <doc>
+         Runs the specified keyword and returns from the enclosing user keyword.
+        </doc>
+        <kw library="BuiltIn" name="Log">
+         <arg>
+          Not executing on Docker
+         </arg>
+         <doc>
+          Logs the given message with the given level.
+         </doc>
+         <msg level="INFO" timestamp="20241219 20:49:08.960">
+          Not executing on Docker
+         </msg>
+         <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+        </kw>
+        <msg level="INFO" timestamp="20241219 20:49:08.960">
+         Returning from the enclosing user keyword.
+        </msg>
+        <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+       </kw>
+       <kw library="BuiltIn" name="Create List">
+        <var>
+         @{options}
+        </var>
+        <arg>
+         --headless
+        </arg>
+        <arg>
+         --no-sandbox
+        </arg>
+        <arg>
+         --disable-dev-shm-usage
+        </arg>
+        <doc>
+         Returns a list containing given items.
+        </doc>
+        <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="NOT RUN"/>
+       </kw>
+       <kw library="BuiltIn" name="Set Global Variable">
+        <arg>
+         @{docker_options}
+        </arg>
+        <arg>
+         @{options}
+        </arg>
+        <doc>
+         Makes a variable available globally in all tests and suites.
+        </doc>
+        <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="NOT RUN"/>
+       </kw>
+       <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+      </kw>
+      <kw library="Support_Web" name="Create Webdriver for chrome preferences">
+       <kw library="Support_Web" name="Update Docker Execution Options">
+        <var>
+         ${list_prefs}
+        </var>
+        <arg>
+         ${list_prefs}
+        </arg>
+        <kw library="BuiltIn" name="Run Keyword And Return Status">
+         <var>
+          ${docker_check}
+         </var>
+         <arg>
+          Variable Should Exist
+         </arg>
+         <arg>
+          ${docker_options}
+         </arg>
+         <doc>
+          Runs the given keyword with given arguments and returns the status as a Boolean value.
+         </doc>
+         <kw library="BuiltIn" name="Variable Should Exist">
+          <arg>
+           ${docker_options}
+          </arg>
+          <doc>
+           Fails unless the given variable exists within the current scope.
+          </doc>
+          <msg level="FAIL" timestamp="20241219 20:49:08.960">
+           Variable '${docker_options}' does not exist.
+          </msg>
+          <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="FAIL"/>
+         </kw>
+         <msg level="INFO" timestamp="20241219 20:49:08.960">
+          ${docker_check} = False
+         </msg>
+         <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+        </kw>
+        <kw library="BuiltIn" name="Get Length">
+         <var>
+          ${list_prefs_length}
+         </var>
+         <arg>
+          ${list_prefs}
+         </arg>
+         <doc>
+          Returns and logs the length of the given item as an integer.
+         </doc>
+         <msg level="INFO" timestamp="20241219 20:49:08.960">
+          Length is 1
+         </msg>
+         <msg level="INFO" timestamp="20241219 20:49:08.960">
+          ${list_prefs_length} = 1
+         </msg>
+         <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+        </kw>
+        <kw library="BuiltIn" name="Run Keyword If">
+         <var>
+          ${list_prefs}
+         </var>
+         <arg>
+          ${docker_check} and ${list_prefs_length}&gt;0 and ${list_prefs}[0] != []
+         </arg>
+         <arg>
+          Combine Lists
+         </arg>
+         <arg>
+          ${list_prefs}
+         </arg>
+         <arg>
+          ${docker_options}
+         </arg>
+         <arg>
+          ELSE IF
+         </arg>
+         <arg>
+          ${docker_check}
+         </arg>
+         <arg>
+          Set Variable
+         </arg>
+         <arg>
+          ${docker_options}
+         </arg>
+         <arg>
+          ELSE
+         </arg>
+         <arg>
+          Set Variable
+         </arg>
+         <arg>
+          ${list_prefs}
+         </arg>
+         <doc>
+          Runs the given keyword with the given arguments, if ``condition`` is true.
+         </doc>
+         <kw library="BuiltIn" name="Set Variable">
+          <arg>
+           ${list_prefs}
+          </arg>
+          <doc>
+           Returns the given values which can then be assigned to a variables.
+          </doc>
+          <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+         </kw>
+         <msg level="INFO" timestamp="20241219 20:49:08.960">
+          ${list_prefs} = [[]]
+         </msg>
+         <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+        </kw>
+        <msg level="INFO" timestamp="20241219 20:49:08.960">
+         ${list_prefs} = [[]]
+        </msg>
+        <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+       </kw>
+       <kw library="Support_Web" name="Create Chrome Options for download preferences">
+        <var>
+         ${chrome_options}
+        </var>
+        <kw library="BuiltIn" name="Evaluate">
+         <var>
+          ${chrome_options}
+         </var>
+         <arg>
+          sys.modules['selenium.webdriver'].ChromeOptions()
+         </arg>
+         <arg>
+          sys
+         </arg>
+         <doc>
+          Evaluates the given expression in Python and returns the result.
+         </doc>
+         <msg level="INFO" timestamp="20241219 20:49:08.960">
+          ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001BAE46A8B00&gt;
+         </msg>
+         <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+        </kw>
+        <msg level="INFO" timestamp="20241219 20:49:08.960">
+         ${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001BAE46A8B00&gt;
+        </msg>
+        <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+       </kw>
+       <kw library="Support_Web" name="Update Preferences List">
+        <arg>
+         ${chrome_options}
+        </arg>
+        <arg>
+         @{list_prefs}
+        </arg>
+        <kw library="BuiltIn" name="Convert To String">
+         <var>
+          ${string_prefs}
+         </var>
+         <arg>
+          ${list_prefs}
+         </arg>
+         <doc>
+          Converts the given item to a Unicode string.
+         </doc>
+         <msg level="INFO" timestamp="20241219 20:49:08.960">
+          ${string_prefs} = [[]]
+         </msg>
+         <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+        </kw>
+        <kw library="BuiltIn" name="Return From Keyword If">
+         <arg>
+          ${string_prefs} == [[]]
+         </arg>
+         <doc>
+          Returns from the enclosing user keyword if ``condition`` is true.
+         </doc>
+         <msg level="INFO" timestamp="20241219 20:49:08.960">
+          Returning from the enclosing user keyword.
+         </msg>
+         <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+        </kw>
+        <for flavor="IN">
+         <var>
+          ${preference}
+         </var>
+         <value>
+          @{list_prefs}
+         </value>
+         <iter>
+          <var name="${preference}"/>
+          <kw library="BuiltIn" name="Call Method">
+           <arg>
+            ${chrome_options}
+           </arg>
+           <arg>
+            add_argument
+           </arg>
+           <arg>
+            ${preference}
+           </arg>
+           <doc>
+            Calls the named method of the given object with the provided arguments.
+           </doc>
+           <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="NOT RUN"/>
+          </kw>
+          <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="NOT RUN"/>
+         </iter>
+         <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="NOT RUN"/>
+        </for>
+        <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+       </kw>
+       <kw library="BuiltIn" name="Call Method">
+        <arg>
+         ${chrome_options}
+        </arg>
+        <arg>
+         add_experimental_option
+        </arg>
+        <arg>
+         prefs
+        </arg>
+        <arg>
+         ${kw_prefs}
+        </arg>
+        <doc>
+         Calls the named method of the given object with the provided arguments.
+        </doc>
+        <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+       </kw>
+       <kw library="BuiltIn" name="Set Global Variable">
+        <arg>
+         ${global_browser_options}
+        </arg>
+        <arg>
+         ${chrome options}
+        </arg>
+        <doc>
+         Makes a variable available globally in all tests and suites.
+        </doc>
+        <msg level="INFO" timestamp="20241219 20:49:08.960">
+         ${global_browser_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001BAE46A8B00&gt;
+        </msg>
+        <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+       </kw>
+       <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+      </kw>
+      <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:02.107" status="PASS"/>
+     </kw>
+     <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:02.107" status="PASS"/>
+    </kw>
+    <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:02.107" status="PASS"/>
+   </kw>
+   <kw library="BuiltIn" name="Set Suite Metadata">
+    <arg>
+     environment
+    </arg>
+    <arg>
+     ${test_server}
+    </arg>
+    <doc>
+     Sets metadata for the current test suite.
+    </doc>
+    <msg level="INFO" timestamp="20241219 20:49:08.960">
+     Set suite metadata 'environment' to value 'Dev'.
+    </msg>
+    <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:08.960" status="PASS"/>
+   </kw>
+   <status endtime="20241219 20:49:08.960" starttime="20241219 20:49:02.107" status="PASS"/>
+  </kw>
+  <suite id="s1-s1" name="Test Create Rental Invoice" source="C:\EID_Replay\EID_Parry\Tests\Test_Create_Rental_Invoice.robot">
+   <test id="s1-s1-t1" line="8" name="Create the rental Invoice">
+    <kw library="create_rental_invoice" name="Create Rental Invoice and download pdf">
+     <kw library="Process" name="Start Process">
+      <arg>
+       ${symvar('SAP_SERVER')}
+      </arg>
+      <doc>
+       Starts a new process on background.
+      </doc>
+      <msg level="INFO" timestamp="20241219 20:49:09.693">
+       Sym.Dev.SAP_SERVER: C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe
+      </msg>
+      <msg level="INFO" timestamp="20241219 20:49:09.693">
+       Starting process:
+"C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe"
+      </msg>
+      <status endtime="20241219 20:49:09.709" starttime="20241219 20:49:09.693" status="PASS"/>
+     </kw>
+     <kw library="SAP_Tcode_Library" name="Connect To Session">
+      <doc>
+       Connects to an open session SAP.
+      </doc>
+      <status endtime="20241219 20:49:09.747" starttime="20241219 20:49:09.709" status="PASS"/>
+     </kw>
+     <kw library="SAP_Tcode_Library" name="Open Connection">
+      <arg>
+       ${symvar('Rental_Connection')}
+      </arg>
+      <doc>
+       Opens a connection to the given connection name. Be sure to provide the full connection name, including the bracket part.
+      </doc>
+      <msg level="INFO" timestamp="20241219 20:49:09.747">
+       Sym.Dev.Rental_Connection: EID sandbox
+      </msg>
+      <status endtime="20241219 20:49:10.385" starttime="20241219 20:49:09.747" status="PASS"/>
+     </kw>
+     <kw library="SAP_Tcode_Library" name="Input Text">
+      <arg>
+       wnd[0]/usr/txtRSYST-MANDT
+      </arg>
+      <arg>
+       ${symvar('Rental_Client')}
+      </arg>
+      <doc>
+       Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+      </doc>
+      <msg level="INFO" timestamp="20241219 20:49:10.385">
+       Sym.Dev.Rental_Client: 900
+      </msg>
+      <msg level="INFO" timestamp="20241219 20:49:10.438">
+       Typing text '900' into text field 'wnd[0]/usr/txtRSYST-MANDT'.
+      </msg>
+      <status endtime="20241219 20:49:10.438" starttime="20241219 20:49:10.385" status="PASS"/>
+     </kw>
+     <kw library="SAP_Tcode_Library" name="Input Text">
+      <arg>
+       wnd[0]/usr/txtRSYST-BNAME
+      </arg>
+      <arg>
+       ${symvar('Rental_User')}
+      </arg>
+      <doc>
+       Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+      </doc>
+      <msg level="INFO" timestamp="20241219 20:49:10.438">
+       Sym.Dev.Rental_User: ESHFFI03
+      </msg>
+      <msg level="INFO" timestamp="20241219 20:49:10.454">
+       Typing text 'ESHFFI03' into text field 'wnd[0]/usr/txtRSYST-BNAME'.
+      </msg>
+      <status endtime="20241219 20:49:10.454" starttime="20241219 20:49:10.438" status="PASS"/>
+     </kw>
+     <kw library="SAP_Tcode_Library" name="Input Password">
+      <arg>
+       wnd[0]/usr/pwdRSYST-BCODE
+      </arg>
+      <arg>
+       %{RENTAL_PASSWORD}
+      </arg>
+      <doc>
+       Inserts the given password into the text field identified by locator.
+The password is not recorded in the log.
+      </doc>
+      <msg level="INFO" timestamp="20241219 20:49:10.454">
+       Typing password into text field 'wnd[0]/usr/pwdRSYST-BCODE'.
+      </msg>
+      <status endtime="20241219 20:49:10.454" starttime="20241219 20:49:10.454" status="PASS"/>
+     </kw>
+     <kw library="SAP_Tcode_Library" name="Send Vkey">
+      <arg>
+       0
+      </arg>
+      <doc>
+       Sends a SAP virtual key combination to the window, not into an element.
+If you want to send a value to a text field, use `input text` instead.
+      </doc>
+      <status endtime="20241219 20:49:11.002" starttime="20241219 20:49:10.454" status="PASS"/>
+     </kw>
+     <kw library="SAP_Tcode_Library" name="Multiple Logon Handling">
+      <var>
+       ${logon_status}
+      </var>
+      <arg>
+       wnd[1]
+      </arg>
+      <msg level="INFO" timestamp="20241219 20:49:11.025">
+       Error: (-2147352567, 'Exception occurred.', (619, 'SAP Frontend Server', 'The control could not be found by id.', 'C:\\Program Files (x86)\\SAP\\FrontEnd\\SAPgui\\sapfront.HLP', 393215, 0), None)
+      </msg>
+      <msg level="INFO" timestamp="20241219 20:49:11.025">
+       ${logon_status} = None
+      </msg>
+      <status endtime="20241219 20:49:11.025" starttime="20241219 20:49:11.002" status="PASS"/>
+     </kw>
+     <if>
+      <branch condition="'${logon_status}' == &quot;Multiple logon found. Please terminate all the logon &amp; proceed&quot;" type="IF">
+       <kw library="BuiltIn" name="Log To Console">
+        <arg>
+         **gbStart**Sales_Document_status**splitKeyValue**${logon_status}**gbEnd**
+        </arg>
+        <doc>
+         Logs the given message to the console.
+        </doc>
+        <status endtime="20241219 20:49:11.041" starttime="20241219 20:49:11.041" status="NOT RUN"/>
+       </kw>
+       <status endtime="20241219 20:49:11.041" starttime="20241219 20:49:11.025" status="NOT RUN"/>
+      </branch>
+      <branch type="ELSE">
+       <kw library="create_rental_invoice" name="Rental Invoice">
+        <kw library="SAP_Tcode_Library" name="Get Value">
+         <var>
+          ${title}
+         </var>
+         <arg>
+          wnd[0]/sbar/pane[0]
+         </arg>
+         <doc>
+          Gets the value of the given element. The possible return values depend on the type of element (see Return values).
+         </doc>
+         <msg level="INFO" timestamp="20241219 20:49:11.041">
+          ${title} =
+         </msg>
+         <status endtime="20241219 20:49:11.041" starttime="20241219 20:49:11.041" status="PASS"/>
+        </kw>
+        <if>
+         <branch condition="'${title}' == 'Name or password is incorrect (repeat logon)'" type="IF">
+          <kw library="BuiltIn" name="Log To Console">
+           <arg>
+            **gbStart**password_status**splitKeyValue**${title}**gbEnd**
+           </arg>
+           <doc>
+            Logs the given message to the console.
+           </doc>
+           <status endtime="20241219 20:49:11.041" starttime="20241219 20:49:11.041" status="NOT RUN"/>
+          </kw>
+          <status endtime="20241219 20:49:11.041" starttime="20241219 20:49:11.041" status="NOT RUN"/>
+         </branch>
+         <branch type="ELSE">
+          <kw library="SAP_Tcode_Library" name="Run Transaction">
+           <arg>
+            /nVF01
+           </arg>
+           <doc>
+            Runs a Sap transaction. An error is given when an unknown transaction is specified.
+           </doc>
+           <status endtime="20241219 20:49:11.241" starttime="20241219 20:49:11.041" status="PASS"/>
+          </kw>
+          <kw library="BuiltIn" name="Sleep">
+           <arg>
+            1
+           </arg>
+           <doc>
+            Pauses the test executed for the given time.
+           </doc>
+           <msg level="INFO" timestamp="20241219 20:49:12.242">
+            Slept 1 second
+           </msg>
+           <status endtime="20241219 20:49:12.242" starttime="20241219 20:49:11.241" status="PASS"/>
+          </kw>
+          <kw library="SAP_Tcode_Library" name="Input Text">
+           <arg>
+            wnd[0]/usr/tblSAPMV60ATCTRL_ERF_FAKT/ctxtKOMFK-VBELN[0,0]
+           </arg>
+           <arg>
+            ${symvar('documents')}
+           </arg>
+           <doc>
+            Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+           </doc>
+           <msg level="INFO" timestamp="20241219 20:49:12.242">
+            Sym.Dev.documents: 40026247
+           </msg>
+           <msg level="INFO" timestamp="20241219 20:49:12.257">
+            Typing text '40026247' into text field 'wnd[0]/usr/tblSAPMV60ATCTRL_ERF_FAKT/ctxtKOMFK-VBELN[0,0]'.
+           </msg>
+           <status endtime="20241219 20:49:12.257" starttime="20241219 20:49:12.242" status="PASS"/>
+          </kw>
+          <kw library="DateTime" name="Get Current Date">
+           <var>
+            ${current_date}
+           </var>
+           <arg>
+            result_format=%d.%m.%Y
+           </arg>
+           <doc>
+            Returns current local or UTC time with an optional increment.
+           </doc>
+           <msg level="INFO" timestamp="20241219 20:49:12.257">
+            ${current_date} = 19.12.2024
+           </msg>
+           <status endtime="20241219 20:49:12.257" starttime="20241219 20:49:12.257" status="PASS"/>
+          </kw>
+          <kw library="SAP_Tcode_Library" name="Input Text">
+           <arg>
+            wnd[0]/usr/ctxtRV60A-FKDAT
+           </arg>
+           <arg>
+            ${current_date}
+           </arg>
+           <doc>
+            Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+           </doc>
+           <msg level="INFO" timestamp="20241219 20:49:12.257">
+            Typing text '19.12.2024' into text field 'wnd[0]/usr/ctxtRV60A-FKDAT'.
+           </msg>
+           <status endtime="20241219 20:49:12.257" starttime="20241219 20:49:12.257" status="PASS"/>
+          </kw>
+          <kw library="SAP_Tcode_Library" name="Send Vkey">
+           <arg>
+            0
+           </arg>
+           <doc>
+            Sends a SAP virtual key combination to the window, not into an element.
+If you want to send a value to a text field, use `input text` instead.
+           </doc>
+           <status endtime="20241219 20:49:12.577" starttime="20241219 20:49:12.257" status="PASS"/>
+          </kw>
+          <kw library="SAP_Tcode_Library" name="Get Value">
+           <var>
+            ${status}
+           </var>
+           <arg>
+            wnd[0]/sbar/pane[0]
+           </arg>
+           <doc>
+            Gets the value of the given element. The possible return values depend on the type of element (see Return values).
+           </doc>
+           <msg level="INFO" timestamp="20241219 20:49:12.631">
+            ${status} = Please check the log.
+           </msg>
+           <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.577" status="PASS"/>
+          </kw>
+          <if>
+           <branch condition="'${status}' == 'No billing documents were generated. Please see log.'" type="IF">
+            <kw library="BuiltIn" name="Sleep">
+             <arg>
+              1
+             </arg>
+             <doc>
+              Pauses the test executed for the given time.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="BuiltIn" name="Log To Console">
+             <arg>
+              For ${symvar('documents')} ${status}
+             </arg>
+             <doc>
+              Logs the given message to the console.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Click Element">
+             <arg>
+              wnd[0]/mbar/menu[1]/menu[3]
+             </arg>
+             <doc>
+              Performs a single click on a given element. Used only for buttons, tabs and menu items.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Click Element">
+             <arg>
+              wnd[0]/tbar[1]/btn[25]
+             </arg>
+             <doc>
+              Performs a single click on a given element. Used only for buttons, tabs and menu items.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Get Value">
+             <var>
+              ${error_log}
+             </var>
+             <arg>
+              wnd[0]/usr/sub/1[0,0]/sub/1/2[0,1]/sub/1/2/3[0,3]/lbl[19,3]
+             </arg>
+             <doc>
+              Gets the value of the given element. The possible return values depend on the type of element (see Return values).
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="create_rental_invoice" name="Write the status into excel">
+             <arg>
+              ${symvar('documents')}
+             </arg>
+             <arg>
+              ${error_log}
+             </arg>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="BuiltIn" name="Log To Console">
+             <arg>
+              **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${error_log}**gbEnd**
+             </arg>
+             <doc>
+              Logs the given message to the console.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+           </branch>
+           <branch condition="'${status}' == '${EMPTY}'" type="ELSE IF">
+            <kw library="BuiltIn" name="Sleep">
+             <arg>
+              1
+             </arg>
+             <doc>
+              Pauses the test executed for the given time.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Click Element">
+             <arg>
+              wnd[0]/usr/btnTC_HEAD
+             </arg>
+             <doc>
+              Performs a single click on a given element. Used only for buttons, tabs and menu items.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Click Element">
+             <arg>
+              wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE
+             </arg>
+             <doc>
+              Performs a single click on a given element. Used only for buttons, tabs and menu items.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Select Form Header">
+             <arg>
+              ${rental_form}
+             </arg>
+             <arg>
+              0001
+             </arg>
+             <arg>
+              Column1
+             </arg>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="DateTime" name="Get Current Date">
+             <var>
+              ${Month}
+             </var>
+             <arg>
+              result_format=%B
+             </arg>
+             <doc>
+              Returns current local or UTC time with an optional increment.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Input Text">
+             <arg>
+              ${rental_text}
+             </arg>
+             <arg>
+              Rent for the month of ${Month} 2024.
+             </arg>
+             <doc>
+              Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Click Element">
+             <arg>
+              wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU
+             </arg>
+             <doc>
+              Performs a single click on a given element. Used only for buttons, tabs and menu items.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Input Text">
+             <arg>
+              wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU/ssubSUBSCREEN_BODY:SAPMV60A:6101/ssubCUSTOMER_SCREEN:ZZBILLHEADER:0100/txtVBRK-ZZEWAYBL
+             </arg>
+             <arg>
+              NA
+             </arg>
+             <doc>
+              Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Click Element">
+             <arg>
+              wnd[0]/tbar[0]/btn[11]
+             </arg>
+             <doc>
+              Performs a single click on a given element. Used only for buttons, tabs and menu items.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Get Value">
+             <var>
+              ${output}
+             </var>
+             <arg>
+              wnd[0]/sbar/pane[0]
+             </arg>
+             <doc>
+              Gets the value of the given element. The possible return values depend on the type of element (see Return values).
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="BuiltIn" name="Log To Console">
+             <arg>
+              ${output}
+             </arg>
+             <doc>
+              Logs the given message to the console.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="create_rental_invoice" name="Write the status into excel">
+             <arg>
+              ${symvar('documents')}
+             </arg>
+             <arg>
+              ${output}
+             </arg>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="BuiltIn" name="Log To Console">
+             <arg>
+              **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
+             </arg>
+             <doc>
+              Logs the given message to the console.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Get Invoice Number">
+             <var>
+              ${invoice_doc}
+             </var>
+             <arg>
+              status_id=wnd[0]/sbar/pane[0]
+             </arg>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="BuiltIn" name="Sleep">
+             <arg>
+              10
+             </arg>
+             <doc>
+              Pauses the test executed for the given time.
+             </doc>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="create_rental_invoice" name="Get Invoice created by">
+             <arg>
+              ${symvar('documents')}
+             </arg>
+             <arg>
+              ${invoice_doc}
+             </arg>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <kw library="create_rental_invoice" name="Validate the e-invoice status">
+             <arg>
+              ${invoice_doc}
+             </arg>
+             <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+            </kw>
+            <status endtime="20241219 20:49:12.631" starttime="20241219 20:49:12.631" status="NOT RUN"/>
+           </branch>
+           <branch condition="'${status}' == 'Please check the log.'" type="ELSE IF">
+            <kw library="BuiltIn" name="Sleep">
+             <arg>
+              1
+             </arg>
+             <doc>
+              Pauses the test executed for the given time.
+             </doc>
+             <msg level="INFO" timestamp="20241219 20:49:13.631">
+              Slept 1 second
+             </msg>
+             <status endtime="20241219 20:49:13.631" starttime="20241219 20:49:12.631" status="PASS"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Click Element">
+             <arg>
+              wnd[0]/usr/btnTC_HEAD
+             </arg>
+             <doc>
+              Performs a single click on a given element. Used only for buttons, tabs and menu items.
+             </doc>
+             <status endtime="20241219 20:49:13.798" starttime="20241219 20:49:13.631" status="PASS"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Click Element">
+             <arg>
+              wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE
+             </arg>
+             <doc>
+              Performs a single click on a given element. Used only for buttons, tabs and menu items.
+             </doc>
+             <status endtime="20241219 20:49:14.183" starttime="20241219 20:49:13.798" status="PASS"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Select Form Header">
+             <arg>
+              ${rental_form}
+             </arg>
+             <arg>
+              0001
+             </arg>
+             <arg>
+              Column1
+             </arg>
+             <status endtime="20241219 20:49:14.438" starttime="20241219 20:49:14.183" status="PASS"/>
+            </kw>
+            <kw library="DateTime" name="Get Current Date">
+             <var>
+              ${Month}
+             </var>
+             <arg>
+              result_format=%B
+             </arg>
+             <doc>
+              Returns current local or UTC time with an optional increment.
+             </doc>
+             <msg level="INFO" timestamp="20241219 20:49:14.438">
+              ${Month} = December
+             </msg>
+             <status endtime="20241219 20:49:14.438" starttime="20241219 20:49:14.438" status="PASS"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Input Text">
+             <arg>
+              ${rental_text}
+             </arg>
+             <arg>
+              Rent for the month of ${Month} 2024.
+             </arg>
+             <doc>
+              Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+             </doc>
+             <msg level="INFO" timestamp="20241219 20:49:14.485">
+              Typing text 'Rent for the month of December 2024.' into text field 'wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE/ssubSUBSCREEN_BODY:SAPLV70T:2100/cntlSPLITTER_CONTAINER/shellcont/shellcont/shell/shellcont[1]/shell'.
+             </msg>
+             <status endtime="20241219 20:49:14.485" starttime="20241219 20:49:14.438" status="PASS"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Click Element">
+             <arg>
+              wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU
+             </arg>
+             <doc>
+              Performs a single click on a given element. Used only for buttons, tabs and menu items.
+             </doc>
+             <status endtime="20241219 20:49:14.833" starttime="20241219 20:49:14.485" status="PASS"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Input Text">
+             <arg>
+              wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU/ssubSUBSCREEN_BODY:SAPMV60A:6101/ssubCUSTOMER_SCREEN:ZZBILLHEADER:0100/txtVBRK-ZZEWAYBL
+             </arg>
+             <arg>
+              NA
+             </arg>
+             <doc>
+              Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+             </doc>
+             <msg level="INFO" timestamp="20241219 20:49:14.855">
+              Typing text 'NA' into text field 'wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU/ssubSUBSCREEN_BODY:SAPMV60A:6101/ssubCUSTOMER_SCREEN:ZZBILLHEADER:0100/txtVBRK-ZZEWAYBL'.
+             </msg>
+             <status endtime="20241219 20:49:14.855" starttime="20241219 20:49:14.833" status="PASS"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Click Element">
+             <arg>
+              wnd[0]/tbar[0]/btn[11]
+             </arg>
+             <doc>
+              Performs a single click on a given element. Used only for buttons, tabs and menu items.
+             </doc>
+             <status endtime="20241219 20:49:15.921" starttime="20241219 20:49:14.855" status="PASS"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Get Value">
+             <var>
+              ${output}
+             </var>
+             <arg>
+              wnd[0]/sbar/pane[0]
+             </arg>
+             <doc>
+              Gets the value of the given element. The possible return values depend on the type of element (see Return values).
+             </doc>
+             <msg level="INFO" timestamp="20241219 20:49:15.959">
+              ${output} = Document 707326195 has been saved.
+             </msg>
+             <status endtime="20241219 20:49:15.959" starttime="20241219 20:49:15.921" status="PASS"/>
+            </kw>
+            <kw library="BuiltIn" name="Log To Console">
+             <arg>
+              ${output}
+             </arg>
+             <doc>
+              Logs the given message to the console.
+             </doc>
+             <status endtime="20241219 20:49:15.959" starttime="20241219 20:49:15.959" status="PASS"/>
+            </kw>
+            <kw library="create_rental_invoice" name="Write the status into excel">
+             <arg>
+              ${symvar('documents')}
+             </arg>
+             <arg>
+              ${output}
+             </arg>
+             <msg level="INFO" timestamp="20241219 20:49:15.959">
+              Sym.Dev.documents: 40026247
+             </msg>
+             <kw library="SAP_Tcode_Library" name="Count Excel Rows">
+              <var>
+               ${row_count}
+              </var>
+              <arg>
+               ${target_file_name}
+              </arg>
+              <arg>
+               ${target_sheet_name}
+              </arg>
+              <msg level="INFO" timestamp="20241219 20:49:15.959">
+               3
+              </msg>
+              <msg level="INFO" timestamp="20241219 20:49:15.959">
+               ${row_count} = 3
+              </msg>
+              <status endtime="20241219 20:49:15.959" starttime="20241219 20:49:15.959" status="PASS"/>
+             </kw>
+             <kw library="BuiltIn" name="Evaluate">
+              <var>
+               ${excel_rows}
+              </var>
+              <arg>
+               ${row_count} + 1
+              </arg>
+              <doc>
+               Evaluates the given expression in Python and returns the result.
+              </doc>
+              <msg level="INFO" timestamp="20241219 20:49:15.959">
+               ${excel_rows} = 4
+              </msg>
+              <status endtime="20241219 20:49:15.959" starttime="20241219 20:49:15.959" status="PASS"/>
+             </kw>
+             <for flavor="IN RANGE">
+              <var>
+               ${excel_row}
+              </var>
+              <value>
+               2
+              </value>
+              <value>
+               ${excel_rows}
+              </value>
+              <iter>
+               <var name="${excel_row}">
+                2
+               </var>
+               <kw library="SAP_Tcode_Library" name="Read Excel Cell Value">
+                <var>
+                 ${excel_data}
+                </var>
+                <arg>
+                 ${target_file_name}
+                </arg>
+                <arg>
+                 ${target_sheet_name}
+                </arg>
+                <arg>
+                 ${excel_row}
+                </arg>
+                <arg>
+                 3
+                </arg>
+                <msg level="INFO" timestamp="20241219 20:49:15.959">
+                 ${excel_data} = ""40026244""
+                </msg>
+                <status endtime="20241219 20:49:15.959" starttime="20241219 20:49:15.959" status="PASS"/>
+               </kw>
+               <kw library="SAP_Tcode_Library" name="Remove Quotes">
+                <var>
+                 ${data}
+                </var>
+                <arg>
+                 ${excel_data}
+                </arg>
+                <msg level="INFO" timestamp="20241219 20:49:15.959">
+                 ${data} = 40026244
+                </msg>
+                <status endtime="20241219 20:49:15.959" starttime="20241219 20:49:15.959" status="PASS"/>
+               </kw>
+               <kw library="BuiltIn" name="Log To Console">
+                <arg>
+                 ${data}
+                </arg>
+                <doc>
+                 Logs the given message to the console.
+                </doc>
+                <status endtime="20241219 20:49:15.959" starttime="20241219 20:49:15.959" status="PASS"/>
+               </kw>
+               <if>
+                <branch condition="'${data}' == '${document_number}'" type="IF">
+                 <kw library="create_rental_invoice" name="Write Excel">
+                  <arg>
+                   ${target_file_name}
+                  </arg>
+                  <arg>
+                   ${target_sheet_name}
+                  </arg>
+                  <arg>
+                   ${excel_row}
+                  </arg>
+                  <arg>
+                   9
+                  </arg>
+                  <arg>
+                   ${value}
+                  </arg>
+                  <status endtime="20241219 20:49:15.959" starttime="20241219 20:49:15.959" status="NOT RUN"/>
+                 </kw>
+                 <status endtime="20241219 20:49:15.959" starttime="20241219 20:49:15.959" status="NOT RUN"/>
+                </branch>
+                <status endtime="20241219 20:49:15.959" starttime="20241219 20:49:15.959" status="PASS"/>
+               </if>
+               <status endtime="20241219 20:49:15.959" starttime="20241219 20:49:15.959" status="PASS"/>
+              </iter>
+              <iter>
+               <var name="${excel_row}">
+                3
+               </var>
+               <kw library="SAP_Tcode_Library" name="Read Excel Cell Value">
+                <var>
+                 ${excel_data}
+                </var>
+                <arg>
+                 ${target_file_name}
+                </arg>
+                <arg>
+                 ${target_sheet_name}
+                </arg>
+                <arg>
+                 ${excel_row}
+                </arg>
+                <arg>
+                 3
+                </arg>
+                <msg level="INFO" timestamp="20241219 20:49:15.974">
+                 ${excel_data} = ""40026247""
+                </msg>
+                <status endtime="20241219 20:49:15.974" starttime="20241219 20:49:15.959" status="PASS"/>
+               </kw>
+               <kw library="SAP_Tcode_Library" name="Remove Quotes">
+                <var>
+                 ${data}
+                </var>
+                <arg>
+                 ${excel_data}
+                </arg>
+                <msg level="INFO" timestamp="20241219 20:49:15.974">
+                 ${data} = 40026247
+                </msg>
+                <status endtime="20241219 20:49:15.974" starttime="20241219 20:49:15.974" status="PASS"/>
+               </kw>
+               <kw library="BuiltIn" name="Log To Console">
+                <arg>
+                 ${data}
+                </arg>
+                <doc>
+                 Logs the given message to the console.
+                </doc>
+                <status endtime="20241219 20:49:15.974" starttime="20241219 20:49:15.974" status="PASS"/>
+               </kw>
+               <if>
+                <branch condition="'${data}' == '${document_number}'" type="IF">
+                 <kw library="create_rental_invoice" name="Write Excel">
+                  <arg>
+                   ${target_file_name}
+                  </arg>
+                  <arg>
+                   ${target_sheet_name}
+                  </arg>
+                  <arg>
+                   ${excel_row}
+                  </arg>
+                  <arg>
+                   9
+                  </arg>
+                  <arg>
+                   ${value}
+                  </arg>
+                  <kw library="ExcelLibrary" name="Open Excel Document">
+                   <arg>
+                    ${filepath}
+                   </arg>
+                   <arg>
+                    1
+                   </arg>
+                   <doc>
+                    Opens xlsx document file.
+                   </doc>
+                   <status endtime="20241219 20:49:15.974" starttime="20241219 20:49:15.974" status="PASS"/>
+                  </kw>
+                  <kw library="ExcelLibrary" name="Get Sheet">
+                   <arg>
+                    ${sheetname}
+                   </arg>
+                   <doc>
+                    Returns a page from the current document.
+                   </doc>
+                   <status endtime="20241219 20:49:15.974" starttime="20241219 20:49:15.974" status="PASS"/>
+                  </kw>
+                  <kw library="ExcelLibrary" name="Write Excel Cell">
+                   <arg>
+                    ${rownum}
+                   </arg>
+                   <arg>
+                    ${colnum}
+                   </arg>
+                   <arg>
+                    ${cell_value}
+                   </arg>
+                   <arg>
+                    ${sheetname}
+                   </arg>
+                   <doc>
+                    Writes value to the cell.
+                   </doc>
+                   <status endtime="20241219 20:49:15.974" starttime="20241219 20:49:15.974" status="PASS"/>
+                  </kw>
+                  <kw library="ExcelLibrary" name="Save Excel Document">
+                   <arg>
+                    ${filepath}
+                   </arg>
+                   <doc>
+                    Saves the current document to disk.
+                   </doc>
+                   <status endtime="20241219 20:49:16.005" starttime="20241219 20:49:15.974" status="PASS"/>
+                  </kw>
+                  <kw library="ExcelLibrary" name="Close Current Excel Document">
+                   <doc>
+                    Closes current document.
+                   </doc>
+                   <status endtime="20241219 20:49:16.005" starttime="20241219 20:49:16.005" status="PASS"/>
+                  </kw>
+                  <status endtime="20241219 20:49:16.005" starttime="20241219 20:49:15.974" status="PASS"/>
+                 </kw>
+                 <status endtime="20241219 20:49:16.005" starttime="20241219 20:49:15.974" status="PASS"/>
+                </branch>
+                <status endtime="20241219 20:49:16.005" starttime="20241219 20:49:15.974" status="PASS"/>
+               </if>
+               <status endtime="20241219 20:49:16.005" starttime="20241219 20:49:15.959" status="PASS"/>
+              </iter>
+              <status endtime="20241219 20:49:16.005" starttime="20241219 20:49:15.959" status="PASS"/>
+             </for>
+             <status endtime="20241219 20:49:16.005" starttime="20241219 20:49:15.959" status="PASS"/>
+            </kw>
+            <kw library="BuiltIn" name="Log To Console">
+             <arg>
+              **gbStart**invoice_log**splitKeyValue**${symvar('documents')} ${output}**gbEnd**
+             </arg>
+             <doc>
+              Logs the given message to the console.
+             </doc>
+             <msg level="INFO" timestamp="20241219 20:49:16.005">
+              Sym.Dev.documents: 40026247
+             </msg>
+             <status endtime="20241219 20:49:16.005" starttime="20241219 20:49:16.005" status="PASS"/>
+            </kw>
+            <kw library="SAP_Tcode_Library" name="Get Invoice Number">
+             <var>
+              ${invoice_doc}
+             </var>
+             <arg>
+              wnd[0]/sbar/pane[0]
+             </arg>
+             <msg level="INFO" timestamp="20241219 20:49:16.005">
+              ${invoice_doc} = 707326195
+             </msg>
+             <status endtime="20241219 20:49:16.005" starttime="20241219 20:49:16.005" status="PASS"/>
+            </kw>
+            <kw library="BuiltIn" name="Sleep">
+             <arg>
+              10
+             </arg>
+             <doc>
+              Pauses the test executed for the given time.
+             </doc>
+             <msg level="INFO" timestamp="20241219 20:49:26.006">
+              Slept 10 seconds
+             </msg>
+             <status endtime="20241219 20:49:26.006" starttime="20241219 20:49:16.005" status="PASS"/>
+            </kw>
+            <kw library="create_rental_invoice" name="Get Invoice created by">
+             <arg>
+              ${symvar('documents')}
+             </arg>
+             <arg>
+              ${invoice_doc}
+             </arg>
+             <msg level="INFO" timestamp="20241219 20:49:26.006">
+              Sym.Dev.documents: 40026247
+             </msg>
+             <kw library="SAP_Tcode_Library" name="Run Transaction">
+              <arg>
+               /nVF03
+              </arg>
+              <doc>
+               Runs a Sap transaction. An error is given when an unknown transaction is specified.
+              </doc>
+              <status endtime="20241219 20:49:26.133" starttime="20241219 20:49:26.006" status="PASS"/>
+             </kw>
+             <kw library="BuiltIn" name="Sleep">
+              <arg>
+               2
+              </arg>
+              <doc>
+               Pauses the test executed for the given time.
+              </doc>
+              <msg level="INFO" timestamp="20241219 20:49:28.133">
+               Slept 2 seconds
+              </msg>
+              <status endtime="20241219 20:49:28.133" starttime="20241219 20:49:26.133" status="PASS"/>
+             </kw>
+             <kw library="SAP_Tcode_Library" name="Input Text">
+              <arg>
+               wnd[0]/usr/ctxtVBRK-VBELN
+              </arg>
+              <arg>
+               ${invoice_doc}
+              </arg>
+              <doc>
+               Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+              </doc>
+              <msg level="INFO" timestamp="20241219 20:49:28.133">
+               Typing text '707326195' into text field 'wnd[0]/usr/ctxtVBRK-VBELN'.
+              </msg>
+              <status endtime="20241219 20:49:28.133" starttime="20241219 20:49:28.133" status="PASS"/>
+             </kw>
+             <kw library="SAP_Tcode_Library" name="Send Vkey">
+              <arg>
+               0
+              </arg>
+              <doc>
+               Sends a SAP virtual key combination to the window, not into an element.
+If you want to send a value to a text field, use `input text` instead.
+              </doc>
+              <status endtime="20241219 20:49:28.427" starttime="20241219 20:49:28.133" status="PASS"/>
+             </kw>
+             <kw library="SAP_Tcode_Library" name="Click Element">
+              <arg>
+               wnd[0]/usr/btnTC_HEAD
+              </arg>
+              <doc>
+               Performs a single click on a given element. Used only for buttons, tabs and menu items.
+              </doc>
+              <status endtime="20241219 20:49:28.596" starttime="20241219 20:49:28.427" status="PASS"/>
+             </kw>
+             <kw library="SAP_Tcode_Library" name="Get Value">
+              <var>
+               ${created_by}
+              </var>
+              <arg>
+               wnd[0]/usr/ssubSUBSCREEN_HEADER:SAPMV60A:6011/txtVBRK-ERNAM
+              </arg>
+              <doc>
+               Gets the value of the given element. The possible return values depend on the type of element (see Return values).
+              </doc>
+              <msg level="INFO" timestamp="20241219 20:49:28.674">
+               ${created_by} = ESHFFI03
+              </msg>
+              <status endtime="20241219 20:49:28.674" starttime="20241219 20:49:28.596" status="PASS"/>
+             </kw>
+             <kw library="create_rental_invoice" name="Write the invoice created by into excel">
+              <arg>
+               ${document_number}
+              </arg>
+              <arg>
+               ${created_by}
+              </arg>
+              <kw library="SAP_Tcode_Library" name="Count Excel Rows">
+               <var>
+                ${row_count}
+               </var>
+               <arg>
+                ${target_file_name}
+               </arg>
+               <arg>
+                ${target_sheet_name}
+               </arg>
+               <msg level="INFO" timestamp="20241219 20:49:28.690">
+                3
+               </msg>
+               <msg level="INFO" timestamp="20241219 20:49:28.690">
+                ${row_count} = 3
+               </msg>
+               <status endtime="20241219 20:49:28.690" starttime="20241219 20:49:28.674" status="PASS"/>
+              </kw>
+              <kw library="BuiltIn" name="Evaluate">
+               <var>
+                ${excel_rows}
+               </var>
+               <arg>
+                ${row_count} + 1
+               </arg>
+               <doc>
+                Evaluates the given expression in Python and returns the result.
+               </doc>
+               <msg level="INFO" timestamp="20241219 20:49:28.690">
+                ${excel_rows} = 4
+               </msg>
+               <status endtime="20241219 20:49:28.690" starttime="20241219 20:49:28.690" status="PASS"/>
+              </kw>
+              <for flavor="IN RANGE">
+               <var>
+                ${excel_row}
+               </var>
+               <value>
+                2
+               </value>
+               <value>
+                ${excel_rows}
+               </value>
+               <iter>
+                <var name="${excel_row}">
+                 2
+                </var>
+                <kw library="SAP_Tcode_Library" name="Read Excel Cell Value">
+                 <var>
+                  ${excel_data}
+                 </var>
+                 <arg>
+                  ${target_file_name}
+                 </arg>
+                 <arg>
+                  ${target_sheet_name}
+                 </arg>
+                 <arg>
+                  ${excel_row}
+                 </arg>
+                 <arg>
+                  3
+                 </arg>
+                 <msg level="INFO" timestamp="20241219 20:49:28.712">
+                  ${excel_data} = ""40026244""
+                 </msg>
+                 <status endtime="20241219 20:49:28.712" starttime="20241219 20:49:28.690" status="PASS"/>
+                </kw>
+                <kw library="SAP_Tcode_Library" name="Remove Quotes">
+                 <var>
+                  ${data}
+                 </var>
+                 <arg>
+                  ${excel_data}
+                 </arg>
+                 <msg level="INFO" timestamp="20241219 20:49:28.712">
+                  ${data} = 40026244
+                 </msg>
+                 <status endtime="20241219 20:49:28.712" starttime="20241219 20:49:28.712" status="PASS"/>
+                </kw>
+                <kw library="BuiltIn" name="Log To Console">
+                 <arg>
+                  ${data}
+                 </arg>
+                 <doc>
+                  Logs the given message to the console.
+                 </doc>
+                 <status endtime="20241219 20:49:28.712" starttime="20241219 20:49:28.712" status="PASS"/>
+                </kw>
+                <if>
+                 <branch condition="'${data}' == '${document_number}'" type="IF">
+                  <kw library="create_rental_invoice" name="Write Excel">
+                   <arg>
+                    ${target_file_name}
+                   </arg>
+                   <arg>
+                    ${target_sheet_name}
+                   </arg>
+                   <arg>
+                    ${excel_row}
+                   </arg>
+                   <arg>
+                    6
+                   </arg>
+                   <arg>
+                    ${value}
+                   </arg>
+                   <status endtime="20241219 20:49:28.712" starttime="20241219 20:49:28.712" status="NOT RUN"/>
+                  </kw>
+                  <status endtime="20241219 20:49:28.712" starttime="20241219 20:49:28.712" status="NOT RUN"/>
+                 </branch>
+                 <status endtime="20241219 20:49:28.712" starttime="20241219 20:49:28.712" status="PASS"/>
+                </if>
+                <status endtime="20241219 20:49:28.712" starttime="20241219 20:49:28.690" status="PASS"/>
+               </iter>
+               <iter>
+                <var name="${excel_row}">
+                 3
+                </var>
+                <kw library="SAP_Tcode_Library" name="Read Excel Cell Value">
+                 <var>
+                  ${excel_data}
+                 </var>
+                 <arg>
+                  ${target_file_name}
+                 </arg>
+                 <arg>
+                  ${target_sheet_name}
+                 </arg>
+                 <arg>
+                  ${excel_row}
+                 </arg>
+                 <arg>
+                  3
+                 </arg>
+                 <msg level="INFO" timestamp="20241219 20:49:28.728">
+                  ${excel_data} = ""40026247""
+                 </msg>
+                 <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:28.712" status="PASS"/>
+                </kw>
+                <kw library="SAP_Tcode_Library" name="Remove Quotes">
+                 <var>
+                  ${data}
+                 </var>
+                 <arg>
+                  ${excel_data}
+                 </arg>
+                 <msg level="INFO" timestamp="20241219 20:49:28.728">
+                  ${data} = 40026247
+                 </msg>
+                 <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:28.728" status="PASS"/>
+                </kw>
+                <kw library="BuiltIn" name="Log To Console">
+                 <arg>
+                  ${data}
+                 </arg>
+                 <doc>
+                  Logs the given message to the console.
+                 </doc>
+                 <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:28.728" status="PASS"/>
+                </kw>
+                <if>
+                 <branch condition="'${data}' == '${document_number}'" type="IF">
+                  <kw library="create_rental_invoice" name="Write Excel">
+                   <arg>
+                    ${target_file_name}
+                   </arg>
+                   <arg>
+                    ${target_sheet_name}
+                   </arg>
+                   <arg>
+                    ${excel_row}
+                   </arg>
+                   <arg>
+                    6
+                   </arg>
+                   <arg>
+                    ${value}
+                   </arg>
+                   <kw library="ExcelLibrary" name="Open Excel Document">
+                    <arg>
+                     ${filepath}
+                    </arg>
+                    <arg>
+                     1
+                    </arg>
+                    <doc>
+                     Opens xlsx document file.
+                    </doc>
+                    <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:28.728" status="PASS"/>
+                   </kw>
+                   <kw library="ExcelLibrary" name="Get Sheet">
+                    <arg>
+                     ${sheetname}
+                    </arg>
+                    <doc>
+                     Returns a page from the current document.
+                    </doc>
+                    <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:28.728" status="PASS"/>
+                   </kw>
+                   <kw library="ExcelLibrary" name="Write Excel Cell">
+                    <arg>
+                     ${rownum}
+                    </arg>
+                    <arg>
+                     ${colnum}
+                    </arg>
+                    <arg>
+                     ${cell_value}
+                    </arg>
+                    <arg>
+                     ${sheetname}
+                    </arg>
+                    <doc>
+                     Writes value to the cell.
+                    </doc>
+                    <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:28.728" status="PASS"/>
+                   </kw>
+                   <kw library="ExcelLibrary" name="Save Excel Document">
+                    <arg>
+                     ${filepath}
+                    </arg>
+                    <doc>
+                     Saves the current document to disk.
+                    </doc>
+                    <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:28.728" status="PASS"/>
+                   </kw>
+                   <kw library="ExcelLibrary" name="Close Current Excel Document">
+                    <doc>
+                     Closes current document.
+                    </doc>
+                    <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:28.728" status="PASS"/>
+                   </kw>
+                   <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:28.728" status="PASS"/>
+                  </kw>
+                  <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:28.728" status="PASS"/>
+                 </branch>
+                 <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:28.728" status="PASS"/>
+                </if>
+                <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:28.712" status="PASS"/>
+               </iter>
+               <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:28.690" status="PASS"/>
+              </for>
+              <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:28.674" status="PASS"/>
+             </kw>
+             <status endtime="20241219 20:49:28.728" starttime="20241219 20:49:26.006" status="PASS"/>
+            </kw>
+            <kw library="create_rental_invoice" name="Validate the e-invoice status">
+             <arg>
+              ${invoice_doc}
+             </arg>
+             <kw library="SAP_Tcode_Library" name="Run Transaction">
+              <arg>
+               /nzeinv
+              </arg>
+              <doc>
+               Runs a Sap transaction. An error is given when an unknown transaction is specified.
+              </doc>
+              <status endtime="20241219 20:49:28.859" starttime="20241219 20:49:28.743" status="PASS"/>
+             </kw>
+             <kw library="SAP_Tcode_Library" name="Select Radio Button">
+              <arg>
+               wnd[0]/usr/radP_SD
+              </arg>
+              <doc>
+               Sets radio button to the specified value.
+              </doc>
+              <status endtime="20241219 20:49:28.928" starttime="20241219 20:49:28.859" status="PASS"/>
+             </kw>
+             <kw library="SAP_Tcode_Library" name="Select From List By Key">
+              <arg>
+               wnd[0]/usr/cmbPA_BUKRS
+              </arg>
+              <arg>
+               EID
+              </arg>
+              <doc>
+               Selects the specified option from the selection list.
+              </doc>
+              <status endtime="20241219 20:49:28.975" starttime="20241219 20:49:28.928" status="PASS"/>
+             </kw>
+             <kw library="SAP_Tcode_Library" name="Send Vkey">
+              <arg>
+               0
+              </arg>
+              <doc>
+               Sends a SAP virtual key combination to the window, not into an element.
+If you want to send a value to a text field, use `input text` instead.
+              </doc>
+              <status endtime="20241219 20:49:29.029" starttime="20241219 20:49:28.975" status="PASS"/>
+             </kw>
+             <kw library="SAP_Tcode_Library" name="Input Text">
+              <arg>
+               wnd[0]/usr/ctxtSO_SDDOC-LOW
+              </arg>
+              <arg>
+               ${invoice_doc}
+              </arg>
+              <doc>
+               Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+              </doc>
+              <msg level="INFO" timestamp="20241219 20:49:29.060">
+               Typing text '707326195' into text field 'wnd[0]/usr/ctxtSO_SDDOC-LOW'.
+              </msg>
+              <status endtime="20241219 20:49:29.060" starttime="20241219 20:49:29.029" status="PASS"/>
+             </kw>
+             <kw library="DateTime" name="Get Current Date">
+              <var>
+               ${year}
+              </var>
+              <arg>
+               result_format=%Y
+              </arg>
+              <doc>
+               Returns current local or UTC time with an optional increment.
+              </doc>
+              <msg level="INFO" timestamp="20241219 20:49:29.060">
+               ${year} = 2024
+              </msg>
+              <status endtime="20241219 20:49:29.060" starttime="20241219 20:49:29.060" status="PASS"/>
+             </kw>
+             <kw library="SAP_Tcode_Library" name="Input Text">
+              <arg>
+               wnd[0]/usr/txtSO_GJAHR-LOW
+              </arg>
+              <arg>
+               ${year}
+              </arg>
+              <doc>
+               Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+              </doc>
+              <msg level="INFO" timestamp="20241219 20:49:29.075">
+               Typing text '2024' into text field 'wnd[0]/usr/txtSO_GJAHR-LOW'.
+              </msg>
+              <status endtime="20241219 20:49:29.075" starttime="20241219 20:49:29.060" status="PASS"/>
+             </kw>
+             <kw library="SAP_Tcode_Library" name="Click Element">
+              <arg>
+               wnd[0]/tbar[1]/btn[8]
+              </arg>
+              <doc>
+               Performs a single click on a given element. Used only for buttons, tabs and menu items.
+              </doc>
+              <status endtime="20241219 20:49:29.661" starttime="20241219 20:49:29.075" status="PASS"/>
+             </kw>
+             <kw library="SAP_Tcode_Library" name="Get Row Count">
+              <var>
+               ${table_row}
+              </var>
+              <arg>
+               wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell
+              </arg>
+              <doc>
+               Returns the number of rows found in the specified table.
+              </doc>
+              <msg level="INFO" timestamp="20241219 20:49:29.715">
+               ${table_row} = 2
+              </msg>
+              <status endtime="20241219 20:49:29.715" starttime="20241219 20:49:29.661" status="PASS"/>
+             </kw>
+             <kw library="BuiltIn" name="Log To Console">
+              <arg>
+               ${table_row}
+              </arg>
+              <doc>
+               Logs the given message to the console.
+              </doc>
+              <status endtime="20241219 20:49:29.715" starttime="20241219 20:49:29.715" status="PASS"/>
+             </kw>
+             <for flavor="IN RANGE">
+              <var>
+               ${r}
+              </var>
+              <value>
+               0
+              </value>
+              <value>
+               ${table_row}
+              </value>
+              <iter>
+               <var name="${r}">
+                0
+               </var>
+               <kw library="SAP_Tcode_Library" name="Get Cell Value">
+                <var>
+                 ${invoice_status}
+                </var>
+                <arg>
+                 wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell
+                </arg>
+                <arg>
+                 ${r}
+                </arg>
+                <arg>
+                 STATDESC
+                </arg>
+                <doc>
+                 Returns the cell value for the specified cell.
+                </doc>
+                <msg level="INFO" timestamp="20241219 20:49:29.731">
+                 ${invoice_status} = Ready To be Sent
+                </msg>
+                <status endtime="20241219 20:49:29.731" starttime="20241219 20:49:29.731" status="PASS"/>
+               </kw>
+               <kw library="BuiltIn" name="Log To Console">
+                <arg>
+                 row is :${r}:${invoice_status}
+                </arg>
+                <doc>
+                 Logs the given message to the console.
+                </doc>
+                <status endtime="20241219 20:49:29.731" starttime="20241219 20:49:29.731" status="PASS"/>
+               </kw>
+               <if>
+                <branch condition="'${invoice_status}' == 'IRN Generated'" type="IF">
+                 <kw library="create_rental_invoice" name="Pdf_process">
+                  <arg>
+                   ${invoice_doc}
+                  </arg>
+                  <status endtime="20241219 20:49:29.731" starttime="20241219 20:49:29.731" status="NOT RUN"/>
+                 </kw>
+                 <kw library="BuiltIn" name="Exit For Loop">
+                  <doc>
+                   Stops executing the enclosing FOR loop.
+                  </doc>
+                  <status endtime="20241219 20:49:29.731" starttime="20241219 20:49:29.731" status="NOT RUN"/>
+                 </kw>
+                 <status endtime="20241219 20:49:29.731" starttime="20241219 20:49:29.731" status="NOT RUN"/>
+                </branch>
+                <branch condition="'${invoice_status}' == 'Ready To be Sent'" type="ELSE IF">
+                 <kw library="BuiltIn" name="Sleep">
+                  <arg>
+                   5
+                  </arg>
+                  <doc>
+                   Pauses the test executed for the given time.
+                  </doc>
+                  <msg level="INFO" timestamp="20241219 20:49:34.731">
+                   Slept 5 seconds
+                  </msg>
+                  <status endtime="20241219 20:49:34.731" starttime="20241219 20:49:29.731" status="PASS"/>
+                 </kw>
+                 <kw library="SAP_Tcode_Library" name="Click Element">
+                  <arg>
+                   wnd[0]/tbar[1]/btn[5]
+                  </arg>
+                  <doc>
+                   Performs a single click on a given element. Used only for buttons, tabs and menu items.
+                  </doc>
+                  <status endtime="20241219 20:49:34.931" starttime="20241219 20:49:34.731" status="PASS"/>
+                 </kw>
+                 <kw library="SAP_Tcode_Library" name="Get Row Count">
+                  <var>
+                   ${table_row}
+                  </var>
+                  <arg>
+                   wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell
+                  </arg>
+                  <doc>
+                   Returns the number of rows found in the specified table.
+                  </doc>
+                  <msg level="INFO" timestamp="20241219 20:49:34.962">
+                   ${table_row} = 2
+                  </msg>
+                  <status endtime="20241219 20:49:34.962" starttime="20241219 20:49:34.931" status="PASS"/>
+                 </kw>
+                 <kw library="BuiltIn" name="Log To Console">
+                  <arg>
+                   ${table_row}
+                  </arg>
+                  <doc>
+                   Logs the given message to the console.
+                  </doc>
+                  <status endtime="20241219 20:49:34.962" starttime="20241219 20:49:34.962" status="PASS"/>
+                 </kw>
+                 <for flavor="IN RANGE">
+                  <var>
+                   ${r}
+                  </var>
+                  <value>
+                   0
+                  </value>
+                  <value>
+                   ${table_row}
+                  </value>
+                  <iter>
+                   <var name="${r}">
+                    0
+                   </var>
+                   <kw library="SAP_Tcode_Library" name="Get Cell Value">
+                    <var>
+                     ${invoice_status}
+                    </var>
+                    <arg>
+                     wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell
+                    </arg>
+                    <arg>
+                     ${r}
+                    </arg>
+                    <arg>
+                     STATDESC
+                    </arg>
+                    <doc>
+                     Returns the cell value for the specified cell.
+                    </doc>
+                    <msg level="INFO" timestamp="20241219 20:49:34.962">
+                     ${invoice_status} = IRN Generated
+                    </msg>
+                    <status endtime="20241219 20:49:34.962" starttime="20241219 20:49:34.962" status="PASS"/>
+                   </kw>
+                   <kw library="BuiltIn" name="Log To Console">
+                    <arg>
+                     row is :${r}:${invoice_status}
+                    </arg>
+                    <doc>
+                     Logs the given message to the console.
+                    </doc>
+                    <status endtime="20241219 20:49:34.962" starttime="20241219 20:49:34.962" status="PASS"/>
+                   </kw>
+                   <if>
+                    <branch condition="'${invoice_status}' == 'IRN Generated'" type="IF">
+                     <kw library="create_rental_invoice" name="Pdf_process">
+                      <arg>
+                       ${invoice_doc}
+                      </arg>
+                      <kw library="SAP_Tcode_Library" name="Run Transaction">
+                       <arg>
+                        /nVF03
+                       </arg>
+                       <doc>
+                        Runs a Sap transaction. An error is given when an unknown transaction is specified.
+                       </doc>
+                       <status endtime="20241219 20:49:35.078" starttime="20241219 20:49:34.962" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Input Text">
+                       <arg>
+                        wnd[0]/usr/ctxtVBRK-VBELN
+                       </arg>
+                       <arg>
+                        ${invoice_doc}
+                       </arg>
+                       <doc>
+                        Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+                       </doc>
+                       <msg level="INFO" timestamp="20241219 20:49:35.094">
+                        Typing text '707326195' into text field 'wnd[0]/usr/ctxtVBRK-VBELN'.
+                       </msg>
+                       <status endtime="20241219 20:49:35.094" starttime="20241219 20:49:35.078" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Click Element">
+                       <arg>
+                        wnd[0]/mbar/menu[0]/menu[11]
+                       </arg>
+                       <doc>
+                        Performs a single click on a given element. Used only for buttons, tabs and menu items.
+                       </doc>
+                       <status endtime="20241219 20:49:35.363" starttime="20241219 20:49:35.094" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Click Element">
+                       <arg>
+                        wnd[1]/tbar[0]/btn[37]
+                       </arg>
+                       <doc>
+                        Performs a single click on a given element. Used only for buttons, tabs and menu items.
+                       </doc>
+                       <status endtime="20241219 20:49:35.733" starttime="20241219 20:49:35.363" status="PASS"/>
+                      </kw>
+                      <kw library="BuiltIn" name="Sleep">
+                       <arg>
+                        1
+                       </arg>
+                       <doc>
+                        Pauses the test executed for the given time.
+                       </doc>
+                       <msg level="INFO" timestamp="20241219 20:49:36.734">
+                        Slept 1 second
+                       </msg>
+                       <status endtime="20241219 20:49:36.734" starttime="20241219 20:49:35.733" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Unselect Checkbox">
+                       <arg>
+                        wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/4[0,4]/chk[1,4]
+                       </arg>
+                       <doc>
+                        Removes selection of checkbox identified by locator.
+Does nothing if the checkbox is not selected.
+                       </doc>
+                       <status endtime="20241219 20:49:36.734" starttime="20241219 20:49:36.734" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Unselect Checkbox">
+                       <arg>
+                        wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/5[0,5]/chk[1,5]
+                       </arg>
+                       <doc>
+                        Removes selection of checkbox identified by locator.
+Does nothing if the checkbox is not selected.
+                       </doc>
+                       <status endtime="20241219 20:49:36.749" starttime="20241219 20:49:36.734" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Unselect Checkbox">
+                       <arg>
+                        wnd[2]/usr/sub/1[0,0]/sub/1/2[0,0]/sub/1/2/6[0,6]/chk[1,6]
+                       </arg>
+                       <doc>
+                        Removes selection of checkbox identified by locator.
+Does nothing if the checkbox is not selected.
+                       </doc>
+                       <status endtime="20241219 20:49:36.749" starttime="20241219 20:49:36.749" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Click Element">
+                       <arg>
+                        wnd[2]/tbar[0]/btn[0]
+                       </arg>
+                       <doc>
+                        Performs a single click on a given element. Used only for buttons, tabs and menu items.
+                       </doc>
+                       <status endtime="20241219 20:49:37.123" starttime="20241219 20:49:36.749" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Click Element">
+                       <arg>
+                        wnd[2]/tbar[0]/btn[8]
+                       </arg>
+                       <doc>
+                        Performs a single click on a given element. Used only for buttons, tabs and menu items.
+                       </doc>
+                       <status endtime="20241219 20:49:39.276" starttime="20241219 20:49:37.123" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Click Element">
+                       <arg>
+                        wnd[0]/mbar/menu[0]/menu[0]
+                       </arg>
+                       <doc>
+                        Performs a single click on a given element. Used only for buttons, tabs and menu items.
+                       </doc>
+                       <status endtime="20241219 20:49:39.561" starttime="20241219 20:49:39.276" status="PASS"/>
+                      </kw>
+                      <kw library="BuiltIn" name="Sleep">
+                       <arg>
+                        1
+                       </arg>
+                       <doc>
+                        Pauses the test executed for the given time.
+                       </doc>
+                       <msg level="INFO" timestamp="20241219 20:49:40.561">
+                        Slept 1 second
+                       </msg>
+                       <status endtime="20241219 20:49:40.561" starttime="20241219 20:49:39.561" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Get Value">
+                       <var>
+                        ${spool_value}
+                       </var>
+                       <arg>
+                        wnd[0]/sbar/pane[0]
+                       </arg>
+                       <doc>
+                        Gets the value of the given element. The possible return values depend on the type of element (see Return values).
+                       </doc>
+                       <msg level="INFO" timestamp="20241219 20:49:40.561">
+                        ${spool_value} = Spool request (number 19,626) created.
+                       </msg>
+                       <status endtime="20241219 20:49:40.561" starttime="20241219 20:49:40.561" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Extract Numeric">
+                       <var>
+                        ${spool_id}
+                       </var>
+                       <arg>
+                        ${spool_value}
+                       </arg>
+                       <msg level="INFO" timestamp="20241219 20:49:40.561">
+                        ${spool_id} = 19626
+                       </msg>
+                       <status endtime="20241219 20:49:40.561" starttime="20241219 20:49:40.561" status="PASS"/>
+                      </kw>
+                      <kw library="BuiltIn" name="Sleep">
+                       <arg>
+                        1
+                       </arg>
+                       <doc>
+                        Pauses the test executed for the given time.
+                       </doc>
+                       <msg level="INFO" timestamp="20241219 20:49:41.562">
+                        Slept 1 second
+                       </msg>
+                       <status endtime="20241219 20:49:41.562" starttime="20241219 20:49:40.561" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Run Transaction">
+                       <arg>
+                        /nex
+                       </arg>
+                       <doc>
+                        Runs a Sap transaction. An error is given when an unknown transaction is specified.
+                       </doc>
+                       <status endtime="20241219 20:49:41.624" starttime="20241219 20:49:41.562" status="PASS"/>
+                      </kw>
+                      <kw library="create_rental_invoice" name="System Logon">
+                       <kw library="Process" name="Start Process">
+                        <arg>
+                         ${symvar('SAP_SERVER')}
+                        </arg>
+                        <doc>
+                         Starts a new process on background.
+                        </doc>
+                        <msg level="INFO" timestamp="20241219 20:49:41.624">
+                         Sym.Dev.SAP_SERVER: C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe
+                        </msg>
+                        <msg level="INFO" timestamp="20241219 20:49:41.624">
+                         Starting process:
+"C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe"
+                        </msg>
+                        <status endtime="20241219 20:49:41.650" starttime="20241219 20:49:41.624" status="PASS"/>
+                       </kw>
+                       <kw library="SAP_Tcode_Library" name="Connect To Session">
+                        <doc>
+                         Connects to an open session SAP.
+                        </doc>
+                        <status endtime="20241219 20:49:41.744" starttime="20241219 20:49:41.650" status="PASS"/>
+                       </kw>
+                       <kw library="SAP_Tcode_Library" name="Open Connection">
+                        <arg>
+                         ${symvar('Rental_Connection')}
+                        </arg>
+                        <doc>
+                         Opens a connection to the given connection name. Be sure to provide the full connection name, including the bracket part.
+                        </doc>
+                        <msg level="INFO" timestamp="20241219 20:49:41.752">
+                         Sym.Dev.Rental_Connection: EID sandbox
+                        </msg>
+                        <status endtime="20241219 20:49:42.386" starttime="20241219 20:49:41.752" status="PASS"/>
+                       </kw>
+                       <kw library="SAP_Tcode_Library" name="Input Text">
+                        <arg>
+                         wnd[0]/usr/txtRSYST-MANDT
+                        </arg>
+                        <arg>
+                         ${symvar('Rental_Client')}
+                        </arg>
+                        <doc>
+                         Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+                        </doc>
+                        <msg level="INFO" timestamp="20241219 20:49:42.401">
+                         Sym.Dev.Rental_Client: 900
+                        </msg>
+                        <msg level="INFO" timestamp="20241219 20:49:42.439">
+                         Typing text '900' into text field 'wnd[0]/usr/txtRSYST-MANDT'.
+                        </msg>
+                        <status endtime="20241219 20:49:42.439" starttime="20241219 20:49:42.386" status="PASS"/>
+                       </kw>
+                       <kw library="SAP_Tcode_Library" name="Input Text">
+                        <arg>
+                         wnd[0]/usr/txtRSYST-BNAME
+                        </arg>
+                        <arg>
+                         ${symvar('Rental_User')}
+                        </arg>
+                        <doc>
+                         Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+                        </doc>
+                        <msg level="INFO" timestamp="20241219 20:49:42.455">
+                         Sym.Dev.Rental_User: ESHFFI03
+                        </msg>
+                        <msg level="INFO" timestamp="20241219 20:49:42.470">
+                         Typing text 'ESHFFI03' into text field 'wnd[0]/usr/txtRSYST-BNAME'.
+                        </msg>
+                        <status endtime="20241219 20:49:42.470" starttime="20241219 20:49:42.439" status="PASS"/>
+                       </kw>
+                       <kw library="SAP_Tcode_Library" name="Input Password">
+                        <arg>
+                         wnd[0]/usr/pwdRSYST-BCODE
+                        </arg>
+                        <arg>
+                         %{RENTAL_PASSWORD}
+                        </arg>
+                        <doc>
+                         Inserts the given password into the text field identified by locator.
+The password is not recorded in the log.
+                        </doc>
+                        <msg level="INFO" timestamp="20241219 20:49:42.470">
+                         Typing password into text field 'wnd[0]/usr/pwdRSYST-BCODE'.
+                        </msg>
+                        <status endtime="20241219 20:49:42.470" starttime="20241219 20:49:42.470" status="PASS"/>
+                       </kw>
+                       <kw library="SAP_Tcode_Library" name="Send Vkey">
+                        <arg>
+                         0
+                        </arg>
+                        <doc>
+                         Sends a SAP virtual key combination to the window, not into an element.
+If you want to send a value to a text field, use `input text` instead.
+                        </doc>
+                        <status endtime="20241219 20:49:43.072" starttime="20241219 20:49:42.470" status="PASS"/>
+                       </kw>
+                       <status endtime="20241219 20:49:43.072" starttime="20241219 20:49:41.624" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Run Transaction">
+                       <arg>
+                        /nZPDF
+                       </arg>
+                       <doc>
+                        Runs a Sap transaction. An error is given when an unknown transaction is specified.
+                       </doc>
+                       <status endtime="20241219 20:49:43.257" starttime="20241219 20:49:43.072" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Input Text">
+                       <arg>
+                        wnd[0]/usr/txtSPOOLNO
+                       </arg>
+                       <arg>
+                        ${spool_id}
+                       </arg>
+                       <doc>
+                        Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+                       </doc>
+                       <msg level="INFO" timestamp="20241219 20:49:43.289">
+                        Typing text '19626' into text field 'wnd[0]/usr/txtSPOOLNO'.
+                       </msg>
+                       <status endtime="20241219 20:49:43.289" starttime="20241219 20:49:43.257" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Click Element">
+                       <arg>
+                        wnd[0]/tbar[1]/btn[8]
+                       </arg>
+                       <doc>
+                        Performs a single click on a given element. Used only for buttons, tabs and menu items.
+                       </doc>
+                       <status endtime="20241219 20:49:43.911" starttime="20241219 20:49:43.289" status="PASS"/>
+                      </kw>
+                      <kw library="BuiltIn" name="Sleep">
+                       <arg>
+                        1
+                       </arg>
+                       <doc>
+                        Pauses the test executed for the given time.
+                       </doc>
+                       <msg level="INFO" timestamp="20241219 20:49:44.911">
+                        Slept 1 second
+                       </msg>
+                       <status endtime="20241219 20:49:44.911" starttime="20241219 20:49:43.911" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Input Text">
+                       <arg>
+                        wnd[1]/usr/ctxtDY_PATH
+                       </arg>
+                       <arg>
+                        ${EMPTY}
+                       </arg>
+                       <doc>
+                        Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+                       </doc>
+                       <msg level="INFO" timestamp="20241219 20:49:44.911">
+                        Typing text '' into text field 'wnd[1]/usr/ctxtDY_PATH'.
+                       </msg>
+                       <status endtime="20241219 20:49:44.911" starttime="20241219 20:49:44.911" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Input Text">
+                       <arg>
+                        wnd[1]/usr/ctxtDY_FILENAME
+                       </arg>
+                       <arg>
+                        ${EMPTY}
+                       </arg>
+                       <doc>
+                        Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+                       </doc>
+                       <msg level="INFO" timestamp="20241219 20:49:44.937">
+                        Typing text '' into text field 'wnd[1]/usr/ctxtDY_FILENAME'.
+                       </msg>
+                       <status endtime="20241219 20:49:44.937" starttime="20241219 20:49:44.911" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Input Text">
+                       <arg>
+                        wnd[1]/usr/ctxtDY_PATH
+                       </arg>
+                       <arg>
+                        ${symvar('Invoice_PDF_PATH')}
+                       </arg>
+                       <doc>
+                        Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+                       </doc>
+                       <msg level="INFO" timestamp="20241219 20:49:44.937">
+                        Sym.Dev.Invoice_PDF_PATH: C:\Symphony\Rental_Invoice\Download\2024\December
+                       </msg>
+                       <msg level="INFO" timestamp="20241219 20:49:44.937">
+                        Typing text 'C:\Symphony\Rental_Invoice\Download\2024\December' into text field 'wnd[1]/usr/ctxtDY_PATH'.
+                       </msg>
+                       <status endtime="20241219 20:49:44.937" starttime="20241219 20:49:44.937" status="PASS"/>
+                      </kw>
+                      <kw library="DateTime" name="Get Current Date">
+                       <var>
+                        ${Month}
+                       </var>
+                       <arg>
+                        result_format=%b
+                       </arg>
+                       <doc>
+                        Returns current local or UTC time with an optional increment.
+                       </doc>
+                       <msg level="INFO" timestamp="20241219 20:49:44.937">
+                        ${Month} = Dec
+                       </msg>
+                       <status endtime="20241219 20:49:44.937" starttime="20241219 20:49:44.937" status="PASS"/>
+                      </kw>
+                      <kw library="DateTime" name="Get Current Date">
+                       <var>
+                        ${year}
+                       </var>
+                       <arg>
+                        result_format=%Y
+                       </arg>
+                       <doc>
+                        Returns current local or UTC time with an optional increment.
+                       </doc>
+                       <msg level="INFO" timestamp="20241219 20:49:44.937">
+                        ${year} = 2024
+                       </msg>
+                       <status endtime="20241219 20:49:44.937" starttime="20241219 20:49:44.937" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Input Text">
+                       <arg>
+                        wnd[1]/usr/ctxtDY_FILENAME
+                       </arg>
+                       <arg>
+                        ${invoice_doc}_${Month}${year}.pdf
+                       </arg>
+                       <doc>
+                        Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.
+                       </doc>
+                       <msg level="INFO" timestamp="20241219 20:49:44.953">
+                        Typing text '707326195_Dec2024.pdf' into text field 'wnd[1]/usr/ctxtDY_FILENAME'.
+                       </msg>
+                       <status endtime="20241219 20:49:44.953" starttime="20241219 20:49:44.937" status="PASS"/>
+                      </kw>
+                      <kw library="SAP_Tcode_Library" name="Click Element">
+                       <arg>
+                        wnd[1]/tbar[0]/btn[0]
+                       </arg>
+                       <doc>
+                        Performs a single click on a given element. Used only for buttons, tabs and menu items.
+                       </doc>
+                       <status endtime="20241219 20:49:45.316" starttime="20241219 20:49:44.953" status="PASS"/>
+                      </kw>
+                      <kw library="BuiltIn" name="Sleep">
+                       <arg>
+                        1
+                       </arg>
+                       <doc>
+                        Pauses the test executed for the given time.
+                       </doc>
+                       <msg level="INFO" timestamp="20241219 20:49:46.316">
+                        Slept 1 second
+                       </msg>
+                       <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:45.316" status="PASS"/>
+                      </kw>
+                      <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:34.962" status="PASS"/>
+                     </kw>
+                     <kw library="BuiltIn" name="Exit For Loop">
+                      <doc>
+                       Stops executing the enclosing FOR loop.
+                      </doc>
+                      <msg level="INFO" timestamp="20241219 20:49:46.316">
+                       Exiting for loop altogether.
+                      </msg>
+                      <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="PASS"/>
+                     </kw>
+                     <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:34.962" status="PASS"/>
+                    </branch>
+                    <branch type="ELSE">
+                     <kw library="BuiltIn" name="Log To Console">
+                      <arg>
+                       **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created ${invoice_doc} with E-Invoice error**gbEnd**
+                      </arg>
+                      <doc>
+                       Logs the given message to the console.
+                      </doc>
+                      <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                     </kw>
+                     <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                    </branch>
+                    <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:34.962" status="PASS"/>
+                   </if>
+                   <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:34.962" status="PASS"/>
+                  </iter>
+                  <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:34.962" status="PASS"/>
+                 </for>
+                 <kw library="BuiltIn" name="Exit For Loop">
+                  <doc>
+                   Stops executing the enclosing FOR loop.
+                  </doc>
+                  <msg level="INFO" timestamp="20241219 20:49:46.316">
+                   Exiting for loop altogether.
+                  </msg>
+                  <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="PASS"/>
+                 </kw>
+                 <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:29.731" status="PASS"/>
+                </branch>
+                <branch condition="'${invoice_status}' == 'Error Generating IRN'" type="ELSE IF">
+                 <kw library="BuiltIn" name="Sleep">
+                  <arg>
+                   5
+                  </arg>
+                  <doc>
+                   Pauses the test executed for the given time.
+                  </doc>
+                  <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                 </kw>
+                 <kw library="SAP_Tcode_Library" name="Click Element">
+                  <arg>
+                   wnd[0]/tbar[1]/btn[5]
+                  </arg>
+                  <doc>
+                   Performs a single click on a given element. Used only for buttons, tabs and menu items.
+                  </doc>
+                  <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                 </kw>
+                 <kw library="SAP_Tcode_Library" name="Get Row Count">
+                  <var>
+                   ${table_row}
+                  </var>
+                  <arg>
+                   wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell
+                  </arg>
+                  <doc>
+                   Returns the number of rows found in the specified table.
+                  </doc>
+                  <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                 </kw>
+                 <kw library="BuiltIn" name="Log To Console">
+                  <arg>
+                   ${table_row}
+                  </arg>
+                  <doc>
+                   Logs the given message to the console.
+                  </doc>
+                  <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                 </kw>
+                 <for flavor="IN RANGE">
+                  <var>
+                   ${r}
+                  </var>
+                  <value>
+                   0
+                  </value>
+                  <value>
+                   ${table_row}
+                  </value>
+                  <iter>
+                   <var name="${r}"/>
+                   <kw library="SAP_Tcode_Library" name="Get Cell Value">
+                    <var>
+                     ${invoice_status}
+                    </var>
+                    <arg>
+                     wnd[0]/usr/subMAINAREA:ZGCS_EINVOICEGENERATE:0101/cntlALV/shellcont/shell
+                    </arg>
+                    <arg>
+                     ${r}
+                    </arg>
+                    <arg>
+                     STATDESC
+                    </arg>
+                    <doc>
+                     Returns the cell value for the specified cell.
+                    </doc>
+                    <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                   </kw>
+                   <kw library="BuiltIn" name="Log To Console">
+                    <arg>
+                     row is :${r}:${invoice_status}
+                    </arg>
+                    <doc>
+                     Logs the given message to the console.
+                    </doc>
+                    <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                   </kw>
+                   <if>
+                    <branch condition="'${invoice_status}' == 'IRN Generated'" type="IF">
+                     <kw library="create_rental_invoice" name="Pdf_process">
+                      <arg>
+                       ${invoice_doc}
+                      </arg>
+                      <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                     </kw>
+                     <kw library="BuiltIn" name="Exit For Loop">
+                      <doc>
+                       Stops executing the enclosing FOR loop.
+                      </doc>
+                      <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                     </kw>
+                     <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                    </branch>
+                    <branch type="ELSE">
+                     <kw library="BuiltIn" name="Log To Console">
+                      <arg>
+                       **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created ${invoice_doc} with E-Invoice error**gbEnd**
+                      </arg>
+                      <doc>
+                       Logs the given message to the console.
+                      </doc>
+                      <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                     </kw>
+                     <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                    </branch>
+                    <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                   </if>
+                   <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                  </iter>
+                  <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                 </for>
+                 <kw library="BuiltIn" name="Exit For Loop">
+                  <doc>
+                   Stops executing the enclosing FOR loop.
+                  </doc>
+                  <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                 </kw>
+                 <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:46.316" status="NOT RUN"/>
+                </branch>
+                <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:29.731" status="PASS"/>
+               </if>
+               <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:29.715" status="PASS"/>
+              </iter>
+              <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:29.715" status="PASS"/>
+             </for>
+             <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:28.743" status="PASS"/>
+            </kw>
+            <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:12.631" status="PASS"/>
+           </branch>
+           <status endtime="20241219 20:49:46.316" starttime="20241219 20:49:12.631" status="PASS"/>
+          </if>
+          <kw library="SAP_Tcode_Library" name="Process Excel">
+           <arg>
+            ${target_file_name}
+           </arg>
+           <arg>
+            ${target_sheet_name}
+           </arg>
+           <msg level="INFO" timestamp="20241219 20:49:46.357">
+            Processed Excel sheet 'Sheet1' has been updated in: C:\Output\Rental_output.xlsx
+           </msg>
+           <msg level="INFO" timestamp="20241219 20:49:46.357">
+            C:\EID_Replay\EID_Parry\Tests\Resource\SAP_Tcode_Library.py:1398: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+           </msg>
+           <status endtime="20241219 20:49:46.357" starttime="20241219 20:49:46.316" status="PASS"/>
+          </kw>
+          <kw library="BuiltIn" name="Sleep">
+           <arg>
+            2
+           </arg>
+           <doc>
+            Pauses the test executed for the given time.
+           </doc>
+           <msg level="INFO" timestamp="20241219 20:49:48.357">
+            Slept 2 seconds
+           </msg>
+           <status endtime="20241219 20:49:48.357" starttime="20241219 20:49:46.357" status="PASS"/>
+          </kw>
+          <kw library="SAP_Tcode_Library" name="Number To String">
+           <arg>
+            ${target_file_name}
+           </arg>
+           <arg>
+            column_letter=C
+           </arg>
+           <status endtime="20241219 20:49:48.373" starttime="20241219 20:49:48.357" status="PASS"/>
+          </kw>
+          <kw library="BuiltIn" name="Sleep">
+           <arg>
+            2
+           </arg>
+           <doc>
+            Pauses the test executed for the given time.
+           </doc>
+           <msg level="INFO" timestamp="20241219 20:49:50.373">
+            Slept 2 seconds
+           </msg>
+           <status endtime="20241219 20:49:50.373" starttime="20241219 20:49:48.373" status="PASS"/>
+          </kw>
+          <kw library="SAP_Tcode_Library" name="Excel To Json New">
+           <var>
+            ${json}
+           </var>
+           <arg>
+            ${target_file_name}
+           </arg>
+           <arg>
+            ${json_path}
+           </arg>
+           <msg level="INFO" timestamp="20241219 20:49:50.389">
+            ${json} = [{'Customer Reference (Header)': 'Rental invoice', 'Document Date': '2024-12-18', 'Sales document': '40026244', 'Net Value (Header)': 10497386.76, 'Document Currency': 'INR', 'Created by': 'ESHFFI03',...
+           </msg>
+           <status endtime="20241219 20:49:50.389" starttime="20241219 20:49:50.373" status="PASS"/>
+          </kw>
+          <kw library="BuiltIn" name="Log To Console">
+           <arg>
+            **gbStart**copilot_status_sheet**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
+           </arg>
+           <doc>
+            Logs the given message to the console.
+           </doc>
+           <status endtime="20241219 20:49:50.389" starttime="20241219 20:49:50.389" status="PASS"/>
+          </kw>
+          <status endtime="20241219 20:49:50.389" starttime="20241219 20:49:11.041" status="PASS"/>
+         </branch>
+         <status endtime="20241219 20:49:50.389" starttime="20241219 20:49:11.041" status="PASS"/>
+        </if>
+        <status endtime="20241219 20:49:50.389" starttime="20241219 20:49:11.041" status="PASS"/>
+       </kw>
+       <status endtime="20241219 20:49:50.389" starttime="20241219 20:49:11.041" status="PASS"/>
+      </branch>
+      <status endtime="20241219 20:49:50.389" starttime="20241219 20:49:11.025" status="PASS"/>
+     </if>
+     <status endtime="20241219 20:49:50.389" starttime="20241219 20:49:09.693" status="PASS"/>
+    </kw>
+    <tag>
+     Regression
+    </tag>
+    <tag>
+     VF01
+    </tag>
+    <status endtime="20241219 20:49:50.389" starttime="20241219 20:49:09.693" status="PASS"/>
+   </test>
+   <kw library="create_rental_invoice" name="System Logout" type="TEARDOWN">
+    <kw library="SAP_Tcode_Library" name="Run Transaction">
+     <arg>
+      /nex
+     </arg>
+     <doc>
+      Runs a Sap transaction. An error is given when an unknown transaction is specified.
+     </doc>
+     <status endtime="20241219 20:49:50.451" starttime="20241219 20:49:50.389" status="PASS"/>
+    </kw>
+    <status endtime="20241219 20:49:50.451" starttime="20241219 20:49:50.389" status="PASS"/>
+   </kw>
+   <status endtime="20241219 20:49:50.451" starttime="20241219 20:49:08.960" status="PASS"/>
+  </suite>
+  <doc>
+   Testing functionality through Robot Framework
+  </doc>
+  <meta name="environment">
+   Dev
+  </meta>
+  <meta name="test_browser_name">
+   chrome
+  </meta>
+  <meta name="test_browser_version">
+   131.0.6778.109
+  </meta>
+  <meta name="test_driver_version">
+   131.0.6778.85
+  </meta>
+  <meta name="test_environment">
+   Dev
+  </meta>
+  <meta name="test_freeze_dependencies">
+   astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,oauthlib==3.2.2,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PySocks==1.7.1,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0
+  </meta>
+  <status endtime="20241219 20:49:50.549" starttime="20241219 20:49:01.744" status="PASS"/>
+ </suite>
+ <statistics>
+  <total>
+   <stat fail="0" pass="1" skip="0">
+    All Tests
+   </stat>
+  </total>
+  <tag>
+   <stat fail="0" pass="1" skip="0">
+    Regression
+   </stat>
+   <stat fail="0" pass="1" skip="0">
+    VF01
+   </stat>
+  </tag>
+  <suite>
+   <stat fail="0" id="s1" name="Tests" pass="1" skip="0">
+    Tests
+   </stat>
+   <stat fail="0" id="s1-s1" name="Test Create Rental Invoice" pass="1" skip="0">
+    Tests.Test Create Rental Invoice
+   </stat>
+  </suite>
+ </statistics>
+ <errors>
+ </errors>
+</robot>

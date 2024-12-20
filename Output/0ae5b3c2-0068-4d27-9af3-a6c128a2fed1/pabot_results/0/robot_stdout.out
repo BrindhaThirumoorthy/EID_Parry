@@ -1,0 +1,25 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Create Rental Invoice                                              
+==============================================================================
+Create the rental Invoice                                             Document 707326195 has been saved.
+40026244
+40026247
+**gbStart**invoice_log**splitKeyValue**40026247 Document 707326195 has been saved.**gbEnd**
+40026244
+40026247
+2
+row is :0:Ready To be Sent
+2
+row is :0:IRN Generated
+**gbStart**copilot_status_sheet**splitKeyValue**[{'Customer Reference (Header)': 'Rental invoice', 'Document Date': '2024-12-18', 'Sales document': '40026244', 'Net Value (Header)': 10497386.76, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Sold-To Party Name': 'MURUGAPPA MANAGEMENT SERVICES', 'Billing Block Description': 'Compl Confirm Missng', 'Invoice Details': 'VF 014 The document is blocked for billing.'}, {'Customer Reference (Header)': 'Rental invoice', 'Document Date': '2024-12-18', 'Sales document': '40026247', 'Net Value (Header)': 776522.24, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Sold-To Party Name': 'CHOLAMANDALAM INVESTMENT AND FINANCE', 'Billing Block Description': 'empty', 'Invoice Details': 'Document 707326195 has been saved.'}]**splitKeyValue**object**gbEnd**
+| PASS |
+------------------------------------------------------------------------------
+Tests.Test Create Rental Invoice                                      | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\0ae5b3c2-0068-4d27-9af3-a6c128a2fed1\pabot_results\0\Output.xml
