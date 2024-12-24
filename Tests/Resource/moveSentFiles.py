@@ -1,6 +1,7 @@
 import os
 import shutil
 import sys
+from datetime import datetime
 
 def move_file(source_folder, destination_folder, file_name):
     try:
@@ -34,8 +35,15 @@ def move_file(source_folder, destination_folder, file_name):
 
 
 if __name__ == "__main__":
-    source_folder = sys.argv[1]
-    destination_folder = sys.argv[2]
+    now = datetime.now()
+    current_month = now.strftime("%B")
+    current_year = now.year
+    source_folder = os.path.join(sys.argv[1], current_month, str(current_year))
+    # source_folder = sys.argv[1]
+    destination_folder = os.path.join(sys.argv[2], current_month, str(current_year))
+    if not os.path.exists(destination_folder):
+        os.makedirs(destination_folder)
+    # destination_folder = sys.argv[2]
     file_name = sys.argv[3]
     if len(sys.argv) == 4:
         move_file(source_folder, destination_folder, file_name)

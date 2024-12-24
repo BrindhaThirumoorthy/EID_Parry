@@ -1,3 +1,4 @@
+from datetime import datetime
 import requests
 import sys
 import os
@@ -125,8 +126,12 @@ if __name__ == "__main__":
         
         subject = sys.argv[6]
         body = sys.argv[7]
-
-        folder_path = sys.argv[8]
+        
+        now = datetime.now()
+        current_month = now.strftime("%B")
+        current_year = now.year
+        folder_path = os.path.join(sys.argv[8], current_month, str(current_year))
+        # folder_path = sys.argv[8]
         file_name = sys.argv[9]
         file_path = os.path.join(folder_path, file_name)
         if not os.path.isfile(file_path):

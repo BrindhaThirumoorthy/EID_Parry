@@ -1,3 +1,4 @@
+from datetime import datetime
 import fitz  # PyMuPDF
 import re
 import os
@@ -33,8 +34,11 @@ def parse_key_value_pairs(lines):
     return parsed_data, recipient_details
 
 if __name__ == "__main__":
-
-    folder_path = sys.argv[1]
+    now = datetime.now()
+    current_month = now.strftime("%B")
+    current_year = now.year
+    folder_path = os.path.join(sys.argv[1], current_month, str(current_year))
+    # folder_path = sys.argv[1]
     file_name = sys.argv[2]
     
     if len(sys.argv) == 3:

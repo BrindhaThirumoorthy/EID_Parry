@@ -1,6 +1,7 @@
 import os
 import json
 import sys
+from datetime import datetime
 
 def check_files_in_folder(folder_path):
     try:
@@ -21,7 +22,11 @@ def check_files_in_folder(folder_path):
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
-        folder_path = sys.argv[1]
+        now = datetime.now()
+        current_month = now.strftime("%B")
+        current_year = now.year
+        # folder_path = sys.argv[1]
+        folder_path = os.path.join(sys.argv[1], current_month, str(current_year))
         result = check_files_in_folder(folder_path)
         print(f"##gbStart##invoiceFilesList##splitKeyValue##{result}##splitKeyValue##object##gbEnd##")
         print("Script Processed Successfully")
