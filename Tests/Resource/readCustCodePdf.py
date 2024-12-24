@@ -37,7 +37,7 @@ if __name__ == "__main__":
     now = datetime.now()
     current_month = now.strftime("%B")
     current_year = now.year
-    folder_path = os.path.join(sys.argv[1], current_month, str(current_year))
+    folder_path = os.path.join(sys.argv[1], str(current_year), current_month)
     # folder_path = sys.argv[1]
     file_name = sys.argv[2]
     

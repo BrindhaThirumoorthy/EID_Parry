@@ -26,7 +26,7 @@ if __name__ == "__main__":
         current_month = now.strftime("%B")
         current_year = now.year
         # folder_path = sys.argv[1]
-        folder_path = os.path.join(sys.argv[1], current_month, str(current_year))
+        folder_path = os.path.join(sys.argv[1], str(current_year), current_month)
         result = check_files_in_folder(folder_path)
         print(f"##gbStart##invoiceFilesList##splitKeyValue##{result}##splitKeyValue##object##gbEnd##")
         print("Script Processed Successfully")
