@@ -227,7 +227,8 @@ Validate the e-invoice status
                 IF    '${invoice_status}' == 'IRN Generated'
                     Pdf_process    ${invoice_doc}
                     Exit For Loop
-                ELSE 
+                ELSE
+                    Write the status into excel    ${symvar('documents')}    Invoice is created ${invoice_doc} with E-Invoice error 
                     Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created ${invoice_doc} with E-Invoice error**gbEnd** 
                 END
             END
@@ -244,7 +245,8 @@ Validate the e-invoice status
                 IF    '${invoice_status}' == 'IRN Generated'
                     Pdf_process    ${invoice_doc}
                     Exit For Loop
-                ELSE 
+                ELSE
+                    Write the status into excel    ${symvar('documents')}    Invoice is created ${invoice_doc} with E-Invoice error 
                     Log To Console    **gbStart**invoice_log**splitKeyValue**${symvar('documents')} Invoice is created ${invoice_doc} with E-Invoice error**gbEnd** 
                 END
             END
