@@ -116,18 +116,12 @@ if __name__ == "__main__":
 
         print("TO Recipients:", to_recipients)
         print("CC Recipients:", cc_recipients)
-        
-        # Email subject and body
+
         subject = sys.argv[6]
         body = sys.argv[7]
         
-        # Path to the folder containing the file to attach
-        now = datetime.now()
-        current_month = now.strftime("%B")
-        current_year = now.year
-        folder_path = os.path.join(sys.argv[8], current_month, str(current_year))
+        folder_path = sys.argv[8]
         
-        # Name of the file to attach
         file_name = sys.argv[9]
         file_path = os.path.join(folder_path, file_name)
         
