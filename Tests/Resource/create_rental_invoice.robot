@@ -149,9 +149,15 @@ Pdf_process
     Sleep    1
     Input Text    wnd[1]/usr/ctxtDY_PATH    ${EMPTY}
     Input Text    wnd[1]/usr/ctxtDY_FILENAME    ${EMPTY}
-    Input Text    wnd[1]/usr/ctxtDY_PATH    ${symvar('Invoice_PDF_PATH')}
+    ${Month1}    Get Current Date    result_format=%B
     ${Month}    Get Current Date    result_format=%b
     ${year}    Get Current Date    result_format=%Y
+    ${EXISTS}   Run Keyword And Return Status   Directory Should Exist    ${symvar('Invoice_PDF_PATH')}\\${year}\\${Month1}
+    IF  '${EXISTS}'' == "False"
+        Create Directory    ${symvar('Invoice_PDF_PATH')}\\${year}\\${Month1}
+        Log    Folder created at ${symvar('Invoice_PDF_PATH')}\\${year}\\${Month1}
+    END
+    Input Text    wnd[1]/usr/ctxtDY_PATH    ${symvar('Invoice_PDF_PATH')}
     Input Text    wnd[1]/usr/ctxtDY_FILENAME    ${invoice_doc}_${Month}${year}.pdf
     Click Element    wnd[1]/tbar[0]/btn[0]
     Sleep    1
