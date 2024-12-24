@@ -15,6 +15,7 @@ ${rental_form}  wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE/ssubSUBSCREEN_BODY:SAP
 ${target_file_name}    C:\\Output\\Rental_output.xlsx
 ${target_sheet_name}    Sheet1
 ${json_path}    C:\\Output\\Rental_output.json
+${ready_to_send}    C:\\Symphony\\Rental_Invoice\\ReadyToSend
 # ${invoice_doc}    707326152
 *** Keywords *** 
 Write Excel
@@ -122,6 +123,13 @@ Rental Invoice
         Sleep    2
         ${json}    Excel To Json New    ${target_file_name}    ${json_path}        
         Log To Console    **gbStart**copilot_status_sheet**splitKeyValue**${json}**splitKeyValue**object**gbEnd**
+    END
+    ${Mon}    Get Current Date    result_format=%B
+    ${yr}    Get Current Date    result_format=%Y
+    ${EXISTS}   Run Keyword And Return Status   Directory Should Exist    ${ready_to_send}\\${yr}\\${Mon}
+    IF  '${EXISTS}'' == "False"
+        Create Directory    ${ready_to_send}\\${yr}\\${Mon}
+        Log    Folder created for Read To Send at ${ready_to_send}\\${yr}\\${Mon}
     END
 
 Pdf_process
