@@ -1,0 +1,29 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Create Rental Invoice                                              
+==============================================================================
+Create the rental Invoice                                             Document 707326196 has been saved.
+40026219
+**gbStart**invoice_log**splitKeyValue**40026219 Document 707326196 has been saved.**gbEnd**
+40026219
+2
+row is :0:Error Generating IRN
+2
+row is :0:Error Generating IRN
+40026219
+**gbStart**invoice_log**splitKeyValue**40026219 Invoice is created 707326196 with E-Invoice error**gbEnd**
+row is :1:
+40026219
+**gbStart**invoice_log**splitKeyValue**40026219 Invoice is created 707326196 with E-Invoice error**gbEnd**
+**gbStart**copilot_status_sheet**splitKeyValue**[{'Customer Reference (Header)': 'Demo - Rental Contra', 'Document Date': '2024-12-04', 'Sales document': '40026219', 'Net Value (Header)': 940.94, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Sold-To Party Name': 'PARRY AGRO INDUSTRIES LTD', 'Billing Block Description': 'empty', 'Invoice Details': 'Invoice is created 707326196 with E-Invoice error'}]**splitKeyValue**object**gbEnd**
+| FAIL |
+Evaluating IF condition failed: Evaluating expression ''True'' == "False"' failed: SyntaxError: unterminated string literal (detected at line 1) (<string>, line 1)
+------------------------------------------------------------------------------
+Tests.Test Create Rental Invoice                                      | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\a03fdef8-b3f6-40a6-b901-c4c94257a673\pabot_results\0\Output.xml

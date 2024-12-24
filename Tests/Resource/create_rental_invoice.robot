@@ -127,7 +127,7 @@ Rental Invoice
     ${Mon}    Get Current Date    result_format=%B
     ${yr}    Get Current Date    result_format=%Y
     ${EXISTS}   Run Keyword And Return Status   Directory Should Exist    ${ready_to_send}\\${yr}\\${Mon}
-    IF  '${EXISTS}'' == "False"
+    IF  '${EXISTS}' == "False"
         Create Directory    ${ready_to_send}\\${yr}\\${Mon}
         Log    Folder created for Read To Send at ${ready_to_send}\\${yr}\\${Mon}
     END
@@ -161,7 +161,7 @@ Pdf_process
     ${Month}    Get Current Date    result_format=%b
     ${year}    Get Current Date    result_format=%Y
     ${EXISTS}   Run Keyword And Return Status   Directory Should Exist    ${symvar('Invoice_PDF_PATH')}\\${year}\\${Month1}
-    IF  '${EXISTS}'' == "False"
+    IF  '${EXISTS}' == "False"
         Create Directory    ${symvar('Invoice_PDF_PATH')}\\${year}\\${Month1}
         Log    Folder created at ${symvar('Invoice_PDF_PATH')}\\${year}\\${Month1}
     END
