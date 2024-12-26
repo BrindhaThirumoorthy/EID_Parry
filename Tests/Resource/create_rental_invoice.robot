@@ -12,7 +12,7 @@ ${rental_date}  01.10.2025
 # ${Text}     Rent for the month of November 2024.
 ${rental_text}  wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE/ssubSUBSCREEN_BODY:SAPLV70T:2100/cntlSPLITTER_CONTAINER/shellcont/shellcont/shell/shellcont[1]/shell
 ${rental_form}  wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE/ssubSUBSCREEN_BODY:SAPLV70T:2100/cntlSPLITTER_CONTAINER/shellcont/shellcont/shell/shellcont[0]/shell
-${target_file_name}    C:\\Output\\Rental_output.xlsx
+${target_file_name}    C:\\Output\\Rental_Invoice.xlsx
 ${target_sheet_name}    Sheet1
 ${json_path}    C:\\Output\\Rental_output.json
 ${ready_to_send}    C:\\Symphony\\Rental_Invoice\\ReadyToSend

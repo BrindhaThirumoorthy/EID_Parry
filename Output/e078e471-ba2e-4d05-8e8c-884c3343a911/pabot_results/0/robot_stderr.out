@@ -1,0 +1,61 @@
+[ ERROR ] Error in file 'C:\EID_Replay\EID_Parry\Tests\Resource\VA45.robot' on line 9: Importing library 'C:\EID_Replay\EID_Parry\Tests\Resource\excel_to_json.py' failed: FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Output\\\\Rental_output.xlsx'
+Traceback (most recent call last):
+  File "C:\EID_Replay\EID_Parry\Tests\Resource\excel_to_json.py", line 41, in <module>
+    convert_excel_to_json(excel_file, json_file)
+  File "C:\EID_Replay\EID_Parry\Tests\Resource\excel_to_json.py", line 7, in convert_excel_to_json
+    df = pd.read_excel(excel_file, engine='openpyxl')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages\pandas\io\excel\_base.py", line 495, in read_excel
+    io = ExcelFile(
+         ^^^^^^^^^^
+  File "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages\pandas\io\excel\_base.py", line 1567, in __init__
+    self._reader = self._engines[engine](
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 553, in __init__
+    super().__init__(
+  File "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages\pandas\io\excel\_base.py", line 563, in __init__
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+PYTHONPATH:
+  C:\EID_Replay\EID_Parry\Tests\Resource
+  C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Scripts\robot.exe
+  C:\Users\pimeidinfra\AppData\Local\Programs\Python\Python312\python312.zip
+  C:\Users\pimeidinfra\AppData\Local\Programs\Python\Python312\DLLs
+  C:\Users\pimeidinfra\AppData\Local\Programs\Python\Python312\Lib
+  C:\Users\pimeidinfra\AppData\Local\Programs\Python\Python312
+  C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony
+  C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages
+  C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages\win32
+  C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages\win32\lib
+  C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages\Pythonwin
+  C:\EID_Replay\EID_Parry\RoboEnvironment\Symphony\Lib\site-packages\setuptools\_vendor
+  C:\EID_Replay\EID_Parry
+[ WARN ] Failed to fetch value for field: Sym.Dev.SAP_SERVER
+[ WARN ] Traceback (most recent call last):
+  File "C:\EID_Replay\EID_Parry\Execution\Access_Data.py", line 58, in get_data
+    field_value = eval(command)
+                  ^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+AttributeError: module 'Data.Symphony.Dev' has no attribute 'SAP_SERVER'
+
+[ WARN ] Failed to fetch value for field: Sym.Dev.SAP_SERVER
+[ WARN ] Traceback (most recent call last):
+  File "C:\Users\pimeidinfra\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\pimeidinfra\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 87] The parameter is incorrect
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\EID_Replay\EID_Parry\Execution\Access_Data.py", line 58, in get_data
+    field_value = eval(command)
+                  ^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+AttributeError: module 'Data.Symphony.Dev' has no attribute 'SAP_SERVER'
+
