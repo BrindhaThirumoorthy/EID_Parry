@@ -165,7 +165,7 @@ Pdf_process
         Create Directory    ${symvar('Invoice_PDF_PATH')}\\${year}\\${Month1}
         Log    Folder created at ${symvar('Invoice_PDF_PATH')}\\${year}\\${Month1}
     END
-    Input Text    wnd[1]/usr/ctxtDY_PATH    ${symvar('Invoice_PDF_PATH')}
+    Input Text    wnd[1]/usr/ctxtDY_PATH    ${symvar('Invoice_PDF_PATH')}\\${year}\\${Month1}
     Input Text    wnd[1]/usr/ctxtDY_FILENAME    ${invoice_doc}_${Month}${year}.pdf
     Click Element    wnd[1]/tbar[0]/btn[0]
     Sleep    1
