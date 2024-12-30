@@ -1,0 +1,18 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Create Rental Invoice                                              
+==============================================================================
+Create the rental Invoice                                             For 40026245 No billing documents were generated. Please see log.
+40025328
+**gbStart**invoice_log**splitKeyValue**40026245 VF 014 The document is blocked for billing.**gbEnd**
+**gbStart**copilot_status_sheet**splitKeyValue**[{'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025328', 'Net Value (Header)': 3914658.22, 'Document Currency': 'INR', 'Created by': 'EECFFI91', 'Sold-To Party Name': 'NET ACCESS INDIA  LTD', 'Billing Block Description': 'empty', 'Invoice Details': 'Document 707350961 has been saved.'}]**splitKeyValue**object**gbEnd**
+| PASS |
+------------------------------------------------------------------------------
+Tests.Test Create Rental Invoice                                      | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\801a151d-eb7a-4154-b872-8ae6bab5bc77\pabot_results\0\Output.xml

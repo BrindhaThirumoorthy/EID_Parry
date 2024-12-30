@@ -13,6 +13,8 @@ from openpyxl import load_workbook
 import json
 import re
 import glob
+from datetime import datetime
+import calendar
 
 
 class SAP_Tcode_Library:
@@ -1626,3 +1628,11 @@ class SAP_Tcode_Library:
         # Return the json.dumps of the dictionary
         return json.dumps(proper_json)
     
+    def get_no_of_days_in_month(self, year, month):
+        days_in_month = calendar.monthrange(year, month)[1]
+        return days_in_month
+    
+    def convert_date_format(self, date):
+        date_obj = datetime.strptime(date, "%d.%m.%Y")
+        converted_date = date_obj.strftime("%Y.%m.%d")
+        return converted_date
