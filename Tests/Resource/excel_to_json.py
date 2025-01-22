@@ -34,8 +34,8 @@ def delete_files(files):
             print(f"Error deleting file {file}: {e}")
 
 
-excel_file = r'C:\\Output\\Rental_output.xlsx'  
-json_file = r'C:\Output\Rental_Status.json'  
+# excel_file = r'C:\\Output\\Rental_output.xlsx'  
+# json_file = r'C:\Output\Rental_Status.json'  
 # convert_json_to_string(data)
 
 convert_excel_to_json(excel_file, json_file)
