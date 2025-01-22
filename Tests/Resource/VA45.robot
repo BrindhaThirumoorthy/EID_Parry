@@ -41,12 +41,15 @@ Rental Document
         Log To Console    **gbStart**password_status**splitKeyValue**${title}**gbEnd**
 
     ELSE     
-        ${lod}    Extract Dates    json_string=${symvar('DateContent')}
+        ${start_date1}  Get First Date Of Month    ${symvar('month_json')}
+        ${start_date}    Convert Date Format    ${start_date1}
+        ${end_date1}  Get Last Date Of Month    ${symvar('month_json')}
+        ${end_date}    Convert Date Format    ${end_date1}
         Run Transaction     /nVA45
         Sleep   1
         Input Text      wnd[0]/usr/ctxtSAUART-LOW   ZMV
-        Input Text      wnd[0]/usr/ctxtSVALID-LOW   ${lod}[0]
-        Input Text      wnd[0]/usr/ctxtSVALID-HIGH  ${lod}[1]
+        Input Text      wnd[0]/usr/ctxtSVALID-LOW   ${start_date}
+        Input Text      wnd[0]/usr/ctxtSVALID-HIGH  ${end_date}
         Select Radio Button     wnd[0]/usr/radPVBOFF
         Click Element   wnd[0]/tbar[1]/btn[8]
 
@@ -94,9 +97,14 @@ Rental Document
         Validate the open documents
         # Remove Space From Column Header    C:\\TEMP\\rental.xlsx
         ${json}    Excel To Json New    excel_file=C:\\TEMP\\rental.xlsx    json_file=C:\\TEMP\\rental.json
-        ${proper_json}    Output Proper Json    ${json}
-        log to console     **gbStart**document_selection**splitKeyValue**${proper_json}**splitKeyValue**object**gbEnd**  
-        Sleep    2
+        ${json_len}    Get Length    ${json}
+        IF    '${json_len}' == '0'
+        Log To Console    **gbStart**document_availability**splitKeyValue**Currently No open Contract available**splitKeyValue**object**gbEnd**
+        ELSE
+            ${proper_json}    Output Proper Json    ${json}
+            log to console     **gbStart**document_selection**splitKeyValue**${proper_json}**splitKeyValue**object**gbEnd**  
+            Sleep    2
+        END
     END
 
 
@@ -108,9 +116,8 @@ Matching_Row
 Validate the open documents
     @{rows_to_delete}   Create List
     Set Global Variable    @{rows_to_delete}
-    ${date}    Extract Dates    json_string=${symvar('DateContent')}
-    ${Rental_Start_Date}    Set Variable    ${date}[0]
-    ${Rental_End_Date}    Set Variable    ${date}[1]
+    ${start_date}  Get First Date Of Month    ${symvar('month_json')}
+    ${end_date}  Get Last Date Of Month    ${symvar('month_json')}
     ${row_count}    Count Excel Rows    ${excel_path}    ${excel_sheet}
     # Log To Console    ${row_count}
     ${row}    Evaluate    ${row_count} + 1
@@ -133,17 +140,19 @@ Validate the open documents
         FOR     ${i}    IN RANGE    0   ${row}
             ${is_visible}   Run Keyword And Return Status   Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
             Run Keyword If    "${is_visible}" == "False"    Exit For Loop
-            ${date}     Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
+            ${date1}     Get Value   wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]
             Set Global Variable    ${i}
-            IF    '${date}' == '${Rental_Start_Date}' or '${date}' == '${Rental_End_Date}'
-                # Sleep    5
-                verify date    ${rows_to_delete}    ${k}
+            IF  '${date1}' == '${EMPTY}'
+                Append To List    ${rows_to_delete}    ${k}
                 Exit For Loop
-                       
-            ELSE IF    '${date}' >= '${Rental_Start_Date}' and '${date}' <= '${Rental_End_Date}'
-                # Sleep    5
-                verify date    ${rows_to_delete}    ${k}
-                Exit For Loop
+            ELSE
+                ${date}    Convert Date Format1    ${date1}
+                ${result}    Compare Dates    ${date}    ${start_date}    ${end_date}
+                IF    '${result}' == 'True'
+                    # Sleep    5
+                    verify date    ${rows_to_delete}    ${k}
+                    Exit For Loop
+                END
             END
             
         END

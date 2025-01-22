@@ -1631,8 +1631,50 @@ class SAP_Tcode_Library:
     def get_no_of_days_in_month(self, year, month):
         days_in_month = calendar.monthrange(year, month)[1]
         return days_in_month
-    
+        
     def convert_date_format(self, date):
+        date_obj = datetime.strptime(date, "%Y.%m.%d")
+        converted_date = date_obj.strftime("%d.%m.%Y")
+        return converted_date
+
+    def convert_date_format1(self, date):
         date_obj = datetime.strptime(date, "%d.%m.%Y")
         converted_date = date_obj.strftime("%Y.%m.%d")
         return converted_date
+
+    def get_first_date_of_month(self, month_json):
+        month_name = month_json[0]["Month"]
+        year = int(month_json[0]["Year"])
+        month_number = datetime.strptime(month_name, "%B").month
+        first_date = datetime(year, month_number, 1).date()
+        first_date_str = first_date.strftime("%Y.%m.%d")
+        return first_date_str
+    
+    def get_last_date_of_month(self, month_json):
+        month_name = month_json[0]["Month"]
+        year = int(month_json[0]["Year"])
+        month_number = datetime.strptime(month_name, "%B").month
+        last_day = calendar.monthrange(year, month_number)[1]
+        last_date = datetime(year, month_number, last_day).date()
+        last_date_str = last_date.strftime("%Y.%m.%d")
+        return last_date_str
+
+    def compare_dates(self, date, start_date, end_date):
+        date = datetime.strptime(date, "%Y.%m.%d")
+        first_date = datetime.strptime(start_date, "%Y.%m.%d")
+        last_date = datetime.strptime(end_date, "%Y.%m.%d")
+        if date.month == first_date.month:
+            if date.year == first_date.year:
+                if first_date.day <= date.day <= last_date.day:
+                    return True
+        return False
+
+    def get_month(self, date):
+        # data = json.loads(date)
+        month = date[0]['Month']
+        return month
+
+    def get_year(self, date):
+        # data = json.loads(date)
+        year = date[0]['Year']
+        return year

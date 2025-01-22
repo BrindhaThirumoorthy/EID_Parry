@@ -17,13 +17,13 @@ Tests :: Testing functionality through Robot Framework
       Create Directory    ${OUTPUTDIR}${/}${wvar('screenshot_dir')}
       |  ${OUTPUTDIR}${/}${wvar('screenshot_dir')} = <Unable to define variable value>
 ______________________________________________________________________________
-Tests.Test custom excel                                                       
+Tests.Test VA45                                                               
 ==============================================================================
-Display Excel for output                                              | FAIL |
+Display the rental documents                                          | FAIL |
 Parent suite setup failed:
 Resolving variable '${wvar('screenshot_dir')}' failed: Variable '${wvar}' not found.
 ------------------------------------------------------------------------------
-Tests.Test custom excel                                               | FAIL |
+Tests.Test VA45                                                       | FAIL |
 Parent suite setup failed:
 Resolving variable '${wvar('screenshot_dir')}' failed: Variable '${wvar}' not found.
 
@@ -35,4 +35,4 @@ Resolving variable '${wvar('screenshot_dir')}' failed: Variable '${wvar}' not fo
 
 1 test, 0 passed, 1 failed
 ==============================================================================
-Output:  C:\EID_Replay\EID_Parry\Output\14e4fd8a-574f-4c64-b36c-a3e0be46f4ea\pabot_results\0\Output.xml
+Output:  C:\EID_Replay\EID_Parry\Output\7539fe27-9fab-4776-b04a-6e2e44075c07\pabot_results\0\Output.xml

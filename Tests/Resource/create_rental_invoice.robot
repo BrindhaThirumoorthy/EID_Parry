@@ -8,7 +8,7 @@ Library    ExcelLibrary
 Library    excel_to_json.py
 
 *** Variables ***
-${rental_date}  01.10.2025
+${month_json}    ${symvar('month_json')}
 # ${Text}     Rent for the month of November 2024.
 ${rental_text}  wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE/ssubSUBSCREEN_BODY:SAPLV70T:2100/cntlSPLITTER_CONTAINER/shellcont/shellcont/shell/shellcont[1]/shell
 ${rental_form}  wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE/ssubSUBSCREEN_BODY:SAPLV70T:2100/cntlSPLITTER_CONTAINER/shellcont/shellcont/shell/shellcont[0]/shell
@@ -85,8 +85,10 @@ Rental Invoice
             Click Element   wnd[0]/usr/btnTC_HEAD
             Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE
             select_form_header     ${rental_form}  0001    Column1
-            ${Month}    Get Current Date    result_format=%B
-            Input Text  ${rental_text}  Rent for the month of ${Month} 2024.
+            
+            ${month}    Get Month   ${month_json}
+            ${year}     Get Year    ${month_json}
+            Input Text  ${rental_text}  Rent for the month of ${Month} ${year}.
             Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU
             Input Text      wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU/ssubSUBSCREEN_BODY:SAPMV60A:6101/ssubCUSTOMER_SCREEN:ZZBILLHEADER:0100/txtVBRK-ZZEWAYBL    NA
             Click Element   wnd[0]/tbar[0]/btn[11]
@@ -103,8 +105,10 @@ Rental Invoice
             Click Element   wnd[0]/usr/btnTC_HEAD
             Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFTE
             select_form_header     ${rental_form}  0001    Column1
-            ${Month}    Get Current Date    result_format=%B
-            Input Text  ${rental_text}  Rent for the month of ${Month} 2024.
+
+            ${month}    Get Month   ${month_json}
+            ${year}     Get Year    ${month_json}
+            Input Text  ${rental_text}  Rent for the month of ${Month} ${year}.
             Click Element   wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU
             Input Text      wnd[0]/usr/tabsTABSTRIP_OVERVIEW/tabpKFCU/ssubSUBSCREEN_BODY:SAPMV60A:6101/ssubCUSTOMER_SCREEN:ZZBILLHEADER:0100/txtVBRK-ZZEWAYBL    NA
             Click Element   wnd[0]/tbar[0]/btn[11]

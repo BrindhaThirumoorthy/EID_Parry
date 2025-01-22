@@ -1,4 +1,4 @@
-[ ERROR ] Processing variable file 'C:\EID_Replay\EID_Parry\Execution\Access_Data.py' failed: Importing variable file 'C:\EID_Replay\EID_Parry\Execution\Access_Data.py' failed: SyntaxError: invalid syntax (rental.py, line 1)
+[ ERROR ] Processing variable file 'C:\EID_Replay\EID_Parry\Execution\Access_Data.py' failed: Importing variable file 'C:\EID_Replay\EID_Parry\Execution\Access_Data.py' failed: SyntaxError: invalid syntax (rental.py, line 5)
 Traceback (most recent call last):
   File "C:\EID_Replay\EID_Parry\Execution\Access_Data.py", line 15, in <module>
     import Data.Symphony as Sym
