@@ -1,0 +1,27 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Create Rental Invoice                                              
+==============================================================================
+Create the rental Invoice                                             Document 707356953 has been saved.
+40025941
+40027077
+40025322
+40026198
+**gbStart**invoice_log**splitKeyValue**40025941 Document 707356953 has been saved.**gbEnd**
+40025941
+40027077
+40025322
+40026198
+2
+row is :0:IRN Generated
+**gbStart**copilot_status_sheet**splitKeyValue**[{'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-06-24', 'Sales document': '40025941', 'Net Value (Header)': 6911267.68, 'Document Currency': 'INR', 'Created by': 'EECFFI91', 'Sold-To Party Name': 'Cholamandalam MS Risk Services Limited', 'Billing Block Description': 'empty', 'Invoice Details': 'Document 707356953 has been saved.'}, {'Customer Reference (Header)': 'RENTAL INVOICE', 'Document Date': '2024-12-26', 'Sales document': '40027077', 'Net Value (Header)': 5750000.0, 'Document Currency': 'INR', 'Created by': 'EECFFI91', 'Sold-To Party Name': 'CHOLAYIL PRIVATE LIMITED', 'Billing Block Description': 'empty', 'Invoice Details': 'empty'}, {'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025322', 'Net Value (Header)': 3031367.46, 'Document Currency': 'INR', 'Created by': 'ESHFFI03', 'Sold-To Party Name': 'PARRY AGRO INDUSTRIES LTD', 'Billing Block Description': 'empty', 'Invoice Details': 'empty'}, {'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-11-28', 'Sales document': '40026198', 'Net Value (Header)': 2298.24, 'Document Currency': 'INR', 'Created by': 'BCSSUPPORT1', 'Sold-To Party Name': 'MURUGAPPA MANAGEMENT SERVICES', 'Billing Block Description': 'empty', 'Invoice Details': 'empty'}]**splitKeyValue**object**gbEnd**
+| PASS |
+------------------------------------------------------------------------------
+Tests.Test Create Rental Invoice                                      | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\0c397d0a-00be-4014-b218-e308c0b7dc2a\pabot_results\0\Output.xml
