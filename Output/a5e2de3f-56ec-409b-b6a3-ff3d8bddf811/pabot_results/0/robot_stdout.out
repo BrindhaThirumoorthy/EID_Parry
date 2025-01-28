@@ -1,0 +1,40 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Create Rental Invoice                                              
+==============================================================================
+Create the rental Invoice                                             Document 707326225 has been saved.
+40026236
+40026235
+40026234
+40026233
+**gbStart**invoice_log**splitKeyValue**40026233 Document 707326225 has been saved.**gbEnd**
+40026236
+40026235
+40026234
+40026233
+2
+row is :0:Error Generating IRN
+2
+row is :0:Error Generating IRN
+40026236
+40026235
+40026234
+40026233
+**gbStart**invoice_log**splitKeyValue**40026233 Invoice is created 707326225 with E-Invoice error**gbEnd**
+row is :1:
+40026236
+40026235
+40026234
+40026233
+**gbStart**invoice_log**splitKeyValue**40026233 Invoice is created 707326225 with E-Invoice error**gbEnd**
+**gbStart**copilot_status_sheet**splitKeyValue**[{'Customer Reference (Header)': 'Demo - Rental Contra', 'Document Date': '2024-12-04', 'Sales document': '40026236', 'Net Value (Header)': 940.94, 'Document Currency': 'INR', 'Created by': 'BCSSUPPORT1', 'Sold-To Party Name': 'PARRY AGRO INDUSTRIES LTD', 'Billing Block Description': 'empty', 'Invoice Details': 'Invoice is created 707326222 with E-Invoice error'}, {'Customer Reference (Header)': 'Demo - Rental Contra', 'Document Date': '2024-12-04', 'Sales document': '40026235', 'Net Value (Header)': 940.94, 'Document Currency': 'INR', 'Created by': 'BCSSUPPORT1', 'Sold-To Party Name': 'PARRY AGRO INDUSTRIES LTD', 'Billing Block Description': 'empty', 'Invoice Details': 'Invoice is created 707326223 with E-Invoice error'}, {'Customer Reference (Header)': 'Demo - Rental Contra', 'Document Date': '2024-12-04', 'Sales document': '40026234', 'Net Value (Header)': 940.94, 'Document Currency': 'INR', 'Created by': 'BCSSUPPORT1', 'Sold-To Party Name': 'PARRY AGRO INDUSTRIES LTD', 'Billing Block Description': 'empty', 'Invoice Details': 'Invoice is created 707326224 with E-Invoice error'}, {'Customer Reference (Header)': 'Demo - Rental Contra', 'Document Date': '2024-12-04', 'Sales document': '40026233', 'Net Value (Header)': 940.94, 'Document Currency': 'INR', 'Created by': 'BCSSUPPORT1', 'Sold-To Party Name': 'PARRY AGRO INDUSTRIES LTD', 'Billing Block Description': 'empty', 'Invoice Details': 'Invoice is created 707326225 with E-Invoice error'}]**splitKeyValue**object**gbEnd**
+| PASS |
+------------------------------------------------------------------------------
+Tests.Test Create Rental Invoice                                      | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\a5e2de3f-56ec-409b-b6a3-ff3d8bddf811\pabot_results\0\Output.xml
