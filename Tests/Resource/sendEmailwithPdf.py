@@ -127,19 +127,21 @@ if __name__ == "__main__":
         subject = sys.argv[6]
         body1 = sys.argv[7]
         body2 = sys.argv[8]
-        body = f"{body1}<br><br>{body2}"
+        body3 = sys.argv[9]
+        body4 = sys.argv[10]
+        body = f"{body1}<br><br>{body2}<br><br>{body3}<br>{body4}"
         now = datetime.now()
         current_month = now.strftime("%B")
         current_year = now.year
-        folder_path = os.path.join(sys.argv[9], str(current_year), current_month)
+        folder_path = os.path.join(sys.argv[11], str(current_year), current_month)
         # folder_path = sys.argv[8]
-        file_name = sys.argv[10]
+        file_name = sys.argv[12]
         file_path = os.path.join(folder_path, file_name)
         if not os.path.isfile(file_path):
             raise FileNotFoundError(f"Attachment file '{file_path}' does not exist.")
 
         
-        if len(sys.argv) == 11:
+        if len(sys.argv) == 13:
             file_path = os.path.join(folder_path, file_name)
             if os.path.isfile(file_path):
                 result = send_email_with_attachment(
