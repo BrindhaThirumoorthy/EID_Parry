@@ -127,7 +127,7 @@ if __name__ == "__main__":
         subject = sys.argv[6]
         body1 = sys.argv[7]
         body2 = sys.argv[8]
-        body = f"{body1}<br>{body2}"
+        body = f"{body1}<br><br>{body2}"
         now = datetime.now()
         current_month = now.strftime("%B")
         current_year = now.year
