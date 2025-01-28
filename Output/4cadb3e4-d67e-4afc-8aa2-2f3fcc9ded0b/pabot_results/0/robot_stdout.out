@@ -1,0 +1,38 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Create Rental Invoice                                              
+==============================================================================
+Create the rental Invoice                                             Document 707357071 has been saved.
+40025331
+40025332
+40025940
+40026531
+40026699
+40027077
+40027079
+40027081
+40027082
+40027085
+**gbStart**invoice_log**splitKeyValue**40027081 Document 707357071 has been saved.**gbEnd**
+40025331
+40025332
+40025940
+40026531
+40026699
+40027077
+40027079
+40027081
+40027082
+40027085
+0
+**gbStart**copilot_status_sheet**splitKeyValue**[{'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025331', 'Net Value (Header)': 1237387.8, 'Document Currency': 'INR', 'Created by': 'EECFFI91', 'Sold-To Party Name': 'CHOLAMANDALAM INVESTMENT AND FINANCE', 'Billing Block Description': 'empty', 'Invoice Details': 'Document 707357063 has been saved.'}, {'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-03-22', 'Sales document': '40025332', 'Net Value (Header)': 46900084.44, 'Document Currency': 'INR', 'Created by': 'EECFFI91', 'Sold-To Party Name': 'Cholamandalam MS General Insurance', 'Billing Block Description': 'empty', 'Invoice Details': 'Document 707357064 has been saved.'}, {'Customer Reference (Header)': 'RENTAL', 'Document Date': '2024-06-24', 'Sales document': '40025940', 'Net Value (Header)': 1261701.6, 'Document Currency': 'INR', 'Created by': 'EECFFI91', 'Sold-To Party Name': 'Cholamandalam MS Risk Services Limited', 'Billing Block Description': 'empty', 'Invoice Details': 'Document 707357065 has been saved.'}, {'Customer Reference (Header)': 'Rental', 'Document Date': '2024-09-20', 'Sales document': '40026531', 'Net Value (Header)': 1475330.2, 'Document Currency': 'INR', 'Created by': 'EECFFI91', 'Sold-To Party Name': 'MURUGAPPA WATER TECHNOLOGY AND SOLUTIONS', 'Billing Block Description': 'empty', 'Invoice Details': 'Document 707357066 has been saved.'}, {'Customer Reference (Header)': 'Rental', 'Document Date': '2024-10-25', 'Sales document': '40026699', 'Net Value (Header)': 3465000.0, 'Document Currency': 'INR', 'Created by': 'EECFFI91', 'Sold-To Party Name': 'PALANIAPPAN LAKSHMANAN', 'Billing Block Description': 'empty', 'Invoice Details': 'Document 707357068 has been saved.'}, {'Customer Reference (Header)': 'RENTAL INVOICE', 'Document Date': '2024-12-26', 'Sales document': '40027077', 'Net Value (Header)': 5750000.0, 'Document Currency': 'INR', 'Created by': 'EECFFI91', 'Sold-To Party Name': 'CHOLAYIL PRIVATE LIMITED', 'Billing Block Description': 'empty', 'Invoice Details': 'Document 707357069 has been saved.'}, {'Customer Reference (Header)': 'RENTAL INVOICE', 'Document Date': '2024-12-27', 'Sales document': '40027079', 'Net Value (Header)': 3150000.0, 'Document Currency': 'INR', 'Created by': 'EECFFI91', 'Sold-To Party Name': 'RMKV FABRICS PRIVATE LIMITED', 'Billing Block Description': 'empty', 'Invoice Details': 'Document 707357070 has been saved.'}, {'Customer Reference (Header)': 'RENTAL INVOICE', 'Document Date': '2024-12-27', 'Sales document': '40027081', 'Net Value (Header)': 4252500.0, 'Document Currency': 'INR', 'Created by': 'EECFFI91', 'Sold-To Party Name': 'M M Muthiah', 'Billing Block Description': 'empty', 'Invoice Details': 'Document 707357071 has been saved.'}, {'Customer Reference (Header)': 'RENTAL INVOICE', 'Document Date': '2024-12-27', 'Sales document': '40027082', 'Net Value (Header)': 2835000.0, 'Document Currency': 'INR', 'Created by': 'EECFFI91', 'Sold-To Party Name': 'RMKV FABRICS PRIVATE LIMITED', 'Billing Block Description': 'empty', 'Invoice Details': 'empty'}, {'Customer Reference (Header)': 'RENTAL INVOICE', 'Document Date': '2024-12-27', 'Sales document': '40027085', 'Net Value (Header)': 5250000.0, 'Document Currency': 'INR', 'Created by': 'EECFFI91', 'Sold-To Party Name': 'RMKV SILKS PRIVATE LIMITED', 'Billing Block Description': 'empty', 'Invoice Details': 'empty'}]**splitKeyValue**object**gbEnd**
+| PASS |
+------------------------------------------------------------------------------
+Tests.Test Create Rental Invoice                                      | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\4cadb3e4-d67e-4afc-8aa2-2f3fcc9ded0b\pabot_results\0\Output.xml

@@ -1,0 +1,16 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test VA42                                                               
+==============================================================================
+Releasing the contracts blocks                                        **gbStart**block_status**splitKeyValue**40027081 Block released successfully..**gbEnd**
+**gbStart**block_log**splitKeyValue**SUG Rental contract 40027081 has been saved.**gbEnd**
+| PASS |
+------------------------------------------------------------------------------
+Tests.Test VA42                                                       | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\088656c1-a920-4999-8569-f29d7337e475\pabot_results\0\Output.xml

@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.12.7 on win32)" generated="20250128 12:30:27.819" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\EID_Replay\EID_Parry\Tests">
+<kw name="Setup highest level suite" type="SETUP">
+<kw name="Set Variable" library="BuiltIn">
+<var>${d.test_server}</var>
+<arg>${test_server}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250128 12:30:29.013" level="INFO">${d.test_server} = Dev</msg>
+<status status="PASS" starttime="20250128 12:30:29.013" endtime="20250128 12:30:29.013"/>
+</kw>
+<kw name="Reset screenshot count variable" library="Support">
+<kw name="Set Variable" library="BuiltIn">
+<var>${screenshotCount}</var>
+<arg>${PABOTQUEUEINDEX}_1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250128 12:30:29.029" level="INFO">${screenshotCount} = 0_1</msg>
+<status status="PASS" starttime="20250128 12:30:29.013" endtime="20250128 12:30:29.029"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${screenshotCount}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250128 12:30:29.029" level="INFO">${screenshotCount} = 0_1</msg>
+<status status="PASS" starttime="20250128 12:30:29.029" endtime="20250128 12:30:29.029"/>
+</kw>
+<kw name="Set up screenshot directory" library="Support">
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${OUTPUTDIR}${/}${wvar('screenshot_dir')}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20250128 12:30:29.029" level="INFO">Web.Dev.screenshot_dir: Screenshot</msg>
+<msg timestamp="20250128 12:30:29.029" level="INFO" html="true">Created directory '&lt;a href="file://C:\EID_Replay\EID_Parry\Output\7e10588b-f640-4944-aea5-9cb68b3ea794\pabot_results\0\Screenshot"&gt;C:\EID_Replay\EID_Parry\Output\7e10588b-f640-4944-aea5-9cb68b3ea794\pabot_results\0\Screenshot&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20250128 12:30:29.029" endtime="20250128 12:30:29.029"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:29.029" endtime="20250128 12:30:29.029"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:29.013" endtime="20250128 12:30:29.029"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${screenshot_taking}</arg>
+<arg>${True}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250128 12:30:29.029" level="INFO">${screenshot_taking} = True</msg>
+<status status="PASS" starttime="20250128 12:30:29.029" endtime="20250128 12:30:29.029"/>
+</kw>
+<kw name="Setup linux execution" library="Support">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${web_test_check}</var>
+<arg>Variable Should Exist</arg>
+<arg>${web_test}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Variable Should Exist" library="BuiltIn">
+<arg>${web_test}</arg>
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<status status="PASS" starttime="20250128 12:30:29.029" endtime="20250128 12:30:29.029"/>
+</kw>
+<msg timestamp="20250128 12:30:29.029" level="INFO">${web_test_check} = True</msg>
+<status status="PASS" starttime="20250128 12:30:29.029" endtime="20250128 12:30:29.029"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${web_test_check}</arg>
+<arg>Setup Docker Execution Options</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Setup Docker Execution Options" library="Support_Web">
+<kw name="Setup Suite Metadata" library="Support_Web">
+<arg>${browser}</arg>
+<kw name="Get Browser Metadata" library="BrowserSupport">
+<var>&amp;{browser_information}</var>
+<arg>browser=${browser}</arg>
+<doc>Fetches browser metadata information
+:param browser: Name of the browser for which information is fetched
+:param reload: Re-read the metadata based on the browser
+:return: Browser metadata information, dict of format
+            {"browser_version": browser version value,
+             "driver_version": driver version value}</doc>
+<msg timestamp="20250128 12:30:35.862" level="INFO">&amp;{browser_information} = { browser_version=131.0.6778.109 | driver_version=131.0.6778.85  }</msg>
+<status status="PASS" starttime="20250128 12:30:29.029" endtime="20250128 12:30:35.862"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_browser_name</arg>
+<arg>${browser}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250128 12:30:35.862" level="INFO">Set suite metadata 'test_browser_name' to value 'chrome'.</msg>
+<status status="PASS" starttime="20250128 12:30:35.862" endtime="20250128 12:30:35.862"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_browser_version</arg>
+<arg>${browser_information.browser_version}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250128 12:30:35.862" level="INFO">Set suite metadata 'test_browser_version' to value '131.0.6778.109'.</msg>
+<status status="PASS" starttime="20250128 12:30:35.862" endtime="20250128 12:30:35.862"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>test_driver_version</arg>
+<arg>${browser_information.driver_version}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250128 12:30:35.862" level="INFO">Set suite metadata 'test_driver_version' to value '131.0.6778.85 '.</msg>
+<status status="PASS" starttime="20250128 12:30:35.862" endtime="20250128 12:30:35.862"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:29.029" endtime="20250128 12:30:35.862"/>
+</kw>
+<kw name="Setup Global Docker Execution Options" library="Support_Web">
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${global_browser_options}</arg>
+<arg>None</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250128 12:30:35.862" level="INFO">${global_browser_options} = None</msg>
+<status status="PASS" starttime="20250128 12:30:35.862" endtime="20250128 12:30:35.862"/>
+</kw>
+<kw name="Get Environment Variable" library="OperatingSystem">
+<var>${docker_check}</var>
+<arg>EXECUTION_ENVIRONMENT</arg>
+<arg>not_found</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<msg timestamp="20250128 12:30:35.862" level="INFO">${docker_check} = not_found</msg>
+<status status="PASS" starttime="20250128 12:30:35.862" endtime="20250128 12:30:35.862"/>
+</kw>
+<kw name="Run Keyword And Return If" library="BuiltIn">
+<arg>"${docker_check}"!="docker"</arg>
+<arg>Log</arg>
+<arg>Not executing on Docker</arg>
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Not executing on Docker</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250128 12:30:35.862" level="INFO">Not executing on Docker</msg>
+<status status="PASS" starttime="20250128 12:30:35.862" endtime="20250128 12:30:35.862"/>
+</kw>
+<msg timestamp="20250128 12:30:35.862" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20250128 12:30:35.862" endtime="20250128 12:30:35.862"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{options}</var>
+<arg>--headless</arg>
+<arg>--no-sandbox</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:35.862" endtime="20250128 12:30:35.862"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>@{docker_options}</arg>
+<arg>@{options}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:35.862" endtime="20250128 12:30:35.862"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:35.862" endtime="20250128 12:30:35.862"/>
+</kw>
+<kw name="Create Webdriver for chrome preferences" library="Support_Web">
+<kw name="Update Docker Execution Options" library="Support_Web">
+<var>${list_prefs}</var>
+<arg>${list_prefs}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${docker_check}</var>
+<arg>Variable Should Exist</arg>
+<arg>${docker_options}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Variable Should Exist" library="BuiltIn">
+<arg>${docker_options}</arg>
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<msg timestamp="20250128 12:30:35.869" level="FAIL">Variable '${docker_options}' does not exist.</msg>
+<status status="FAIL" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<msg timestamp="20250128 12:30:35.869" level="INFO">${docker_check} = False</msg>
+<status status="PASS" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${list_prefs_length}</var>
+<arg>${list_prefs}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20250128 12:30:35.869" level="INFO">Length is 1</msg>
+<msg timestamp="20250128 12:30:35.869" level="INFO">${list_prefs_length} = 1</msg>
+<status status="PASS" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${list_prefs}</var>
+<arg>${docker_check} and ${list_prefs_length}&gt;0 and ${list_prefs}[0] != []</arg>
+<arg>Combine Lists</arg>
+<arg>${list_prefs}</arg>
+<arg>${docker_options}</arg>
+<arg>ELSE IF</arg>
+<arg>${docker_check}</arg>
+<arg>Set Variable</arg>
+<arg>${docker_options}</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${list_prefs}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Variable" library="BuiltIn">
+<arg>${list_prefs}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<msg timestamp="20250128 12:30:35.869" level="INFO">${list_prefs} = [[]]</msg>
+<status status="PASS" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<msg timestamp="20250128 12:30:35.869" level="INFO">${list_prefs} = [[]]</msg>
+<status status="PASS" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<kw name="Create Chrome Options for download preferences" library="Support_Web">
+<var>${chrome_options}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20250128 12:30:35.869" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000016250090830&gt;</msg>
+<status status="PASS" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<msg timestamp="20250128 12:30:35.869" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000016250090830&gt;</msg>
+<status status="PASS" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<kw name="Update Preferences List" library="Support_Web">
+<arg>${chrome_options}</arg>
+<arg>@{list_prefs}</arg>
+<kw name="Convert To String" library="BuiltIn">
+<var>${string_prefs}</var>
+<arg>${list_prefs}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20250128 12:30:35.869" level="INFO">${string_prefs} = [[]]</msg>
+<status status="PASS" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>${string_prefs} == [[]]</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<msg timestamp="20250128 12:30:35.869" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<for flavor="IN">
+<var>${preference}</var>
+<value>@{list_prefs}</value>
+<iter>
+<var name="${preference}"/>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>${preference}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<status status="NOT RUN" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</iter>
+<status status="NOT RUN" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</for>
+<status status="PASS" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${kw_prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${global_browser_options}</arg>
+<arg>${chrome options}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250128 12:30:35.869" level="INFO">${global_browser_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000016250090830&gt;</msg>
+<status status="PASS" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:35.862" endtime="20250128 12:30:35.869"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:29.029" endtime="20250128 12:30:35.869"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:29.029" endtime="20250128 12:30:35.869"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:29.029" endtime="20250128 12:30:35.869"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>environment</arg>
+<arg>${test_server}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20250128 12:30:35.869" level="INFO">Set suite metadata 'environment' to value 'Dev'.</msg>
+<status status="PASS" starttime="20250128 12:30:35.869" endtime="20250128 12:30:35.869"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:29.013" endtime="20250128 12:30:35.869"/>
+</kw>
+<suite id="s1-s1" name="Test VA42" source="C:\EID_Replay\EID_Parry\Tests\Test_VA42.robot">
+<test id="s1-s1-t1" name="Releasing the contracts blocks" line="9">
+<kw name="System Logon" library="VA42">
+<kw name="Start Process" library="Process">
+<arg>${symvar('SAP_SERVER')}</arg>
+<doc>Starts a new process on background.</doc>
+<msg timestamp="20250128 12:30:36.637" level="INFO">Sym.Dev.SAP_SERVER: C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe</msg>
+<msg timestamp="20250128 12:30:36.637" level="INFO">Starting process:
+"C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe"</msg>
+<status status="PASS" starttime="20250128 12:30:36.637" endtime="20250128 12:30:36.668"/>
+</kw>
+<kw name="Connect To Session" library="SAP_Tcode_Library">
+<doc>Connects to an open session SAP.</doc>
+<status status="PASS" starttime="20250128 12:30:36.668" endtime="20250128 12:30:36.691"/>
+</kw>
+<kw name="Open Connection" library="SAP_Tcode_Library">
+<arg>${symvar('Rental_Connection')}</arg>
+<doc>Opens a connection to the given connection name. Be sure to provide the full connection name, including the bracket part.</doc>
+<msg timestamp="20250128 12:30:36.691" level="INFO">Sym.Dev.Rental_Connection: ESP Prod</msg>
+<status status="PASS" starttime="20250128 12:30:36.691" endtime="20250128 12:30:37.371"/>
+</kw>
+<kw name="Input Text" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/txtRSYST-MANDT</arg>
+<arg>${symvar('Rental_Client')}</arg>
+<doc>Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.</doc>
+<msg timestamp="20250128 12:30:37.371" level="INFO">Sym.Dev.Rental_Client: 900</msg>
+<msg timestamp="20250128 12:30:37.425" level="INFO">Typing text '900' into text field 'wnd[0]/usr/txtRSYST-MANDT'.</msg>
+<status status="PASS" starttime="20250128 12:30:37.371" endtime="20250128 12:30:37.425"/>
+</kw>
+<kw name="Input Text" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/txtRSYST-BNAME</arg>
+<arg>${symvar('Rental_User')}</arg>
+<doc>Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.</doc>
+<msg timestamp="20250128 12:30:37.425" level="INFO">Sym.Dev.Rental_User: EECFFI80</msg>
+<msg timestamp="20250128 12:30:37.441" level="INFO">Typing text 'EECFFI80' into text field 'wnd[0]/usr/txtRSYST-BNAME'.</msg>
+<status status="PASS" starttime="20250128 12:30:37.425" endtime="20250128 12:30:37.441"/>
+</kw>
+<kw name="Input Password" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/pwdRSYST-BCODE</arg>
+<arg>%{RENTAL_PASSWORD}</arg>
+<doc>Inserts the given password into the text field identified by locator.
+The password is not recorded in the log.</doc>
+<msg timestamp="20250128 12:30:37.456" level="INFO">Typing password into text field 'wnd[0]/usr/pwdRSYST-BCODE'.</msg>
+<status status="PASS" starttime="20250128 12:30:37.441" endtime="20250128 12:30:37.472"/>
+</kw>
+<kw name="Send Vkey" library="SAP_Tcode_Library">
+<arg>0</arg>
+<doc>Sends a SAP virtual key combination to the window, not into an element.
+If you want to send a value to a text field, use `input text` instead.</doc>
+<status status="PASS" starttime="20250128 12:30:37.472" endtime="20250128 12:30:38.145"/>
+</kw>
+<kw name="Multiple Logon Handling" library="SAP_Tcode_Library">
+<var>${logon_status}</var>
+<arg>wnd[1]</arg>
+<msg timestamp="20250128 12:30:38.176" level="INFO">Error: (-2147352567, 'Exception occurred.', (619, 'SAP Frontend Server', 'The control could not be found by id.', 'C:\\Program Files (x86)\\SAP\\FrontEnd\\SAPgui\\sapfront.HLP', 393215, 0), None)</msg>
+<msg timestamp="20250128 12:30:38.176" level="INFO">${logon_status} = None</msg>
+<status status="PASS" starttime="20250128 12:30:38.145" endtime="20250128 12:30:38.176"/>
+</kw>
+<if>
+<branch type="IF" condition="'${logon_status}' == &quot;Multiple logon found. Please terminate all the logon &amp; proceed&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>**gbStart**Sales_Document_status**splitKeyValue**${logon_status}**gbEnd**</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:38.192" endtime="20250128 12:30:38.192"/>
+</kw>
+<status status="NOT RUN" starttime="20250128 12:30:38.176" endtime="20250128 12:30:38.192"/>
+</branch>
+<branch type="ELSE">
+<kw name="Release Block" library="VA42">
+<kw name="Get Value" library="SAP_Tcode_Library">
+<var>${title}</var>
+<arg>wnd[0]/sbar/pane[0]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<msg timestamp="20250128 12:30:38.207" level="INFO">${title} = </msg>
+<status status="PASS" starttime="20250128 12:30:38.192" endtime="20250128 12:30:38.207"/>
+</kw>
+<if>
+<branch type="IF" condition="'${title}' == 'Name or password is incorrect (repeat logon)'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>**gbStart**password_status**splitKeyValue**${title}**gbEnd**</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:38.207" endtime="20250128 12:30:38.207"/>
+</kw>
+<status status="NOT RUN" starttime="20250128 12:30:38.207" endtime="20250128 12:30:38.207"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get First Date Of Month" library="SAP_Tcode_Library">
+<var>${start_date}</var>
+<arg>${symvar('month_json')}</arg>
+<msg timestamp="20250128 12:30:38.207" level="INFO">Sym.Dev.month_json: [{'Month': 'January', 'Year': '2025'}]</msg>
+<msg timestamp="20250128 12:30:38.207" level="INFO">${start_date} = 2025.01.01</msg>
+<status status="PASS" starttime="20250128 12:30:38.207" endtime="20250128 12:30:38.207"/>
+</kw>
+<kw name="Get Last Date Of Month" library="SAP_Tcode_Library">
+<var>${end_date}</var>
+<arg>${symvar('month_json')}</arg>
+<msg timestamp="20250128 12:30:38.207" level="INFO">Sym.Dev.month_json: [{'Month': 'January', 'Year': '2025'}]</msg>
+<msg timestamp="20250128 12:30:38.207" level="INFO">${end_date} = 2025.01.31</msg>
+<status status="PASS" starttime="20250128 12:30:38.207" endtime="20250128 12:30:38.207"/>
+</kw>
+<kw name="Run Transaction" library="SAP_Tcode_Library">
+<arg>/nVA42</arg>
+<doc>Runs a Sap transaction. An error is given when an unknown transaction is specified.</doc>
+<status status="PASS" starttime="20250128 12:30:38.207" endtime="20250128 12:30:38.467"/>
+</kw>
+<kw name="Input Text" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/ctxtVBAK-VBELN</arg>
+<arg>text=${symvar('documents')}</arg>
+<doc>Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.</doc>
+<msg timestamp="20250128 12:30:38.467" level="INFO">Sym.Dev.documents: 40025332</msg>
+<msg timestamp="20250128 12:30:38.483" level="INFO">Typing text '40025332' into text field 'wnd[0]/usr/ctxtVBAK-VBELN'.</msg>
+<status status="PASS" starttime="20250128 12:30:38.467" endtime="20250128 12:30:38.483"/>
+</kw>
+<kw name="Send Vkey" library="SAP_Tcode_Library">
+<arg>0</arg>
+<doc>Sends a SAP virtual key combination to the window, not into an element.
+If you want to send a value to a text field, use `input text` instead.</doc>
+<status status="PASS" starttime="20250128 12:30:38.483" endtime="20250128 12:30:43.368"/>
+</kw>
+<kw name="Click Element" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/subSUBSCREEN_HEADER:SAPMV45A:4021/btnBT_HEAD</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="PASS" starttime="20250128 12:30:43.368" endtime="20250128 12:30:45.051"/>
+</kw>
+<kw name="Click Element" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP_HEAD/tabpT\\05</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="PASS" starttime="20250128 12:30:45.051" endtime="20250128 12:30:45.753"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Click Element</arg>
+<arg>wnd[1]/tbar[0]/btn[0]</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click Element" library="SAP_Tcode_Library">
+<arg>wnd[1]/tbar[0]/btn[0]</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<msg timestamp="20250128 12:30:45.876" level="INFO" html="true">&lt;a href="sap-screenshot_1.jpg"&gt;&lt;img src="sap-screenshot_1.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250128 12:30:45.876" level="FAIL">ValueError: Cannot find element with id 'wnd[1]/tbar[0]/btn[0]'</msg>
+<status status="FAIL" starttime="20250128 12:30:45.753" endtime="20250128 12:30:45.876"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:45.753" endtime="20250128 12:30:45.876"/>
+</kw>
+<kw name="Get Row Count" library="SAP_Tcode_Library">
+<var>${row}</var>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD</arg>
+<doc>Returns the number of rows found in the specified table.</doc>
+<msg timestamp="20250128 12:30:45.876" level="INFO">${row} = 29</msg>
+<status status="PASS" starttime="20250128 12:30:45.876" endtime="20250128 12:30:45.876"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>0</value>
+<value>${row}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Get Value</arg>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<status status="PASS" starttime="20250128 12:30:45.876" endtime="20250128 12:30:45.907"/>
+</kw>
+<msg timestamp="20250128 12:30:45.907" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20250128 12:30:45.876" endtime="20250128 12:30:45.907"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${is_visible}" == "False"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250128 12:30:45.907" endtime="20250128 12:30:45.907"/>
+</kw>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<var>${date1}</var>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<msg timestamp="20250128 12:30:45.923" level="INFO">${date1} = 01.03.2024</msg>
+<status status="PASS" starttime="20250128 12:30:45.907" endtime="20250128 12:30:45.923"/>
+</kw>
+<kw name="Convert Date Format1" library="SAP_Tcode_Library">
+<var>${date}</var>
+<arg>${date1}</arg>
+<msg timestamp="20250128 12:30:45.923" level="INFO">${date} = 2024.03.01</msg>
+<status status="PASS" starttime="20250128 12:30:45.923" endtime="20250128 12:30:45.923"/>
+</kw>
+<kw name="Compare Dates" library="SAP_Tcode_Library">
+<var>${result}</var>
+<arg>${date}</arg>
+<arg>${start_date}</arg>
+<arg>${end_date}</arg>
+<msg timestamp="20250128 12:30:45.938" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20250128 12:30:45.923" endtime="20250128 12:30:45.938"/>
+</kw>
+<if>
+<branch type="IF" condition="'${result}' == 'True'">
+<kw name="Process rental block" library="VA42">
+<status status="NOT RUN" starttime="20250128 12:30:45.938" endtime="20250128 12:30:45.938"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:45.938" endtime="20250128 12:30:45.938"/>
+</kw>
+<status status="NOT RUN" starttime="20250128 12:30:45.938" endtime="20250128 12:30:45.938"/>
+</branch>
+<status status="PASS" starttime="20250128 12:30:45.938" endtime="20250128 12:30:45.938"/>
+</if>
+<status status="PASS" starttime="20250128 12:30:45.876" endtime="20250128 12:30:45.938"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Get Value</arg>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<status status="PASS" starttime="20250128 12:30:45.938" endtime="20250128 12:30:45.975"/>
+</kw>
+<msg timestamp="20250128 12:30:45.975" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20250128 12:30:45.938" endtime="20250128 12:30:45.975"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${is_visible}" == "False"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250128 12:30:45.975" endtime="20250128 12:30:45.975"/>
+</kw>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<var>${date1}</var>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<msg timestamp="20250128 12:30:45.992" level="INFO">${date1} = 01.04.2024</msg>
+<status status="PASS" starttime="20250128 12:30:45.975" endtime="20250128 12:30:45.992"/>
+</kw>
+<kw name="Convert Date Format1" library="SAP_Tcode_Library">
+<var>${date}</var>
+<arg>${date1}</arg>
+<msg timestamp="20250128 12:30:45.992" level="INFO">${date} = 2024.04.01</msg>
+<status status="PASS" starttime="20250128 12:30:45.992" endtime="20250128 12:30:45.992"/>
+</kw>
+<kw name="Compare Dates" library="SAP_Tcode_Library">
+<var>${result}</var>
+<arg>${date}</arg>
+<arg>${start_date}</arg>
+<arg>${end_date}</arg>
+<msg timestamp="20250128 12:30:45.992" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20250128 12:30:45.992" endtime="20250128 12:30:45.992"/>
+</kw>
+<if>
+<branch type="IF" condition="'${result}' == 'True'">
+<kw name="Process rental block" library="VA42">
+<status status="NOT RUN" starttime="20250128 12:30:45.992" endtime="20250128 12:30:45.992"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:45.992" endtime="20250128 12:30:45.992"/>
+</kw>
+<status status="NOT RUN" starttime="20250128 12:30:45.992" endtime="20250128 12:30:45.992"/>
+</branch>
+<status status="PASS" starttime="20250128 12:30:45.992" endtime="20250128 12:30:45.992"/>
+</if>
+<status status="PASS" starttime="20250128 12:30:45.938" endtime="20250128 12:30:45.992"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Get Value</arg>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<status status="PASS" starttime="20250128 12:30:45.992" endtime="20250128 12:30:46.023"/>
+</kw>
+<msg timestamp="20250128 12:30:46.023" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20250128 12:30:45.992" endtime="20250128 12:30:46.023"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${is_visible}" == "False"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250128 12:30:46.023" endtime="20250128 12:30:46.023"/>
+</kw>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<var>${date1}</var>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<msg timestamp="20250128 12:30:46.054" level="INFO">${date1} = 01.05.2024</msg>
+<status status="PASS" starttime="20250128 12:30:46.023" endtime="20250128 12:30:46.054"/>
+</kw>
+<kw name="Convert Date Format1" library="SAP_Tcode_Library">
+<var>${date}</var>
+<arg>${date1}</arg>
+<msg timestamp="20250128 12:30:46.054" level="INFO">${date} = 2024.05.01</msg>
+<status status="PASS" starttime="20250128 12:30:46.054" endtime="20250128 12:30:46.054"/>
+</kw>
+<kw name="Compare Dates" library="SAP_Tcode_Library">
+<var>${result}</var>
+<arg>${date}</arg>
+<arg>${start_date}</arg>
+<arg>${end_date}</arg>
+<msg timestamp="20250128 12:30:46.054" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20250128 12:30:46.054" endtime="20250128 12:30:46.054"/>
+</kw>
+<if>
+<branch type="IF" condition="'${result}' == 'True'">
+<kw name="Process rental block" library="VA42">
+<status status="NOT RUN" starttime="20250128 12:30:46.054" endtime="20250128 12:30:46.054"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:46.054" endtime="20250128 12:30:46.054"/>
+</kw>
+<status status="NOT RUN" starttime="20250128 12:30:46.054" endtime="20250128 12:30:46.054"/>
+</branch>
+<status status="PASS" starttime="20250128 12:30:46.054" endtime="20250128 12:30:46.054"/>
+</if>
+<status status="PASS" starttime="20250128 12:30:45.992" endtime="20250128 12:30:46.054"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Get Value</arg>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<status status="PASS" starttime="20250128 12:30:46.054" endtime="20250128 12:30:46.076"/>
+</kw>
+<msg timestamp="20250128 12:30:46.076" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20250128 12:30:46.054" endtime="20250128 12:30:46.076"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${is_visible}" == "False"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250128 12:30:46.092" endtime="20250128 12:30:46.092"/>
+</kw>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<var>${date1}</var>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<msg timestamp="20250128 12:30:46.108" level="INFO">${date1} = 01.06.2024</msg>
+<status status="PASS" starttime="20250128 12:30:46.092" endtime="20250128 12:30:46.108"/>
+</kw>
+<kw name="Convert Date Format1" library="SAP_Tcode_Library">
+<var>${date}</var>
+<arg>${date1}</arg>
+<msg timestamp="20250128 12:30:46.108" level="INFO">${date} = 2024.06.01</msg>
+<status status="PASS" starttime="20250128 12:30:46.108" endtime="20250128 12:30:46.108"/>
+</kw>
+<kw name="Compare Dates" library="SAP_Tcode_Library">
+<var>${result}</var>
+<arg>${date}</arg>
+<arg>${start_date}</arg>
+<arg>${end_date}</arg>
+<msg timestamp="20250128 12:30:46.108" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20250128 12:30:46.108" endtime="20250128 12:30:46.108"/>
+</kw>
+<if>
+<branch type="IF" condition="'${result}' == 'True'">
+<kw name="Process rental block" library="VA42">
+<status status="NOT RUN" starttime="20250128 12:30:46.108" endtime="20250128 12:30:46.108"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:46.108" endtime="20250128 12:30:46.108"/>
+</kw>
+<status status="NOT RUN" starttime="20250128 12:30:46.108" endtime="20250128 12:30:46.108"/>
+</branch>
+<status status="PASS" starttime="20250128 12:30:46.108" endtime="20250128 12:30:46.108"/>
+</if>
+<status status="PASS" starttime="20250128 12:30:46.054" endtime="20250128 12:30:46.108"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Get Value</arg>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<status status="PASS" starttime="20250128 12:30:46.108" endtime="20250128 12:30:46.139"/>
+</kw>
+<msg timestamp="20250128 12:30:46.139" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20250128 12:30:46.108" endtime="20250128 12:30:46.139"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${is_visible}" == "False"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250128 12:30:46.139" endtime="20250128 12:30:46.139"/>
+</kw>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<var>${date1}</var>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<msg timestamp="20250128 12:30:46.155" level="INFO">${date1} = 01.07.2024</msg>
+<status status="PASS" starttime="20250128 12:30:46.139" endtime="20250128 12:30:46.155"/>
+</kw>
+<kw name="Convert Date Format1" library="SAP_Tcode_Library">
+<var>${date}</var>
+<arg>${date1}</arg>
+<msg timestamp="20250128 12:30:46.155" level="INFO">${date} = 2024.07.01</msg>
+<status status="PASS" starttime="20250128 12:30:46.155" endtime="20250128 12:30:46.155"/>
+</kw>
+<kw name="Compare Dates" library="SAP_Tcode_Library">
+<var>${result}</var>
+<arg>${date}</arg>
+<arg>${start_date}</arg>
+<arg>${end_date}</arg>
+<msg timestamp="20250128 12:30:46.155" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20250128 12:30:46.155" endtime="20250128 12:30:46.155"/>
+</kw>
+<if>
+<branch type="IF" condition="'${result}' == 'True'">
+<kw name="Process rental block" library="VA42">
+<status status="NOT RUN" starttime="20250128 12:30:46.155" endtime="20250128 12:30:46.155"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:46.155" endtime="20250128 12:30:46.155"/>
+</kw>
+<status status="NOT RUN" starttime="20250128 12:30:46.155" endtime="20250128 12:30:46.155"/>
+</branch>
+<status status="PASS" starttime="20250128 12:30:46.155" endtime="20250128 12:30:46.155"/>
+</if>
+<status status="PASS" starttime="20250128 12:30:46.108" endtime="20250128 12:30:46.155"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Get Value</arg>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<status status="PASS" starttime="20250128 12:30:46.155" endtime="20250128 12:30:46.192"/>
+</kw>
+<msg timestamp="20250128 12:30:46.192" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20250128 12:30:46.155" endtime="20250128 12:30:46.192"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${is_visible}" == "False"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250128 12:30:46.192" endtime="20250128 12:30:46.192"/>
+</kw>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<var>${date1}</var>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<msg timestamp="20250128 12:30:46.208" level="INFO">${date1} = 01.08.2024</msg>
+<status status="PASS" starttime="20250128 12:30:46.192" endtime="20250128 12:30:46.208"/>
+</kw>
+<kw name="Convert Date Format1" library="SAP_Tcode_Library">
+<var>${date}</var>
+<arg>${date1}</arg>
+<msg timestamp="20250128 12:30:46.208" level="INFO">${date} = 2024.08.01</msg>
+<status status="PASS" starttime="20250128 12:30:46.208" endtime="20250128 12:30:46.208"/>
+</kw>
+<kw name="Compare Dates" library="SAP_Tcode_Library">
+<var>${result}</var>
+<arg>${date}</arg>
+<arg>${start_date}</arg>
+<arg>${end_date}</arg>
+<msg timestamp="20250128 12:30:46.208" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20250128 12:30:46.208" endtime="20250128 12:30:46.208"/>
+</kw>
+<if>
+<branch type="IF" condition="'${result}' == 'True'">
+<kw name="Process rental block" library="VA42">
+<status status="NOT RUN" starttime="20250128 12:30:46.208" endtime="20250128 12:30:46.208"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:46.208" endtime="20250128 12:30:46.208"/>
+</kw>
+<status status="NOT RUN" starttime="20250128 12:30:46.208" endtime="20250128 12:30:46.208"/>
+</branch>
+<status status="PASS" starttime="20250128 12:30:46.208" endtime="20250128 12:30:46.208"/>
+</if>
+<status status="PASS" starttime="20250128 12:30:46.155" endtime="20250128 12:30:46.208"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Get Value</arg>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<status status="PASS" starttime="20250128 12:30:46.208" endtime="20250128 12:30:46.239"/>
+</kw>
+<msg timestamp="20250128 12:30:46.239" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20250128 12:30:46.208" endtime="20250128 12:30:46.239"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${is_visible}" == "False"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250128 12:30:46.239" endtime="20250128 12:30:46.239"/>
+</kw>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<var>${date1}</var>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<msg timestamp="20250128 12:30:46.255" level="INFO">${date1} = 01.09.2024</msg>
+<status status="PASS" starttime="20250128 12:30:46.239" endtime="20250128 12:30:46.255"/>
+</kw>
+<kw name="Convert Date Format1" library="SAP_Tcode_Library">
+<var>${date}</var>
+<arg>${date1}</arg>
+<msg timestamp="20250128 12:30:46.255" level="INFO">${date} = 2024.09.01</msg>
+<status status="PASS" starttime="20250128 12:30:46.255" endtime="20250128 12:30:46.255"/>
+</kw>
+<kw name="Compare Dates" library="SAP_Tcode_Library">
+<var>${result}</var>
+<arg>${date}</arg>
+<arg>${start_date}</arg>
+<arg>${end_date}</arg>
+<msg timestamp="20250128 12:30:46.255" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20250128 12:30:46.255" endtime="20250128 12:30:46.255"/>
+</kw>
+<if>
+<branch type="IF" condition="'${result}' == 'True'">
+<kw name="Process rental block" library="VA42">
+<status status="NOT RUN" starttime="20250128 12:30:46.255" endtime="20250128 12:30:46.255"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:46.255" endtime="20250128 12:30:46.255"/>
+</kw>
+<status status="NOT RUN" starttime="20250128 12:30:46.255" endtime="20250128 12:30:46.255"/>
+</branch>
+<status status="PASS" starttime="20250128 12:30:46.255" endtime="20250128 12:30:46.255"/>
+</if>
+<status status="PASS" starttime="20250128 12:30:46.208" endtime="20250128 12:30:46.255"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Get Value</arg>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<status status="PASS" starttime="20250128 12:30:46.255" endtime="20250128 12:30:46.293"/>
+</kw>
+<msg timestamp="20250128 12:30:46.293" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20250128 12:30:46.255" endtime="20250128 12:30:46.293"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${is_visible}" == "False"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250128 12:30:46.293" endtime="20250128 12:30:46.293"/>
+</kw>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<var>${date1}</var>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<msg timestamp="20250128 12:30:46.308" level="INFO">${date1} = 01.10.2024</msg>
+<status status="PASS" starttime="20250128 12:30:46.293" endtime="20250128 12:30:46.308"/>
+</kw>
+<kw name="Convert Date Format1" library="SAP_Tcode_Library">
+<var>${date}</var>
+<arg>${date1}</arg>
+<msg timestamp="20250128 12:30:46.308" level="INFO">${date} = 2024.10.01</msg>
+<status status="PASS" starttime="20250128 12:30:46.308" endtime="20250128 12:30:46.308"/>
+</kw>
+<kw name="Compare Dates" library="SAP_Tcode_Library">
+<var>${result}</var>
+<arg>${date}</arg>
+<arg>${start_date}</arg>
+<arg>${end_date}</arg>
+<msg timestamp="20250128 12:30:46.308" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20250128 12:30:46.308" endtime="20250128 12:30:46.308"/>
+</kw>
+<if>
+<branch type="IF" condition="'${result}' == 'True'">
+<kw name="Process rental block" library="VA42">
+<status status="NOT RUN" starttime="20250128 12:30:46.308" endtime="20250128 12:30:46.308"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:46.308" endtime="20250128 12:30:46.308"/>
+</kw>
+<status status="NOT RUN" starttime="20250128 12:30:46.308" endtime="20250128 12:30:46.308"/>
+</branch>
+<status status="PASS" starttime="20250128 12:30:46.308" endtime="20250128 12:30:46.308"/>
+</if>
+<status status="PASS" starttime="20250128 12:30:46.255" endtime="20250128 12:30:46.308"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Get Value</arg>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<status status="PASS" starttime="20250128 12:30:46.308" endtime="20250128 12:30:46.340"/>
+</kw>
+<msg timestamp="20250128 12:30:46.340" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20250128 12:30:46.308" endtime="20250128 12:30:46.340"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${is_visible}" == "False"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250128 12:30:46.340" endtime="20250128 12:30:46.340"/>
+</kw>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<var>${date1}</var>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<msg timestamp="20250128 12:30:46.355" level="INFO">${date1} = 01.11.2024</msg>
+<status status="PASS" starttime="20250128 12:30:46.340" endtime="20250128 12:30:46.355"/>
+</kw>
+<kw name="Convert Date Format1" library="SAP_Tcode_Library">
+<var>${date}</var>
+<arg>${date1}</arg>
+<msg timestamp="20250128 12:30:46.355" level="INFO">${date} = 2024.11.01</msg>
+<status status="PASS" starttime="20250128 12:30:46.355" endtime="20250128 12:30:46.355"/>
+</kw>
+<kw name="Compare Dates" library="SAP_Tcode_Library">
+<var>${result}</var>
+<arg>${date}</arg>
+<arg>${start_date}</arg>
+<arg>${end_date}</arg>
+<msg timestamp="20250128 12:30:46.355" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20250128 12:30:46.355" endtime="20250128 12:30:46.355"/>
+</kw>
+<if>
+<branch type="IF" condition="'${result}' == 'True'">
+<kw name="Process rental block" library="VA42">
+<status status="NOT RUN" starttime="20250128 12:30:46.355" endtime="20250128 12:30:46.355"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:46.355" endtime="20250128 12:30:46.355"/>
+</kw>
+<status status="NOT RUN" starttime="20250128 12:30:46.355" endtime="20250128 12:30:46.355"/>
+</branch>
+<status status="PASS" starttime="20250128 12:30:46.355" endtime="20250128 12:30:46.355"/>
+</if>
+<status status="PASS" starttime="20250128 12:30:46.308" endtime="20250128 12:30:46.355"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Get Value</arg>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<status status="PASS" starttime="20250128 12:30:46.371" endtime="20250128 12:30:46.393"/>
+</kw>
+<msg timestamp="20250128 12:30:46.393" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20250128 12:30:46.355" endtime="20250128 12:30:46.393"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${is_visible}" == "False"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250128 12:30:46.393" endtime="20250128 12:30:46.393"/>
+</kw>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<var>${date1}</var>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<msg timestamp="20250128 12:30:46.409" level="INFO">${date1} = 01.12.2024</msg>
+<status status="PASS" starttime="20250128 12:30:46.393" endtime="20250128 12:30:46.409"/>
+</kw>
+<kw name="Convert Date Format1" library="SAP_Tcode_Library">
+<var>${date}</var>
+<arg>${date1}</arg>
+<msg timestamp="20250128 12:30:46.409" level="INFO">${date} = 2024.12.01</msg>
+<status status="PASS" starttime="20250128 12:30:46.409" endtime="20250128 12:30:46.409"/>
+</kw>
+<kw name="Compare Dates" library="SAP_Tcode_Library">
+<var>${result}</var>
+<arg>${date}</arg>
+<arg>${start_date}</arg>
+<arg>${end_date}</arg>
+<msg timestamp="20250128 12:30:46.409" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20250128 12:30:46.409" endtime="20250128 12:30:46.409"/>
+</kw>
+<if>
+<branch type="IF" condition="'${result}' == 'True'">
+<kw name="Process rental block" library="VA42">
+<status status="NOT RUN" starttime="20250128 12:30:46.409" endtime="20250128 12:30:46.409"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:46.409" endtime="20250128 12:30:46.409"/>
+</kw>
+<status status="NOT RUN" starttime="20250128 12:30:46.409" endtime="20250128 12:30:46.409"/>
+</branch>
+<status status="PASS" starttime="20250128 12:30:46.409" endtime="20250128 12:30:46.409"/>
+</if>
+<status status="PASS" starttime="20250128 12:30:46.355" endtime="20250128 12:30:46.409"/>
+</iter>
+<iter>
+<var name="${i}">10</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Get Value</arg>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<status status="PASS" starttime="20250128 12:30:46.409" endtime="20250128 12:30:46.440"/>
+</kw>
+<msg timestamp="20250128 12:30:46.440" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20250128 12:30:46.409" endtime="20250128 12:30:46.440"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${is_visible}" == "False"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250128 12:30:46.440" endtime="20250128 12:30:46.440"/>
+</kw>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<var>${date1}</var>
+<arg>wnd[0]/usr/tabsTAXI_TABSTRIP/tabpT\\05/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD/ctxtRV60F-ABRBE[0,${i}]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<msg timestamp="20250128 12:30:46.471" level="INFO">${date1} = 01.01.2025</msg>
+<status status="PASS" starttime="20250128 12:30:46.440" endtime="20250128 12:30:46.471"/>
+</kw>
+<kw name="Convert Date Format1" library="SAP_Tcode_Library">
+<var>${date}</var>
+<arg>${date1}</arg>
+<msg timestamp="20250128 12:30:46.471" level="INFO">${date} = 2025.01.01</msg>
+<status status="PASS" starttime="20250128 12:30:46.471" endtime="20250128 12:30:46.471"/>
+</kw>
+<kw name="Compare Dates" library="SAP_Tcode_Library">
+<var>${result}</var>
+<arg>${date}</arg>
+<arg>${start_date}</arg>
+<arg>${end_date}</arg>
+<msg timestamp="20250128 12:30:46.471" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20250128 12:30:46.471" endtime="20250128 12:30:46.471"/>
+</kw>
+<if>
+<branch type="IF" condition="'${result}' == 'True'">
+<kw name="Process rental block" library="VA42">
+<kw name="Send Vkey" library="SAP_Tcode_Library">
+<arg>2</arg>
+<doc>Sends a SAP virtual key combination to the window, not into an element.
+If you want to send a value to a text field, use `input text` instead.</doc>
+<status status="PASS" starttime="20250128 12:30:46.471" endtime="20250128 12:30:46.678"/>
+</kw>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<var>${block}</var>
+<arg>element_id=wnd[0]/usr/ctxtFPLT-FAKSP</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<msg timestamp="20250128 12:30:46.725" level="INFO">${block} = </msg>
+<status status="PASS" starttime="20250128 12:30:46.678" endtime="20250128 12:30:46.725"/>
+</kw>
+<if>
+<branch type="IF" condition="'${block}' == '02'">
+<kw name="Input Text" library="SAP_Tcode_Library">
+<arg>wnd[0]/usr/ctxtFPLT-FAKSP</arg>
+<arg>${EMPTY }</arg>
+<doc>Inserts the given text into the text field identified by locator.
+Use keyword `input password` to insert a password in a text field.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:46.725" endtime="20250128 12:30:46.725"/>
+</kw>
+<kw name="Click Element" library="SAP_Tcode_Library">
+<arg>wnd[0]/tbar[0]/btn[3]</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:46.725" endtime="20250128 12:30:46.725"/>
+</kw>
+<kw name="Click Element" library="SAP_Tcode_Library">
+<arg>wnd[0]/tbar[0]/btn[3]</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:46.725" endtime="20250128 12:30:46.725"/>
+</kw>
+<kw name="Click Element" library="SAP_Tcode_Library">
+<arg>wnd[0]/tbar[0]/btn[11]</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:46.725" endtime="20250128 12:30:46.725"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>**gbStart**block_status**splitKeyValue**${symvar('documents')} Block released successfully..**gbEnd**</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20250128 12:30:46.725" endtime="20250128 12:30:46.725"/>
+</kw>
+<status status="NOT RUN" starttime="20250128 12:30:46.725" endtime="20250128 12:30:46.725"/>
+</branch>
+<branch type="ELSE IF" condition="'${block}' == ''">
+<kw name="Click Element" library="SAP_Tcode_Library">
+<arg>wnd[0]/tbar[0]/btn[3]</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="PASS" starttime="20250128 12:30:46.725" endtime="20250128 12:30:47.126"/>
+</kw>
+<kw name="Click Element" library="SAP_Tcode_Library">
+<arg>wnd[0]/tbar[0]/btn[3]</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="PASS" starttime="20250128 12:30:47.126" endtime="20250128 12:30:50.590"/>
+</kw>
+<kw name="Click Element" library="SAP_Tcode_Library">
+<arg>wnd[0]/tbar[0]/btn[11]</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="PASS" starttime="20250128 12:30:50.590" endtime="20250128 12:30:52.389"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>**gbStart**block_status**splitKeyValue**${symvar('documents')} Block already in released state...**gbEnd**</arg>
+<doc>Logs the given message to the console.</doc>
+<msg timestamp="20250128 12:30:52.389" level="INFO">Sym.Dev.documents: 40025332</msg>
+<status status="PASS" starttime="20250128 12:30:52.389" endtime="20250128 12:30:52.389"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:46.725" endtime="20250128 12:30:52.389"/>
+</branch>
+<status status="PASS" starttime="20250128 12:30:46.725" endtime="20250128 12:30:52.389"/>
+</if>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Click Element</arg>
+<arg>wnd[1]/tbar[0]/btn[0]</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click Element" library="SAP_Tcode_Library">
+<arg>wnd[1]/tbar[0]/btn[0]</arg>
+<doc>Performs a single click on a given element. Used only for buttons, tabs and menu items.</doc>
+<status status="PASS" starttime="20250128 12:30:52.389" endtime="20250128 12:30:54.517"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:52.389" endtime="20250128 12:30:54.517"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>time_=0.3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250128 12:30:54.817" level="INFO">Slept 300 milliseconds</msg>
+<status status="PASS" starttime="20250128 12:30:54.517" endtime="20250128 12:30:54.817"/>
+</kw>
+<kw name="Get Value" library="SAP_Tcode_Library">
+<var>${status}</var>
+<arg>wnd[0]/sbar/pane[0]</arg>
+<doc>Gets the value of the given element. The possible return values depend on the type of element (see Return values).</doc>
+<msg timestamp="20250128 12:30:54.817" level="INFO">${status} = SUG Rental contract 40025332 has been saved.</msg>
+<status status="PASS" starttime="20250128 12:30:54.817" endtime="20250128 12:30:54.817"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>**gbStart**block_log**splitKeyValue**${status}**gbEnd**</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20250128 12:30:54.817" endtime="20250128 12:30:54.817"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:46.471" endtime="20250128 12:30:54.817"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<msg timestamp="20250128 12:30:54.817" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20250128 12:30:54.817" endtime="20250128 12:30:54.817"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:46.471" endtime="20250128 12:30:54.817"/>
+</branch>
+<status status="PASS" starttime="20250128 12:30:46.471" endtime="20250128 12:30:54.817"/>
+</if>
+<status status="PASS" starttime="20250128 12:30:46.409" endtime="20250128 12:30:54.817"/>
+</iter>
+<status status="PASS" starttime="20250128 12:30:45.876" endtime="20250128 12:30:54.817"/>
+</for>
+<status status="PASS" starttime="20250128 12:30:38.207" endtime="20250128 12:30:54.817"/>
+</branch>
+<status status="PASS" starttime="20250128 12:30:38.207" endtime="20250128 12:30:54.817"/>
+</if>
+<status status="PASS" starttime="20250128 12:30:38.192" endtime="20250128 12:30:54.817"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:38.192" endtime="20250128 12:30:54.817"/>
+</branch>
+<status status="PASS" starttime="20250128 12:30:38.176" endtime="20250128 12:30:54.817"/>
+</if>
+<status status="PASS" starttime="20250128 12:30:36.637" endtime="20250128 12:30:54.817"/>
+</kw>
+<tag>Regression</tag>
+<tag>VA42</tag>
+<status status="PASS" starttime="20250128 12:30:36.637" endtime="20250128 12:30:54.817"/>
+</test>
+<kw name="System Logout" library="VA42" type="TEARDOWN">
+<kw name="Run Transaction" library="SAP_Tcode_Library">
+<arg>/nex</arg>
+<doc>Runs a Sap transaction. An error is given when an unknown transaction is specified.</doc>
+<status status="PASS" starttime="20250128 12:30:54.817" endtime="20250128 12:30:54.896"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:54.817" endtime="20250128 12:30:54.896"/>
+</kw>
+<status status="PASS" starttime="20250128 12:30:35.869" endtime="20250128 12:30:54.896"/>
+</suite>
+<doc>Testing functionality through Robot Framework</doc>
+<meta name="environment">Dev</meta>
+<meta name="test_browser_name">chrome</meta>
+<meta name="test_browser_version">131.0.6778.109</meta>
+<meta name="test_driver_version">131.0.6778.85 </meta>
+<meta name="test_environment">Dev</meta>
+<meta name="test_freeze_dependencies">astroid==3.3.5,attrs==24.2.0,beautifulsoup4==4.12.3,bs4==0.0.2,certifi==2024.8.30,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.0,click==8.1.7,colorama==0.4.6,comtypes==1.4.8,cryptography==43.0.3,defusedxml==0.7.1,dill==0.3.9,docutils==0.21.2,et_xmlfile==2.0.0,exceptiongroup==1.2.2,gitdb==4.0.11,GitPython==3.1.43,h11==0.14.0,idna==3.10,isort==5.13.2,jason==0.1.7,Jinja2==3.1.4,jira==3.8.0,jsonpath-ng==1.7.0,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lazy-object-proxy==1.10.0,lxml==5.3.0,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,natsort==8.4.0,numpy==2.1.3,O365==2.0.38,oauthlib==3.2.2,opencv-python-headless==4.10.0.84,openpyxl==3.1.5,outcome==1.3.0.post0,packaging==24.2,pandas==2.2.3,pathspec==0.11.2,pillow==11.0.0,pip==24.3.1,platformdirs==4.3.6,ply==3.11,pycparser==2.22,Pygments==2.18.0,pylint==3.3.1,PyMuPDF==1.25.1,PySocks==1.7.1,pytesseract==0.3.13,python-dateutil==2.9.0.post0,pytz==2024.2,pywin32==308,pywinauto==0.6.8,PyYAML==6.0.2,referencing==0.35.1,requests==2.32.3,requests-oauthlib==2.0.0,requests-toolbelt==1.0.0,rich==13.9.4,rich-click==1.6.1,robotframework==6.0.2,robotframework-datadriver==1.9.0,robotframework-excellib==2.0.1,robotframework-jsonlibrary==0.5,robotframework-pabot==2.16.0,robotframework-pythonlibcore==4.2.0,robotframework-requests==0.9.2,robotframework-sapguilibrary==1.1,robotframework-seleniumlibrary==5.1.3,robotframework-stacktrace==0.4.1,robotframework-tidy==4.5.0,rpds-py==0.21.0,selenium==4.9.1,setuptools==75.6.0,six==1.16.0,smmap==5.0.1,sniffio==1.3.1,sortedcontainers==2.4.0,soupsieve==2.6,tomli==2.0.2,tomlkit==0.13.2,trio==0.27.0,trio-websocket==0.11.1,typing_extensions==4.12.2,tzdata==2024.2,tzlocal==5.2,urllib3==2.2.3,wheel==0.45.1,wrapt==1.17.0,wsproto==1.2.0</meta>
+<status status="PASS" starttime="20250128 12:30:28.716" endtime="20250128 12:30:54.949"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+<stat pass="1" fail="0" skip="0">VA42</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test VA42">Tests.Test VA42</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

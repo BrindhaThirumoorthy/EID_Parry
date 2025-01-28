@@ -125,20 +125,21 @@ if __name__ == "__main__":
         print("CC Recipients:", cc_recipients)
         
         subject = sys.argv[6]
-        body = sys.argv[7]
-        
+        body1 = sys.argv[7]
+        body2 = sys.argv[8]
+        body = f"{body1}<br>{body2}"
         now = datetime.now()
         current_month = now.strftime("%B")
         current_year = now.year
-        folder_path = os.path.join(sys.argv[8], str(current_year), current_month)
+        folder_path = os.path.join(sys.argv[9], str(current_year), current_month)
         # folder_path = sys.argv[8]
-        file_name = sys.argv[9]
+        file_name = sys.argv[10]
         file_path = os.path.join(folder_path, file_name)
         if not os.path.isfile(file_path):
             raise FileNotFoundError(f"Attachment file '{file_path}' does not exist.")
 
         
-        if len(sys.argv) == 10:
+        if len(sys.argv) == 11:
             file_path = os.path.join(folder_path, file_name)
             if os.path.isfile(file_path):
                 result = send_email_with_attachment(
