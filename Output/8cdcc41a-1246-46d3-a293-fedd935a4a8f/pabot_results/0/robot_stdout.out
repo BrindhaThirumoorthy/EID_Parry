@@ -1,0 +1,45 @@
+==============================================================================
+Tests :: Testing functionality through Robot Framework                        
+==============================================================================
+Tests.Test Material Availability Description                                  
+==============================================================================
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Test_Material_Availability_Description.robot:5
+      System Logon    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\Material_Availability_Description.robot:29
+      Open Connection    ${symvar('MM_SAP_connection')}
+      |  ${symvar('MM_SAP_connection')} = EID Sandbox (str)
+______________________________________________________________________________
+Executing Material Availability                                       | FAIL |
+Parent suite setup failed:
+ValueError: Cannot open connection 'EID Sandbox', please check connection name.
+------------------------------------------------------------------------------
+Result                                                                | FAIL |
+Parent suite setup failed:
+ValueError: Cannot open connection 'EID Sandbox', please check connection name.
+------------------------------------------------------------------------------
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Test_Material_Availability_Description.robot:6
+      System Logout    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\EID_Replay\EID_Parry\Tests\Resource\Material_Availability_Description.robot:38
+      Run Transaction    /nex
+______________________________________________________________________________
+Tests.Test Material Availability Description                          | FAIL |
+Suite setup failed:
+ValueError: Cannot open connection 'EID Sandbox', please check connection name.
+
+Also suite teardown failed:
+AttributeError: 'int' object has no attribute 'findById'
+
+2 tests, 0 passed, 2 failed
+==============================================================================
+Tests :: Testing functionality through Robot Framework                | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+Output:  C:\EID_Replay\EID_Parry\Output\8cdcc41a-1246-46d3-a293-fedd935a4a8f\pabot_results\0\Output.xml

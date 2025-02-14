@@ -1,0 +1,8 @@
+MM_SAP_SERVER = "C:\\Program Files (x86)\\SAP\\FrontEnd\\SAPgui\\saplogon.exe"
+MM_SAP_connection = "EID Sandbox"
+MM_Client_Id = "900"
+MM_User_Name = "bcssupport1"
+Plant ="1040"
+Material ="SUGAR S30 50KG-WHITE"
+MM_Cleaned_filepath = "C:\\tmp\\"
+MM_Cleaned_filename = "MM_Availability.xlsx"
