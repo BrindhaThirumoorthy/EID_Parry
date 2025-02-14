@@ -32,8 +32,8 @@ System Logon
     # Input Password   wnd[0]/usr/pwdRSYST-BCODE    ${symvar('MM_User_Password')}
     Input Password   wnd[0]/usr/pwdRSYST-BCODE    %{MM_User_Password}
     Send Vkey    0
-    Multiple logon Handling     wnd[1]  wnd[1]/usr/radMULTI_LOGON_OPT2  wnd[1]/tbar[0]/btn[0] 
-
+    # Multiple Logon Handling    wnd[1]    wnd[1]/usr/radMULTI_LOGON_OPT2    wnd[1]/tbar[0]/btn[0] 
+    Multiple Logon Handling    wnd[1]/usr/radMULTI_LOGON_OPT2 
 System Logout
     Run Transaction   /nex
 

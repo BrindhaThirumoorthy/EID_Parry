@@ -1,5 +1,5 @@
 MM_SAP_SERVER = "C:\\Program Files (x86)\\SAP\\FrontEnd\\SAPgui\\saplogon.exe"
-MM_SAP_connection = "EID Sandbox"
+MM_SAP_connection = "EID sandbox"
 MM_Client_Id = "900"
 MM_User_Name = "bcssupport1"
 Plant ="1040"
