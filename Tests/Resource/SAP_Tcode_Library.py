@@ -14,6 +14,7 @@ import json
 import re
 import glob
 from datetime import datetime
+from dateutil.relativedelta import relativedelta
 import calendar
 
 
@@ -1678,3 +1679,40 @@ class SAP_Tcode_Library:
         # data = json.loads(date)
         year = date[0]['Year']
         return year
+
+    def material_availability_description(self, filepath, search_pattern, result_filepath):
+        # Read data from the Excel file
+        df = pd.read_excel(filepath, header =1)
+
+        # Clean any extra spaces in column names
+        df.columns = df.columns.str.strip()
+
+        
+        material_description_col = 'Material Description'
+        material_id_col = 'Material'
+        plant_col = 'Plnt'
+        unrestricted_stock_col = 'Unrestr.'
+
+        # Filter rows where the description matches the pattern
+        matching_rows = df[df[material_description_col].str.contains(search_pattern, na=False, flags=re.IGNORECASE)]
+        result = matching_rows[[material_id_col, plant_col, material_description_col, unrestricted_stock_col]]
+        # Rename the columns
+        result = result.rename(columns={
+            material_id_col: 'Material ID',
+            plant_col: 'Plant',
+            material_description_col: 'Material Description',
+            unrestricted_stock_col: 'Unrestricted Stock'
+        })
+        result.to_excel(result_filepath, index=False)
+        print("Cleaned data has been saved successfully!")
+
+    def get_mail_subject(self, data):
+        str_obj = json.dumps(data)
+        json_data = json.loads(str_obj)
+
+        month = json_data[0]["Month"]
+        year = json_data[0]["Year"]
+
+        formatted_date = f"{month} {year}."
+        print(formatted_date)
+        return formatted_date

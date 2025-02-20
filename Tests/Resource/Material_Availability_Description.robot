@@ -19,7 +19,7 @@ ${result_filepath}    ${symvar('MM_Cleaned_filepath')}\\${symvar('MM_Cleaned_fil
 
 #${Plant}    1040
 #${Material}    laptop
-${layout}    mat
+${layout}    /mat
 
 *** Keywords ***
 System Logon
@@ -32,8 +32,15 @@ System Logon
     # Input Password   wnd[0]/usr/pwdRSYST-BCODE    ${symvar('MM_User_Password')}
     Input Password   wnd[0]/usr/pwdRSYST-BCODE    %{MM_User_Password}
     Send Vkey    0
-    # Multiple Logon Handling    wnd[1]    wnd[1]/usr/radMULTI_LOGON_OPT2    wnd[1]/tbar[0]/btn[0] 
-    Multiple Logon Handling    wnd[1]/usr/radMULTI_LOGON_OPT2 
+    # Multiple logon Handling     wnd[1]  wnd[1]/usr/radMULTI_LOGON_OPT2  wnd[1]/tbar[0]/btn[0]
+     ${logon_status}    Multiple logon Handling     wnd[1]
+    IF    '${logon_status}' == "Multiple logon found. Please terminate all the logon & proceed"
+        Log To Console    **gbStart**Sales_Document_status**splitKeyValue**${logon_status}**gbEnd**
+
+    ELSE
+        Executing Material Availability
+    END 
+
 System Logout
     Run Transaction   /nex
 
@@ -43,7 +50,8 @@ Executing Material Availability
     Sleep    1
     #Input Text    wnd[0]/usr/ctxtMATNR-LOW    ${symvar('Material')}
     Input Text    wnd[0]/usr/ctxtWERKS-LOW    ${symvar('Plant')}
-    Input Text    wnd[0]/usr/ctxtP_VARI    ${layout}
+    # Input Text    wnd[0]/usr/ctxtP_VARI    ${layout}
+    Input Text    wnd[0]/usr/ctxtP_VARI    ${symvar('layout')}
     Sleep    0.1
     #Input Text    wnd[0]/usr/ctxtWERKS-LOW    ${Plant}
     #wnd[0]/usr/ctxtWERKS-LOW
@@ -56,12 +64,15 @@ Executing Material Availability
     Select Radio Button    wnd[1]/usr/subSUBSCREEN_STEPLOOP:SAPLSPO5:0150/sub:SAPLSPO5:0150/radSPOPLI-SELFLAG[2,0]
     Click Element    wnd[1]/tbar[0]/btn[0]
     Sleep    1
-    Click Element    wnd[1]/tbar[0]/btn[20]
-    Sleep    1
+    # Click Element    wnd[1]/tbar[0]/btn[20]
+    # Sleep    1
+    Input Text    wnd[1]/usr/ctxtDY_PATH   ${EMPTY}
     Input Text    wnd[1]/usr/ctxtDY_PATH   ${symvar('MM_Cleaned_filepath')}
     Sleep    1
+    Input Text    wnd[1]/usr/ctxtDY_FILENAME    ${EMPTY}
     Input Text    wnd[1]/usr/ctxtDY_FILENAME    ${MM_Filename}
-    Click Element    wnd[1]/tbar[0]/btn[11]
+    # Click Element    wnd[1]/tbar[0]/btn[11]
+    Click Element    wnd[1]/tbar[0]/btn[0]
     Sleep    1
     Log To Console    ma completed 
 Result
