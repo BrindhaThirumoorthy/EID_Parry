@@ -83,9 +83,11 @@ Rental Document
         
 
         Click Element    element_id=wnd[0]/mbar/menu[0]/menu[3]/menu[1]
+        # for prod system have to disable the below line
         # Sleep    10s
-        # Click Element    element_id=wnd[1]/tbar[0]/btn[0]
+        Click Element    element_id=wnd[1]/tbar[0]/btn[0]
         # Sleep    60s
+        # for prod system have to disable the above line
         Delete Specific File    file_path=C:\\TEMP\\rental.xlsx
         Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=${EMPTY}
         Input Text    element_id=wnd[1]/usr/ctxtDY_FILENAME    text=rental.xlsx
